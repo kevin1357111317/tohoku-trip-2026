@@ -8,8 +8,10 @@
 <body>
 <script>
 (async()=>{
-  const b64=(await fetch('./site1.txt')).text ? await (await fetch('./site1.txt')).text() : '';
-  const bin=atob(b64.trim());
+  const r = await fetch('https://raw.githubusercontent.com/kevin1357111317/tohoku-trip-2026/main/site1.txt');
+  if (!r.ok) throw new Error('HTTP '+r.status);
+  const b64 = (await r.text()).trim();
+  const bin=atob(b64);
   const bytes=new Uint8Array(bin.length);
   for(let i=0;i<bin.length;i++) bytes[i]=bin.charCodeAt(i);
   const ds=new DecompressionStream('gzip');
