@@ -1,29 +1,3 @@
-<!doctype html>
-<html lang="zh-Hant">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>2026 東北9日｜V30</title>
-</head>
-<body>
-<div id="status" style="font-family:system-ui;padding:24px">載入行程中…</div>
-<script src="./payload.js"></script>
-<script>
-(async()=>{
-  if(!window.__SITE_B64) throw new Error('payload.js 未載入');
-  const bin=atob(window.__SITE_B64);
-  const bytes=new Uint8Array(bin.length);
-  for(let i=0;i<bin.length;i++) bytes[i]=bin.charCodeAt(i);
-  if(typeof DecompressionStream==='undefined') throw new Error('此瀏覽器不支援 DecompressionStream');
-  const ds=new DecompressionStream('gzip');
-  let html=await new Response(new Blob([bytes]).stream().pipeThrough(ds)).text();
-  html=html.replace('<title>2026 東北9日｜V28</title>','<title>2026 東北9日｜V30</title>');
-  document.open();
-  document.write(html);
-  document.close();
-})().catch(e=>{
-  document.getElementById('status').textContent='網站載入失敗：'+e;
-});
-</script>
-</body>
-</html>
+---
+---
+{% include v30_01.html %}{% include v30_02.html %}{% include v30_03.html %}{% include v30_04.html %}{% include v30_05.html %}{% include v30_06.html %}{% include v30_07.html %}{% include v30_08.html %}
