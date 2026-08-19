@@ -1,0 +1,91 @@
+
+:root{
+  --bg:#f8f1e7; --card:#fffdf8; --ink:#35241d; --muted:#79665b;
+  --green:#a53a28; --green2:#f5dfd2; --gold:#b97a20; --gold2:#f7e4b9;
+  --red:#8f261e; --red2:#f3d4cf; --blue:#4f6b77; --blue2:#e7eef1;
+  --line:#eadccf; --shadow:0 10px 28px rgba(93,54,35,.10);
+}
+body{
+  background:
+    radial-gradient(circle at 8% 1%, rgba(221,105,42,.10), transparent 22%),
+    radial-gradient(circle at 92% 8%, rgba(165,58,40,.09), transparent 24%),
+    var(--bg);
+}
+.hero{
+  position:relative;overflow:hidden;
+  background:linear-gradient(145deg,#6e211b 0%,#a53a28 48%,#db702d 100%);
+  box-shadow:0 14px 34px rgba(110,33,27,.18)
+}
+.hero:before{content:"🍁";position:absolute;right:-10px;top:8px;font-size:92px;opacity:.15;transform:rotate(18deg)}
+.hero:after{content:"🍂";position:absolute;left:-12px;bottom:-18px;font-size:72px;opacity:.12;transform:rotate(-18deg)}
+.stat{background:rgba(255,247,236,.13);border-color:rgba(255,255,255,.18)}
+.date-strip{background:rgba(248,241,231,.95);border-color:var(--line)}
+.date-pill{background:#fff8ef;border-color:#e8cfbd;color:#78281f}
+.section-title h2,.day-index{color:#8f2e22}
+.day-head{background:linear-gradient(180deg,rgba(247,228,185,.52),rgba(255,253,248,0))}
+.day-head h2{color:#4c2d23}
+.map-btn{background:#f4dfc0;color:#7b2d21}
+.dot:before{background:linear-gradient(135deg,#9d2f24,#df762f)}
+.chip.poi{background:#f5ddd2;color:#a54827}
+.chip.hotel{background:#eee1d7;color:#754b3b}
+.chip.food{background:#f9e3c7;color:#a65a24}
+.chip.special{background:#f7d5ae;color:#994b1b}
+.oirase-card{border-left-color:#db702d}
+.oirase-date{color:#9d3025}
+.callout{background:linear-gradient(145deg,#6e211b,#9f3225 65%,#c95c28)}
+.info-title{color:#593328}
+
+/* No-JS tabs */
+.tab-radio{position:fixed;opacity:0;pointer-events:none}
+.view{display:none!important}
+#tab-trip:checked ~ main #view-trip,
+#tab-oirase:checked ~ main #view-oirase,
+#tab-hotels:checked ~ main #view-hotels,
+#tab-todos:checked ~ main #view-todos{display:block!important}
+
+.bottom-nav{
+  background:rgba(255,249,242,.96);
+  border-top-color:#eadccf;
+  box-shadow:0 -8px 24px rgba(93,54,35,.08)
+}
+.bottom-nav label{
+  text-align:center;cursor:pointer;padding:10px 4px;border-radius:13px;
+  font-size:11px;font-weight:800;color:#75645b;user-select:none
+}
+#tab-trip:checked ~ .bottom-nav label[for="tab-trip"],
+#tab-oirase:checked ~ .bottom-nav label[for="tab-oirase"],
+#tab-hotels:checked ~ .bottom-nav label[for="tab-hotels"],
+#tab-todos:checked ~ .bottom-nav label[for="tab-todos"]{
+  background:linear-gradient(135deg,#f3d8ce,#f5e3bf);
+  color:#76271e
+}
+</style>
+
+
+<style>
+.text-map-link{
+  color:inherit;
+  text-decoration-line:underline;
+  text-decoration-style:dotted;
+  text-decoration-color:#c96b43;
+  text-underline-offset:3px;
+  text-decoration-thickness:1px;
+  font-weight:inherit;
+}
+.text-map-link:active{opacity:.65}
+</style>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="東北9日">
+</head>
+<body>
+<div class="app">
+<header class="hero">
+<div class="eyebrow">V30</div>
+<h1>仙台・奧入瀨・岩手<br>9天8夜</h1>
+<p>2026/10/17–10/25 · 2人 · 手機旅行版</p>
+<div class="stats"><div class="stat"><b>9天</b><span>仙台進出</span></div><div class="stat"><b>3天2夜</b><span>奧入瀨</span></div><div class="stat"><b>8晚</b><span>已訂住宿</span></div></div>
+</header>
+<div class="date-strip"><a class="date-pill" href="#d1">10/17</a><a class="date-pill" href="#d2">10/18</a><a class="date-pill" href="#d3">10/19</a><a class="date-pill" href="#d4">10/20</a><a class="date-pill" href="#d5">10/21</a><a class="date-pill" href="#d6">10/22</a><a class="date-pill" href="#d7">10/23</a><a class="date-pill" href="#d8">10/24</a><a class="date-pill" href="#d9">10/25</a></div>
+<input class="tab-radio" type="radio" name="tabs" id="tab-trip" checked><input class="tab-radio" type="radio" name="tabs" id="tab-oirase"><input class="tab-radio" type="radio" name="tabs" id="tab-hotels"><input class="tab-radio" type="radio" name="tabs" id="tab-todos"><main>
+<section class="view" id="view-trip"><div class="section"><div class="section-title"><h2>每日行程</h2><span>提示｜可點擊名稱開啟地圖</span></div><article class="day-card" id="d1"><div class="day-head"><div><span class="day-index">D1</span><h2>10/17（六） 抵達仙台</h2><p>仙台</p></div></div><div class="hotel-line">住宿｜<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=Hotel+Metropolitan+The+Base+Sendai%2C+Sendai%2C+Japan" target="_blank" rel="noopener">Hotel Metropolitan The Base Sendai</a></div><div class="timeline"><div class="timeline-item"><div class="time">11:35–16:00</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>星宇 JX862｜桃園 → 仙台</h4><span class="chip danger">固定</span></div><p>座位32F／32G；每人托運1件23kg＋手提7kg。</p></div></div><div class="timeline-item"><div class="time">17:39–18:04</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%A9%BA%E6%B8%AF" target="_blank" rel="noopener">仙台機場</a>線 → <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E9%A7%85" target="_blank" rel="noopener">仙台站</a></h4><span class="chip transport">交通</span></div><p>17:39為目標班次；若通關或領行李延誤就搭下一班。</p></div></div><div class="timeline-item"><div class="time">18:10–19:00</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>飯店 Check-in、整理行李</h4><span class="chip stay">住宿</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E9%A7%85" target="_blank" rel="noopener">仙台站</a>旁，抵達後先休息。</p></div></div><div class="timeline-item"><div class="time">19:00–22:00</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>牛舌晚餐</h4><span class="chip food">餐飲</span></div><p>
