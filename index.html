@@ -6,19 +6,23 @@
 <title>2026 東北9日｜V30</title>
 </head>
 <body>
+<div id="status" style="font-family:system-ui;padding:24px">載入行程中…</div>
+<script src="./payload.js"></script>
 <script>
 (async()=>{
-  const r = await fetch('https://raw.githubusercontent.com/kevin1357111317/tohoku-trip-2026/main/site1.txt');
-  if (!r.ok) throw new Error('HTTP '+r.status);
-  const b64 = (await r.text()).trim();
-  const bin=atob(b64);
+  if(!window.__SITE_B64) throw new Error('payload.js 未載入');
+  const bin=atob(window.__SITE_B64);
   const bytes=new Uint8Array(bin.length);
   for(let i=0;i<bin.length;i++) bytes[i]=bin.charCodeAt(i);
+  if(typeof DecompressionStream==='undefined') throw new Error('此瀏覽器不支援 DecompressionStream');
   const ds=new DecompressionStream('gzip');
-  const html=await new Response(new Blob([bytes]).stream().pipeThrough(ds)).text();
-  document.open(); document.write(html); document.close();
+  let html=await new Response(new Blob([bytes]).stream().pipeThrough(ds)).text();
+  html=html.replace('<title>2026 東北9日｜V28</title>','<title>2026 東北9日｜V30</title>');
+  document.open();
+  document.write(html);
+  document.close();
 })().catch(e=>{
-  document.body.innerHTML='<pre style="white-space:pre-wrap;font-family:system-ui;padding:24px">網站載入失敗：'+e+'</pre>';
+  document.getElementById('status').textContent='網站載入失敗：'+e;
 });
 </script>
 </body>
