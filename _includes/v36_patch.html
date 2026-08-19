@@ -1,0 +1,70 @@
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+ const M=(t,q)=>`<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}" target="_blank" rel="noopener">${t}</a>`;
+ const I=(tm,title,cls,tag,txt)=>`<div class="timeline-item"><div class="time">${tm}</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>${title}</h4><span class="chip ${cls}">${tag}</span></div><p>${txt}</p></div></div>`;
+ const H=M('星野集團 奧入瀨溪流飯店','奥入瀬渓流ホテル by 星野リゾート 青森県十和田市'),
+ K=M('奧入瀨溪流館','奥入瀬渓流館 青森県十和田市'),
+ B=M('八戶站','八戸駅 青森県八戸市'),
+ S=M('仙台站','仙台駅 宮城県仙台市'),
+ C=M('銚子大瀑布','銚子大滝 奥入瀬渓流 青森県十和田市'),
+ N=M('子之口','子ノ口 十和田湖 青森県十和田市'),
+ Y=M('休屋','十和田湖 休屋 青森県十和田市'),
+ O=M('乙女之像','乙女の像 十和田湖 青森県十和田市'),
+ T=M('十和田神社','十和田神社 青森県十和田市'),
+ R=M('石戶休憩所','石ヶ戸休憩所 青森県十和田市奥瀬'),
+ A=M('阿修羅之流','阿修羅の流れ 奥入瀬渓流 青森県十和田市'),
+ U=M('雲井瀑布','雲井の滝 奥入瀬渓流 青森県十和田市'),
+ G=M('馬門岩','馬門岩 奥入瀬渓流 青森県十和田市'),
+ L=M('十和田湖','十和田湖 青森県十和田市');
+ document.title='2026 東北9日｜V36'; const ey=document.querySelector('.eyebrow');if(ey)ey.textContent='V36';
+
+ const setDay=(id,title,sub,hotel,items)=>{const d=document.getElementById(id);if(!d)return;d.querySelector('.day-head h2').textContent=title;d.querySelector('.day-head p').innerHTML=sub;d.querySelector('.hotel-line').innerHTML='住宿｜'+hotel;d.querySelector('.timeline').innerHTML=items.join('');};
+
+ setDay('d5','10/21（三） 早進奧入瀨＋溪流敞篷巴士','仙台 → 八戶 → 奧入瀨',H,[
+  I('06:00–08:34',`退房＋Hayabusa 95｜${S} → ${B}`,'warn','待預約','06:40仙台出發、08:34八戶抵達；全車指定席。大型行李全部隨身帶往奧入瀨。'),
+  I('08:34–10:00',`${B}早餐／補給＋買中午便當`,'food','餐飲','今天13:20有敞篷巴士硬時間；先買便當／飯糰，09:40前到西口JR巴士乘車處。'),
+  I('10:00–11:36',`JR巴士 おいらせ21號｜${B} → ${K}`,'warn','待預約','八戶上車須預約；紅葉旺季可能滿席／塞車。原14:30星野免費接駁繼續保留備援。'),
+  I('11:36–13:00',`${K} → ${H}｜寄行李＋簡單午餐`,'stay','入住前','吃八戶先買好的便當／輕食；12:50前到溪流-BASE報到。'),
+  I('13:20–15:00',`住客限定溪流敞篷巴士｜${H} → ${N} → 飯店`,'special','建議預約','13:20集合、13:30出發、14:10子之口短停、15:00回飯店；90分鐘，¥3,850／人。第一天先從高視角看奧入瀨與十和田湖。'),
+  I('15:00–17:00','Check-in＋飯店／溪流露天溫泉','hotel','星野','第一天下午不再塞外部景點，先享受森林神話大廳、溪流空間與溫泉。'),
+  I('17:00–17:30','Mountain Stream Discovery','hotel','免費','免費、免預約的溪流探索活動。'),
+  I('晚間','青森蘋果廚房 Buffet＋泡湯＋Keiryu-BASE','food','晚餐','兩晚都安排飯店 Buffet；晚上以飯店慢活收尾。')
+ ]);
+
+ setDay('d6','10/22（四） 銚子大瀑布＋十和田湖完整日',`奧入瀨上游／${L}`,H,[
+  I('07:00–08:15','青森蘋果廚房早餐＋裝備準備','food','早餐','住宿內含早餐。今天不騎E-BIKE；用JR巴士＋短走＋遊船。'),
+  I('08:15–09:08',`步行至${K} → JR巴士 → ${C}`,'transport','交通','主抓08:45溪流館發車、09:08銚子大瀑布到達；紅葉季提早候車。'),
+  I('09:08–10:10',`${C}慢看 → 沿溪步行至${N}`,'poi','上游精華','約1.5km／30分鐘；另留20–30分鐘賞瀑與拍照。'),
+  I('10:10–11:50',`${N}休息／買票 → 11:00 ${L}遊覽船 → ${Y}`,'special','遊船','A航線11:00子之口→11:50休屋，成人¥1,760。若強風／濃霧停航，改10:40子之口→10:55休屋JR巴士。'),
+  I('11:50–15:00',`${Y}午餐 → ${O} → ${T}`,'poi','湖畔核心','乙女之像＋十和田神社約2km／1小時；不走中之湖展望台陡階。14:40前回到巴士站附近。'),
+  I('15:00–15:42',`JR巴士｜${Y} → ${K}`,'danger','主班','15:00休屋發、15:42溪流館到；回程無預約制。'),
+  I('15:50–晚間',`回${H}｜泡湯＋休息＋青森蘋果廚房 Buffet`,'hotel','星野','第二晚刻意留給飯店，不再塞外部景點。')
+ ]);
+
+ setDay('d7','10/23（五） 石戶休憩所→雲井瀑布慢走＋晚回仙台','奧入瀨中游 → 八戶 → 仙台',M('Daiwa Roynet Hotel 仙台西口 PREMIER','ダイワロイネットホテル仙台西口 PREMIER 宮城県仙台市'),[
+  I('07:00–08:00','青森蘋果廚房早餐＋整理行李','food','早餐','吃住宿內含早餐；不參加溪流露台早餐。08:00前到溪流-BASE等接駁。'),
+  I('08:00–08:11',`星野溪流接駁｜飯店 → ${R}`,'transport','免費接駁','紅葉旺季可能客滿，建議提早候車。'),
+  I('08:11–10:35',`精華慢走約2.8km｜${R} → ${G} → ${A} → ${U}`,'poi','本日核心','用2小時多慢走、拍照，不當健行衝里程。'),
+  I('10:35–10:50',`星野溪流接駁｜${U} → 飯店`,'danger','硬截止','10:35務必在雲井瀑布站候車；錯過會壓縮退房時間。'),
+  I('10:50–12:00','最後泡湯＋整理＋12:00前 Check-out','hotel','星野','若要最後泡溪流露天溫泉，抓10:50–11:20；11:30後進入日間維護時段。'),
+  I('12:00–16:10',`午餐＋森林神話／Keiryu-BASE／${K}慢逛`,'flex','慢活','第三天下午刻意留白；約15:30領行李，16:10前往巴士站。'),
+  I('16:42–18:20',`JR巴士｜${K} → ${B}`,'danger','固定','無預約制；紅葉季可能塞車，後面的新幹線刻意留大緩衝。'),
+  I('18:20–20:13',`${B}晚餐／補給`,'food','晚餐','簡單吃，不壓20:13新幹線。'),
+  I('20:13–21:45',`Hayabusa 44｜${B} → ${S} → Daiwa Check-in`,'warn','待預約','20:13八戶→21:30仙台；約21:45入住。')
+ ]);
+
+ const ov=document.getElementById('view-oirase');
+ if(ov)ov.querySelector('.section').innerHTML=`<div class="section-title"><h2>奧入瀨 3天2夜</h2><span>景點70%＋星野30%</span></div>
+ <div class="callout"><h3>巴士看全貌、上游＋十和田湖、中游慢走</h3><p>10/21敞篷巴士先看全貌；10/22 ${C}＋${L}遊船＋${T}；10/23 ${R}→${U}慢走。E-BIKE與溪流露台早餐不排。</p></div>
+ <div class="oirase-grid"><div class="oirase-card"><span class="oirase-date">10/21</span><h3>敞篷巴士＋星野</h3><p>13:20–15:00敞篷巴士；入住後溪流探索、Buffet、溫泉。</p></div>
+ <div class="oirase-card"><span class="oirase-date">10/22</span><h3>上游＋十和田湖</h3><p>${C}→步行1.5km→${N}→11:00遊船→${Y}→${O}＋${T}→15:00回星野。</p></div>
+ <div class="oirase-card"><span class="oirase-date">10/23</span><h3>中游2.8km慢走</h3><p>${R}→${G}→${A}→${U}，10:35接駁回飯店；下午慢活，16:42離開。</p></div></div>
+ <div class="info-card" style="margin-top:12px"><div class="info-title">10/22 遊船停航備援</div><p>強風／濃霧停航時改10:40 ${N}→10:55 ${Y} JR巴士；後續行程不變。</p></div>`;
+
+ document.querySelectorAll('.todo-card').forEach(c=>{const h=c.querySelector('h3');if(!h)return;
+  if(h.textContent.includes('10/22 電動自行車'))c.innerHTML='<div class="todo-top"><span class="priority">非常高</span><span class="due">建議儘早</span></div><h3>10/21 13:20 溪流敞篷巴士</h3><p>2人；13:20集合、15:00回飯店。¥3,850／人；先到先得。</p>';
+  if(h.textContent.includes('10/23 溪流露台早餐'))c.innerHTML='<div class="todo-top"><span class="priority">非常高</span><span class="due">出發前確認</span></div><h3>10/22 11:00 十和田湖遊覽船</h3><p>子之口11:00 → 休屋11:50；成人¥1,760／人。停航時改10:40 JR巴士。</p>';
+ });
+ const src=document.querySelector('.source');if(src)src.textContent='V36｜來源：20261017_仙台奧入瀨岩手9日行程_V36.xlsx';
+});
+</script>
