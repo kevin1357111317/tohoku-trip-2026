@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026 東北9日｜V30</title>
+</head>
+<body>
+<script>
+(async()=>{
+  const b64=(await fetch('./site1.txt')).text ? await (await fetch('./site1.txt')).text() : '';
+  const bin=atob(b64.trim());
+  const bytes=new Uint8Array(bin.length);
+  for(let i=0;i<bin.length;i++) bytes[i]=bin.charCodeAt(i);
+  const ds=new DecompressionStream('gzip');
+  const html=await new Response(new Blob([bytes]).stream().pipeThrough(ds)).text();
+  document.open(); document.write(html); document.close();
+})().catch(e=>{
+  document.body.innerHTML='<pre style="white-space:pre-wrap;font-family:system-ui;padding:24px">網站載入失敗：'+e+'</pre>';
+});
+</script>
+</body>
+</html>
