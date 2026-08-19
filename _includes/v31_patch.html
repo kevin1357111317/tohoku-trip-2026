@@ -1,0 +1,29 @@
+<script>
+(function(){
+  document.title='2026 東北9日｜V31';
+  const eyebrow=document.querySelector('.eyebrow'); if(eyebrow) eyebrow.textContent='V31';
+  const d9=document.querySelector('#d9');
+  if(d9){
+    const items=d9.querySelectorAll('.timeline-item');
+    if(items[1]){
+      const h4=items[1].querySelector('h4'); if(h4) h4.textContent='退房、請飯店協助叫一般計程車';
+      const chip=items[1].querySelector('.chip'); if(chip){chip.textContent='待叫車'; chip.className='chip warn';}
+      const p=items[1].querySelector('p'); if(p) p.textContent='兩人＋大型行李；不是包車方案。';
+    }
+    if(items[2]){
+      const h4=items[2].querySelector('h4'); if(h4 && !h4.textContent.startsWith('一般計程車｜')) h4.insertAdjacentText('afterbegin','一般計程車｜');
+      const chip=items[2].querySelector('.chip'); if(chip){chip.textContent='計程車'; chip.className='chip transport';}
+      const p=items[2].querySelector('p'); if(p) p.textContent='暫抓10:25–11:30參拜、12:15到機場。主案請同一台一般計程車在神社等候約65分鐘，行李留後車廂，再續往機場；上車時確認司機可否等候，以及跳表等候費、過路／停車費。';
+    }
+  }
+  document.querySelectorAll('.todo-card').forEach(card=>{
+    const h3=card.querySelector('h3');
+    if(h3 && h3.textContent.includes('10/25') && h3.textContent.includes('金蛇水神社')){
+      h3.innerHTML=h3.innerHTML.replace(/包車\s*$/,'｜一般計程車');
+      const due=card.querySelector('.due'); if(due) due.textContent='10/24';
+      const p=card.querySelector('p'); if(p) p.textContent='請飯店櫃台協助叫一般計程車；先告知神社停留約65分鐘後續往機場，確認司機等候、行李留車與跳表等候費。';
+    }
+  });
+  const source=document.querySelector('.source'); if(source) source.textContent='V31｜來源：20261017_仙台奧入瀨岩手9日行程_V31.xlsx';
+})();
+</script>
