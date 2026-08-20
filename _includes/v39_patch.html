@@ -1,0 +1,48 @@
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+ const M=(t,q)=>`<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}" target="_blank" rel="noopener">${t}</a>`;
+ const I=(tm,title,cls,tag,txt)=>`<div class="timeline-item"><div class="time">${tm}</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>${title}</h4><span class="chip ${cls}">${tag}</span></div><p>${txt}</p></div></div>`;
+ const H=M('星野集團 奧入瀨溪流飯店','奥入瀬渓流ホテル by 星野リゾート 青森県十和田市'),K=M('奧入瀨溪流館','奥入瀬渓流館 青森県十和田市'),B=M('八戶站','八戸駅 青森県八戸市'),S=M('仙台站','仙台駅 宮城県仙台市'),C=M('銚子大瀑布','銚子大滝 奥入瀬渓流 青森県十和田市'),N=M('子之口','子ノ口 十和田湖 青森県十和田市'),Y=M('休屋','十和田湖 休屋 青森県十和田市'),O=M('乙女之像','乙女の像 十和田湖 青森県十和田市'),T=M('十和田神社','十和田神社 青森県十和田市'),R=M('石戶休憩所','石ヶ戸休憩所 青森県十和田市奥瀬'),G=M('馬門岩','馬門岩 奥入瀬渓流 青森県十和田市'),A=M('阿修羅之流','阿修羅の流れ 奥入瀬渓流 青森県十和田市'),U=M('雲井瀑布','雲井の滝 奥入瀬渓流 青森県十和田市'),SR=M('三亂之流','三乱の流れ 奥入瀬渓流 青森県十和田市'),Z=M('紫明溪','紫明渓 奥入瀬渓流 青森県十和田市'),OL=M('石窯披薩 Ortolana','石窯ピザ Ortolana 青森県十和田市奥瀬栃久保');
+ document.title='2026 東北9日｜V39';const ey=document.querySelector('.eyebrow');if(ey)ey.textContent='V39';
+ const setDay=(id,title,sub,hotel,items)=>{const d=document.getElementById(id);if(!d)return;d.querySelector('.day-head h2').textContent=title;d.querySelector('.day-head p').innerHTML=sub;d.querySelector('.hotel-line').innerHTML='住宿｜'+hotel;d.querySelector('.timeline').innerHTML=items.join('');};
+ setDay('d5','10/21（三） 星野示範路線 Day1｜抵達＋下游暖身＋飯店慢活','仙台 → 八戶 → 奧入瀨',H,[
+  I('08:30–09:30','飯店早餐＋最後整理行李','food','早餐','第一天不早起，正常吃完早餐再退房。'),
+  I('09:30–10:25',`Check-out → ${S}`,'transport','移動','大型行李全部帶往奧入瀨；10:25前進月台即可。'),
+  I('10:41–12:01',`Hayabusa 9｜${S} → ${B}`,'warn','待預約','JR東日本2026/10/21現行時刻；全車指定席。'),
+  I('12:01–13:20',`${B}午餐＋補給`,'food','午餐','正常吃午餐；13:20前到西口JR巴士乘車處。'),
+  I('13:30–15:06',`JR巴士 おいらせ23號｜${B} → ${K}`,'warn','待預約','八戶站上車需預約；原14:30星野免費接駁保留交通備援。'),
+  I('15:06–16:20',`步行至${H} → Check-in → 下游短走`,'poi','暖身','15:30左右從飯店／溪流館往紫明溪方向短走，天黑前折返；下雨就直接取消。'),
+  I('16:20–18:00','溪流露天溫泉＋森林神話大廳','hotel','星野','照星野示範路線的第一天節奏，把時間留給飯店與溪流。'),
+  I('18:00後','青森蘋果廚房 Buffet → Bar／自由活動','food','晚餐','不排日文溪流探索；晚餐後完全自由。')
+ ]);
+ setDay('d6','10/22（四） 星野示範路線 Day2｜敞篷巴士＋銚子大瀑布＋十和田湖','奧入瀨上游／十和田湖',H,[
+  I('07:30–09:30','青森蘋果廚房早餐＋飯店慢活','food','早餐','今天不用趕08:45 JR巴士；早餐後慢慢準備。'),
+  I('10:30–11:05','準備輕午餐／飲料 → 星野活動中心','flex','準備','13:30遊船前沒有正式餐廳時間，建議帶飯糰／三明治等輕午餐。'),
+  I('11:05–約12:10',`住客溪流敞篷巴士｜${H} → ${N} → 回程${C}離團`,'special','核心','11:05集合、11:15出發、11:55子之口；官方允許在回程銚子大瀑布離團。¥3,850／人。'),
+  I('約12:10–13:25',`${C}慢看 → 步行約1.5km → ${N}＋輕午餐`,'poi','瀑布＋步行','地圖純走約30分鐘；另留約40分鐘賞瀑、拍照與吃輕午餐。13:20前到碼頭。'),
+  I('13:30–14:20',`十和田湖遊覽船 A航線｜${N} → ${Y}`,'special','遊船','2026 A航線13:30子之口出發、14:20休屋抵達，成人¥1,760／人。'),
+  I('14:20–16:00',`${Y} → ${O} → ${T} → 湖畔散步`,'poi','湖畔','主順位是乙女之像＋十和田神社；有餘裕再外帶蘋果派。16:00前回巴士站。'),
+  I('16:00–16:42',`JR巴士｜${Y} → ${K}`,'danger','固定','官方2026時刻16:00休屋→16:42奧入瀨溪流館。'),
+  I('17:00後',`回${H} → 溪流露天溫泉 → 青森蘋果廚房 Buffet`,'hotel','星野','延續示範路線：湖區回來後就是泡湯、晚餐、休息。')
+ ]);
+ setDay('d7','10/23（五） 星野示範路線 Day3｜葫蘆燈＋Ortolana＋三亂之流徒步','奧入瀨 → 八戶 → 仙台',M('Daiwa Roynet Hotel 仙台西口 PREMIER','ダイワロイネットホテル仙台西口 PREMIER 宮城県仙台市'),[
+  I('07:45–08:30','青森蘋果廚房早餐','food','早餐','不參加溪流露台早餐，也不用07:00開餐就到。'),
+  I('08:30–09:50','整理房間 → Check-out／寄大型行李 → 飯店自由時間','stay','退房','森林神話大廳、星野活動中心慢慢晃；大型行李留飯店。'),
+  I('10:00–11:00','製作自己專屬的葫蘆燈','special','要參加','官方10:00／13:00／16:00三場；1小時、14人、¥6,000～30,000／人。'),
+  I('11:05–12:05',`${OL}午餐`,'food','示範路線','星野官方示範路線推薦的鄰近午餐；文章標示Buffet 60分鐘，2026營業／價格出發前複核。'),
+  I('12:05–13:00','回飯店休息＋領散步裝備','flex','準備','12:50前回到星野活動中心等13:00接駁。'),
+  I('13:00–15:50',`接駁 → ${SR}下車｜徒步約3.5km → ${R} → ${G} → ${A} → ${U} → 接駁回飯店`,'poi','下午主行程','13:10三亂之流開始用走的；純步行基準約75分鐘，實際留2小時25分慢走拍照。15:35雲井瀑布接駁→15:50飯店。'),
+  I('15:50–16:20',`回${H}領大型行李 → ${K}巴士站`,'transport','硬截止','16:20前到站，留約20分鐘候車。'),
+  I('16:42–21:45',`JR巴士｜${K} → ${B} → Hayabusa 44 → ${S} → Daiwa`,'warn','返仙台','16:42溪流館→18:20八戶；20:13新幹線→21:30仙台，約21:45入住。')
+ ]);
+ const ov=document.getElementById('view-oirase');if(ov)ov.querySelector('.section').innerHTML=`<div class="section-title"><h2>奧入瀨 3天2夜｜星野官方示範路線客製版</h2><span>Day1飯店慢活・Day2敞篷巴士＋十和田湖・Day3手作＋徒步</span></div><div class="callout"><h3>照星野官方節奏玩，但保留你真正要的內容</h3><p>官方示範路線的骨架是：第一天抵達後大廳／溫泉／晚餐、第二天敞篷巴士＋十和田湖、第三天步行＋Ortolana＋手作。本版依2026班次重新組合，加入${C}、${O}、${T}與${SR}徒步；日文溪流探索與溪流露台早餐不排。</p></div><div class="oirase-grid"><div class="oirase-card"><span class="oirase-date">10/21</span><h3>抵達＋下游暖身＋飯店慢活</h3><p>10:41仙台出發、15:06到溪流館；下游短走後泡湯、森林神話大廳、青森蘋果廚房。</p></div><div class="oirase-card"><span class="oirase-date">10/22</span><h3>敞篷巴士＋瀑布＋十和田湖</h3><p>11:05敞篷巴士，回程${C}離團→步行約1.5km到${N}→13:30遊船到${Y}→${O}＋${T}→16:00回星野。</p></div><div class="oirase-card"><span class="oirase-date">10/23</span><h3>葫蘆燈＋Ortolana＋三亂徒步</h3><p>10:00葫蘆燈→11:05 ${OL}→13:10 ${SR}起走約3.5km至${U}→15:35接駁→16:42離開。</p></div></div>`;
+ document.querySelectorAll('.todo-card').forEach(c=>{const h=c.querySelector('h3');if(!h)return;const s=h.textContent;
+   if(s.includes('10/21 16:00 葫蘆燈製作')){h.textContent='10/22 11:05 溪流敞篷巴士';c.querySelector('p').textContent='住客版2人；回程在銚子大瀑布離團，銜接1.5km步行＋13:30遊船。';}
+   if(s.includes('10/22 11:00 十和田湖遊覽船')){h.textContent='10/22 13:30 十和田湖遊覽船';c.querySelector('p').textContent='A航線：子之口13:30 → 休屋14:20；成人¥1,760／人。';}
+   if(s.includes('10/23 11:05 溪流敞篷巴士'))c.remove();
+ });
+ const grid=document.querySelector('#view-todos .grid');if(grid&&!Array.from(grid.querySelectorAll('h3')).some(x=>x.textContent.includes('10/23 10:00 葫蘆燈'))){const x=document.createElement('div');x.className='todo-card';x.innerHTML='<div class="todo-top"><span class="priority">非常高</span><span class="due">建議儘早</span></div><h3>10/23 10:00 葫蘆燈</h3><p>2人；1小時、每場14人；¥6,000～30,000／人。</p>';grid.prepend(x);}
+ const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let n;while(n=walker.nextNode()){n.nodeValue=n.nodeValue.replaceAll('Keiryu-BASE','星野活動中心').replaceAll('溪流-BASE','星野活動中心');}
+ const src=document.querySelector('.source');if(src)src.textContent='V39｜來源：20261017_仙台奧入瀨岩手9日行程_V39.xlsx';
+});
+</script>
