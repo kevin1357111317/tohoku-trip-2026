@@ -19,7 +19,7 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 .date-strip{position:sticky;top:0;z-index:30;display:flex;gap:7px;overflow:auto;padding:9px 12px;background:rgba(246,236,221,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(16px);scrollbar-width:none}.date-strip::-webkit-scrollbar{display:none}.date-pill{flex:none;padding:8px 11px;border:1px solid #e5c9b7;border-radius:999px;background:#fff8ef;color:var(--maple);font-size:12px;font-weight:850;text-decoration:none}
 .section{padding:18px 13px}.section-title{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;margin:0 2px 12px}.section-title h2{margin:0;color:var(--maple);font-size:22px}.section-title span{color:var(--muted);font-size:11px;text-align:right}.view{display:none!important}.tab-radio{position:fixed;opacity:0;pointer-events:none}
 #tab-trip:checked~main #view-trip,#tab-transport:checked~main #view-transport,#tab-budget:checked~main #view-budget,#tab-todos:checked~main #view-todos{display:block!important}
-.day-card,.info-card,.todo-card,.transport-day,.budget-group,.callout{background:var(--card);border:1px solid #ead9ca;border-radius:20px;box-shadow:var(--shadow)}.day-card{overflow:hidden;margin-bottom:14px}.day-head{padding:17px 17px 12px;background:linear-gradient(110deg,var(--soft2),rgba(255,253,249,0))}.day-index{font-size:10px;font-weight:900;letter-spacing:.09em;color:var(--maple)}.day-head h2{margin:4px 0 6px;font-size:19px;line-height:1.35}.day-head p{margin:0;color:var(--muted);font-size:12.5px;line-height:1.55}.hotel-line{display:flex;gap:8px;align-items:flex-start;padding:0 17px 13px;border-bottom:1px solid var(--line);color:var(--muted);font-size:11.5px}.hotel-line span{flex:none;color:var(--maple);font-weight:850}
+.day-card,.info-card,.todo-card,.transport-day,.budget-group,.callout{background:var(--card);border:1px solid #ead9ca;border-radius:20px;box-shadow:var(--shadow)}.day-card{overflow:hidden;margin-bottom:14px}.day-card>summary{list-style:none;cursor:pointer}.day-card>summary::-webkit-details-marker{display:none}.day-head{display:flex;align-items:center;gap:12px;padding:17px;background:linear-gradient(110deg,var(--soft2),rgba(255,253,249,0))}.day-head-copy{min-width:0;flex:1}.day-index{font-size:10px;font-weight:900;letter-spacing:.09em;color:var(--maple)}.day-head h2{margin:4px 0 6px;font-size:19px;line-height:1.35}.day-head p{margin:0;color:var(--muted);font-size:12.5px;line-height:1.55}.day-toggle{flex:none;display:grid;place-items:center;width:54px;min-height:34px;padding:5px 7px;border:1px solid #e5c9b7;border-radius:999px;background:#fff8ef;color:var(--maple);font-size:10px;font-weight:900}.day-toggle:before{content:"展開⌄"}.day-card[open] .day-toggle:before{content:"收合⌃"}.day-card[open] .day-head{border-bottom:1px solid var(--line)}.hotel-line{display:flex;gap:8px;align-items:flex-start;padding:12px 17px 13px;border-bottom:1px solid var(--line);color:var(--muted);font-size:11.5px}.hotel-line span{flex:none;color:var(--maple);font-weight:850}
 .timeline{padding:9px 13px 5px}.timeline-item{display:grid;grid-template-columns:68px 12px minmax(0,1fr);gap:7px;min-height:72px}.time{padding-top:8px;color:#624a40;font-size:11.5px;font-weight:780;line-height:1.35}.time.core-time{color:var(--maple);font-weight:950}.dot{position:relative}.dot:before{content:"";position:absolute;top:13px;left:3px;width:7px;height:7px;border-radius:50%;background:linear-gradient(135deg,var(--maple),var(--orange))}.dot:after{content:"";position:absolute;top:24px;bottom:-7px;left:6px;width:1px;background:var(--line)}.timeline-item:last-child .dot:after{display:none}.item-body{min-width:0;padding:6px 0 14px}.item-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}.item-top h4{min-width:0;flex:1;margin:0;font-size:14.5px;line-height:1.42}.item-body p{margin:5px 0 0;color:var(--muted);font-size:12px;line-height:1.58;overflow-wrap:anywhere}
 .chip{flex:none;max-width:42%;padding:4px 7px;border-radius:999px;font-size:9.5px;font-weight:900;line-height:1.2;text-align:center;background:var(--soft3);color:var(--maple)}.chip.danger{background:var(--soft);color:var(--maple)}.chip.must{background:#f1d2c6;color:#7a251e}.chip.food{background:#f7dfc3;color:#85421f}.chip.stay{background:#eee0d5;color:#674337}.chip.transport{background:#f3e0d3;color:#7d3426}.chip.warn{background:var(--soft3);color:#74441e}.chip.bonus{background:#eee7df;color:#67584f}.chip.flex{background:#f1ece6;color:#6d5c53}
 .text-map-link{text-decoration-line:underline;text-decoration-style:dotted;text-decoration-color:var(--orange);text-underline-offset:3px;font-weight:750;overflow-wrap:anywhere}.text-map-link:active,.action-link:active{opacity:.65}.callout{padding:16px;margin-bottom:14px;background:linear-gradient(145deg,#54231e,#873027 64%,#bd5b2f);color:#fff}.callout h3{margin:0 0 7px;font-size:16px}.callout p{margin:0;color:rgba(255,255,255,.84);font-size:12px;line-height:1.6}
@@ -62,15 +62,15 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 </div>
 </header>
 <div class="date-strip" aria-label="日期快速導覽">
-<a class="date-pill" href="#d1" onclick="document.getElementById('tab-trip').checked=true">10/17</a>
-<a class="date-pill" href="#d2" onclick="document.getElementById('tab-trip').checked=true">10/18</a>
-<a class="date-pill" href="#d3" onclick="document.getElementById('tab-trip').checked=true">10/19</a>
-<a class="date-pill" href="#d4" onclick="document.getElementById('tab-trip').checked=true">10/20</a>
-<a class="date-pill" href="#d5" onclick="document.getElementById('tab-trip').checked=true">10/21</a>
-<a class="date-pill" href="#d6" onclick="document.getElementById('tab-trip').checked=true">10/22</a>
-<a class="date-pill" href="#d7" onclick="document.getElementById('tab-trip').checked=true">10/23</a>
-<a class="date-pill" href="#d8" onclick="document.getElementById('tab-trip').checked=true">10/24</a>
-<a class="date-pill" href="#d9" onclick="document.getElementById('tab-trip').checked=true">10/25</a>
+<a class="date-pill" href="#d1" onclick="document.getElementById('tab-trip').checked=true;document.getElementById('d1').open=true">10/17</a>
+<a class="date-pill" href="#d2" onclick="document.getElementById('tab-trip').checked=true;document.getElementById('d2').open=true">10/18</a>
+<a class="date-pill" href="#d3" onclick="document.getElementById('tab-trip').checked=true;document.getElementById('d3').open=true">10/19</a>
+<a class="date-pill" href="#d4" onclick="document.getElementById('tab-trip').checked=true;document.getElementById('d4').open=true">10/20</a>
+<a class="date-pill" href="#d5" onclick="document.getElementById('tab-trip').checked=true;document.getElementById('d5').open=true">10/21</a>
+<a class="date-pill" href="#d6" onclick="document.getElementById('tab-trip').checked=true;document.getElementById('d6').open=true">10/22</a>
+<a class="date-pill" href="#d7" onclick="document.getElementById('tab-trip').checked=true;document.getElementById('d7').open=true">10/23</a>
+<a class="date-pill" href="#d8" onclick="document.getElementById('tab-trip').checked=true;document.getElementById('d8').open=true">10/24</a>
+<a class="date-pill" href="#d9" onclick="document.getElementById('tab-trip').checked=true;document.getElementById('d9').open=true">10/25</a>
 </div>
 <input class="tab-radio" type="radio" name="tabs" id="tab-trip" checked>
 <input class="tab-radio" type="radio" name="tabs" id="tab-transport">
@@ -83,14 +83,16 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 <h2>每日行程</h2>
 <span>點地點可開Google Maps</span>
 </div>
-<article class="day-card" id="d1">
-<div class="day-head">
-<div>
+<details class="day-card" id="d1">
+<summary class="day-head">
+<div class="day-head-copy">
 <span class="day-index">D1・仙台</span>
 <h2>10/17（六）抵達仙台</h2>
 <p>抵達、入住、牛舌晚餐；不安排Pokémon Center或額外限時景點。</p>
 </div>
-</div>
+<span class="day-toggle" aria-hidden="true">
+</span>
+</summary>
 <div class="hotel-line">
 <span>住宿</span>
 <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=Hotel%20Metropolitan%20The%20Base%20Sendai" target="_blank" rel="noopener">Hotel Metropolitan The Base Sendai<span aria-hidden="true"> ↗</span>
@@ -173,15 +175,17 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 </div>
 </div>
 </div>
-</article>
-<article class="day-card" id="d2">
-<div class="day-head">
-<div>
+</details>
+<details class="day-card" id="d2">
+<summary class="day-head">
+<div class="day-head-copy">
 <span class="day-index">D2・仙台・岩沼</span>
 <h2>10/18（日）仙台城跡＋金蛇水神社</h2>
 <p>上午兩個仙台核心景點，回站午餐；下午完整留給金蛇水神社，節奏不趕。</p>
 </div>
-</div>
+<span class="day-toggle" aria-hidden="true">
+</span>
+</summary>
 <div class="hotel-line">
 <span>住宿</span>
 <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=Hotel%20Metropolitan%20The%20Base%20Sendai" target="_blank" rel="noopener">Hotel Metropolitan The Base Sendai<span aria-hidden="true"> ↗</span>
@@ -354,15 +358,17 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 </div>
 </div>
 </div>
-</article>
-<article class="day-card" id="d3">
-<div class="day-head">
-<div>
+</details>
+<details class="day-card" id="d3">
+<summary class="day-head">
+<div class="day-head-copy">
 <span class="day-index">D3・松島</span>
 <h2>10/19（一）松島寺院與海岸慢遊</h2>
 <p>不用太早出發；寺院、牡蠣海鮮、海岸散步與咖啡為主，遊覽船只看當天狀況。</p>
 </div>
-</div>
+<span class="day-toggle" aria-hidden="true">
+</span>
+</summary>
 <div class="hotel-line">
 <span>住宿</span>
 <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=Hotel%20Metropolitan%20The%20Base%20Sendai" target="_blank" rel="noopener">Hotel Metropolitan The Base Sendai<span aria-hidden="true"> ↗</span>
@@ -490,15 +496,17 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 </div>
 </div>
 </div>
-</article>
-<article class="day-card" id="d4">
-<div class="day-head">
-<div>
+</details>
+<details class="day-card" id="d4">
+<summary class="day-head">
+<div class="day-head-copy">
 <span class="day-index">D4・青森</span>
 <h2>10/20（二）仙台移動至青森</h2>
 <p>上午新幹線移動；下午把睡魔、港灣與青森站周邊串成步行慢遊。</p>
 </div>
-</div>
+<span class="day-toggle" aria-hidden="true">
+</span>
+</summary>
 <div class="hotel-line">
 <span>住宿</span>
 <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E6%A3%AE%E7%AB%99%E9%99%84%E8%BF%91%E4%BD%8F%E5%AE%BF%EF%BC%88%E5%BE%85%E8%A8%82%EF%BC%89" target="_blank" rel="noopener">青森站附近住宿（待訂）<span aria-hidden="true"> ↗</span>
@@ -656,15 +664,17 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 </div>
 </div>
 </div>
-</article>
-<article class="day-card" id="d5">
-<div class="day-head">
-<div>
+</details>
+<details class="day-card" id="d5">
+<summary class="day-head">
+<div class="day-head-copy">
 <span class="day-index">D5・青森・奧入瀨</span>
 <h2>10/21（三）奧入瀨中游紅葉精華</h2>
 <p>09:00從青森出發；寄放行李與休息後，下午慢走石ヶ戶至雲井瀑布。</p>
 </div>
-</div>
+<span class="day-toggle" aria-hidden="true">
+</span>
+</summary>
 <div class="hotel-line">
 <span>住宿</span>
 <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%98%9F%E9%87%8E%E9%9B%86%E5%9C%98%20%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A3%AF%E5%BA%97" target="_blank" rel="noopener">星野集團 奧入瀨溪流飯店<span aria-hidden="true"> ↗</span>
@@ -792,15 +802,17 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 </div>
 </div>
 </div>
-</article>
-<article class="day-card" id="d6">
-<div class="day-head">
-<div>
+</details>
+<details class="day-card" id="d6">
+<summary class="day-head">
+<div class="day-head-copy">
 <span class="day-index">D6・奧入瀨・十和田湖</span>
 <h2>10/22（四）銚子大瀑布＋十和田湖</h2>
 <p>先看銚子大瀑布並短走至子之口，再搭巴士到休屋；Marine Blue與湖畔慢遊是主軸。</p>
 </div>
-</div>
+<span class="day-toggle" aria-hidden="true">
+</span>
+</summary>
 <div class="hotel-line">
 <span>住宿</span>
 <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%98%9F%E9%87%8E%E9%9B%86%E5%9C%98%20%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A3%AF%E5%BA%97" target="_blank" rel="noopener">星野集團 奧入瀨溪流飯店<span aria-hidden="true"> ↗</span>
@@ -988,15 +1000,17 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 </div>
 </div>
 </div>
-</article>
-<article class="day-card" id="d7">
-<div class="day-head">
-<div>
+</details>
+<details class="day-card" id="d7">
+<summary class="day-head">
+<div class="day-head-copy">
 <span class="day-index">D7・八戶・仙台</span>
 <h2>10/23（五）回仙台＋逛街＋吃牛舌</h2>
 <p>11:00星野接駁後保留充足轉乘；下午只安排仙台商店街、購物、咖啡與牛舌。</p>
 </div>
-</div>
+<span class="day-toggle" aria-hidden="true">
+</span>
+</summary>
 <div class="hotel-line">
 <span>住宿</span>
 <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=Daiwa%20Roynet%20Hotel%20%E4%BB%99%E5%8F%B0%E8%A5%BF%E5%8F%A3%20PREMIER" target="_blank" rel="noopener">Daiwa Roynet Hotel 仙台西口 PREMIER<span aria-hidden="true"> ↗</span>
@@ -1109,15 +1123,17 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 </div>
 </div>
 </div>
-</article>
-<article class="day-card" id="d8">
-<div class="day-head">
-<div>
+</details>
+<details class="day-card" id="d8">
+<summary class="day-head">
+<div class="day-head-copy">
 <span class="day-index">D8・平泉</span>
 <h2>10/24（六）毛越寺・中尊寺・紅葉銀河</h2>
 <p>平泉重要日：毛越寺、中尊寺金色堂與900年秘佛御開帳；傍晚完整保留紅葉銀河。</p>
 </div>
-</div>
+<span class="day-toggle" aria-hidden="true">
+</span>
+</summary>
 <div class="hotel-line">
 <span>住宿</span>
 <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=Daiwa%20Roynet%20Hotel%20%E4%BB%99%E5%8F%B0%E8%A5%BF%E5%8F%A3%20PREMIER" target="_blank" rel="noopener">Daiwa Roynet Hotel 仙台西口 PREMIER<span aria-hidden="true"> ↗</span>
@@ -1245,15 +1261,17 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 </div>
 </div>
 </div>
-</article>
-<article class="day-card" id="d9">
-<div class="day-head">
-<div>
+</details>
+<details class="day-card" id="d9">
+<summary class="day-head">
+<div class="day-head-copy">
 <span class="day-index">D9・仙台・返台</span>
 <h2>10/25（日）最後購物＋回台灣</h2>
 <p>睡飽、早午餐與仙台站最後購物；下午提早到機場，保留報到與免稅店時間。</p>
 </div>
-</div>
+<span class="day-toggle" aria-hidden="true">
+</span>
+</summary>
 <div class="hotel-line">
 <span>住宿</span>—</div>
 <div class="timeline">
@@ -1348,7 +1366,7 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 </div>
 </div>
 </div>
-</article>
+</details>
 </div>
 </section>
 <section class="view" id="view-transport">
