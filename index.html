@@ -1,149 +1,3127 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="zh-Hant">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
-<meta content="#6f2d26" name="theme-color"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6f2a22">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="東北深秋V42">
 <title>2026 東北9日｜V42</title>
-<style>
-:root{--bg:#f4f5f2;--card:#fff;--ink:#17211c;--muted:#68736d;--green:#1f5f46;--green2:#e5f0e9;--gold:#9c6a16;--gold2:#f7edd8;--red:#9e3434;--red2:#f9e8e8;--blue:#32627e;--blue2:#e8f0f5;--line:#dfe4e0;--shadow:0 8px 24px rgba(25,44,34,.08)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;padding-bottom:92px}
-a{color:inherit}.app{max-width:780px;margin:0 auto}
-.hero{background:linear-gradient(145deg,#10251d,#275f49);color:#fff;padding:calc(24px + env(safe-area-inset-top)) 20px 24px;border-radius:0 0 28px 28px}
-.eyebrow{font-size:12px;letter-spacing:.12em;opacity:.72;text-transform:uppercase}.hero h1{font-size:30px;line-height:1.15;margin:8px 0}.hero p{margin:0;opacity:.82;font-size:14px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}.stat{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:12px}.stat b{display:block;font-size:18px}.stat span{font-size:11px;opacity:.72}
-.date-strip{position:sticky;top:0;z-index:20;display:flex;gap:8px;overflow:auto;background:rgba(244,245,242,.92);backdrop-filter:blur(16px);padding:10px 14px;border-bottom:1px solid var(--line);scrollbar-width:none}.date-strip::-webkit-scrollbar{display:none}
-.date-pill{flex:none;text-decoration:none;background:#fff;border:1px solid var(--line);padding:8px 12px;border-radius:999px;font-size:13px;font-weight:700}
-.section{padding:18px 14px}.section-title{display:flex;align-items:end;justify-content:space-between;margin:0 2px 12px}.section-title h2{margin:0;font-size:22px}.section-title span{font-size:12px;color:var(--muted)}
-.day-card,.info-card,.todo-card,.oirase-card{background:var(--card);border:1px solid #e6e9e7;border-radius:20px;box-shadow:var(--shadow)}.day-card{margin:0 0 14px;overflow:hidden}
-.day-head{display:flex;justify-content:space-between;gap:12px;padding:18px 18px 10px}.day-index{font-size:11px;color:var(--green);font-weight:800;letter-spacing:.08em}.day-head h2{font-size:20px;margin:3px 0}.day-head p{font-size:13px;color:var(--muted);margin:0}
-.map-btn{align-self:flex-start;text-decoration:none;background:var(--green2);color:var(--green);padding:8px 12px;border-radius:999px;font-size:12px;font-weight:800}.hotel-line{padding:0 18px 14px;color:var(--muted);font-size:12px;border-bottom:1px solid var(--line)}
-.timeline{padding:10px 14px 8px}.timeline-item{display:grid;grid-template-columns:72px 12px 1fr;gap:8px;min-height:76px}.time{font-size:12px;font-weight:750;padding-top:8px;color:#3f4b45}.dot{position:relative}.dot:before{content:"";position:absolute;top:14px;left:3px;width:7px;height:7px;border-radius:50%;background:var(--green)}.dot:after{content:"";position:absolute;top:24px;bottom:-9px;left:6px;width:1px;background:var(--line)}.timeline-item:last-child .dot:after{display:none}
-.item-body{padding:7px 0 16px}.item-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}.item-top h4{font-size:15px;line-height:1.35;margin:0;flex:1}.item-body p{font-size:12.5px;line-height:1.6;color:var(--muted);margin:6px 0 0}
-.chip{flex:none;font-size:10px;font-weight:800;border-radius:999px;padding:4px 7px;background:#edf0ee;color:#53615a}.chip.danger{background:var(--red2);color:var(--red)}.chip.warn{background:var(--gold2);color:var(--gold)}.chip.poi{background:var(--green2);color:var(--green)}.chip.hotel{background:#eee9f7;color:#62468d}.chip.transport{background:var(--blue2);color:var(--blue)}.chip.food{background:#f5ede7;color:#8b5c38}.chip.stay{background:#e9eef8;color:#465f93}.chip.flex{background:#f0f0ef;color:#676a68}.chip.special{background:#f8e9d3;color:#985a16}
-.grid{display:grid;gap:12px}.info-card,.todo-card,.oirase-card{padding:16px}.info-title{font-weight:800;font-size:15px;margin-bottom:10px}.kv{display:flex;justify-content:space-between;border-top:1px solid #eef0ee;padding:8px 0;font-size:13px}.kv span{color:var(--muted)}.info-card p,.todo-card p,.oirase-card p{font-size:12.5px;line-height:1.6;color:var(--muted);margin:8px 0 0}
-.todo-top{display:flex;justify-content:space-between;gap:10px;margin-bottom:9px}.priority{font-size:10px;font-weight:900;background:var(--red2);color:var(--red);border-radius:999px;padding:4px 8px}.due{font-size:11px;color:var(--muted)}.todo-card h3,.oirase-card h3{font-size:15px;margin:0}.oirase-grid{display:grid;gap:12px}.oirase-card{border-left:5px solid var(--green)}.oirase-date{font-size:11px;font-weight:900;color:var(--green)}
-.callout{background:#172b22;color:#fff;border-radius:20px;padding:18px;margin-bottom:14px}.callout h3{margin:0 0 7px;font-size:17px}.callout p{font-size:12.5px;line-height:1.6;margin:0;opacity:.8}
-.bottom-nav{position:fixed;left:50%;transform:translateX(-50%);bottom:0;z-index:40;width:min(780px,100%);padding:8px 10px calc(8px + env(safe-area-inset-bottom));background:rgba(255,255,255,.94);backdrop-filter:blur(18px);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.bottom-nav button{border:0;background:transparent;padding:9px 4px;border-radius:12px;font-size:11px;font-weight:800;color:#66726c}.bottom-nav button.active{background:var(--green2);color:var(--green)}
-.view{display:none}.view.active{display:block}.source{font-size:11px;color:#7c8580;padding:6px 18px 20px;text-align:center}
-@media(min-width:650px){.section{padding:22px}.grid.two{grid-template-columns:1fr 1fr}.hero{padding-left:28px;padding-right:28px}}
-</style>
-<style>
-:root{
-  --bg:#f8f1e7; --card:#fffdf8; --ink:#35241d; --muted:#79665b;
-  --green:#a53a28; --green2:#f5dfd2; --gold:#b97a20; --gold2:#f7e4b9;
-  --red:#8f261e; --red2:#f3d4cf; --blue:#4f6b77; --blue2:#e7eef1;
-  --line:#eadccf; --shadow:0 10px 28px rgba(93,54,35,.10);
-}
-body{
-  background:
-    radial-gradient(circle at 8% 1%, rgba(221,105,42,.10), transparent 22%),
-    radial-gradient(circle at 92% 8%, rgba(165,58,40,.09), transparent 24%),
-    var(--bg);
-}
-.hero{
-  position:relative;overflow:hidden;
-  background:linear-gradient(145deg,#6e211b 0%,#a53a28 48%,#db702d 100%);
-  box-shadow:0 14px 34px rgba(110,33,27,.18)
-}
-.hero:before{content:"🍁";position:absolute;right:-10px;top:8px;font-size:92px;opacity:.15;transform:rotate(18deg)}
-.hero:after{content:"🍂";position:absolute;left:-12px;bottom:-18px;font-size:72px;opacity:.12;transform:rotate(-18deg)}
-.stat{background:rgba(255,247,236,.13);border-color:rgba(255,255,255,.18)}
-.date-strip{background:rgba(248,241,231,.95);border-color:var(--line)}
-.date-pill{background:#fff8ef;border-color:#e8cfbd;color:#78281f}
-.section-title h2,.day-index{color:#8f2e22}
-.day-head{background:linear-gradient(180deg,rgba(247,228,185,.52),rgba(255,253,248,0))}
-.day-head h2{color:#4c2d23}
-.map-btn{background:#f4dfc0;color:#7b2d21}
-.dot:before{background:linear-gradient(135deg,#9d2f24,#df762f)}
-.chip.poi{background:#f5ddd2;color:#a54827}
-.chip.hotel{background:#eee1d7;color:#754b3b}
-.chip.food{background:#f9e3c7;color:#a65a24}
-.chip.special{background:#f7d5ae;color:#994b1b}
-.oirase-card{border-left-color:#db702d}
-.oirase-date{color:#9d3025}
-.callout{background:linear-gradient(145deg,#6e211b,#9f3225 65%,#c95c28)}
-.info-title{color:#593328}
-
-/* No-JS tabs */
-.tab-radio{position:fixed;opacity:0;pointer-events:none}
-.view{display:none!important}
-#tab-trip:checked ~ main #view-trip,
-#tab-oirase:checked ~ main #view-oirase,
-#tab-hotels:checked ~ main #view-hotels,
-#tab-todos:checked ~ main #view-todos{display:block!important}
-
-.bottom-nav{
-  background:rgba(255,249,242,.96);
-  border-top-color:#eadccf;
-  box-shadow:0 -8px 24px rgba(93,54,35,.08)
-}
-.bottom-nav label{
-  text-align:center;cursor:pointer;padding:10px 4px;border-radius:13px;
-  font-size:11px;font-weight:800;color:#75645b;user-select:none
-}
-#tab-trip:checked ~ .bottom-nav label[for="tab-trip"],
-#tab-oirase:checked ~ .bottom-nav label[for="tab-oirase"],
-#tab-hotels:checked ~ .bottom-nav label[for="tab-hotels"],
-#tab-todos:checked ~ .bottom-nav label[for="tab-todos"]{
-  background:linear-gradient(135deg,#f3d8ce,#f5e3bf);
-  color:#76271e
-}
-</style>
-<style>
-.text-map-link{
-  color:inherit;
-  text-decoration-line:underline;
-  text-decoration-style:dotted;
-  text-decoration-color:#c96b43;
-  text-underline-offset:3px;
-  text-decoration-thickness:1px;
-  font-weight:inherit;
-}
-.text-map-link:active{opacity:.65}
-</style>
-<meta content="yes" name="apple-mobile-web-app-capable"/>
-<meta content="default" name="apple-mobile-web-app-status-bar-style"/>
-<meta content="東北9日" name="apple-mobile-web-app-title"/>
-<style id="v42-autumn-edition">
-:root{--bg:#f7f0e6;--card:#fffdf9;--ink:#35251f;--muted:#78665b;--green:#365f4b;--green2:#e7efe8;--gold:#a56b1f;--gold2:#f5e6bf;--red:#96392c;--red2:#f4ddd5;--blue:#477684;--blue2:#e4eff1;--line:#e4d7ca;--shadow:0 12px 30px rgba(86,48,32,.10)}
-body{background:radial-gradient(circle at 12% 3%,rgba(187,75,42,.11),transparent 23%),radial-gradient(circle at 92% 12%,rgba(76,126,137,.10),transparent 22%),linear-gradient(180deg,#faf5ed 0%,#f5eee4 100%)}
-.hero{min-height:310px;padding-bottom:30px;background:radial-gradient(ellipse at 76% 86%,rgba(123,188,196,.42) 0 13%,transparent 14%),radial-gradient(ellipse at 76% 91%,rgba(255,255,255,.16) 0 25%,transparent 26%),linear-gradient(155deg,#3e261f 0%,#7f2f27 42%,#c45f32 70%,#315d58 118%);isolation:isolate}
-.hero:before{content:"";right:-52px;top:-72px;width:210px;height:210px;border-radius:62% 38% 65% 35%;background:radial-gradient(circle at 34% 36%,rgba(255,205,113,.78),rgba(185,67,42,.7) 48%,rgba(103,38,30,.18) 70%);opacity:.42;transform:rotate(26deg);filter:blur(.2px)}
-.hero:after{content:"";left:-8%;right:-8%;bottom:-38px;height:112px;background:repeating-radial-gradient(ellipse at 50% 10%,rgba(255,255,255,.24) 0 1px,transparent 2px 14px);opacity:.42;transform:none}
-.hero>*{position:relative;z-index:2}.hero .eyebrow{display:inline-flex;padding:5px 9px;border:1px solid rgba(255,255,255,.22);border-radius:999px;background:rgba(255,255,255,.08);letter-spacing:.15em}.hero h1{font-size:34px;margin-top:14px}.hero-subline{display:block;font-size:14px;font-weight:650;letter-spacing:.04em;margin-top:8px;color:rgba(255,255,255,.88)}
-.stats{margin-top:24px}.stat{background:rgba(255,250,244,.12);backdrop-filter:blur(5px)}
-.date-strip{background:rgba(248,242,233,.94)}.date-pill{background:#fffaf3;color:#713027;border-color:#e5cdbd}.date-pill:active{background:#f4dfd1}
-.day-card{position:relative}.day-card:before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:var(--accent,#b25737)}
-.day-card .day-head{background:linear-gradient(110deg,var(--tint,#f6e8db),rgba(255,253,249,0))}.day-summary{margin:0 18px 12px;padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.6);color:var(--muted);font-size:12.5px;line-height:1.55;border:1px solid rgba(120,90,70,.09)}
-.region-sendai{--accent:#a85136;--tint:#f5e6d7}.region-matsushima{--accent:#4b8181;--tint:#e3efed}.region-oirase{--accent:#396b4d;--tint:#e4eee3}.region-towada{--accent:#4d8290;--tint:#e2eef1}.region-hiraizumi{--accent:#a97829;--tint:#f5e8c8}.region-neutral{--accent:#866453;--tint:#efe7df}
-.region-towada .dot:before{background:linear-gradient(135deg,#4d8290,#a74635)}.region-oirase .dot:before{background:linear-gradient(135deg,#356649,#c65a32)}
-.oirase-section{background:radial-gradient(circle at 95% 12%,rgba(79,131,142,.10),transparent 25%)}.autumn-callout{background:linear-gradient(145deg,#45271f,#8a3329 64%,#c15d31)}.callout-kicker,.lake-kicker{display:block;font-size:10px;letter-spacing:.12em;font-weight:900;text-transform:uppercase;opacity:.78;margin-bottom:7px}
-.route-grid{display:grid;gap:12px}.route-card{border-radius:20px;padding:17px;border:1px solid var(--line);box-shadow:var(--shadow);background:var(--card)}.stream-route{background:linear-gradient(155deg,#fffdf8,#edf3e9)}.lake-route{background:linear-gradient(155deg,#fffdf8,#e5f0f2)}.route-title{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;padding-bottom:12px;border-bottom:1px solid rgba(90,88,70,.12)}.route-title span{font-size:16px;font-weight:900;color:#623226}.route-title b{font-size:10px;color:var(--muted);text-align:right}.route-stop{display:flex;gap:11px;align-items:flex-start;padding:9px 0}.route-dot{width:10px;height:10px;margin-top:5px;border-radius:50%;background:linear-gradient(135deg,#a94031,#d87933);box-shadow:0 0 0 4px rgba(168,64,46,.10)}.route-stop b{font-size:14px}.route-stop small{display:block;color:var(--muted);font-size:11px;margin-top:3px}.route-arrow{color:#b37642;margin:-5px 0 -4px 4px;font-weight:900}
-.lake-feature{margin-top:14px;border-radius:22px;padding:19px;color:#fff;background:radial-gradient(ellipse at 86% 110%,rgba(208,239,240,.34),transparent 40%),linear-gradient(145deg,#294c4d,#477f87 56%,#874037 130%);box-shadow:0 14px 34px rgba(50,89,94,.18)}.lake-feature h3{font-size:18px;margin:0}.lake-feature p{font-size:12.5px;line-height:1.65;color:rgba(255,255,255,.82);margin:10px 0 0}.feature-chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.feature-chips span{font-size:10px;font-weight:850;padding:5px 8px;border:1px solid rgba(255,255,255,.2);border-radius:999px;background:rgba(255,255,255,.12)}.lake-feature .text-map-link{color:#fff;text-decoration-color:rgba(255,255,255,.58)}
-.risk-note{margin-top:12px;padding:15px;border-radius:17px;background:#fff5df;border:1px solid #efd4a4}.risk-note b{font-size:13px;color:#8c5316}.risk-note p{font-size:12px;line-height:1.6;color:#735d4c;margin:6px 0 0}.stay-total{margin-top:12px}.todo-card.done{opacity:.78}.todo-card.done .priority{background:var(--green2);color:var(--green)}
-.source{line-height:1.5}@media(min-width:650px){.route-grid{grid-template-columns:1fr 1fr}.hero{min-height:330px}.hero h1{font-size:40px}}
-</style>
+<style>:root{--bg:#f6ecdd;--paper:#fffaf2;--card:#fffdf9;--ink:#3b241d;--muted:#77645a;--maple:#6f2a22;--russet:#8c3b2f;--orange:#c65d2e;--gold:#c18a3d;--cream:#f6ecdd;--soft:#f3ddd5;--soft2:#f8e7d4;--soft3:#f5e9c9;--line:#decdbE;--shadow:0 12px 30px rgba(85,45,30,.10)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:radial-gradient(circle at 8% 2%,rgba(198,93,46,.10),transparent 22%),radial-gradient(circle at 94% 11%,rgba(111,42,34,.08),transparent 24%),var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;padding-bottom:calc(86px + env(safe-area-inset-bottom))}
+a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overflow:hidden;min-height:238px;padding:calc(22px + env(safe-area-inset-top)) 20px 24px;color:#fff;background:linear-gradient(145deg,#4a211d 0%,#7b2922 42%,#b94f2d 75%,#d4863b 120%);border-radius:0 0 28px 28px;box-shadow:0 14px 34px rgba(95,40,28,.18);isolation:isolate}
+.hero:before{content:"";position:absolute;right:-54px;top:-72px;width:210px;height:210px;border-radius:70% 30% 62% 38%;background:radial-gradient(circle at 34% 34%,rgba(255,215,142,.72),rgba(198,93,46,.56) 52%,rgba(111,42,34,.06) 72%);transform:rotate(28deg);opacity:.58;z-index:-1}
+.hero:after{content:"";position:absolute;left:-8%;right:-8%;bottom:-26px;height:88px;background:repeating-radial-gradient(ellipse at 50% 6%,rgba(255,247,232,.18) 0 1px,transparent 2px 15px);opacity:.52;z-index:-1}
+.hero-art{position:absolute;right:20px;bottom:20px;width:116px;height:74px;opacity:.48}.leaf{position:absolute;width:32px;height:46px;border-radius:75% 20% 70% 28%;background:linear-gradient(145deg,#f7bf57,#d75e2e 58%,#8a2f27);transform-origin:50% 100%}.leaf.one{right:7px;bottom:7px;transform:rotate(25deg)}.leaf.two{right:44px;bottom:13px;transform:rotate(-8deg) scale(.82)}.leaf.three{right:78px;bottom:1px;transform:rotate(-35deg) scale(.68)}
+.eyebrow{display:inline-flex;padding:5px 9px;border:1px solid rgba(255,255,255,.22);border-radius:999px;background:rgba(255,255,255,.09);font-size:11px;font-weight:850;letter-spacing:.14em}.hero h1{font-size:31px;line-height:1.15;margin:13px 0 7px;letter-spacing:.02em}.hero p{margin:0;color:rgba(255,255,255,.84);font-size:13px;line-height:1.55}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:18px;max-width:510px}.stat{padding:10px 11px;border:1px solid rgba(255,255,255,.15);border-radius:15px;background:rgba(255,250,242,.10);backdrop-filter:blur(4px)}.stat b{display:block;font-size:16px}.stat span{font-size:10px;color:rgba(255,255,255,.72)}
+.date-strip{position:sticky;top:0;z-index:30;display:flex;gap:7px;overflow:auto;padding:9px 12px;background:rgba(246,236,221,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(16px);scrollbar-width:none}.date-strip::-webkit-scrollbar{display:none}.date-pill{flex:none;padding:8px 11px;border:1px solid #e5c9b7;border-radius:999px;background:#fff8ef;color:var(--maple);font-size:12px;font-weight:850;text-decoration:none}
+.section{padding:18px 13px}.section-title{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;margin:0 2px 12px}.section-title h2{margin:0;color:var(--maple);font-size:22px}.section-title span{color:var(--muted);font-size:11px;text-align:right}.view{display:none!important}.tab-radio{position:fixed;opacity:0;pointer-events:none}
+#tab-trip:checked~main #view-trip,#tab-transport:checked~main #view-transport,#tab-budget:checked~main #view-budget,#tab-todos:checked~main #view-todos{display:block!important}
+.day-card,.info-card,.todo-card,.transport-day,.budget-group,.callout{background:var(--card);border:1px solid #ead9ca;border-radius:20px;box-shadow:var(--shadow)}.day-card{overflow:hidden;margin-bottom:14px}.day-head{padding:17px 17px 12px;background:linear-gradient(110deg,var(--soft2),rgba(255,253,249,0))}.day-index{font-size:10px;font-weight:900;letter-spacing:.09em;color:var(--maple)}.day-head h2{margin:4px 0 6px;font-size:19px;line-height:1.35}.day-head p{margin:0;color:var(--muted);font-size:12.5px;line-height:1.55}.hotel-line{display:flex;gap:8px;align-items:flex-start;padding:0 17px 13px;border-bottom:1px solid var(--line);color:var(--muted);font-size:11.5px}.hotel-line span{flex:none;color:var(--maple);font-weight:850}
+.timeline{padding:9px 13px 5px}.timeline-item{display:grid;grid-template-columns:68px 12px minmax(0,1fr);gap:7px;min-height:72px}.time{padding-top:8px;color:#624a40;font-size:11.5px;font-weight:780;line-height:1.35}.time.core-time{color:var(--maple);font-weight:950}.dot{position:relative}.dot:before{content:"";position:absolute;top:13px;left:3px;width:7px;height:7px;border-radius:50%;background:linear-gradient(135deg,var(--maple),var(--orange))}.dot:after{content:"";position:absolute;top:24px;bottom:-7px;left:6px;width:1px;background:var(--line)}.timeline-item:last-child .dot:after{display:none}.item-body{min-width:0;padding:6px 0 14px}.item-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}.item-top h4{min-width:0;flex:1;margin:0;font-size:14.5px;line-height:1.42}.item-body p{margin:5px 0 0;color:var(--muted);font-size:12px;line-height:1.58;overflow-wrap:anywhere}
+.chip{flex:none;max-width:42%;padding:4px 7px;border-radius:999px;font-size:9.5px;font-weight:900;line-height:1.2;text-align:center;background:var(--soft3);color:var(--maple)}.chip.danger{background:var(--soft);color:var(--maple)}.chip.must{background:#f1d2c6;color:#7a251e}.chip.food{background:#f7dfc3;color:#85421f}.chip.stay{background:#eee0d5;color:#674337}.chip.transport{background:#f3e0d3;color:#7d3426}.chip.warn{background:var(--soft3);color:#74441e}.chip.bonus{background:#eee7df;color:#67584f}.chip.flex{background:#f1ece6;color:#6d5c53}
+.text-map-link{text-decoration-line:underline;text-decoration-style:dotted;text-decoration-color:var(--orange);text-underline-offset:3px;font-weight:750;overflow-wrap:anywhere}.text-map-link:active,.action-link:active{opacity:.65}.callout{padding:16px;margin-bottom:14px;background:linear-gradient(145deg,#54231e,#873027 64%,#bd5b2f);color:#fff}.callout h3{margin:0 0 7px;font-size:16px}.callout p{margin:0;color:rgba(255,255,255,.84);font-size:12px;line-height:1.6}
+.transport-day{overflow:hidden;margin-bottom:11px}.transport-day summary{display:grid;grid-template-columns:62px 1fr;gap:10px;align-items:center;padding:15px 16px;cursor:pointer;list-style:none;background:linear-gradient(110deg,var(--soft2),var(--paper))}.transport-day summary::-webkit-details-marker{display:none}.transport-day summary span{color:var(--maple);font-weight:950}.transport-day summary b{font-size:14px;line-height:1.4}.transport-day[open] summary{border-bottom:1px solid var(--line)}.transport-body{padding:5px 14px 10px}.transport-leg{padding:13px 0;border-bottom:1px dashed var(--line)}.transport-leg:last-child{border-bottom:0}.leg-head{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}.leg-head strong{color:var(--maple);font-size:15px}.route-line{margin:7px 0;font-size:13px;line-height:1.5}.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.facts div{padding:7px 8px;border-radius:10px;background:var(--cream);min-width:0}.facts span{display:block;color:var(--muted);font-size:9px}.facts b{display:block;margin-top:2px;font-size:11px;line-height:1.35;overflow-wrap:anywhere}.facts b.warn{color:var(--maple)}.transport-leg p{margin:8px 0 0;color:var(--muted);font-size:11.5px;line-height:1.55}
+.risk-grid,.grid{display:grid;gap:11px}.risk-card{padding:14px;border:1px solid #e6cdbb;border-radius:16px;background:var(--soft3)}.risk-card b{color:var(--maple);font-size:13px}.risk-card p{margin:5px 0 0;color:var(--muted);font-size:11.5px;line-height:1.55}
+.budget-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-bottom:14px}.money-card{padding:14px;border:1px solid var(--line);border-radius:17px;background:var(--paper)}.money-card span{display:block;color:var(--muted);font-size:10px}.money-card b{display:block;margin-top:5px;color:var(--maple);font-size:18px;line-height:1.25;overflow-wrap:anywhere}.money-card.alert{background:var(--soft)}.budget-note{margin:-3px 2px 14px;color:var(--muted);font-size:11px;line-height:1.5}.budget-group{overflow:hidden;margin-bottom:12px}.budget-group h3{margin:0;padding:13px 15px;background:linear-gradient(110deg,var(--soft2),var(--paper));color:var(--maple);font-size:15px}.budget-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;padding:12px 14px;border-top:1px solid var(--line)}.budget-row>div:first-child{min-width:0}.budget-row span,.budget-row small{display:block;color:var(--muted);font-size:10px;line-height:1.45}.budget-row b{display:block;margin:3px 0;font-size:12.5px;line-height:1.4;overflow-wrap:anywhere}.budget-money{text-align:right;min-width:84px}.budget-money b{color:var(--maple);font-size:13px}.budget-money span{display:inline-block;padding:3px 6px;border-radius:999px;background:var(--soft3)}
+.info-card,.todo-card{padding:15px}.info-title{margin-bottom:9px;color:var(--maple);font-size:14px;font-weight:900;line-height:1.45}.kv{display:grid;grid-template-columns:72px minmax(0,1fr);gap:8px;padding:7px 0;border-top:1px solid var(--line);font-size:11.5px}.kv span{color:var(--muted)}.kv b{text-align:right;overflow-wrap:anywhere}.info-card p,.todo-card p{margin:8px 0 0;color:var(--muted);font-size:11.5px;line-height:1.58}.todo-top{display:flex;justify-content:space-between;gap:8px;margin-bottom:8px}.priority{padding:4px 8px;border-radius:999px;background:var(--soft);color:var(--maple);font-size:9.5px;font-weight:900}.due{color:var(--muted);font-size:10px}.todo-card h3{margin:0;font-size:14px;line-height:1.45}.todo-card.done{opacity:.72;background:#f1ece6}.action-link{display:inline-block;margin-top:7px;color:var(--maple);font-weight:850}
+.source{padding:4px 18px 20px;color:var(--muted);font-size:10.5px;line-height:1.55;text-align:center}.bottom-nav{position:fixed;left:50%;bottom:0;z-index:50;width:min(920px,100%);transform:translateX(-50%);display:grid;grid-template-columns:repeat(4,1fr);gap:5px;padding:8px 9px calc(8px + env(safe-area-inset-bottom));border-top:1px solid var(--line);background:rgba(255,249,240,.96);box-shadow:0 -8px 24px rgba(82,42,29,.08);backdrop-filter:blur(18px)}.bottom-nav label{padding:10px 3px;border-radius:13px;color:#77655b;font-size:11px;font-weight:850;text-align:center;cursor:pointer;user-select:none}
+#tab-trip:checked~.bottom-nav label[for="tab-trip"],#tab-transport:checked~.bottom-nav label[for="tab-transport"],#tab-budget:checked~.bottom-nav label[for="tab-budget"],#tab-todos:checked~.bottom-nav label[for="tab-todos"]{background:linear-gradient(135deg,var(--soft),var(--soft3));color:var(--maple)}
+@media(min-width:650px){.hero{padding-left:28px;padding-right:28px}.hero h1{font-size:38px}.section{padding:22px}.grid.two,.risk-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.budget-summary{grid-template-columns:repeat(4,minmax(0,1fr))}.facts{grid-template-columns:repeat(5,minmax(0,1fr))}.timeline-item{grid-template-columns:82px 14px minmax(0,1fr)}.transport-body{padding:8px 20px 12px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}</style>
 </head>
 <body>
 <div class="app">
 <header class="hero">
-<div class="eyebrow">V42 Autumn Edition</div><h1>2026 東北紅葉旅行<span class="hero-subline">仙台・奧入瀨・十和田湖・岩手</span></h1><p>2026/10/17–10/25 · 2人 · V42 Autumn Edition</p><div class="stats"><div class="stat"><b>9天</b><span>仙台進出</span></div><div class="stat"><b>3天2夜</b><span>奧入瀨</span></div><div class="stat"><b>8晚</b><span>已訂住宿</span></div></div>
-</header>
-<div class="date-strip"><a class="date-pill" onclick="document.getElementById('tab-trip').checked=true" href="#d1">10/17</a><a class="date-pill" onclick="document.getElementById('tab-trip').checked=true" href="#d2">10/18</a><a class="date-pill" onclick="document.getElementById('tab-trip').checked=true" href="#d3">10/19</a><a class="date-pill" onclick="document.getElementById('tab-trip').checked=true" href="#d4">10/20</a><a class="date-pill" onclick="document.getElementById('tab-trip').checked=true" href="#d5">10/21</a><a class="date-pill" onclick="document.getElementById('tab-trip').checked=true" href="#d6">10/22</a><a class="date-pill" onclick="document.getElementById('tab-trip').checked=true" href="#d7">10/23</a><a class="date-pill" onclick="document.getElementById('tab-trip').checked=true" href="#d8">10/24</a><a class="date-pill" onclick="document.getElementById('tab-trip').checked=true" href="#d9">10/25</a></div>
-<input checked="" class="tab-radio" id="tab-trip" name="tabs" type="radio"/><input class="tab-radio" id="tab-oirase" name="tabs" type="radio"/><input class="tab-radio" id="tab-hotels" name="tabs" type="radio"/><input class="tab-radio" id="tab-todos" name="tabs" type="radio"/><main>
-<section class="view" id="view-trip"><div class="section"><div class="section-title"><h2>每日行程</h2><span>點擊地點即可開啟 Google Maps</span></div><article class="day-card region-sendai" id="d1"><div class="day-head"><div><span class="day-index">D1</span><h2>10/17（六） 抵達仙台</h2><p>仙台</p></div></div><div class="day-summary">抵達、入住、仙台站周邊牛舌；不塞限時購物。</div><div class="hotel-line">住宿｜<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=Hotel%20Metropolitan%20The%20Base%20Sendai" target="_blank" rel="noopener">Hotel Metropolitan The Base Sendai</a></div><div class="timeline"><div class="timeline-item"><div class="time">11:35–16:00</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>星宇 JX862</h4><span class="chip danger">航班</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%A1%83%E5%9C%92%E2%86%92%E4%BB%99%E5%8F%B0" target="_blank" rel="noopener">桃園→仙台</a>｜交通：直飛｜午：機上｜32F／32G；每人托運1×23kg＋手提7kg</p></div></div><div class="timeline-item"><div class="time">16:00–17:35</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>通關、領行李、購票與轉乘緩衝</h4><span class="chip flex">緩衝</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E6%A9%9F%E5%A0%B4" target="_blank" rel="noopener">仙台機場</a>｜交通：步行｜不要為追17:39班次壓縮通關；沒趕上就搭下一班</p></div></div><div class="timeline-item"><div class="time">17:39–18:04</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>仙台機場線（目標班次）</h4><span class="chip transport">交通</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E6%A9%9F%E5%A0%B4%E2%86%92%E4%BB%99%E5%8F%B0%E7%AB%99" target="_blank" rel="noopener">仙台機場→仙台站</a>｜交通：機場線｜若未趕上即搭下一班</p></div></div><div class="timeline-item"><div class="time">18:10–19:00</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>飯店 Check-in、整理行李</h4><span class="chip stay">住宿</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%AB%99" target="_blank" rel="noopener">仙台站</a>｜交通：步行｜通知飯店預計抵達時間</p></div></div><div class="timeline-item"><div class="time">19:00–20:30</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>牛舌晚餐</h4><span class="chip food">必吃</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%AB%99%E5%91%A8%E9%82%8A" target="_blank" rel="noopener">仙台站周邊</a>｜交通：步行｜晚：司／善治郎擇一｜就近用餐；不為指定店家久候</p></div></div><div class="timeline-item"><div class="time">20:30後</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>回房休息</h4><span class="chip flex">舒適節奏</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%A3%AF%E5%BA%97" target="_blank" rel="noopener">飯店</a>｜交通：步行｜寶可夢中心不排抵達日</p></div></div></div></article><article class="day-card region-sendai" id="d2"><div class="day-head"><div><span class="day-index">D2</span><h2>10/18（日） Loople 伊達文化一日</h2><p>仙台市區</p></div></div><div class="day-summary">飯店早餐後直接搭Loople：瑞鳳殿→仙台城跡→大崎八幡宮→水晶之路→牛舌閣。</div><div class="hotel-line">住宿｜<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=Hotel%20Metropolitan%20The%20Base%20Sendai" target="_blank" rel="noopener">Hotel Metropolitan The Base Sendai</a></div><div class="timeline"><div class="timeline-item"><div class="time">08:30–09:30</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>早餐與隨身物品整理</h4><span class="chip stay">住宿</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%A3%AF%E5%BA%97" target="_blank" rel="noopener">飯店</a>｜交通：飯店內｜早：飯店早餐（另付）｜房價不含早餐，以現場加購為準</p></div></div><div class="timeline-item"><div class="time">09:30–10:00</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>購買Loople一日券、候車</h4><span class="chip transport">Loople</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%A3%AF%E5%BA%97%E2%86%92%E4%BB%99%E5%8F%B0%E7%AB%99%E8%A5%BF%E5%8F%A316%E8%99%9F" target="_blank" rel="noopener">飯店→仙台站西口16號</a>｜交通：步行｜週末每15分鐘；客滿搭下一班</p></div></div><div class="timeline-item"><div class="time">10:00–11:13</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>10:13抵達；10:15–11:05參觀</h4><span class="chip poi">必去｜瑞鳳殿</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E7%91%9E%E9%B3%B3%E6%AE%BF" target="_blank" rel="noopener">瑞鳳殿</a>｜交通：Loople＋步行｜11:13於瑞鳳殿前上車；參道有石階</p></div></div><div class="timeline-item"><div class="time">11:13–12:30</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>11:23抵達；伊達政宗公騎馬像與市景</h4><span class="chip poi">必去｜仙台城跡</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E5%9F%8E%E8%B7%A1" target="_blank" rel="noopener">仙台城跡</a>｜交通：Loople＋步行｜不安排仙台市博物館</p></div></div><div class="timeline-item"><div class="time">12:30–13:00</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>彈性午餐</h4><span class="chip food">餐飲</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E5%9F%8E%E8%B7%A1%E5%91%A8%E9%82%8A" target="_blank" rel="noopener">仙台城跡周邊</a>｜交通：步行｜午：快速入座、份量適中｜不鎖拉麵店；優先保留後續動線</p></div></div><div class="timeline-item"><div class="time">13:00–14:30</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>午餐後搭下一班Loople前往並參拜</h4><span class="chip food">必去｜大崎八幡宮</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E5%B4%8E%E5%85%AB%E5%B9%A1%E5%AE%AE" target="_blank" rel="noopener">大崎八幡宮</a>｜交通：Loople＋步行｜神符授與至16:00；保留約50分鐘</p></div></div><div class="timeline-item"><div class="time">14:30–16:35</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>水晶之路（CLIS ROAD）慢逛</h4><span class="chip poi">必去｜水晶之路</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%BB%A3%E7%80%A8%E9%80%9A%EF%BC%8F%E4%B8%80%E7%95%AA%E7%94%BA" target="_blank" rel="noopener">廣瀨通／一番町</a>｜交通：Loople＋步行｜若前段延誤，10/20晚間已留補逛時段</p></div></div><div class="timeline-item"><div class="time">16:35–18:30</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>前往候位；17:00開店後晚餐</h4><span class="chip food">必吃｜牛舌閣</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E7%89%9B%E3%81%9F%E3%82%93%E6%96%99%E7%90%86%20%E9%96%A3" target="_blank" rel="noopener">牛たん料理 閣</a>｜交通：步行｜晚：牛舌閣｜若排不到，10/20晚間再挑戰</p></div></div></div></article><article class="day-card region-neutral" id="d3"><div class="day-head"><div><span class="day-index">D3</span><h2>10/19（一） Klook 178500 E 一日遊</h2><p>藏王・山形・銀山</p></div></div><div class="day-summary">藏王御釜、藏王纜車／溫泉街、山形午餐、天童採果、銀山溫泉。</div><div class="hotel-line">住宿｜<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=Hotel%20Metropolitan%20The%20Base%20Sendai" target="_blank" rel="noopener">Hotel Metropolitan The Base Sendai</a></div><div class="timeline"><div class="timeline-item"><div class="time">07:00–07:30</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>簡單早餐</h4><span class="chip food">餐飲</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0" target="_blank" rel="noopener">仙台</a>｜交通：步行｜早：飯店／便利商店輕食｜110 COFFEE週一休息，不排本日</p></div></div><div class="timeline-item"><div class="time">07:30–08:00</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>前往指定集合點、報到</h4><span class="chip danger">固定集合</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%AB%99%E5%91%A8%E9%82%8A" target="_blank" rel="noopener">仙台站周邊</a>｜交通：步行｜暫以07:40集合、08:00出發估排；最終以Klook憑證為準</p></div></div><div class="timeline-item"><div class="time">08:00–18:30</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>Klook 178500 E 套餐</h4><span class="chip food">賞秋｜藏王＋銀山＋採果</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E8%97%8F%E7%8E%8B%E3%83%BB%E5%A4%A9%E7%AB%A5%E3%83%BB%E9%8A%80%E5%B1%B1" target="_blank" rel="noopener">藏王・天童・銀山</a>｜交通：觀光巴士＋短距離步行｜午：方案含山形特色午餐｜訂單GCG327718；成人2人；實付NT$8,980；山區項目依天候</p></div></div><div class="timeline-item"><div class="time">18:30–20:30</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>返仙台、彈性晚餐、回飯店</h4><span class="chip stay">休息</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%AB%99%E5%91%A8%E9%82%8A" target="_blank" rel="noopener">仙台站周邊</a>｜交通：觀光巴士＋步行｜晚：就近、不排長隊｜不再安排限時活動</p></div></div></div></article><article class="day-card region-matsushima" id="d4"><div class="day-head"><div><span class="day-index">D4</span><h2>10/20（二） 松島寺院與遊船</h2><p>松島</p></div></div><div class="day-summary">110 COFFEE→瑞巖寺／圓通院→牡蠣海鮮→15:00遊船；晚間保留10/18備援。</div><div class="hotel-line">住宿｜<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=Hotel%20Metropolitan%20The%20Base%20Sendai" target="_blank" rel="noopener">Hotel Metropolitan The Base Sendai</a></div><div class="timeline"><div class="timeline-item"><div class="time">08:00–09:15</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>110 COFFEE 早餐</h4><span class="chip food">必吃｜110 COFFEE</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E6%9C%9D%E5%B8%82%E3%83%93%E3%83%AB1F" target="_blank" rel="noopener">仙台朝市ビル1F</a>｜交通：步行｜早：110 COFFEE｜官方08:00–13:00；內用客滿即外帶</p></div></div><div class="timeline-item"><div class="time">09:15–10:30</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>步行至仙台站、搭JR仙石線</h4><span class="chip transport">交通</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E2%86%92%E6%9D%BE%E5%B3%B6%E6%B5%B7%E5%B2%B8" target="_blank" rel="noopener">仙台→松島海岸</a>｜交通：JR仙石線｜不為追特定班次壓縮早餐</p></div></div><div class="timeline-item"><div class="time">10:30–12:15</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>瑞巖寺＋圓通院</h4><span class="chip poi">必去｜瑞巖寺・圓通院</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%BE%E5%B3%B6" target="_blank" rel="noopener">松島</a>｜交通：步行｜先完成兩處核心寺院</p></div></div><div class="timeline-item"><div class="time">12:15–14:30</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>牡蠣／海鮮午餐＋五大堂／海岸散步</h4><span class="chip food">必吃｜牡蠣海鮮</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%BE%E5%B3%B6" target="_blank" rel="noopener">松島</a>｜交通：步行｜午：松島牡蠣／海鮮｜候位過長就換店；14:30前往遊船報到</p></div></div><div class="timeline-item"><div class="time">14:30–15:50</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>報到；15:00–15:50仁王丸遊船</h4><span class="chip poi">必去｜松島遊船</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%BE%E5%B3%B6%E7%81%A3" target="_blank" rel="noopener">松島灣</a>｜交通：遊船｜通年15:00班；天候可能停航</p></div></div><div class="timeline-item"><div class="time">16:00–18:00</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>短逛伴手禮後搭JR返仙台</h4><span class="chip transport">交通</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%BE%E5%B3%B6%E2%86%92%E4%BB%99%E5%8F%B0" target="_blank" rel="noopener">松島→仙台</a>｜交通：步行＋JR仙石線｜不追車；錯過即搭下一班</p></div></div><div class="timeline-item"><div class="time">18:00–20:30</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>10/18備援：水晶之路＋牛舌閣</h4><span class="chip food">備援</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E5%B8%82%E4%B8%AD%E5%BF%83" target="_blank" rel="noopener">仙台市中心</a>｜交通：步行｜晚：未吃到牛舌閣才排｜10/18兩項皆完成則整段改自由行程</p></div></div><div class="timeline-item"><div class="time">20:30–21:00</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>整理隔日奧入瀨行李</h4><span class="chip flex">固定準備</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%A3%AF%E5%BA%97" target="_blank" rel="noopener">飯店</a>｜交通：步行｜大型行李全部帶往奧入瀨</p></div></div></div></article><article class="day-card region-sendai" id="d5"><div class="day-head"><div><span class="day-index">D5</span><h2>10/21（三） 舒適抵達奧入瀨</h2><p>仙台→八戶→奧入瀨</p></div></div><div class="day-summary">睡飽整理後搭11:54新幹線；八戶保留86分鐘，再搭已確認的14:30星野免費接駁。</div><div class="hotel-line">住宿｜<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%98%9F%E9%87%8E%E9%9B%86%E5%9C%98%20%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A3%AF%E5%BA%97" target="_blank" rel="noopener">星野集團 奧入瀨溪流飯店</a></div><div class="timeline"><div class="timeline-item"><div class="time">08:30–09:30</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>早餐</h4><span class="chip stay">舒適出發</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E9%A3%AF%E5%BA%97" target="_blank" rel="noopener">仙台飯店</a>｜交通：飯店內／附近｜早：飯店／附近｜今天不排早晨景點，保留睡眠與移動體力</p></div></div><div class="timeline-item"><div class="time">09:30–10:40</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>回房休息、整理行李</h4><span class="chip stay">休息</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E9%A3%AF%E5%BA%97" target="_blank" rel="noopener">仙台飯店</a>｜交通：飯店內｜大型行李全部帶往奧入瀨</p></div></div><div class="timeline-item"><div class="time">10:40–11:15</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>退房、拖行李進站</h4><span class="chip stay">緩衝</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%A3%AF%E5%BA%97%E2%86%92%E4%BB%99%E5%8F%B0%E7%AB%99" target="_blank" rel="noopener">飯店→仙台站</a>｜交通：步行｜11:15前進站，不壓縮找月台與買便當時間</p></div></div><div class="timeline-item"><div class="time">11:15–11:45</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>買便當／飲水、前往月台</h4><span class="chip flex">補給</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%AB%99" target="_blank" rel="noopener">仙台站</a>｜交通：步行｜午：便當或八戶站彈性用餐｜全車指定席；大型行李全程隨身</p></div></div><div class="timeline-item"><div class="time">11:54–13:04</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>Hayabusa 15</h4><span class="chip danger">固定班次</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E2%86%92%E5%85%AB%E6%88%B6" target="_blank" rel="noopener">仙台→八戶</a>｜交通：東北新幹線｜全車指定席；官方時刻仙台11:54發、八戶13:04到</p></div></div><div class="timeline-item"><div class="time">13:04–14:20</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>午餐、補給、轉乘緩衝</h4><span class="chip food">轉乘緩衝86分鐘</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%85%AB%E6%88%B6%E7%AB%99" target="_blank" rel="noopener">八戶站</a>｜交通：步行｜午：八戶站／車站便當｜接駁不等JR延誤；14:20前到西口集合點</p></div></div><div class="timeline-item"><div class="time">14:20–14:30</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>星野接駁報到、上車</h4><span class="chip danger">固定集合</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%85%AB%E6%88%B6%E7%AB%99%E8%A5%BF%E5%8F%A3" target="_blank" rel="noopener">八戶站西口</a>｜交通：步行｜2026/10/21 14:30；請至少提前10分鐘到乘車處</p></div></div><div class="timeline-item"><div class="time">14:30–16:15</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>星野住宿客免費接駁</h4><span class="chip stay">固定交通</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%85%AB%E6%88%B6%E7%AB%99%E8%A5%BF%E5%8F%A3%E2%86%92%E6%98%9F%E9%87%8E%E5%A5%A7%E5%85%A5%E7%80%A8" target="_blank" rel="noopener">八戶站西口→星野奧入瀨</a>｜交通：星野免費接駁｜官方所需約105分鐘；紅葉季與道路狀況可能延遲</p></div></div><div class="timeline-item"><div class="time">16:15–22:00</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>Check-in、森林神話大廳、泡湯、晚餐</h4><span class="chip stay">住宿／必吃</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%98%9F%E9%87%8E%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A3%AF%E5%BA%97" target="_blank" rel="noopener">星野奧入瀨溪流飯店</a>｜交通：飯店內｜晚：青森蘋果廚房（另付）｜抵達日不再加戶外行程；住宿只含早餐、不含晚餐</p></div></div></div></article><article class="day-card region-oirase" id="d6"><div class="day-head"><div><span class="day-index">D6</span><h2>10/22（四） 奧入瀨溪流舒適版</h2><p>奧入瀨溪流・子之口</p></div></div><div class="day-summary">早餐睡飽＋飯店休息，11:00才出發；核心溪流分段慢走，下午回星野。</div><div class="hotel-line">住宿｜<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%98%9F%E9%87%8E%E9%9B%86%E5%9C%98%20%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A3%AF%E5%BA%97" target="_blank" rel="noopener">星野集團 奧入瀨溪流飯店</a></div><div class="timeline"><div class="timeline-item"><div class="time">08:30–09:30</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>早餐</h4><span class="chip stay">慢活</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%98%9F%E9%87%8E%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A3%AF%E5%BA%97" target="_blank" rel="noopener">星野奧入瀨溪流飯店</a>｜交通：飯店內｜早：青森蘋果廚房（已含）｜慢慢吃早餐，不安排清晨活動</p></div></div><div class="timeline-item"><div class="time">09:30–10:50</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>回房休息、慢慢準備</h4><span class="chip stay">休息</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%98%9F%E9%87%8E%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A3%AF%E5%BA%97" target="_blank" rel="noopener">星野奧入瀨溪流飯店</a>｜交通：飯店內｜帶飲水、雨具與少量點心；本日不特別安排午餐</p></div></div><div class="timeline-item"><div class="time">11:00–11:17</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>星野住宿客免費「溪流接駁專車」</h4><span class="chip stay">固定起點</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%98%9F%E9%87%8E%E2%86%92%E9%9B%B2%E4%BA%95%E7%80%91%E5%B8%83" target="_blank" rel="noopener">星野→雲井瀑布</a>｜交通：星野溪流接駁｜每小時00分飯店發、17分雲井瀑布到；紅葉季滿27人可能需等下一班</p></div></div><div class="timeline-item"><div class="time">11:20–13:00</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>奧入瀨核心溪流慢走約2.8km</h4><span class="chip poi">必去｜雲井瀑布・阿修羅之流・馬門岩・石ヶ戶</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%9B%B2%E4%BA%95%E7%80%91%E5%B8%83%E2%86%92%E9%98%BF%E4%BF%AE%E7%BE%85%E4%B9%8B%E6%B5%81%E2%86%92%E9%A6%AC%E9%96%80%E5%B2%A9%E2%86%92%E7%9F%B3%E3%83%B6%E6%88%B6" target="_blank" rel="noopener">雲井瀑布→阿修羅之流→馬門岩→石ヶ戶</a>｜交通：沿溪下游步行｜不以純步速壓成1小時；含拍照、看溪流與休息</p></div></div><div class="timeline-item"><div class="time">13:00–13:55</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>休息、上廁所、候車</h4><span class="chip flex">休息</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E7%9F%B3%E3%83%B6%E6%88%B6%E4%BC%91%E6%86%A9%E6%89%80" target="_blank" rel="noopener">石ヶ戶休憩所</a>｜交通：步行｜午：不特別安排；需要時吃自備點心｜14:07 JR巴士為下一段固定交通</p></div></div><div class="timeline-item"><div class="time">14:07–14:22</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>JR巴士往十和田湖方向</h4><span class="chip poi">固定交通</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E7%9F%B3%E3%83%B6%E6%88%B6%E2%86%92%E9%8A%9A%E5%AD%90%E5%A4%A7%E7%80%91%E5%B8%83" target="_blank" rel="noopener">石ヶ戶→銚子大瀑布</a>｜交通：JR巴士｜紅葉季提早排隊；滿載或塞車是本日主要風險</p></div></div><div class="timeline-item"><div class="time">14:22–14:45</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>銚子大瀑布賞景</h4><span class="chip poi">必去｜銚子大瀑布</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%8A%9A%E5%AD%90%E5%A4%A7%E7%80%91%E5%B8%83" target="_blank" rel="noopener">銚子大瀑布</a>｜交通：步行｜約23分鐘賞景與拍照，14:45起走</p></div></div><div class="timeline-item"><div class="time">14:45–15:20</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>沿溪步行約1.5km</h4><span class="chip flex">溪流→湖</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%8A%9A%E5%AD%90%E5%A4%A7%E7%80%91%E5%B8%83%E2%86%92%E5%AD%90%E4%B9%8B%E5%8F%A3" target="_blank" rel="noopener">銚子大瀑布→子之口</a>｜交通：步行｜雨大、路滑或體力不佳時，改在銚子大瀑布搭15:29 JR巴士至子之口15:35</p></div></div><div class="timeline-item"><div class="time">15:20–15:45</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>湖畔休息，第一次接觸十和田湖景色</h4><span class="chip poi">必去｜十和田湖</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%AD%90%E4%B9%8B%E5%8F%A3%E3%83%BB%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96" target="_blank" rel="noopener">子之口・十和田湖</a>｜交通：步行｜15:35抵達也仍有10分鐘；不要離巴士站太遠</p></div></div><div class="timeline-item"><div class="time">15:45–16:12</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>JR巴士返回奧入瀨</h4><span class="chip transport">固定交通</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%AD%90%E4%B9%8B%E5%8F%A3%E2%86%92%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A4%A8" target="_blank" rel="noopener">子之口→奧入瀨溪流館</a>｜交通：JR巴士｜官方時刻15:45發、16:12到；紅葉季可能延誤</p></div></div><div class="timeline-item"><div class="time">16:12–16:20</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>步行回飯店</h4><span class="chip stay">返飯店</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A4%A8%E2%86%92%E6%98%9F%E9%87%8E" target="_blank" rel="noopener">奧入瀨溪流館→星野</a>｜交通：步行｜依實際下車與路況彈性</p></div></div><div class="timeline-item"><div class="time">16:20–22:00</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>飯店休息、森林神話大廳、泡湯、晚餐</h4><span class="chip stay">飯店慢活</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%98%9F%E9%87%8E%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A3%AF%E5%BA%97" target="_blank" rel="noopener">星野奧入瀨溪流飯店</a>｜交通：飯店內｜晚：青森蘋果廚房（另付）｜今天只保留飯店休息與晚餐，湖區景點集中在10/23</p></div></div></div></article><article class="day-card region-towada" id="d7"><div class="day-head"><div><span class="day-index">D7</span><h2>10/23（五） 十和田湖舒適版＋回仙台</h2><p>十和田湖→八戶→仙台</p></div></div><div class="day-summary">舒服退房後慢遊十和田湖，指定Marine Blue午餐休息；回飯店拿行李再到八戶、仙台。</div><div class="hotel-line">住宿｜<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=Daiwa%20Roynet%20Hotel%20%E4%BB%99%E5%8F%B0%E8%A5%BF%E5%8F%A3%20PREMIER" target="_blank" rel="noopener">Daiwa Roynet Hotel 仙台西口 PREMIER</a></div><div class="timeline"><div class="timeline-item"><div class="time">08:30–09:30</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>早餐</h4><span class="chip stay">慢活</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%98%9F%E9%87%8E%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A3%AF%E5%BA%97" target="_blank" rel="noopener">星野奧入瀨溪流飯店</a>｜交通：飯店內｜早：青森蘋果廚房（已含）｜退房日仍保留完整早餐時間</p></div></div><div class="timeline-item"><div class="time">09:30–10:25</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>回房休息、整理行李</h4><span class="chip stay">休息</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%98%9F%E9%87%8E%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A3%AF%E5%BA%97" target="_blank" rel="noopener">星野奧入瀨溪流飯店</a>｜交通：飯店內｜約10:25 Check-out；大型行李寄放飯店</p></div></div><div class="timeline-item"><div class="time">10:25–10:40</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>Check-out、寄放行李</h4><span class="chip stay">住宿</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%98%9F%E9%87%8E%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A3%AF%E5%BA%97" target="_blank" rel="noopener">星野奧入瀨溪流飯店</a>｜交通：飯店內｜只帶隨身包、防風外套與飲水前往湖區</p></div></div><div class="timeline-item"><div class="time">10:40–11:01</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>步行至站牌、候車</h4><span class="chip flex">固定緩衝</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%98%9F%E9%87%8E%E2%86%92%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A4%A8" target="_blank" rel="noopener">星野→奧入瀨溪流館</a>｜交通：步行｜紅葉季提早排隊，不壓到最後5分鐘</p></div></div><div class="timeline-item"><div class="time">11:01–11:45</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>JR巴士前往十和田湖</h4><span class="chip poi">固定交通</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A4%A8%E2%86%92%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%E3%83%BB%E4%BC%91%E5%B1%8B" target="_blank" rel="noopener">奧入瀨溪流館→十和田湖・休屋</a>｜交通：JR巴士｜官方時刻11:01發、11:45到；紅葉季可能延誤</p></div></div><div class="timeline-item"><div class="time">11:45–12:50</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>十和田神社→乙女之像→湖畔慢慢逛</h4><span class="chip poi">必去｜十和田神社・乙女之像・湖畔</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%E3%83%BB%E4%BC%91%E5%B1%8B" target="_blank" rel="noopener">十和田湖・休屋</a>｜交通：步行｜沿湖畔順走；若神社停留較久，14:00後自由時間可回補</p></div></div><div class="timeline-item"><div class="time">12:50–14:00</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>蘋果派、咖啡、簡單餐食與湖景休息</h4><span class="chip food">指定必去｜Marine Blue</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A7%89%E5%A6%B9%E6%96%BD%E8%A8%AD%20%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%E3%83%9E%E3%83%AA%E3%83%B3%E3%83%96%E3%83%AB%E3%83%BC" target="_blank" rel="noopener">姉妹施設 十和田湖マリンブルー</a>｜交通：步行｜午：Marine Blue簡單餐食＋蘋果派＋咖啡｜湖景午餐／休息；4月下旬至11月上旬通常營業，預約不可</p></div></div><div class="timeline-item"><div class="time">14:00–14:45</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>湖畔自由時間、伴手禮、拍照</h4><span class="chip poi">十和田湖慢活</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%E3%83%BB%E4%BC%91%E5%B1%8B" target="_blank" rel="noopener">十和田湖・休屋</a>｜交通：步行｜本段只做湖畔自由活動；14:45開始往巴士站移動</p></div></div><div class="timeline-item"><div class="time">14:45–15:00</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>回站、排隊候車</h4><span class="chip danger">固定集合</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%E3%83%BB%E4%BC%91%E5%B1%8B%E5%B7%B4%E5%A3%AB%E7%AB%99" target="_blank" rel="noopener">十和田湖・休屋巴士站</a>｜交通：步行｜旺季無預約制，提早15分鐘排隊</p></div></div><div class="timeline-item"><div class="time">15:00–15:42</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>JR巴士返回奧入瀨</h4><span class="chip transport">固定交通</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%E3%83%BB%E4%BC%91%E5%B1%8B%E2%86%92%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A4%A8" target="_blank" rel="noopener">十和田湖・休屋→奧入瀨溪流館</a>｜交通：JR巴士｜官方時刻15:00發、15:42到；道路壅塞可能延誤</p></div></div><div class="timeline-item"><div class="time">15:42–16:20</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>回飯店拿寄放行李、上廁所、最後整理</h4><span class="chip danger">轉乘緩衝</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A4%A8%E2%86%94%E6%98%9F%E9%87%8E" target="_blank" rel="noopener">奧入瀨溪流館↔星野</a>｜交通：步行｜16:20帶齊行李返回站牌；不把整理拖到16:30</p></div></div><div class="timeline-item"><div class="time">16:20–16:42</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>提早候車</h4><span class="chip flex">固定緩衝</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A4%A8%E7%AB%99" target="_blank" rel="noopener">奧入瀨溪流館站</a>｜交通：步行｜避免只剩5–10分鐘極限轉乘；如前班嚴重塞車，立即請飯店協助評估備案</p></div></div><div class="timeline-item"><div class="time">16:42–18:20</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>JR巴士 おいらせ24號時段</h4><span class="chip transport">固定交通</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A4%A8%E2%86%92%E5%85%AB%E6%88%B6" target="_blank" rel="noopener">奧入瀨溪流館→八戶</a>｜交通：JR巴士｜紅葉季可能塞車；後段保留1小時53分</p></div></div><div class="timeline-item"><div class="time">18:20–20:05</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>晚餐、補給與新幹線緩衝</h4><span class="chip food">轉乘緩衝</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%85%AB%E6%88%B6%E7%AB%99" target="_blank" rel="noopener">八戶站</a>｜交通：步行｜晚：八戶站／車上簡餐｜20:05前到月台</p></div></div><div class="timeline-item"><div class="time">20:13–21:30</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>Hayabusa 44</h4><span class="chip danger">固定班次</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%85%AB%E6%88%B6%E2%86%92%E4%BB%99%E5%8F%B0" target="_blank" rel="noopener">八戶→仙台</a>｜交通：東北新幹線｜全車指定席</p></div></div><div class="timeline-item"><div class="time">21:30–21:50</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>步行至Daiwa、Check-in</h4><span class="chip stay">住宿</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%AB%99%E8%A5%BF%E5%8F%A3" target="_blank" rel="noopener">仙台站西口</a>｜交通：步行｜目前為可吸菸房；優先變更</p></div></div></div></article><article class="day-card region-hiraizumi" id="d8"><div class="day-head"><div><span class="day-index">D8</span><h2>10/24（六） 毛越寺＋中尊寺紅葉銀河</h2><p>平泉</p></div></div><div class="day-summary">仙台朝市早餐後前往平泉；白天完成毛越寺、金色堂與秘佛，傍晚看紅葉銀河。</div><div class="hotel-line">住宿｜<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=Daiwa%20Roynet%20Hotel%20%E4%BB%99%E5%8F%B0%E8%A5%BF%E5%8F%A3%20PREMIER" target="_blank" rel="noopener">Daiwa Roynet Hotel 仙台西口 PREMIER</a></div><div class="timeline"><div class="timeline-item"><div class="time">08:30–09:20</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>早餐與短逛</h4><span class="chip food">必吃／必逛｜仙台朝市</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E6%9C%9D%E5%B8%82" target="_blank" rel="noopener">仙台朝市</a>｜交通：步行｜早：仙台朝市｜09:20離開後直接進站</p></div></div><div class="timeline-item"><div class="time">09:20–10:45</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>新幹線＋JR東北本線</h4><span class="chip transport">交通</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E2%86%92%E4%B8%80%E4%B9%8B%E9%97%9C%E2%86%92%E5%B9%B3%E6%B3%89" target="_blank" rel="noopener">仙台→一之關→平泉</a>｜交通：JR｜以10:45前後抵達為目標，不先硬鎖月台</p></div></div><div class="timeline-item"><div class="time">10:45–12:30</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>毛越寺＋淨土庭園</h4><span class="chip poi">必去｜毛越寺</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%AF%9B%E8%B6%8A%E5%AF%BA" target="_blank" rel="noopener">毛越寺</a>｜交通：步行／短程計程車｜先看毛越寺，再銜接中尊寺</p></div></div><div class="timeline-item"><div class="time">12:30–13:30</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>午餐＋前往中尊寺</h4><span class="chip food">餐飲</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%B9%B3%E6%B3%89" target="_blank" rel="noopener">平泉</a>｜交通：步行＋計程車｜午：平泉彈性用餐｜不排長隊；短程計程車較穩妥</p></div></div><div class="timeline-item"><div class="time">13:30–16:30</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>中尊寺、金色堂、900年秘佛御開帳</h4><span class="chip poi">必去｜金色堂＋秘佛</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%AD%E5%B0%8A%E5%AF%BA" target="_blank" rel="noopener">中尊寺</a>｜交通：步行｜秘佛開放至17:00，先完成室內參拜</p></div></div><div class="timeline-item"><div class="time">16:30–18:00</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>紅葉銀河點燈</h4><span class="chip poi">賞楓｜紅葉銀河首日</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%AD%E5%B0%8A%E5%AF%BA" target="_blank" rel="noopener">中尊寺</a>｜交通：步行｜活動至18:30；為回程安全，主案18:00左右離開</p></div></div><div class="timeline-item"><div class="time">18:00–20:30</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>下山、返站、JR＋新幹線回仙台</h4><span class="chip transport">回程</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%B9%B3%E6%B3%89%E2%86%92%E4%BB%99%E5%8F%B0" target="_blank" rel="noopener">平泉→仙台</a>｜交通：計程車＋JR｜晚：返仙台後彈性｜不為看滿18:30冒險錯過合理回程</p></div></div></div></article><article class="day-card region-sendai" id="d9"><div class="day-head"><div><span class="day-index">D9</span><h2>10/25（日） 金蛇水神社＋返台</h2><p>岩沼・仙台機場</p></div></div><div class="day-summary">10:00 JR至岩沼，兩段計程車分開叫；12:15左右抵達機場，下午免稅採買。</div><div class="hotel-line">住宿｜—</div><div class="timeline"><div class="timeline-item"><div class="time">08:30–09:10</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>早餐、最後整理行李</h4><span class="chip stay">住宿</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=Daiwa%E9%A3%AF%E5%BA%97" target="_blank" rel="noopener">Daiwa飯店</a>｜交通：飯店內／附近｜早：飯店／附近｜護照、退稅品、充電器、托運物品最後確認</p></div></div><div class="timeline-item"><div class="time">09:10–09:55</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>退房、步行進站、前往月台</h4><span class="chip stay">固定緩衝</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%A3%AF%E5%BA%97%E2%86%92%E4%BB%99%E5%8F%B0%E7%AB%99" target="_blank" rel="noopener">飯店→仙台站</a>｜交通：步行｜大型行李全程隨身</p></div></div><div class="timeline-item"><div class="time">10:00–10:20</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>JR東北本線 普通430M</h4><span class="chip danger">固定班次</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E2%86%92%E5%B2%A9%E6%B2%BC" target="_blank" rel="noopener">仙台→岩沼</a>｜交通：JR｜出發前再確認是否改點</p></div></div><div class="timeline-item"><div class="time">10:20–10:45</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>出站、排計程車、搭車</h4><span class="chip transport">交通</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%B2%A9%E6%B2%BC%E7%AB%99%E2%86%92%E9%87%91%E8%9B%87%E6%B0%B4%E7%A5%9E%E7%A4%BE" target="_blank" rel="noopener">岩沼站→金蛇水神社</a>｜交通：計程車｜官方估車程10分鐘、約¥1,000</p></div></div><div class="timeline-item"><div class="time">10:45–11:35</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>參拜、求財運／御守</h4><span class="chip poi">必去｜金蛇水神社</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%87%91%E8%9B%87%E6%B0%B4%E7%A5%9E%E7%A4%BE" target="_blank" rel="noopener">金蛇水神社</a>｜交通：步行｜大型行李隨身；社務時間8:00–16:00</p></div></div><div class="timeline-item"><div class="time">11:35–12:15</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>請神社／Sando Terrace協助叫車或用App；另搭第二台計程車</h4><span class="chip poi">交通緩衝</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%87%91%E8%9B%87%E6%B0%B4%E7%A5%9E%E7%A4%BE%E2%86%92%E4%BB%99%E5%8F%B0%E6%A9%9F%E5%A0%B4" target="_blank" rel="noopener">金蛇水神社→仙台機場</a>｜交通：計程車｜含叫車等待；不要預設路邊一定有車</p></div></div><div class="timeline-item"><div class="time">12:15–14:55</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>午餐、整理行李、管制區外採買</h4><span class="chip food">購物</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E6%A9%9F%E5%A0%B4" target="_blank" rel="noopener">仙台機場</a>｜交通：步行｜午：仙台機場｜免稅店須完成出境後才能進入</p></div></div><div class="timeline-item"><div class="time">14:55–16:25</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>星宇報到、托運、安檢與出境</h4><span class="chip danger">固定截止</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E6%A9%9F%E5%A0%B42F" target="_blank" rel="noopener">仙台機場2F</a>｜交通：步行｜依17:25起飛倒推；以當日櫃檯公告為準</p></div></div><div class="timeline-item"><div class="time">16:25–17:25</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>Duty Free VEGA＋前往登機門</h4><span class="chip flex">免稅採買</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%9C%8B%E9%9A%9B%E7%B7%9A%E7%AE%A1%E5%88%B6%E5%8D%80" target="_blank" rel="noopener">國際線管制區</a>｜交通：步行｜不要拖到登機門截止</p></div></div><div class="timeline-item"><div class="time">17:25–20:35</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>星宇 JX863</h4><span class="chip danger">航班</span></div><p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E2%86%92%E6%A1%83%E5%9C%92" target="_blank" rel="noopener">仙台→桃園</a>｜交通：直飛｜晚：機上｜33F／33G；每人托運2×23kg＋手提7kg</p></div></div></div></article></div></section><section class="view" id="view-oirase"><div class="section oirase-section"><div class="section-title"><h2>奧入瀨・十和田湖</h2><span>V42 舒適分段版</span></div>
-  <div class="callout autumn-callout"><span class="callout-kicker">10/22｜核心溪流</span><h3>睡飽後 11:00 才出發</h3><p>星野免費溪流接駁送到雲井瀑布，沿溪往下游慢走；保留賞楓、拍照、看溪流與休息，不用純步速壓縮。</p></div>
-  <div class="route-grid">
-    <div class="route-card stream-route"><div class="route-title"><span>溪流路線 A</span><b>約 2.8 km｜約 1 小時 40 分</b></div><div class="route-stop"><span class="route-dot"></span><div><b><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%9B%B2%E4%BA%95%E7%80%91%E5%B8%83" target="_blank" rel="noopener">雲井瀑布</a></b><small>11:17 下車</small></div></div><div class="route-arrow">↓</div><div class="route-stop"><span class="route-dot"></span><div><b><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%98%BF%E4%BF%AE%E7%BE%85%E4%B9%8B%E6%B5%81" target="_blank" rel="noopener">阿修羅之流</a></b><small>溪流核心</small></div></div><div class="route-arrow">↓</div><div class="route-stop"><span class="route-dot"></span><div><b><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%A6%AC%E9%96%80%E5%B2%A9" target="_blank" rel="noopener">馬門岩</a></b><small>沿溪下游</small></div></div><div class="route-arrow">↓</div><div class="route-stop"><span class="route-dot"></span><div><b><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E7%9F%B3%E3%83%B6%E6%88%B6" target="_blank" rel="noopener">石ヶ戶</a></b><small>13:00 休息・廁所</small></div></div></div>
-    <div class="route-card lake-route"><div class="route-title"><span>溪流路線 B</span><b>JR 接駁＋約 1.5 km</b></div><div class="route-stop"><span class="route-dot"></span><div><b><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%8A%9A%E5%AD%90%E5%A4%A7%E7%80%91%E5%B8%83" target="_blank" rel="noopener">銚子大瀑布</a></b><small>14:22–14:45</small></div></div><div class="route-arrow">↓</div><div class="route-stop"><span class="route-dot"></span><div><b><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%AD%90%E4%B9%8B%E5%8F%A3" target="_blank" rel="noopener">子之口</a></b><small>15:20 湖畔休息</small></div></div><div class="route-arrow">↓</div><div class="route-stop"><span class="route-dot"></span><div><b><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96" target="_blank" rel="noopener">十和田湖</a></b><small>第一次接觸湖景</small></div></div></div>
-  </div>
-  <div class="lake-feature"><span class="lake-kicker">10/23｜十和田湖舒適版</span><h3><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%E3%83%9E%E3%83%AA%E3%83%B3%E3%83%96%E3%83%AB%E3%83%BC" target="_blank" rel="noopener">姉妹施設 十和田湖マリンブルー</a></h3><div class="feature-chips"><span>蘋果派</span><span>咖啡</span><span>湖景</span><span>午餐／休息</span></div><p>十和田神社 → 乙女之像 → 湖畔 → Marine Blue。12:50–14:00 留給簡單餐食、甜點與看湖，不安排趕場。</p></div>
-  <div class="risk-note"><b>紅葉旺季提醒</b><p>星野接駁與 JR 巴士皆可能因壅塞延遲或滿載。10/22 石ヶ戶先休息再提早排隊；10/23 回星野拿行李後，16:20 必須離開飯店，保留 22 分鐘在溪流館站候車。</p></div>
-</div></section><section class="view" id="view-hotels"><div class="section"><div class="section-title"><h2>住宿</h2><span>4 / 2 / 2 晚</span></div><div class="grid"><div class="info-card"><div class="info-title">10/17–10/21｜<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=Hotel%20Metropolitan%20The%20Base%20Sendai" target="_blank" rel="noopener">Hotel Metropolitan The Base Sendai</a></div><div class="kv"><span>晚數</span><b>4晚</b></div><div class="kv"><span>狀態</span><b>已付款／已確認連住</b></div><div class="kv"><span>房價</span><b>NT$28,349.25／2人</b></div><p>禁菸 Universal Twin｜同一房連住；僅住宿；早餐另付。10/17預計約18:10入住；10/21 11:00前退房</p></div><div class="info-card"><div class="info-title">10/21–10/23｜<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%98%9F%E9%87%8E%E9%9B%86%E5%9C%98%20%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A3%AF%E5%BA%97" target="_blank" rel="noopener">星野集團 奧入瀨溪流飯店</a></div><div class="kv"><span>晚數</span><b>2晚</b></div><div class="kv"><span>狀態</span><b>已付款</b></div><div class="kv"><span>房價</span><b>NT$54,938／2人</b></div><p>2位成人｜不可退款；含早餐、不含晚餐。10/21八戶西口14:30免費接駁已確認2人；10/23回程改JR巴士</p></div><div class="info-card"><div class="info-title">10/23–10/25｜<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=Daiwa%20Roynet%20Hotel%20%E4%BB%99%E5%8F%B0%E8%A5%BF%E5%8F%A3%20PREMIER" target="_blank" rel="noopener">Daiwa Roynet Hotel 仙台西口 PREMIER</a></div><div class="kv"><span>晚數</span><b>2晚</b></div><div class="kv"><span>狀態</span><b>已付款／待改禁菸</b></div><div class="kv"><span>房價</span><b>NT$13,423／2人</b></div><p>豪華加大雙人床｜目前可吸菸房；僅住宿。預約 T3036C2079673；先確認禁菸庫存再變更</p></div></div><div class="info-card stay-total"><div class="info-title">兩人住宿總額</div><div class="kv"><span>8晚合計</span><b>NT$96,710.25</b></div><div class="kv"><span>每人合計</span><b>約 NT$48,355</b></div></div></div></section><section class="view" id="view-todos"><div class="section"><div class="section-title"><h2>待辦</h2><span>V42｜先做錯過成本高的</span></div><div class="grid two"><div class="todo-card "><div class="todo-top"><span class="priority">非常高</span><span class="due">立即</span></div><h3>10/23｜Daiwa 10/23–25改禁菸房</h3><p>現有房型為可吸菸；先確認同飯店禁菸庫存與新價格，再變更／重訂。<br/><a class="text-map-link" href="https://www.daiwaroynet.jp/sendai-nishiguchi/" target="_blank" rel="noopener">開啟官方／訂單頁</a></p></div><div class="todo-card "><div class="todo-top"><span class="priority">非常高</span><span class="due">9/21 10:00 JST</span></div><h3>10/21｜10/21 Hayabusa 15指定席</h3><p>仙台11:54→八戶13:04；全車指定席。到14:30星野接駁前有86分鐘。<br/><a class="text-map-link" href="https://timetables.jreast.co.jp/2608/train/110/111142.html" target="_blank" rel="noopener">開啟官方／訂單頁</a></p></div><div class="todo-card "><div class="todo-top"><span class="priority">非常高</span><span class="due">10/21晚間</span></div><h3>10/22｜10/22 JR巴士時刻與運行情況最終確認</h3><p>石ヶ戶14:07→銚子大瀑布14:22、子之口15:45→溪流館16:12；同時查看天候、步道與紅葉季壅塞公告。<br/><a class="text-map-link" href="https://www.jrbustohoku.co.jp/route/11/280/" target="_blank" rel="noopener">開啟官方／訂單頁</a></p></div><div class="todo-card "><div class="todo-top"><span class="priority">非常高</span><span class="due">10/22晚間</span></div><h3>10/23｜10/23 JR巴士時刻與運行情況最終確認</h3><p>溪流館11:01→休屋11:45、休屋15:00→溪流館15:42、溪流館16:42→八戶18:20。<br/><a class="text-map-link" href="https://www.jrbustohoku.co.jp/route/11/280/" target="_blank" rel="noopener">開啟官方／訂單頁</a></p></div><div class="todo-card "><div class="todo-top"><span class="priority">非常高</span><span class="due">10/20前</span></div><h3>10/23｜Marine Blue 10/23營業確認</h3><p>確認姉妹施設 十和田湖マリンブルー10/23營業、臨時休業與餐食供應；電話0176-75-3025。<br/><a class="text-map-link" href="https://www.towadakolakeside.jp/food" target="_blank" rel="noopener">開啟官方／訂單頁</a></p></div><div class="todo-card "><div class="todo-top"><span class="priority">非常高</span><span class="due">最晚10/17 00:00</span></div><h3>10/19｜Klook 178500 E 最終憑證</h3><p>已付款NT$8,980；確認最終集合時間／地點、回程與天候備案。<br/><a class="text-map-link" href="https://www.klook.com/zh-TW/activity/178500-ginzan-onsen-zao-ropeway-snow-monsters-day-tour-from-sendai/" target="_blank" rel="noopener">開啟官方／訂單頁</a></p></div><div class="todo-card "><div class="todo-top"><span class="priority">非常高</span><span class="due">9/23 10:00 JST</span></div><h3>10/23｜10/23 Hayabusa 44指定席</h3><p>八戶20:13→仙台21:30；全車指定席。<br/><a class="text-map-link" href="https://timetables.jreast.co.jp/2608/train/125/129875.html" target="_blank" rel="noopener">開啟官方／訂單頁</a></p></div><div class="todo-card "><div class="todo-top"><span class="priority">非常高</span><span class="due">9/24 10:00 JST</span></div><h3>10/24｜10/24平泉往返JR／指定席</h3><p>鎖定可銜接仙台朝市與18:00左右離開中尊寺的班次。<br/><a class="text-map-link" href="https://www.jreast.co.jp/en/multi/faq/" target="_blank" rel="noopener">開啟官方／訂單頁</a></p></div><div class="todo-card "><div class="todo-top"><span class="priority">高</span><span class="due">9月底</span></div><h3>10/20｜預約10/20 15:00松島遊船</h3><p>14:30前報到；同時複核仙台↔松島海岸JR班次。<br/><a class="text-map-link" href="https://www.matsushima.or.jp/timesheet/" target="_blank" rel="noopener">開啟官方／訂單頁</a></p></div><div class="todo-card "><div class="todo-top"><span class="priority">高</span><span class="due">9/19</span></div><h3>全程｜比較JR EAST PASS與單買</h3><p>納入仙台↔八戶、平泉、松島與10/22–23奧入瀨JR巴士；星野10/21接駁為免費。<br/><a class="text-map-link" href="https://www.jreast.co.jp/en/multi/pass/eastpass.html" target="_blank" rel="noopener">開啟官方／訂單頁</a></p></div><div class="todo-card "><div class="todo-top"><span class="priority">高</span><span class="due">出發前</span></div><h3>10/17｜通知首晚飯店約18:10抵達</h3><p>原訂單若填晚到時間，改為目前預估；航班延誤再聯絡。<br/><a class="text-map-link" href="https://base-sendai-j.jre-hotels.jp/" target="_blank" rel="noopener">開啟官方／訂單頁</a></p></div><div class="todo-card "><div class="todo-top"><span class="priority">高</span><span class="due">出發前</span></div><h3>10/25｜準備10/25叫車方式</h3><p>確認神社／Sando Terrace可協助叫車，並安裝可用叫車App。<br/><a class="text-map-link" href="https://kanahebi.cdx.jp/access.html" target="_blank" rel="noopener">開啟官方／訂單頁</a></p></div><div class="todo-card "><div class="todo-top"><span class="priority">中</span><span class="due">取得金額後</span></div><h3>全程｜拆分旅平險、eSIM、星野到店稅</h3><p>目前暫估合計NT$6,124；取得收據後分列。</p></div><div class="todo-card done"><div class="todo-top"><span class="priority">完成</span><span class="due">—</span></div><h3>10/21｜10/21星野免費接駁</h3><p>2026/10/21八戶站西口14:30；2人；免費；預約已確認。<br/><a class="text-map-link" href="https://hoshinoresorts.com/zh_tw/hotels/oirasekeiryu/access/" target="_blank" rel="noopener">開啟官方／訂單頁</a></p></div><div class="todo-card done"><div class="todo-top"><span class="priority">完成</span><span class="due">—</span></div><h3>全程｜三段住宿與星宇航班</h3><p>仙台4晚同房連住、星野2晚、Daiwa2晚與來回航班均已付款。</p></div><div class="todo-card done"><div class="todo-top"><span class="priority">完成</span><span class="due">—</span></div><h3>10/19｜10/19 Klook E付款</h3><p>成人2人；實付NT$8,980；訂單GCG327718。</p></div></div></div></section></main>
-<div class="source">V42｜來源：20261017_仙台奧入瀨岩手9日行程_V42.xlsx<br/>V42模板｜基於V39重新優化</div>
-<nav class="bottom-nav"><label for="tab-trip">行程</label><label for="tab-oirase">奧入瀨</label><label for="tab-hotels">住宿</label><label for="tab-todos">待辦</label></nav>
+<div class="hero-art" aria-hidden="true">
+<span class="leaf one">
+</span>
+<span class="leaf two">
+</span>
+<span class="leaf three">
+</span>
 </div>
-</body></html>
+<div class="eyebrow">V42・東北深秋 楓葉之旅</div>
+<h1>2026 東北深秋之旅</h1>
+<p>仙台・松島・青森・奧入瀨・十和田湖・平泉<br>2026.10.17 – 10.25・2人</p>
+<div class="stats">
+<div class="stat">
+<b>9天8夜</b>
+<span>仙台進出</span>
+</div>
+<div class="stat">
+<b>3天2夜</b>
+<span>奧入瀨・十和田湖</span>
+</div>
+<div class="stat">
+<b>V42</b>
+<span>唯一正式版本</span>
+</div>
+</div>
+</header>
+<div class="date-strip" aria-label="日期快速導覽">
+<a class="date-pill" href="#d1" onclick="document.getElementById('tab-trip').checked=true">10/17</a>
+<a class="date-pill" href="#d2" onclick="document.getElementById('tab-trip').checked=true">10/18</a>
+<a class="date-pill" href="#d3" onclick="document.getElementById('tab-trip').checked=true">10/19</a>
+<a class="date-pill" href="#d4" onclick="document.getElementById('tab-trip').checked=true">10/20</a>
+<a class="date-pill" href="#d5" onclick="document.getElementById('tab-trip').checked=true">10/21</a>
+<a class="date-pill" href="#d6" onclick="document.getElementById('tab-trip').checked=true">10/22</a>
+<a class="date-pill" href="#d7" onclick="document.getElementById('tab-trip').checked=true">10/23</a>
+<a class="date-pill" href="#d8" onclick="document.getElementById('tab-trip').checked=true">10/24</a>
+<a class="date-pill" href="#d9" onclick="document.getElementById('tab-trip').checked=true">10/25</a>
+</div>
+<input class="tab-radio" type="radio" name="tabs" id="tab-trip" checked>
+<input class="tab-radio" type="radio" name="tabs" id="tab-transport">
+<input class="tab-radio" type="radio" name="tabs" id="tab-budget">
+<input class="tab-radio" type="radio" name="tabs" id="tab-todos">
+<main>
+<section class="view" id="view-trip">
+<div class="section">
+<div class="section-title">
+<h2>每日行程</h2>
+<span>點地點可開Google Maps</span>
+</div>
+<article class="day-card" id="d1">
+<div class="day-head">
+<div>
+<span class="day-index">D1・仙台</span>
+<h2>10/17（六）抵達仙台</h2>
+<p>抵達、入住、牛舌晚餐；不安排Pokémon Center或額外限時景點。</p>
+</div>
+</div>
+<div class="hotel-line">
+<span>住宿</span>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=Hotel%20Metropolitan%20The%20Base%20Sendai" target="_blank" rel="noopener">Hotel Metropolitan The Base Sendai<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="timeline">
+<div class="timeline-item">
+<div class="time core-time">11:35–16:00</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>星宇 JX862</h4>
+<span class="chip danger">固定航班</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%A1%83%E5%9C%92%E5%9C%8B%E9%9A%9B%E6%A9%9F%E5%A0%B4%20%E2%86%92%20%E4%BB%99%E5%8F%B0%E6%A9%9F%E5%A0%B4" target="_blank" rel="noopener">桃園國際機場 → 仙台機場<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：國際航班<br>午：機上<br>32F／32G；每人托運1×23kg＋手提7kg。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">16:00–17:35</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>入境、領行李與轉乘緩衝</h4>
+<span class="chip flex">舒適緩衝</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E6%A9%9F%E5%A0%B4" target="_blank" rel="noopener">仙台機場<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>不為追單一班次壓縮通關；完成後搭仙台機場線。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">17:35–18:35</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>前往仙台市區</h4>
+<span class="chip transport">核心交通</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E6%A9%9F%E5%A0%B4%20%E2%86%92%20%E4%BB%99%E5%8F%B0%E7%AB%99" target="_blank" rel="noopener">仙台機場 → 仙台站<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：仙台機場Access線<br>依實際入境時間搭下一班，預留拖行李進站時間。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">18:35–19:15</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>飯店Check-in、放行李</h4>
+<span class="chip stay">住宿</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=Hotel%20Metropolitan%20The%20Base%20Sendai" target="_blank" rel="noopener">Hotel Metropolitan The Base Sendai<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>本段住宿新版為10/17入住、10/20退房。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">19:15–20:45</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>牛舌晚餐</h4>
+<span class="chip food">必吃</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%AB%99%E5%91%A8%E9%82%8A" target="_blank" rel="noopener">仙台站周邊<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>晚：牛舌<br>以就近、等待時間合理的店家為優先。</p>
+</div>
+</div>
+</div>
+</article>
+<article class="day-card" id="d2">
+<div class="day-head">
+<div>
+<span class="day-index">D2・仙台・岩沼</span>
+<h2>10/18（日）仙台城跡＋金蛇水神社</h2>
+<p>上午兩個仙台核心景點，回站午餐；下午完整留給金蛇水神社，節奏不趕。</p>
+</div>
+</div>
+<div class="hotel-line">
+<span>住宿</span>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=Hotel%20Metropolitan%20The%20Base%20Sendai" target="_blank" rel="noopener">Hotel Metropolitan The Base Sendai<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="timeline">
+<div class="timeline-item">
+<div class="time ">07:45–08:35</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>早餐與出門準備</h4>
+<span class="chip food">慢慢開始</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E9%A3%AF%E5%BA%97%EF%BC%8F%E4%BB%99%E5%8F%B0%E7%AB%99%E5%91%A8%E9%82%8A" target="_blank" rel="noopener">仙台飯店／仙台站周邊<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>早：飯店或附近<br>08:40前往仙台站西口Loople乘車處。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">09:00–09:23</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>Loople前往仙台城跡</h4>
+<span class="chip transport">核心交通</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%AB%99%E8%A5%BF%E5%8F%A3%20%E2%86%92%20%E4%BB%99%E5%8F%B0%E5%9F%8E%E8%B7%A1" target="_blank" rel="noopener">仙台站西口 → 仙台城跡<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：Loople Sendai<br>週日約每15分鐘；錯過搭下一班，不追車。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">09:25–10:35</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>仙台城跡與伊達政宗騎馬像</h4>
+<span class="chip must">必去</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E5%9F%8E%E8%B7%A1" target="_blank" rel="noopener">仙台城跡<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>以騎馬像與市景為主，保留拍照時間。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">10:38–10:58</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>Loople前往大崎八幡宮</h4>
+<span class="chip transport">核心交通</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E5%9F%8E%E8%B7%A1%20%E2%86%92%20%E5%A4%A7%E5%B4%8E%E5%85%AB%E5%B9%A1%E5%AE%AE" target="_blank" rel="noopener">仙台城跡 → 大崎八幡宮<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：Loople Sendai<br>錯過則順延約15分鐘。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">11:00–11:50</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>大崎八幡宮參拜</h4>
+<span class="chip must">必去</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E5%B4%8E%E5%85%AB%E5%B9%A1%E5%AE%AE" target="_blank" rel="noopener">大崎八幡宮<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>御守授與時段內完成參拜。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">11:58–12:22</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>Loople返回仙台站</h4>
+<span class="chip transport">核心交通</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E5%B4%8E%E5%85%AB%E5%B9%A1%E5%AE%AE%20%E2%86%92%20%E4%BB%99%E5%8F%B0%E7%AB%99" target="_blank" rel="noopener">大崎八幡宮 → 仙台站<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：Loople Sendai<br>若順延，下午JR班次一併後移。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">12:25–13:05</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>仙台站周邊午餐</h4>
+<span class="chip food">彈性餐飲</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%AB%99" target="_blank" rel="noopener">仙台站<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>午：視現場簡單用餐<br>13:05前結束，留15分鐘進月台。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">13:20–14:00</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>JR至岩沼、轉計程車</h4>
+<span class="chip transport">核心交通</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%AB%99%20%E2%86%92%20%E5%B2%A9%E6%B2%BC%E7%AB%99%20%E2%86%92%20%E9%87%91%E8%9B%87%E6%B0%B4%E7%A5%9E%E7%A4%BE" target="_blank" rel="noopener">仙台站 → 岩沼站 → 金蛇水神社<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：JR＋計程車<br>岩沼站到神社計程車約10分鐘；公車班次少，不作主案。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">14:00–15:40</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>金蛇水神社＋SandoTerrace</h4>
+<span class="chip must">必去</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%87%91%E8%9B%87%E6%B0%B4%E7%A5%9E%E7%A4%BE" target="_blank" rel="noopener">金蛇水神社<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>下午：SandoTerrace<br>參拜、御守、御朱印與休息一次完成；授與所16:00前。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">15:40–16:40</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>返回仙台</h4>
+<span class="chip transport">返程</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%87%91%E8%9B%87%E6%B0%B4%E7%A5%9E%E7%A4%BE%20%E2%86%92%20%E5%B2%A9%E6%B2%BC%E7%AB%99%20%E2%86%92%20%E4%BB%99%E5%8F%B0%E7%AB%99" target="_blank" rel="noopener">金蛇水神社 → 岩沼站 → 仙台站<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：計程車＋JR<br>錯過列車就搭下一班，晚上沒有硬性景點。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">18:00–19:30</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>牛舌晚餐</h4>
+<span class="chip food">必吃</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%AB%99%E5%91%A8%E9%82%8A" target="_blank" rel="noopener">仙台站周邊<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>晚：牛舌<br>下午若延誤可順延，不需趕場。</p>
+</div>
+</div>
+</div>
+</article>
+<article class="day-card" id="d3">
+<div class="day-head">
+<div>
+<span class="day-index">D3・松島</span>
+<h2>10/19（一）松島寺院與海岸慢遊</h2>
+<p>不用太早出發；寺院、牡蠣海鮮、海岸散步與咖啡為主，遊覽船只看當天狀況。</p>
+</div>
+</div>
+<div class="hotel-line">
+<span>住宿</span>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=Hotel%20Metropolitan%20The%20Base%20Sendai" target="_blank" rel="noopener">Hotel Metropolitan The Base Sendai<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="timeline">
+<div class="timeline-item">
+<div class="time ">08:30–09:30</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>早餐與準備</h4>
+<span class="chip food">舒適開始</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0" target="_blank" rel="noopener">仙台<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>早：飯店／附近<br>不安排清晨景點。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">10:10–10:50</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>JR前往松島海岸</h4>
+<span class="chip transport">核心交通</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%AB%99%20%E2%86%92%20%E6%9D%BE%E5%B3%B6%E6%B5%B7%E5%B2%B8%E7%AB%99" target="_blank" rel="noopener">仙台站 → 松島海岸站<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：JR仙石線<br>錯過可搭下一班，寺院順序不變。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">11:00–11:50</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>瑞巖寺</h4>
+<span class="chip must">必去</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E7%91%9E%E5%B7%96%E5%AF%BA" target="_blank" rel="noopener">瑞巖寺<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>松島核心寺院。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">12:00–12:40</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>円通院</h4>
+<span class="chip must">必去</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%86%86%E9%80%9A%E9%99%A2" target="_blank" rel="noopener">円通院<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>與瑞巖寺相鄰，順路參觀。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">12:45–13:45</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>海鮮／牡蠣午餐</h4>
+<span class="chip food">必吃</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%BE%E5%B3%B6%E6%B5%B7%E5%B2%B8" target="_blank" rel="noopener">松島海岸<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>午：海鮮／牡蠣<br>不綁單一店家，避免候位拖長。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">14:00–14:30</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>五大堂</h4>
+<span class="chip must">必去</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BA%94%E5%A4%A7%E5%A0%82" target="_blank" rel="noopener">五大堂<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>短距離散步與拍照。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">14:30–16:40</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>海岸散步、咖啡與自由逛街</h4>
+<span class="chip bonus">慢遊</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%BE%E5%B3%B6%E6%B5%B7%E5%B2%B8" target="_blank" rel="noopener">松島海岸<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>下午：咖啡<br>Bonus：天候、體力與班次皆合適才搭遊覽船；不為它壓縮主行程。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">17:00–18:00</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>傍晚返回仙台</h4>
+<span class="chip transport">返程</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%BE%E5%B3%B6%E6%B5%B7%E5%B2%B8%E7%AB%99%20%E2%86%92%20%E4%BB%99%E5%8F%B0%E7%AB%99" target="_blank" rel="noopener">松島海岸站 → 仙台站<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：JR仙石線<br>實際搭乘班次出發前複核。</p>
+</div>
+</div>
+</div>
+</article>
+<article class="day-card" id="d4">
+<div class="day-head">
+<div>
+<span class="day-index">D4・青森</span>
+<h2>10/20（二）仙台移動至青森</h2>
+<p>上午新幹線移動；下午把睡魔、港灣與青森站周邊串成步行慢遊。</p>
+</div>
+</div>
+<div class="hotel-line">
+<span>住宿</span>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E6%A3%AE%E7%AB%99%E9%99%84%E8%BF%91%E4%BD%8F%E5%AE%BF%EF%BC%88%E5%BE%85%E8%A8%82%EF%BC%89" target="_blank" rel="noopener">青森站附近住宿（待訂）<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="timeline">
+<div class="timeline-item">
+<div class="time ">08:00–09:15</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>早餐、退房與進站</h4>
+<span class="chip warn">移動準備</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E9%A3%AF%E5%BA%97%20%E2%86%92%20%E4%BB%99%E5%8F%B0%E7%AB%99" target="_blank" rel="noopener">仙台飯店 → 仙台站<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>早：飯店／附近<br>09:30前到月台；新幹線全車指定席。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time core-time">09:50–11:16</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>Hayabusa 5</h4>
+<span class="chip danger">固定候選班次</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%AB%99%20%E2%86%92%20%E6%96%B0%E9%9D%92%E6%A3%AE%E7%AB%99" target="_blank" rel="noopener">仙台站 → 新青森站<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：東北新幹線<br>全車指定席；10月正式時刻公布後再複核。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">11:16–11:43</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>轉乘奧羽本線至青森</h4>
+<span class="chip transport">轉乘21分鐘</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E9%9D%92%E6%A3%AE%E7%AB%99%20%E2%86%92%20%E9%9D%92%E6%A3%AE%E7%AB%99" target="_blank" rel="noopener">新青森站 → 青森站<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：JR奧羽本線<br>月台確認後轉乘；Backup見交通細節。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">11:50–12:20</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>寄放行李</h4>
+<span class="chip stay">住宿</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E6%A3%AE%E7%AB%99%E9%99%84%E8%BF%91%E4%BD%8F%E5%AE%BF" target="_blank" rel="noopener">青森站附近住宿<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>優先選青森站步行10分鐘內。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">12:20–13:00</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>青森午餐</h4>
+<span class="chip food">彈性餐飲</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E6%A3%AE%E7%AB%99%E5%91%A8%E9%82%8A" target="_blank" rel="noopener">青森站周邊<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>午：青森站周邊<br>下午景點彼此步行可達。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">13:00–14:30</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>睡魔之家 Wa Rasse</h4>
+<span class="chip must">必去</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E7%9D%A1%E9%AD%94%E4%B9%8B%E5%AE%B6%20Wa%20Rasse" target="_blank" rel="noopener">睡魔之家 Wa Rasse<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>保留完整展示參觀時間。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">14:30–15:20</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>A-FACTORY</h4>
+<span class="chip food">必去</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=A-FACTORY" target="_blank" rel="noopener">A-FACTORY<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>下午：咖啡／蘋果點心<br>休息與伴手禮。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">15:20–16:10</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>青森港灣散步</h4>
+<span class="chip flex">散步</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E6%A3%AE%E6%B8%AF" target="_blank" rel="noopener">青森港<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>風雨大時縮短，直接往ASPAM。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">16:10–17:10</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>ASPAM</h4>
+<span class="chip must">必去</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E6%A3%AE%E7%B8%A3%E8%A7%80%E5%85%89%E7%89%A9%E7%94%A2%E9%A4%A8%20ASPAM" target="_blank" rel="noopener">青森縣觀光物產館 ASPAM<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>以物產與景觀空間為主，出發前複核。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">17:10–19:30</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>Check-in、青森晚餐與站前散步</h4>
+<span class="chip stay">住宿／晚餐</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E6%A3%AE%E7%AB%99%E5%91%A8%E9%82%8A" target="_blank" rel="noopener">青森站周邊<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>晚：青森在地料理<br>隔日08:20前退房並前往JR Bus站。</p>
+</div>
+</div>
+</div>
+</article>
+<article class="day-card" id="d5">
+<div class="day-head">
+<div>
+<span class="day-index">D5・青森・奧入瀨</span>
+<h2>10/21（三）奧入瀨中游紅葉精華</h2>
+<p>09:00從青森出發；寄放行李與休息後，下午慢走石ヶ戶至雲井瀑布。</p>
+</div>
+</div>
+<div class="hotel-line">
+<span>住宿</span>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%98%9F%E9%87%8E%E9%9B%86%E5%9C%98%20%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A3%AF%E5%BA%97" target="_blank" rel="noopener">星野集團 奧入瀨溪流飯店<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="timeline">
+<div class="timeline-item">
+<div class="time core-time">07:15–08:20</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>早餐、退房</h4>
+<span class="chip danger">準時準備</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E6%A3%AE%E7%AB%99%E9%99%84%E8%BF%91%E4%BD%8F%E5%AE%BF" target="_blank" rel="noopener">青森站附近住宿<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>早：飯店／附近<br>今天必須搭09:00 JR Bus，早餐不能拖延。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">08:20–09:00</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>前往站牌、購票與排隊</h4>
+<span class="chip warn">紅葉季緩衝</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E6%A3%AE%E7%AB%99JR%20Bus%E4%B9%98%E8%BB%8A%E8%99%95" target="_blank" rel="noopener">青森站JR Bus乘車處<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>提早40分鐘候車；巴士可能滿座且不保證行李空間。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time core-time">09:00–11:01</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>JR Bus前往奧入瀨溪流館</h4>
+<span class="chip danger">固定主線</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E6%A3%AE%E7%AB%99%20%E2%86%92%20%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A4%A8" target="_blank" rel="noopener">青森站 → 奧入瀨溪流館<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：JR Bus みずうみ4号<br>成人單程¥2,650；紅葉季道路可能延誤。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">11:01–12:40</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>步行到星野、寄放行李與午間休息</h4>
+<span class="chip stay">舒適緩衝</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A4%A8%20%E2%86%92%20%E6%98%9F%E9%87%8E%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A3%AF%E5%BA%97" target="_blank" rel="noopener">奧入瀨溪流館 → 星野奧入瀨溪流飯店<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行約5分鐘<br>午：輕食／簡單午餐<br>先處理行李、上廁所與補水，不抵達就立刻健走。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">13:00–13:11</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>星野溪流Shuttle至石ヶ戶</h4>
+<span class="chip transport">核心交通</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%98%9F%E9%87%8E%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A3%AF%E5%BA%97%20%E2%86%92%20%E7%9F%B3%E3%83%B6%E6%88%B6" target="_blank" rel="noopener">星野奧入瀨溪流飯店 → 石ヶ戶<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：星野免費溪流Shuttle<br>每車27人；旺季可能要等下一班。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">13:15–15:20</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>石ヶ戶→馬門岩→阿修羅之流→雲井瀑布</h4>
+<span class="chip must">必去</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E4%B8%AD%E6%B8%B8" target="_blank" rel="noopener">奧入瀨溪流中游<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行約2.8km<br>沿溪往上游；保留拍照、休息與看溪流，不用純步速壓縮。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">15:35–15:50</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>Shuttle回星野</h4>
+<span class="chip transport">主回程</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%9B%B2%E4%BA%95%E7%80%91%E5%B8%83%20%E2%86%92%20%E6%98%9F%E9%87%8E%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A3%AF%E5%BA%97" target="_blank" rel="noopener">雲井瀑布 → 星野奧入瀨溪流飯店<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：星野免費溪流Shuttle<br>Backup：16:35雲井瀑布發、16:50回飯店。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">16:00–22:00</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>Check-in、休息、泡湯與晚餐</h4>
+<span class="chip stay">飯店慢活</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%98%9F%E9%87%8E%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A3%AF%E5%BA%97" target="_blank" rel="noopener">星野奧入瀨溪流飯店<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：飯店內<br>晚：飯店／依訂房方案<br>今天不安排十和田湖。</p>
+</div>
+</div>
+</div>
+</article>
+<article class="day-card" id="d6">
+<div class="day-head">
+<div>
+<span class="day-index">D6・奧入瀨・十和田湖</span>
+<h2>10/22（四）銚子大瀑布＋十和田湖</h2>
+<p>先看銚子大瀑布並短走至子之口，再搭巴士到休屋；Marine Blue與湖畔慢遊是主軸。</p>
+</div>
+</div>
+<div class="hotel-line">
+<span>住宿</span>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%98%9F%E9%87%8E%E9%9B%86%E5%9C%98%20%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A3%AF%E5%BA%97" target="_blank" rel="noopener">星野集團 奧入瀨溪流飯店<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="timeline">
+<div class="timeline-item">
+<div class="time ">08:30–09:30</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>星野早餐</h4>
+<span class="chip food">舒適開始</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%98%9F%E9%87%8E%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A3%AF%E5%BA%97" target="_blank" rel="noopener">星野奧入瀨溪流飯店<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：飯店內<br>早：星野早餐（已含）<br>慢慢吃早餐，09:55前走到溪流館站。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">09:30–10:11</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>準備、步行至站牌與候車</h4>
+<span class="chip warn">旺季緩衝</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%98%9F%E9%87%8E%20%E2%86%92%20%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A4%A8" target="_blank" rel="noopener">星野 → 奧入瀨溪流館<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行約5分鐘<br>JR Bus無預約；紅葉季可能滿載。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time core-time">10:11–10:34</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>JR Bus至銚子大瀑布</h4>
+<span class="chip danger">核心交通</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A4%A8%20%E2%86%92%20%E9%8A%9A%E5%AD%90%E5%A4%A7%E6%BB%9D" target="_blank" rel="noopener">奧入瀨溪流館 → 銚子大滝<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：JR Bus<br>到站後先確認步道與天候。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">10:34–10:45</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>銚子大瀑布賞景</h4>
+<span class="chip must">必去</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%8A%9A%E5%AD%90%E5%A4%A7%E7%80%91%E5%B8%83" target="_blank" rel="noopener">銚子大瀑布<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>拍照賞楓後開始往子之口走。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">10:45–11:15</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>銚子大瀑布→子之口</h4>
+<span class="chip must">必走</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%8A%9A%E5%AD%90%E5%A4%A7%E7%80%91%E5%B8%83%20%E2%86%92%20%E5%AD%90%E4%B9%8B%E5%8F%A3" target="_blank" rel="noopener">銚子大瀑布 → 子之口<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行約1.5km<br>慢慢走；雨大或路滑時改搭巴士。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">11:15–11:45</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>子之口候車並前往休屋</h4>
+<span class="chip transport">轉乘15分鐘</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%AD%90%E4%B9%8B%E5%8F%A3%20%E2%86%92%20%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%E4%BC%91%E5%B1%8B" target="_blank" rel="noopener">子之口 → 十和田湖休屋<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：JR Bus 11:30發<br>11:15抵達站牌；11:30–11:45搭車。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">12:00–13:10</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>十和田湖 Marine Blue</h4>
+<span class="chip food">必去</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%E3%83%9E%E3%83%AA%E3%83%B3%E3%83%96%E3%83%AB%E3%83%BC" target="_blank" rel="noopener">十和田湖マリンブルー<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>午：蘋果派、咖啡、簡單餐食<br>湖景午餐與休息；這段不壓縮。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">13:10–14:15</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>十和田神社</h4>
+<span class="chip must">必去</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%81%E5%92%8C%E7%94%B0%E7%A5%9E%E7%A4%BE" target="_blank" rel="noopener">十和田神社<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>沿湖畔慢慢走，注意林間路面。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">14:15–14:40</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>乙女之像</h4>
+<span class="chip must">必去</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%B9%99%E5%A5%B3%E4%B9%8B%E5%83%8F" target="_blank" rel="noopener">乙女之像<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>湖畔拍照。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">14:40–15:40</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>湖畔散步、伴手禮與休息</h4>
+<span class="chip bonus">自由時間</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%E4%BC%91%E5%B1%8B" target="_blank" rel="noopener">十和田湖休屋<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>下午：依現場<br>Bonus：僅在時間、天候與體力都適合時考慮遊覽船，完全不是必搭。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time core-time">15:40–16:42</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>排隊並搭JR Bus回奧入瀨</h4>
+<span class="chip danger">固定主回程</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%E4%BC%91%E5%B1%8B%20%E2%86%92%20%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A4%A8" target="_blank" rel="noopener">十和田湖休屋 → 奧入瀨溪流館<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：JR Bus 16:00發<br>16:00–16:42；紅葉季可能延誤，提早20分鐘候車。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">16:42–22:00</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>步行回星野、休息、泡湯與晚餐</h4>
+<span class="chip stay">飯店慢活</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%98%9F%E9%87%8E%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A3%AF%E5%BA%97" target="_blank" rel="noopener">星野奧入瀨溪流飯店<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行約5分鐘<br>晚：飯店／依訂房方案<br>晚上不再加戶外活動。</p>
+</div>
+</div>
+</div>
+</article>
+<article class="day-card" id="d7">
+<div class="day-head">
+<div>
+<span class="day-index">D7・八戶・仙台</span>
+<h2>10/23（五）回仙台＋逛街＋吃牛舌</h2>
+<p>11:00星野接駁後保留充足轉乘；下午只安排仙台商店街、購物、咖啡與牛舌。</p>
+</div>
+</div>
+<div class="hotel-line">
+<span>住宿</span>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=Daiwa%20Roynet%20Hotel%20%E4%BB%99%E5%8F%B0%E8%A5%BF%E5%8F%A3%20PREMIER" target="_blank" rel="noopener">Daiwa Roynet Hotel 仙台西口 PREMIER<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="timeline">
+<div class="timeline-item">
+<div class="time ">08:30–10:40</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>早餐、整理行李與Check-out</h4>
+<span class="chip stay">舒適退房</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%98%9F%E9%87%8E%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A3%AF%E5%BA%97" target="_blank" rel="noopener">星野奧入瀨溪流飯店<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：飯店內<br>早：星野早餐（已含）<br>10:40前到接駁候車處。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time core-time">11:00–12:10</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>星野免費接駁至八戶</h4>
+<span class="chip danger">固定主線</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%98%9F%E9%87%8E%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A3%AF%E5%BA%97%20%E2%86%92%20%E5%85%AB%E6%88%B6%E7%AB%99" target="_blank" rel="noopener">星野奧入瀨溪流飯店 → 八戶站<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：星野住宿客免費接駁<br>官方約70分鐘；道路延誤仍可能發生。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">12:10–12:55</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>午餐、取票與進月台</h4>
+<span class="chip warn">轉乘45分鐘</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%85%AB%E6%88%B6%E7%AB%99" target="_blank" rel="noopener">八戶站<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>午：八戶站簡單用餐<br>不使用12:16的極短轉乘方案。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time core-time">13:07–14:29</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>Hayabusa 20</h4>
+<span class="chip danger">固定主案</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%85%AB%E6%88%B6%E7%AB%99%20%E2%86%92%20%E4%BB%99%E5%8F%B0%E7%AB%99" target="_blank" rel="noopener">八戶站 → 仙台站<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：東北新幹線<br>全車指定席；Backup 13:40–14:56 Hayabusa 22。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">14:29–15:10</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>飯店寄放行李／Check-in</h4>
+<span class="chip stay">住宿</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=Daiwa%20Roynet%20Hotel%20%E4%BB%99%E5%8F%B0%E8%A5%BF%E5%8F%A3%20PREMIER" target="_blank" rel="noopener">Daiwa Roynet Hotel 仙台西口 PREMIER<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>若尚未到入住時間先寄放行李。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">15:10–18:30</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>CLIS ROAD、水晶之路、商店街與仙台站購物</h4>
+<span class="chip flex">逛街</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E5%B8%82%E4%B8%AD%E5%BF%83" target="_blank" rel="noopener">仙台市中心<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>下午：咖啡<br>不排寺廟、神社、遠距離或有嚴格閉館時間的景點。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">18:30–20:00</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>牛舌晚餐</h4>
+<span class="chip food">必吃</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%AB%99%EF%BC%8F%E4%B8%80%E7%95%AA%E7%94%BA%E5%91%A8%E9%82%8A" target="_blank" rel="noopener">仙台站／一番町周邊<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>晚：牛舌<br>店家依逛街位置與候位長度決定。</p>
+</div>
+</div>
+</div>
+</article>
+<article class="day-card" id="d8">
+<div class="day-head">
+<div>
+<span class="day-index">D8・平泉</span>
+<h2>10/24（六）毛越寺・中尊寺・紅葉銀河</h2>
+<p>平泉重要日：毛越寺、中尊寺金色堂與900年秘佛御開帳；傍晚完整保留紅葉銀河。</p>
+</div>
+</div>
+<div class="hotel-line">
+<span>住宿</span>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=Daiwa%20Roynet%20Hotel%20%E4%BB%99%E5%8F%B0%E8%A5%BF%E5%8F%A3%20PREMIER" target="_blank" rel="noopener">Daiwa Roynet Hotel 仙台西口 PREMIER<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="timeline">
+<div class="timeline-item">
+<div class="time ">07:45–08:35</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>早餐與進站</h4>
+<span class="chip warn">準備</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0" target="_blank" rel="noopener">仙台<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>早：飯店／附近<br>重要一日行程，需搭08:50候選班次。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time core-time">08:50–10:23</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>新幹線與JR至平泉</h4>
+<span class="chip danger">核心交通</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%AB%99%20%E2%86%92%20%E4%B8%80%E4%B9%8B%E9%97%9C%E7%AB%99%20%E2%86%92%20%E5%B9%B3%E6%B3%89%E7%AB%99" target="_blank" rel="noopener">仙台站 → 一之關站 → 平泉站<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：Hayabusa 101＋JR東北本線<br>09:25抵達一之關，預留50分鐘；10:15–10:23前往平泉。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">10:30–11:40</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>毛越寺</h4>
+<span class="chip must">必去</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%AF%9B%E8%B6%8A%E5%AF%BA" target="_blank" rel="noopener">毛越寺<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>從平泉站先走毛越寺，避免折返。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">11:45–12:40</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>平泉午餐</h4>
+<span class="chip food">彈性餐飲</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%B9%B3%E6%B3%89%E7%AB%99%EF%BC%8F%E6%AF%9B%E8%B6%8A%E5%AF%BA%E5%91%A8%E9%82%8A" target="_blank" rel="noopener">平泉站／毛越寺周邊<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>午：平泉在地料理<br>不排長時間候位餐廳。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">12:40–13:05</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>前往中尊寺</h4>
+<span class="chip transport">當地交通</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%AF%9B%E8%B6%8A%E5%AF%BA%20%E2%86%92%20%E4%B8%AD%E5%B0%8A%E5%AF%BA" target="_blank" rel="noopener">毛越寺 → 中尊寺<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：路線巴士／計程車<br>巴士班次不合即搭計程車。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">13:05–16:45</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>中尊寺、金色堂與900年秘佛御開帳</h4>
+<span class="chip must">必去</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%AD%E5%B0%8A%E5%AF%BA" target="_blank" rel="noopener">中尊寺<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>2026/7/17–11/15；共通券成人¥1,600。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time core-time">16:45–18:20</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>中尊寺紅葉銀河夜間點燈</h4>
+<span class="chip danger">重要Highlight</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%AD%E5%B0%8A%E5%AF%BA" target="_blank" rel="noopener">中尊寺<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>2026/10/24為活動首日；官方目前公告點燈至18:30。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">18:25–20:55</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>計程車到一之關、晚餐緩衝後回仙台</h4>
+<span class="chip transport">安全回程</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%AD%E5%B0%8A%E5%AF%BA%20%E2%86%92%20%E4%B8%80%E4%B9%8B%E9%97%9C%E7%AB%99%20%E2%86%92%20%E4%BB%99%E5%8F%B0%E7%AB%99" target="_blank" rel="noopener">中尊寺 → 一之關站 → 仙台站<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：計程車＋Yamabiko<br>晚：一之關站簡單用餐<br>主案保留約80分鐘；19:22僅在提早離開且計程車順利時作Backup。</p>
+</div>
+</div>
+</div>
+</article>
+<article class="day-card" id="d9">
+<div class="day-head">
+<div>
+<span class="day-index">D9・仙台・返台</span>
+<h2>10/25（日）最後購物＋回台灣</h2>
+<p>睡飽、早午餐與仙台站最後購物；下午提早到機場，保留報到與免稅店時間。</p>
+</div>
+</div>
+<div class="hotel-line">
+<span>住宿</span>—</div>
+<div class="timeline">
+<div class="timeline-item">
+<div class="time ">09:00–10:00</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>睡飽、早餐／早午餐</h4>
+<span class="chip food">慢慢開始</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%AB%99%E5%91%A8%E9%82%8A" target="_blank" rel="noopener">仙台站周邊<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>早午餐：仙台站周邊<br>不安排遠距離景點。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">10:00–13:00</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>最後購物與自由活動</h4>
+<span class="chip flex">採買</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%AB%99%E5%91%A8%E9%82%8A" target="_blank" rel="noopener">仙台站周邊<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>預留行李裝箱時間；Pokémon Center需求未確認前不硬塞。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">13:00–13:50</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>取行李、重新打包與退房</h4>
+<span class="chip warn">出發準備</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=Daiwa%20Roynet%20Hotel%20%E4%BB%99%E5%8F%B0%E8%A5%BF%E5%8F%A3%20PREMIER" target="_blank" rel="noopener">Daiwa Roynet Hotel 仙台西口 PREMIER<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>確認護照、登機證與免稅品空間。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time ">14:10–14:35</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>前往仙台機場</h4>
+<span class="chip transport">建議班次</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%AB%99%20%E2%86%92%20%E4%BB%99%E5%8F%B0%E6%A9%9F%E5%A0%B4" target="_blank" rel="noopener">仙台站 → 仙台機場<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：仙台機場Access線<br>Backup 14:30左右下一班；仍保留充分報到時間。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time core-time">14:35–16:30</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>報到、安檢與免稅店採買</h4>
+<span class="chip danger">機場採買</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E6%A9%9F%E5%A0%B4" target="_blank" rel="noopener">仙台機場<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：步行<br>下午：機場簡單用餐<br>16:30前完成登機準備。</p>
+</div>
+</div>
+<div class="timeline-item">
+<div class="time core-time">17:25–20:35</div>
+<div class="dot">
+</div>
+<div class="item-body">
+<div class="item-top">
+<h4>星宇 JX863</h4>
+<span class="chip danger">固定航班</span>
+</div>
+<p>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E6%A9%9F%E5%A0%B4%20%E2%86%92%20%E6%A1%83%E5%9C%92%E5%9C%8B%E9%9A%9B%E6%A9%9F%E5%A0%B4" target="_blank" rel="noopener">仙台機場 → 桃園國際機場<span aria-hidden="true"> ↗</span>
+</a>
+<br>交通：國際航班<br>晚：機上<br>每人托運2×23kg＋手提7kg。</p>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section class="view" id="view-transport">
+<div class="section">
+<div class="section-title">
+<h2>交通細節</h2>
+<span>完整班次・票價・Backup</span>
+</div>
+<div class="callout">
+<h3>紅葉旺季交通原則</h3>
+<p>巴士提早排隊、新幹線使用指定席；不做5–10分鐘極限轉乘。候選JR時刻須在10月正式時刻公布後再複核。</p>
+</div>
+<div class="risk-grid">
+<div class="risk-card">
+<b>10/21</b>
+<p>JR Bus無預約制，08:20前到青森站排隊；紅葉季可能滿座或塞車。</p>
+</div>
+<div class="risk-card">
+<b>10/22</b>
+<p>16:00休屋回程是主線；提早20分鐘候車，晚間不接硬性預約。</p>
+</div>
+<div class="risk-card">
+<b>10/23</b>
+<p>星野接駁若延誤，使用13:40 Hayabusa 22；不追12:16極短轉乘。</p>
+</div>
+<div class="risk-card">
+<b>10/24</b>
+<p>紅葉銀河後以20:22候選新幹線為主，先預約計程車並保留約80分鐘。</p>
+</div>
+</div>
+<div style="height:12px">
+</div>
+<details class="transport-day" id="transport-1017">
+<summary>
+<span>10/17</span>
+<b>桃園 → 仙台</b>
+</summary>
+<div class="transport-body">
+<div class="transport-leg">
+<div class="leg-head">
+<strong>11:35 → 16:00</strong>
+<span class="chip transport">星宇 JX862</span>
+</div>
+<div class="route-line">
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%A1%83%E5%9C%92%20T1" target="_blank" rel="noopener">桃園 T1<span aria-hidden="true"> ↗</span>
+</a>
+<span aria-hidden="true"> → </span>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E6%A9%9F%E5%A0%B4" target="_blank" rel="noopener">仙台機場<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="facts">
+<div>
+<span>工具</span>
+<b>飛機</b>
+</div>
+<div>
+<span>預約</span>
+<b class="neutral">已開票</b>
+</div>
+<div>
+<span>座位</span>
+<b>32F／32G</b>
+</div>
+<div>
+<span>車資</span>
+<b>已含機票</b>
+</div>
+<div>
+<span>轉乘</span>
+<b>—</b>
+</div>
+</div>
+<p>
+<b>Backup｜</b>依航空公司安排<br>
+<b>注意｜</b>入境與領行李後再搭機場線。</p>
+</div>
+<div class="transport-leg">
+<div class="leg-head">
+<strong>約17:35 → 約18:05</strong>
+<span class="chip transport">依通關後最近班次</span>
+</div>
+<div class="route-line">
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E6%A9%9F%E5%A0%B4" target="_blank" rel="noopener">仙台機場<span aria-hidden="true"> ↗</span>
+</a>
+<span aria-hidden="true"> → </span>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%AB%99" target="_blank" rel="noopener">仙台站<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="facts">
+<div>
+<span>工具</span>
+<b>仙台機場Access線</b>
+</div>
+<div>
+<span>預約</span>
+<b class="neutral">免預約</b>
+</div>
+<div>
+<span>座位</span>
+<b>自由席</b>
+</div>
+<div>
+<span>車資</span>
+<b>待確認</b>
+</div>
+<div>
+<span>轉乘</span>
+<b>通關後彈性</b>
+</div>
+</div>
+<p>
+<b>Backup｜</b>下一班機場線<br>
+<b>注意｜</b>不追車；以實際入境時間為準。</p>
+</div>
+</div>
+</details>
+<details class="transport-day" id="transport-1018">
+<summary>
+<span>10/18</span>
+<b>仙台市區 → 岩沼 → 仙台</b>
+</summary>
+<div class="transport-body">
+<div class="transport-leg">
+<div class="leg-head">
+<strong>09:00 → 09:23</strong>
+<span class="chip transport">週日班次</span>
+</div>
+<div class="route-line">
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%AB%99%E8%A5%BF%E5%8F%A3" target="_blank" rel="noopener">仙台站西口<span aria-hidden="true"> ↗</span>
+</a>
+<span aria-hidden="true"> → </span>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E5%9F%8E%E8%B7%A1" target="_blank" rel="noopener">仙台城跡<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="facts">
+<div>
+<span>工具</span>
+<b>Loople Sendai</b>
+</div>
+<div>
+<span>預約</span>
+<b class="neutral">免預約</b>
+</div>
+<div>
+<span>座位</span>
+<b>自由席</b>
+</div>
+<div>
+<span>車資</span>
+<b>一日券成人¥630</b>
+</div>
+<div>
+<span>轉乘</span>
+<b>—</b>
+</div>
+</div>
+<p>
+<b>Backup｜</b>約15分鐘後下一班<br>
+<b>注意｜</b>Loople單向循環。</p>
+</div>
+<div class="transport-leg">
+<div class="leg-head">
+<strong>10:38 → 10:58</strong>
+<span class="chip transport">同一路線</span>
+</div>
+<div class="route-line">
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E5%9F%8E%E8%B7%A1" target="_blank" rel="noopener">仙台城跡<span aria-hidden="true"> ↗</span>
+</a>
+<span aria-hidden="true"> → </span>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E5%B4%8E%E5%85%AB%E5%B9%A1%E5%AE%AE" target="_blank" rel="noopener">大崎八幡宮<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="facts">
+<div>
+<span>工具</span>
+<b>Loople Sendai</b>
+</div>
+<div>
+<span>預約</span>
+<b class="neutral">免預約</b>
+</div>
+<div>
+<span>座位</span>
+<b>自由席</b>
+</div>
+<div>
+<span>車資</span>
+<b>一日券涵蓋</b>
+</div>
+<div>
+<span>轉乘</span>
+<b>景點停留75分鐘</b>
+</div>
+</div>
+<p>
+<b>Backup｜</b>下一班約15分鐘後<br>
+<b>注意｜</b>候車處依官方站牌。</p>
+</div>
+<div class="transport-leg">
+<div class="leg-head">
+<strong>11:58 → 12:22</strong>
+<span class="chip transport">同一路線</span>
+</div>
+<div class="route-line">
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E5%B4%8E%E5%85%AB%E5%B9%A1%E5%AE%AE" target="_blank" rel="noopener">大崎八幡宮<span aria-hidden="true"> ↗</span>
+</a>
+<span aria-hidden="true"> → </span>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%AB%99" target="_blank" rel="noopener">仙台站<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="facts">
+<div>
+<span>工具</span>
+<b>Loople Sendai</b>
+</div>
+<div>
+<span>預約</span>
+<b class="neutral">免預約</b>
+</div>
+<div>
+<span>座位</span>
+<b>自由席</b>
+</div>
+<div>
+<span>車資</span>
+<b>一日券涵蓋</b>
+</div>
+<div>
+<span>轉乘</span>
+<b>午餐前</b>
+</div>
+</div>
+<p>
+<b>Backup｜</b>下一班約15分鐘後<br>
+<b>注意｜</b>回站後在站區午餐。</p>
+</div>
+<div class="transport-leg">
+<div class="leg-head">
+<strong>13:20 → 約13:42</strong>
+<span class="chip transport">常磐線／東北本線候選</span>
+</div>
+<div class="route-line">
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%AB%99" target="_blank" rel="noopener">仙台站<span aria-hidden="true"> ↗</span>
+</a>
+<span aria-hidden="true"> → </span>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%B2%A9%E6%B2%BC%E7%AB%99" target="_blank" rel="noopener">岩沼站<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="facts">
+<div>
+<span>工具</span>
+<b>JR</b>
+</div>
+<div>
+<span>預約</span>
+<b class="neutral">免預約</b>
+</div>
+<div>
+<span>座位</span>
+<b>自由席</b>
+</div>
+<div>
+<span>車資</span>
+<b>待確認</b>
+</div>
+<div>
+<span>轉乘</span>
+<b>約15分鐘進月台</b>
+</div>
+</div>
+<p>
+<b>Backup｜</b>下一班JR<br>
+<b>注意｜</b>10月時刻出發前複核。</p>
+</div>
+<div class="transport-leg">
+<div class="leg-head">
+<strong>約13:45 → 約14:00</strong>
+<span class="chip transport">站前搭乘</span>
+</div>
+<div class="route-line">
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%B2%A9%E6%B2%BC%E7%AB%99" target="_blank" rel="noopener">岩沼站<span aria-hidden="true"> ↗</span>
+</a>
+<span aria-hidden="true"> → </span>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%87%91%E8%9B%87%E6%B0%B4%E7%A5%9E%E7%A4%BE" target="_blank" rel="noopener">金蛇水神社<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="facts">
+<div>
+<span>工具</span>
+<b>計程車</b>
+</div>
+<div>
+<span>預約</span>
+<b class="neutral">通常免預約</b>
+</div>
+<div>
+<span>座位</span>
+<b>—</b>
+</div>
+<div>
+<span>車資</span>
+<b>約¥1,000／車</b>
+</div>
+<div>
+<span>轉乘</span>
+<b>約10分鐘</b>
+</div>
+</div>
+<p>
+<b>Backup｜</b>市民巴士／步行40分鐘<br>
+<b>注意｜</b>市民巴士班次稀疏，不作主案。</p>
+</div>
+<div class="transport-leg">
+<div class="leg-head">
+<strong>15:40後 → 約16:40</strong>
+<span class="chip transport">岩沼站轉乘</span>
+</div>
+<div class="route-line">
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%87%91%E8%9B%87%E6%B0%B4%E7%A5%9E%E7%A4%BE" target="_blank" rel="noopener">金蛇水神社<span aria-hidden="true"> ↗</span>
+</a>
+<span aria-hidden="true"> → </span>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%AB%99" target="_blank" rel="noopener">仙台站<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="facts">
+<div>
+<span>工具</span>
+<b>計程車＋JR</b>
+</div>
+<div>
+<span>預約</span>
+<b class="neutral">免預約</b>
+</div>
+<div>
+<span>座位</span>
+<b>自由席</b>
+</div>
+<div>
+<span>車資</span>
+<b>待確認</b>
+</div>
+<div>
+<span>轉乘</span>
+<b>彈性</b>
+</div>
+</div>
+<p>
+<b>Backup｜</b>下一班JR<br>
+<b>注意｜</b>若計程車不足可請SandoTerrace協助叫車。</p>
+</div>
+</div>
+</details>
+<details class="transport-day" id="transport-1019">
+<summary>
+<span>10/19</span>
+<b>仙台 ↔ 松島海岸</b>
+</summary>
+<div class="transport-body">
+<div class="transport-leg">
+<div class="leg-head">
+<strong>10:10 → 約10:50</strong>
+<span class="chip transport">建議直達班次</span>
+</div>
+<div class="route-line">
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%AB%99" target="_blank" rel="noopener">仙台站<span aria-hidden="true"> ↗</span>
+</a>
+<span aria-hidden="true"> → </span>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%BE%E5%B3%B6%E6%B5%B7%E5%B2%B8%E7%AB%99" target="_blank" rel="noopener">松島海岸站<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="facts">
+<div>
+<span>工具</span>
+<b>JR仙石線</b>
+</div>
+<div>
+<span>預約</span>
+<b class="neutral">免預約</b>
+</div>
+<div>
+<span>座位</span>
+<b>自由席</b>
+</div>
+<div>
+<span>車資</span>
+<b>待確認</b>
+</div>
+<div>
+<span>轉乘</span>
+<b>—</b>
+</div>
+</div>
+<p>
+<b>Backup｜</b>下一班仙石線<br>
+<b>注意｜</b>10月正式時刻公布後複核。</p>
+</div>
+<div class="transport-leg">
+<div class="leg-head">
+<strong>視當天 → 約50分鐘</strong>
+<span class="chip transport">Bonus</span>
+</div>
+<div class="route-line">
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%BE%E5%B3%B6" target="_blank" rel="noopener">松島<span aria-hidden="true"> ↗</span>
+</a>
+<span aria-hidden="true"> → </span>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%BE%E5%B3%B6%E7%81%A3" target="_blank" rel="noopener">松島灣<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="facts">
+<div>
+<span>工具</span>
+<b>遊覽船</b>
+</div>
+<div>
+<span>預約</span>
+<b class="neutral">非必要</b>
+</div>
+<div>
+<span>座位</span>
+<b>依票種</b>
+</div>
+<div>
+<span>車資</span>
+<b>待確認</b>
+</div>
+<div>
+<span>轉乘</span>
+<b>不列硬行程</b>
+</div>
+</div>
+<p>
+<b>Backup｜</b>完全不搭<br>
+<b>注意｜</b>只有天候、班次與體力都合適才考慮。</p>
+</div>
+<div class="transport-leg">
+<div class="leg-head">
+<strong>約17:00 → 約18:00</strong>
+<span class="chip transport">現場最近班次</span>
+</div>
+<div class="route-line">
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%BE%E5%B3%B6%E6%B5%B7%E5%B2%B8%E7%AB%99" target="_blank" rel="noopener">松島海岸站<span aria-hidden="true"> ↗</span>
+</a>
+<span aria-hidden="true"> → </span>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%AB%99" target="_blank" rel="noopener">仙台站<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="facts">
+<div>
+<span>工具</span>
+<b>JR仙石線</b>
+</div>
+<div>
+<span>預約</span>
+<b class="neutral">免預約</b>
+</div>
+<div>
+<span>座位</span>
+<b>自由席</b>
+</div>
+<div>
+<span>車資</span>
+<b>待確認</b>
+</div>
+<div>
+<span>轉乘</span>
+<b>彈性</b>
+</div>
+</div>
+<p>
+<b>Backup｜</b>下一班仙石線<br>
+<b>注意｜</b>傍晚回仙台。</p>
+</div>
+</div>
+</details>
+<details class="transport-day" id="transport-1020">
+<summary>
+<span>10/20</span>
+<b>仙台 → 青森</b>
+</summary>
+<div class="transport-body">
+<div class="transport-leg">
+<div class="leg-head">
+<strong>09:50 → 11:16</strong>
+<span class="chip transport">Hayabusa 5</span>
+</div>
+<div class="route-line">
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%AB%99" target="_blank" rel="noopener">仙台站<span aria-hidden="true"> ↗</span>
+</a>
+<span aria-hidden="true"> → </span>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E9%9D%92%E6%A3%AE%E7%AB%99" target="_blank" rel="noopener">新青森站<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="facts">
+<div>
+<span>工具</span>
+<b>東北新幹線</b>
+</div>
+<div>
+<span>預約</span>
+<b class="warn">需指定席</b>
+</div>
+<div>
+<span>座位</span>
+<b>全車指定席</b>
+</div>
+<div>
+<span>車資</span>
+<b>待確認</b>
+</div>
+<div>
+<span>轉乘</span>
+<b>新青森21分鐘</b>
+</div>
+</div>
+<p>
+<b>Backup｜</b>Hayabusa 7｜10:17–11:51<br>
+<b>注意｜</b>10月正式時刻公布後複核。</p>
+</div>
+<div class="transport-leg">
+<div class="leg-head">
+<strong>11:37 → 11:43</strong>
+<span class="chip transport">普通列車候選</span>
+</div>
+<div class="route-line">
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E9%9D%92%E6%A3%AE%E7%AB%99" target="_blank" rel="noopener">新青森站<span aria-hidden="true"> ↗</span>
+</a>
+<span aria-hidden="true"> → </span>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E6%A3%AE%E7%AB%99" target="_blank" rel="noopener">青森站<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="facts">
+<div>
+<span>工具</span>
+<b>JR奧羽本線</b>
+</div>
+<div>
+<span>預約</span>
+<b class="neutral">免預約</b>
+</div>
+<div>
+<span>座位</span>
+<b>自由席</b>
+</div>
+<div>
+<span>車資</span>
+<b>待確認</b>
+</div>
+<div>
+<span>轉乘</span>
+<b>21分鐘</b>
+</div>
+</div>
+<p>
+<b>Backup｜</b>12:21左右下一班<br>
+<b>注意｜</b>行李多，先確認月台；錯過即搭下一班。</p>
+</div>
+</div>
+</details>
+<details class="transport-day" open id="transport-1021">
+<summary>
+<span>10/21</span>
+<b>青森 → 奧入瀨＋溪流Shuttle</b>
+</summary>
+<div class="transport-body">
+<div class="transport-leg">
+<div class="leg-head">
+<strong>09:00 → 11:01</strong>
+<span class="chip transport">みずうみ4号</span>
+</div>
+<div class="route-line">
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E6%A3%AE%E7%AB%99" target="_blank" rel="noopener">青森站<span aria-hidden="true"> ↗</span>
+</a>
+<span aria-hidden="true"> → </span>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A4%A8" target="_blank" rel="noopener">奧入瀨溪流館<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="facts">
+<div>
+<span>工具</span>
+<b>JR Bus</b>
+</div>
+<div>
+<span>預約</span>
+<b class="neutral">無預約制</b>
+</div>
+<div>
+<span>座位</span>
+<b>自由席／可能滿座</b>
+</div>
+<div>
+<span>車資</span>
+<b>成人¥2,650；2人¥5,300</b>
+</div>
+<div>
+<span>轉乘</span>
+<b>下車後步行約5分鐘</b>
+</div>
+</div>
+<p>
+<b>Backup｜</b>後續班次會壓縮午後步行，不建議<br>
+<b>注意｜</b>08:20前到站排隊；大型行李與道路延誤須留意。</p>
+</div>
+<div class="transport-leg">
+<div class="leg-head">
+<strong>13:00 → 13:11</strong>
+<span class="chip transport">住客免費接駁</span>
+</div>
+<div class="route-line">
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%98%9F%E9%87%8E%E9%A3%AF%E5%BA%97" target="_blank" rel="noopener">星野飯店<span aria-hidden="true"> ↗</span>
+</a>
+<span aria-hidden="true"> → </span>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E7%9F%B3%E3%83%B6%E6%88%B6" target="_blank" rel="noopener">石ヶ戶<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="facts">
+<div>
+<span>工具</span>
+<b>星野溪流Shuttle</b>
+</div>
+<div>
+<span>預約</span>
+<b class="neutral">免預約</b>
+</div>
+<div>
+<span>座位</span>
+<b>每車27人</b>
+</div>
+<div>
+<span>車資</span>
+<b>免費</b>
+</div>
+<div>
+<span>轉乘</span>
+<b>13:15開始步行</b>
+</div>
+</div>
+<p>
+<b>Backup｜</b>14:00班會明顯壓縮行程<br>
+<b>注意｜</b>依官方站序飯店→三亂之流→石ヶ戶。</p>
+</div>
+<div class="transport-leg">
+<div class="leg-head">
+<strong>15:35 → 15:50</strong>
+<span class="chip transport">住客免費接駁</span>
+</div>
+<div class="route-line">
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%9B%B2%E4%BA%95%E7%80%91%E5%B8%83" target="_blank" rel="noopener">雲井瀑布<span aria-hidden="true"> ↗</span>
+</a>
+<span aria-hidden="true"> → </span>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%98%9F%E9%87%8E%E9%A3%AF%E5%BA%97" target="_blank" rel="noopener">星野飯店<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="facts">
+<div>
+<span>工具</span>
+<b>星野溪流Shuttle</b>
+</div>
+<div>
+<span>預約</span>
+<b class="neutral">免預約</b>
+</div>
+<div>
+<span>座位</span>
+<b>每車27人</b>
+</div>
+<div>
+<span>車資</span>
+<b>免費</b>
+</div>
+<div>
+<span>轉乘</span>
+<b>—</b>
+</div>
+</div>
+<p>
+<b>Backup｜</b>16:35–16:50<br>
+<b>注意｜</b>旺季提早到站；可能客滿或受交通影響。</p>
+</div>
+</div>
+</details>
+<details class="transport-day" open id="transport-1022">
+<summary>
+<span>10/22</span>
+<b>奧入瀨 → 銚子大瀑布 → 十和田湖 → 奧入瀨</b>
+</summary>
+<div class="transport-body">
+<div class="transport-leg">
+<div class="leg-head">
+<strong>10:11 → 10:34</strong>
+<span class="chip transport">十和田湖方向</span>
+</div>
+<div class="route-line">
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A4%A8" target="_blank" rel="noopener">奧入瀨溪流館<span aria-hidden="true"> ↗</span>
+</a>
+<span aria-hidden="true"> → </span>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%8A%9A%E5%AD%90%E5%A4%A7%E6%BB%9D" target="_blank" rel="noopener">銚子大滝<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="facts">
+<div>
+<span>工具</span>
+<b>JR Bus</b>
+</div>
+<div>
+<span>預約</span>
+<b class="neutral">無預約制</b>
+</div>
+<div>
+<span>座位</span>
+<b>自由席／可能滿座</b>
+</div>
+<div>
+<span>車資</span>
+<b>待確認</b>
+</div>
+<div>
+<span>轉乘</span>
+<b>—</b>
+</div>
+</div>
+<p>
+<b>Backup｜</b>11:01–11:24<br>
+<b>注意｜</b>紅葉季提早候車。</p>
+</div>
+<div class="transport-leg">
+<div class="leg-head">
+<strong>10:45 → 11:15</strong>
+<span class="chip transport">溪流步道約1.5km</span>
+</div>
+<div class="route-line">
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%8A%9A%E5%AD%90%E5%A4%A7%E7%80%91%E5%B8%83" target="_blank" rel="noopener">銚子大瀑布<span aria-hidden="true"> ↗</span>
+</a>
+<span aria-hidden="true"> → </span>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%AD%90%E4%B9%8B%E5%8F%A3" target="_blank" rel="noopener">子之口<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="facts">
+<div>
+<span>工具</span>
+<b>步行</b>
+</div>
+<div>
+<span>預約</span>
+<b class="warn">不需</b>
+</div>
+<div>
+<span>座位</span>
+<b>—</b>
+</div>
+<div>
+<span>車資</span>
+<b>免費</b>
+</div>
+<div>
+<span>轉乘</span>
+<b>子之口候車15分鐘</b>
+</div>
+</div>
+<p>
+<b>Backup｜</b>雨大或路滑改搭巴士<br>
+<b>注意｜</b>約30分鐘，慢走即可。</p>
+</div>
+<div class="transport-leg">
+<div class="leg-head">
+<strong>11:30 → 11:45</strong>
+<span class="chip transport">十和田湖方向</span>
+</div>
+<div class="route-line">
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%AD%90%E4%B9%8B%E5%8F%A3" target="_blank" rel="noopener">子之口<span aria-hidden="true"> ↗</span>
+</a>
+<span aria-hidden="true"> → </span>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%E4%BC%91%E5%B1%8B" target="_blank" rel="noopener">十和田湖休屋<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="facts">
+<div>
+<span>工具</span>
+<b>JR Bus</b>
+</div>
+<div>
+<span>預約</span>
+<b class="neutral">無預約制</b>
+</div>
+<div>
+<span>座位</span>
+<b>自由席／可能滿座</b>
+</div>
+<div>
+<span>車資</span>
+<b>成人約¥720；最終確認</b>
+</div>
+<div>
+<span>轉乘</span>
+<b>15分鐘</b>
+</div>
+</div>
+<p>
+<b>Backup｜</b>12:05左右後續班次<br>
+<b>注意｜</b>11:15抵達站牌，不離站太遠。</p>
+</div>
+<div class="transport-leg">
+<div class="leg-head">
+<strong>16:00 → 16:42</strong>
+<span class="chip transport">おいらせ24号</span>
+</div>
+<div class="route-line">
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%E4%BC%91%E5%B1%8B" target="_blank" rel="noopener">十和田湖休屋<span aria-hidden="true"> ↗</span>
+</a>
+<span aria-hidden="true"> → </span>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A4%A8" target="_blank" rel="noopener">奧入瀨溪流館<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="facts">
+<div>
+<span>工具</span>
+<b>JR Bus</b>
+</div>
+<div>
+<span>預約</span>
+<b class="neutral">無預約制</b>
+</div>
+<div>
+<span>座位</span>
+<b>自由席／可能滿座</b>
+</div>
+<div>
+<span>車資</span>
+<b>成人¥1,330</b>
+</div>
+<div>
+<span>轉乘</span>
+<b>提早20分鐘排隊</b>
+</div>
+</div>
+<p>
+<b>Backup｜</b>備用班次需於出發前依2026秋季表確認<br>
+<b>注意｜</b>道路壅塞可能延誤；不要排晚間硬性活動。</p>
+</div>
+</div>
+</details>
+<details class="transport-day" open id="transport-1023">
+<summary>
+<span>10/23</span>
+<b>星野 → 八戶 → 仙台</b>
+</summary>
+<div class="transport-body">
+<div class="transport-leg">
+<div class="leg-head">
+<strong>11:00 → 約12:10</strong>
+<span class="chip transport">住宿客專用</span>
+</div>
+<div class="route-line">
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%98%9F%E9%87%8E%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A3%AF%E5%BA%97" target="_blank" rel="noopener">星野奧入瀨溪流飯店<span aria-hidden="true"> ↗</span>
+</a>
+<span aria-hidden="true"> → </span>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%85%AB%E6%88%B6%E7%AB%99%E8%A5%BF%E5%8F%A3" target="_blank" rel="noopener">八戶站西口<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="facts">
+<div>
+<span>工具</span>
+<b>星野免費接駁</b>
+</div>
+<div>
+<span>預約</span>
+<b class="warn">需事前預約</b>
+</div>
+<div>
+<span>座位</span>
+<b>定員制</b>
+</div>
+<div>
+<span>車資</span>
+<b>免費</b>
+</div>
+<div>
+<span>轉乘</span>
+<b>主案保留57分鐘</b>
+</div>
+</div>
+<p>
+<b>Backup｜</b>若接駁延誤，改搭後續新幹線<br>
+<b>注意｜</b>至少2日前預約；紅葉旺季建議更早完成。</p>
+</div>
+<div class="transport-leg">
+<div class="leg-head">
+<strong>13:07 → 14:29</strong>
+<span class="chip transport">Hayabusa 20</span>
+</div>
+<div class="route-line">
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%85%AB%E6%88%B6%E7%AB%99" target="_blank" rel="noopener">八戶站<span aria-hidden="true"> ↗</span>
+</a>
+<span aria-hidden="true"> → </span>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%AB%99" target="_blank" rel="noopener">仙台站<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="facts">
+<div>
+<span>工具</span>
+<b>東北新幹線</b>
+</div>
+<div>
+<span>預約</span>
+<b class="warn">需指定席</b>
+</div>
+<div>
+<span>座位</span>
+<b>全車指定席</b>
+</div>
+<div>
+<span>車資</span>
+<b>待確認</b>
+</div>
+<div>
+<span>轉乘</span>
+<b>接駁表定到站後57分鐘</b>
+</div>
+</div>
+<p>
+<b>Backup｜</b>Hayabusa 22｜13:40–14:56<br>
+<b>注意｜</b>不把12:16極短轉乘列為主方案。</p>
+</div>
+</div>
+</details>
+<details class="transport-day" id="transport-1024">
+<summary>
+<span>10/24</span>
+<b>仙台 → 平泉 → 仙台</b>
+</summary>
+<div class="transport-body">
+<div class="transport-leg">
+<div class="leg-head">
+<strong>08:50 → 09:25</strong>
+<span class="chip transport">Hayabusa 101候選</span>
+</div>
+<div class="route-line">
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%AB%99" target="_blank" rel="noopener">仙台站<span aria-hidden="true"> ↗</span>
+</a>
+<span aria-hidden="true"> → </span>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%80%E4%B9%8B%E9%97%9C%E7%AB%99" target="_blank" rel="noopener">一之關站<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="facts">
+<div>
+<span>工具</span>
+<b>東北新幹線</b>
+</div>
+<div>
+<span>預約</span>
+<b class="warn">需指定席</b>
+</div>
+<div>
+<span>座位</span>
+<b>全車指定席</b>
+</div>
+<div>
+<span>車資</span>
+<b>待確認</b>
+</div>
+<div>
+<span>轉乘</span>
+<b>50分鐘</b>
+</div>
+</div>
+<p>
+<b>Backup｜</b>Yamabiko 51｜08:00–08:36<br>
+<b>注意｜</b>10月正式時刻公布後複核。</p>
+</div>
+<div class="transport-leg">
+<div class="leg-head">
+<strong>10:15 → 10:23</strong>
+<span class="chip transport">普通列車候選</span>
+</div>
+<div class="route-line">
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%80%E4%B9%8B%E9%97%9C%E7%AB%99" target="_blank" rel="noopener">一之關站<span aria-hidden="true"> ↗</span>
+</a>
+<span aria-hidden="true"> → </span>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%B9%B3%E6%B3%89%E7%AB%99" target="_blank" rel="noopener">平泉站<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="facts">
+<div>
+<span>工具</span>
+<b>JR東北本線</b>
+</div>
+<div>
+<span>預約</span>
+<b class="neutral">免預約</b>
+</div>
+<div>
+<span>座位</span>
+<b>自由席</b>
+</div>
+<div>
+<span>車資</span>
+<b>待確認</b>
+</div>
+<div>
+<span>轉乘</span>
+<b>50分鐘</b>
+</div>
+</div>
+<p>
+<b>Backup｜</b>計程車<br>
+<b>注意｜</b>留足早餐補給與月台轉乘。</p>
+</div>
+<div class="transport-leg">
+<div class="leg-head">
+<strong>12:40 → 13:05</strong>
+<span class="chip transport">當地移動</span>
+</div>
+<div class="route-line">
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%AF%9B%E8%B6%8A%E5%AF%BA" target="_blank" rel="noopener">毛越寺<span aria-hidden="true"> ↗</span>
+</a>
+<span aria-hidden="true"> → </span>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%AD%E5%B0%8A%E5%AF%BA" target="_blank" rel="noopener">中尊寺<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="facts">
+<div>
+<span>工具</span>
+<b>路線巴士／計程車</b>
+</div>
+<div>
+<span>預約</span>
+<b class="neutral">計程車可事前安排</b>
+</div>
+<div>
+<span>座位</span>
+<b>—</b>
+</div>
+<div>
+<span>車資</span>
+<b>待確認</b>
+</div>
+<div>
+<span>轉乘</span>
+<b>—</b>
+</div>
+</div>
+<p>
+<b>Backup｜</b>直接計程車<br>
+<b>注意｜</b>不為等公車壓縮中尊寺。</p>
+</div>
+<div class="transport-leg">
+<div class="leg-head">
+<strong>18:25 → 約19:00</strong>
+<span class="chip transport">建議事前安排</span>
+</div>
+<div class="route-line">
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%AD%E5%B0%8A%E5%AF%BA" target="_blank" rel="noopener">中尊寺<span aria-hidden="true"> ↗</span>
+</a>
+<span aria-hidden="true"> → </span>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%80%E4%B9%8B%E9%97%9C%E7%AB%99" target="_blank" rel="noopener">一之關站<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="facts">
+<div>
+<span>工具</span>
+<b>計程車</b>
+</div>
+<div>
+<span>預約</span>
+<b class="neutral">建議預約</b>
+</div>
+<div>
+<span>座位</span>
+<b>—</b>
+</div>
+<div>
+<span>車資</span>
+<b>待確認</b>
+</div>
+<div>
+<span>轉乘</span>
+<b>約82分鐘</b>
+</div>
+</div>
+<p>
+<b>Backup｜</b>提早離場搭平泉18:23普通列車<br>
+<b>注意｜</b>紅葉銀河後搭20:22新幹線，避免極限轉乘。</p>
+</div>
+<div class="transport-leg">
+<div class="leg-head">
+<strong>20:22 → 約20:55</strong>
+<span class="chip transport">Yamabiko候選</span>
+</div>
+<div class="route-line">
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%80%E4%B9%8B%E9%97%9C%E7%AB%99" target="_blank" rel="noopener">一之關站<span aria-hidden="true"> ↗</span>
+</a>
+<span aria-hidden="true"> → </span>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%AB%99" target="_blank" rel="noopener">仙台站<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="facts">
+<div>
+<span>工具</span>
+<b>東北新幹線</b>
+</div>
+<div>
+<span>預約</span>
+<b class="neutral">建議指定席</b>
+</div>
+<div>
+<span>座位</span>
+<b>指定席</b>
+</div>
+<div>
+<span>車資</span>
+<b>待確認</b>
+</div>
+<div>
+<span>轉乘</span>
+<b>約82分鐘</b>
+</div>
+</div>
+<p>
+<b>Backup｜</b>19:22僅限18:05前離場且計程車順利<br>
+<b>注意｜</b>10月正式時刻公布後複核。</p>
+</div>
+</div>
+</details>
+<details class="transport-day" id="transport-1025">
+<summary>
+<span>10/25</span>
+<b>仙台 → 仙台機場 → 桃園</b>
+</summary>
+<div class="transport-body">
+<div class="transport-leg">
+<div class="leg-head">
+<strong>14:10 → 約14:35</strong>
+<span class="chip transport">建議班次</span>
+</div>
+<div class="route-line">
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%AB%99" target="_blank" rel="noopener">仙台站<span aria-hidden="true"> ↗</span>
+</a>
+<span aria-hidden="true"> → </span>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E6%A9%9F%E5%A0%B4" target="_blank" rel="noopener">仙台機場<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="facts">
+<div>
+<span>工具</span>
+<b>仙台機場Access線</b>
+</div>
+<div>
+<span>預約</span>
+<b class="neutral">免預約</b>
+</div>
+<div>
+<span>座位</span>
+<b>自由席</b>
+</div>
+<div>
+<span>車資</span>
+<b>待確認</b>
+</div>
+<div>
+<span>轉乘</span>
+<b>航班前約2小時50分到達</b>
+</div>
+</div>
+<p>
+<b>Backup｜</b>14:30左右下一班<br>
+<b>注意｜</b>10月正式時刻公布後複核。</p>
+</div>
+<div class="transport-leg">
+<div class="leg-head">
+<strong>17:25 → 20:35</strong>
+<span class="chip transport">星宇 JX863</span>
+</div>
+<div class="route-line">
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E6%A9%9F%E5%A0%B4" target="_blank" rel="noopener">仙台機場<span aria-hidden="true"> ↗</span>
+</a>
+<span aria-hidden="true"> → </span>
+<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%A1%83%E5%9C%92%20T1" target="_blank" rel="noopener">桃園 T1<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="facts">
+<div>
+<span>工具</span>
+<b>飛機</b>
+</div>
+<div>
+<span>預約</span>
+<b class="neutral">已開票</b>
+</div>
+<div>
+<span>座位</span>
+<b>33F／33G</b>
+</div>
+<div>
+<span>車資</span>
+<b>已含機票</b>
+</div>
+<div>
+<span>轉乘</span>
+<b>—</b>
+</div>
+</div>
+<p>
+<b>Backup｜</b>依航空公司安排<br>
+<b>注意｜</b>提早完成報到與安檢，保留免稅店採買。</p>
+</div>
+</div>
+</details>
+</div>
+</section>
+<section class="view" id="view-budget">
+<div class="section">
+<div class="section-title">
+<h2>預算</h2>
+<span>JPY ¥／TWD NT$</span>
+</div>
+<div class="budget-summary">
+<div class="money-card">
+<span>已付款</span>
+<b>NT$117,091</b>
+</div>
+<div class="money-card">
+<span>已知未付款</span>
+<b>¥9,760</b>
+</div>
+<div class="money-card">
+<span>目前可計算合計</span>
+<b>約 NT$119,092</b>
+</div>
+<div class="money-card alert">
+<span>完整旅行總預算</span>
+<b>待確認</b>
+</div>
+</div>
+<p class="budget-note">參考換算1 JPY = NT$0.205；只換算已有官方數字的項目。仙台住宿調整、青森住宿、新幹線、餐飲與購物尚未定價，不亂填。</p>
+<div class="budget-group">
+<h3>已付款明細</h3>
+<div class="budget-row">
+<div>
+<b>JX862＋JX863國際機票</b>
+</div>
+<div class="budget-money">
+<b>NT$48,730</b>
+<span>已付款</span>
+</div>
+</div>
+<div class="budget-row">
+<div>
+<b>星野奧入瀨溪流飯店2晚</b>
+</div>
+<div class="budget-money">
+<b>NT$54,938</b>
+<span>已付款</span>
+</div>
+</div>
+<div class="budget-row">
+<div>
+<b>Daiwa Roynet仙台西口2晚</b>
+</div>
+<div class="budget-money">
+<b>NT$13,423</b>
+<span>已付款</span>
+</div>
+</div>
+</div>
+<div class="section-title">
+<h2>住宿</h2>
+<span>4段・8晚</span>
+</div>
+<div class="grid two">
+<article class="info-card hotel-card">
+<div class="info-title">10/17–10/20｜<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=Hotel%20Metropolitan%20The%20Base%20Sendai" target="_blank" rel="noopener">Hotel Metropolitan The Base Sendai<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="kv">
+<span>晚數</span>
+<b>3晚</b>
+</div>
+<div class="kv">
+<span>房型</span>
+<b>禁菸 Universal Twin｜同一房連住</b>
+</div>
+<div class="kv">
+<span>早餐</span>
+<b>未含／依現場</b>
+</div>
+<div class="kv">
+<span>金額</span>
+<b>待確認</b>
+</div>
+<div class="kv">
+<span>付款</span>
+<b>原訂單已付款，待調整</b>
+</div>
+<div class="kv">
+<span>可取消</span>
+<b>依原訂單條款</b>
+</div>
+<p>原10/17–10/21四晚訂單需取消或縮短10/20一晚；退款與三晚新金額待確認。</p>
+</article>
+<article class="info-card hotel-card">
+<div class="info-title">10/20–10/21｜<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E6%A3%AE%E7%AB%99%E9%99%84%E8%BF%91%E4%BD%8F%E5%AE%BF%EF%BC%88%E5%BE%85%E8%A8%82%EF%BC%89" target="_blank" rel="noopener">青森站附近住宿（待訂）<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="kv">
+<span>晚數</span>
+<b>1晚</b>
+</div>
+<div class="kv">
+<span>房型</span>
+<b>2人房｜優先禁菸、步行方便</b>
+</div>
+<div class="kv">
+<span>早餐</span>
+<b>待確認</b>
+</div>
+<div class="kv">
+<span>金額</span>
+<b>待確認</b>
+</div>
+<div class="kv">
+<span>付款</span>
+<b>未付款</b>
+</div>
+<div class="kv">
+<span>可取消</span>
+<b>待確認</b>
+</div>
+<p>優先選青森站步行10分鐘內，方便隔日08:20前往JR Bus站。</p>
+</article>
+<article class="info-card hotel-card">
+<div class="info-title">10/21–10/23｜<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%98%9F%E9%87%8E%E9%9B%86%E5%9C%98%20%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A3%AF%E5%BA%97" target="_blank" rel="noopener">星野集團 奧入瀨溪流飯店<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="kv">
+<span>晚數</span>
+<b>2晚</b>
+</div>
+<div class="kv">
+<span>房型</span>
+<b>2位成人｜不可退款</b>
+</div>
+<div class="kv">
+<span>早餐</span>
+<b>含早餐</b>
+</div>
+<div class="kv">
+<span>金額</span>
+<b>NT$54,938</b>
+</div>
+<div class="kv">
+<span>付款</span>
+<b>已付款</b>
+</div>
+<div class="kv">
+<span>可取消</span>
+<b>不可退款</b>
+</div>
+<p>10/23 11:00飯店→八戶免費接駁仍須事前預約。</p>
+</article>
+<article class="info-card hotel-card">
+<div class="info-title">10/23–10/25｜<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=Daiwa%20Roynet%20Hotel%20%E4%BB%99%E5%8F%B0%E8%A5%BF%E5%8F%A3%20PREMIER" target="_blank" rel="noopener">Daiwa Roynet Hotel 仙台西口 PREMIER<span aria-hidden="true"> ↗</span>
+</a>
+</div>
+<div class="kv">
+<span>晚數</span>
+<b>2晚</b>
+</div>
+<div class="kv">
+<span>房型</span>
+<b>豪華加大雙人床｜目前為吸菸房</b>
+</div>
+<div class="kv">
+<span>早餐</span>
+<b>未含</b>
+</div>
+<div class="kv">
+<span>金額</span>
+<b>NT$13,423</b>
+</div>
+<div class="kv">
+<span>付款</span>
+<b>已付款</b>
+</div>
+<div class="kv">
+<span>可取消</span>
+<b>依訂單條款</b>
+</div>
+<p>預約 T3036C2079673；優先詢問同房型禁菸房。</p>
+</article>
+</div>
+<div style="height:14px">
+</div>
+<div class="budget-group">
+<h3>住宿</h3>
+<div class="budget-row">
+<div>
+<span>10/17–10/20</span>
+<b>Hotel Metropolitan The Base Sendai｜3晚</b>
+<small>原四晚訂單需調整；退款與新版三晚金額未定。</small>
+</div>
+<div class="budget-money">
+<b>待確認</b>
+<span>待調整</span>
+</div>
+</div>
+<div class="budget-row">
+<div>
+<span>10/20–10/21</span>
+<b>青森站附近住宿｜1晚</b>
+<small>尚未預訂，不填估價。</small>
+</div>
+<div class="budget-money">
+<b>待確認</b>
+<span>未付款</span>
+</div>
+</div>
+<div class="budget-row">
+<div>
+<span>10/21–10/23</span>
+<b>星野奧入瀨溪流飯店｜2晚</b>
+<small>2人；含早餐。</small>
+</div>
+<div class="budget-money">
+<b>NT$54,938</b>
+<span>已付款</span>
+</div>
+</div>
+<div class="budget-row">
+<div>
+<span>10/23–10/25</span>
+<b>Daiwa Roynet仙台西口｜2晚</b>
+<small>目前吸菸房，待改禁菸。</small>
+</div>
+<div class="budget-money">
+<b>NT$13,423</b>
+<span>已付款</span>
+</div>
+</div>
+</div>
+<div class="budget-group">
+<h3>交通</h3>
+<div class="budget-row">
+<div>
+<span>全程</span>
+<b>JX862＋JX863國際機票｜2人</b>
+<small>來回機票合計。</small>
+</div>
+<div class="budget-money">
+<b>NT$48,730</b>
+<span>已付款</span>
+</div>
+</div>
+<div class="budget-row">
+<div>
+<span>10/18</span>
+<b>Loople Sendai一日券</b>
+<small>成人2人。</small>
+</div>
+<div class="budget-money">
+<b>¥1,260</b>
+<span>未付款</span>
+</div>
+</div>
+<div class="budget-row">
+<div>
+<span>10/21</span>
+<b>JR Bus青森→奧入瀨溪流館</b>
+<small>成人2人；無預約制。</small>
+</div>
+<div class="budget-money">
+<b>¥5,300</b>
+<span>未付款</span>
+</div>
+</div>
+<div class="budget-row">
+<div>
+<span>10/21・10/23</span>
+<b>星野溪流Shuttle＋八戶接駁</b>
+<small>10/23八戶接駁需事前預約。</small>
+</div>
+<div class="budget-money">
+<b>¥0</b>
+<span>免費</span>
+</div>
+</div>
+<div class="budget-row">
+<div>
+<span>10/20・10/23・10/24</span>
+<b>東北新幹線</b>
+<small>指定席與是否使用Pass尚未決定。</small>
+</div>
+<div class="budget-money">
+<b>待確認</b>
+<span>未付款</span>
+</div>
+</div>
+<div class="budget-row">
+<div>
+<span>10/18・10/19・10/20・10/24・10/25</span>
+<b>當地JR／機場線</b>
+<small>依實際搭乘與票券方案計算。</small>
+</div>
+<div class="budget-money">
+<b>待確認</b>
+<span>未付款</span>
+</div>
+</div>
+<div class="budget-row">
+<div>
+<span>10/18・10/24</span>
+<b>計程車</b>
+<small>岩沼與紅葉銀河回程使用。</small>
+</div>
+<div class="budget-money">
+<b>待確認</b>
+<span>未付款</span>
+</div>
+</div>
+</div>
+<div class="budget-group">
+<h3>景點／門票</h3>
+<div class="budget-row">
+<div>
+<span>10/19</span>
+<b>松島寺院門票</b>
+<small>瑞巖寺、円通院；遊覽船不列必付。</small>
+</div>
+<div class="budget-money">
+<b>待確認</b>
+<span>未付款</span>
+</div>
+</div>
+<div class="budget-row">
+<div>
+<span>10/20</span>
+<b>睡魔之家 Wa Rasse</b>
+<small>2人門票出發前確認。</small>
+</div>
+<div class="budget-money">
+<b>待確認</b>
+<span>未付款</span>
+</div>
+</div>
+<div class="budget-row">
+<div>
+<span>10/24</span>
+<b>中尊寺共通券</b>
+<small>成人2人；包含金色堂等指定區域。</small>
+</div>
+<div class="budget-money">
+<b>¥3,200</b>
+<span>未付款</span>
+</div>
+</div>
+<div class="budget-row">
+<div>
+<span>10/24</span>
+<b>毛越寺與其他平泉門票</b>
+<small>不填未確認數字。</small>
+</div>
+<div class="budget-money">
+<b>待確認</b>
+<span>未付款</span>
+</div>
+</div>
+</div>
+<div class="budget-group">
+<h3>餐飲</h3>
+<div class="budget-row">
+<div>
+<span>全程</span>
+<b>9天餐飲</b>
+<small>依每日實際消費；Marine Blue包含在此。</small>
+</div>
+<div class="budget-money">
+<b>待確認</b>
+<span>未付款</span>
+</div>
+</div>
+</div>
+<div class="budget-group">
+<h3>購物／其他</h3>
+<div class="budget-row">
+<div>
+<span>全程</span>
+<b>伴手禮、Pokémon與其他購物</b>
+<small>保留自訂，不預先亂填。</small>
+</div>
+<div class="budget-money">
+<b>待確認</b>
+<span>未付款</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="view" id="view-todos">
+<div class="section">
+<div class="section-title">
+<h2>待辦</h2>
+<span>14項未完成</span>
+</div>
+<div class="callout">
+<h3>現在先做</h3>
+<p>青森住宿、原仙台住宿調整、取消原一日遊，以及10/23星野→八戶接駁，是目前錯過成本最高的四件事。</p>
+</div>
+<div class="grid two">
+<article class="todo-card ">
+<div class="todo-top">
+<span class="priority">最高</span>
+<span class="due">立即</span>
+</div>
+<h3>10/19｜取消藏王 Klook</h3>
+<p>取消原Klook一日遊並確認退款金額與入帳方式；正式行程不再保留任何原行程內容。</p>
+</article>
+<article class="todo-card ">
+<div class="todo-top">
+<span class="priority">最高</span>
+<span class="due">立即</span>
+</div>
+<h3>10/20｜取消／調整10/20仙台住宿</h3>
+<p>將Hotel Metropolitan原四晚改為10/17–10/20三晚，確認退款與新金額。</p>
+</article>
+<article class="todo-card ">
+<div class="todo-top">
+<span class="priority">最高</span>
+<span class="due">立即</span>
+</div>
+<h3>10/20｜預訂青森站附近住宿</h3>
+<p>優先青森站步行10分鐘內、禁菸、2人房；隔日08:20可快速到JR Bus站。<br>
+<a class="action-link" href="https://www.google.com/maps/search/?api=1&amp;query=Aomori+Station+hotel" target="_blank" rel="noopener">開啟官方／訂單頁 ↗</a>
+</p>
+</article>
+<article class="todo-card ">
+<div class="todo-top">
+<span class="priority">最高</span>
+<span class="due">盡快</span>
+</div>
+<h3>10/23｜預約11:00星野→八戶免費接駁</h3>
+<p>住宿客專用、至少2日前；紅葉旺季有滿席風險，完成後保存確認信。<br>
+<a class="action-link" href="https://hoshinoresorts.com/zh_tw/hotels/oirasekeiryu/access/" target="_blank" rel="noopener">開啟官方／訂單頁 ↗</a>
+</p>
+</article>
+<article class="todo-card ">
+<div class="todo-top">
+<span class="priority">高</span>
+<span class="due">開賣後</span>
+</div>
+<h3>10/23｜預訂八戶→仙台新幹線</h3>
+<p>主案Hayabusa 20 13:07–14:29；Backup Hayabusa 22 13:40–14:56，2人指定席。<br>
+<a class="action-link" href="https://www.jreast.co.jp/multi/zh-CHT/ticket/ekinet.html" target="_blank" rel="noopener">開啟官方／訂單頁 ↗</a>
+</p>
+</article>
+<article class="todo-card ">
+<div class="todo-top">
+<span class="priority">高</span>
+<span class="due">開賣後</span>
+</div>
+<h3>全程｜確認新幹線指定席</h3>
+<p>10/20 Hayabusa 5、10/23 Hayabusa 20、10/24往返平泉相關指定席；決定是否使用Pass。<br>
+<a class="action-link" href="https://www.jreast.co.jp/multi/zh-CHT/ticket/ekinet.html" target="_blank" rel="noopener">開啟官方／訂單頁 ↗</a>
+</p>
+</article>
+<article class="todo-card ">
+<div class="todo-top">
+<span class="priority">高</span>
+<span class="due">9月底</span>
+</div>
+<h3>10/21｜確認09:00青森→奧入瀨JR Bus</h3>
+<p>確認2026秋季最終班次、乘車處、票價與大型行李規則；本線無預約制。<br>
+<a class="action-link" href="https://www.jrbustohoku.co.jp/route/11/274/" target="_blank" rel="noopener">開啟官方／訂單頁 ↗</a>
+</p>
+</article>
+<article class="todo-card ">
+<div class="todo-top">
+<span class="priority">高</span>
+<span class="due">9月底</span>
+</div>
+<h3>10/21｜確認星野溪流Shuttle</h3>
+<p>確認2026/10/21正常運行、每小時時刻與旺季搭乘限制；免預約但每車27人。<br>
+<a class="action-link" href="https://hoshinoresorts.com/en/hotels/oirasekeiryu/activities/8798/" target="_blank" rel="noopener">開啟官方／訂單頁 ↗</a>
+</p>
+</article>
+<article class="todo-card ">
+<div class="todo-top">
+<span class="priority">高</span>
+<span class="due">9月底</span>
+</div>
+<h3>10/22｜確認JR Bus紅葉季班次</h3>
+<p>複核10:11奧入瀨→銚子、11:30子之口→休屋、16:00休屋→奧入瀨及備用班次。<br>
+<a class="action-link" href="https://www.jrbustohoku.co.jp/route/11/274/" target="_blank" rel="noopener">開啟官方／訂單頁 ↗</a>
+</p>
+</article>
+<article class="todo-card ">
+<div class="todo-top">
+<span class="priority">高</span>
+<span class="due">9月底</span>
+</div>
+<h3>10/22｜確認Marine Blue營業資訊</h3>
+<p>確認2026/10/22營業日與最後點餐時間；此站為必去，官方與地方資料目前有17:00／18:00差異。<br>
+<a class="action-link" href="https://explorekazuno.jp/eat/towadako-nanataki/marineblue/" target="_blank" rel="noopener">開啟官方／訂單頁 ↗</a>
+</p>
+</article>
+<article class="todo-card ">
+<div class="todo-top">
+<span class="priority">高</span>
+<span class="due">9月底</span>
+</div>
+<h3>10/24｜確認平泉交通與回程計程車</h3>
+<p>複核仙台→一之關→平泉班次，並預先安排紅葉銀河後中尊寺→一之關計程車。<br>
+<a class="action-link" href="https://www.jreast.co.jp/" target="_blank" rel="noopener">開啟官方／訂單頁 ↗</a>
+</p>
+</article>
+<article class="todo-card ">
+<div class="todo-top">
+<span class="priority">高</span>
+<span class="due">9月底</span>
+</div>
+<h3>10/24｜確認中尊寺紅葉銀河最終時間</h3>
+<p>目前官方公告2026/10/24開始、點燈至18:30；出發前確認入場與交通管制。<br>
+<a class="action-link" href="https://www.chusonji.or.jp/" target="_blank" rel="noopener">開啟官方／訂單頁 ↗</a>
+</p>
+</article>
+<article class="todo-card ">
+<div class="todo-top">
+<span class="priority">高</span>
+<span class="due">盡快</span>
+</div>
+<h3>10/23–10/25｜Daiwa房型改禁菸</h3>
+<p>目前豪華加大雙人床為吸菸房；先確認禁菸庫存與差額，再變更。</p>
+</article>
+<article class="todo-card ">
+<div class="todo-top">
+<span class="priority">中</span>
+<span class="due">出發前</span>
+</div>
+<h3>彈性｜Pokémon Center Sendai 30週年卡需求</h3>
+<p>若仍要購買，先確認販售日、整理券與庫存，再決定放入10/23或10/25自由購物時段；不排抵達日。<br>
+<a class="action-link" href="https://www.pokemon.co.jp/shop/pokecen/sendai/" target="_blank" rel="noopener">開啟官方／訂單頁 ↗</a>
+</p>
+</article>
+</div>
+<div class="section-title" style="margin-top:22px">
+<h2>已完成</h2>
+<span>2項</span>
+</div>
+<div class="grid two">
+<article class="todo-card done">
+<div class="todo-top">
+<span class="priority">完成</span>
+<span class="due">—</span>
+</div>
+<h3>10/17・10/25｜國際航班</h3>
+<p>JX862／JX863已付款、已開票。</p>
+</article>
+<article class="todo-card done">
+<div class="todo-top">
+<span class="priority">完成</span>
+<span class="due">—</span>
+</div>
+<h3>10/21–10/23｜星野奧入瀨住宿</h3>
+<p>2晚住宿已付款。</p>
+</article>
+</div>
+</div>
+</section>
+</main>
+<div class="source">V42｜來源：20261017_仙台奧入瀨岩手9日行程_V42.xlsx<br>V42模板｜基於V39重新優化</div>
+<nav class="bottom-nav" aria-label="主要導覽">
+<label for="tab-trip">行程</label>
+<label for="tab-transport">交通細節</label>
+<label for="tab-budget">預算</label>
+<label for="tab-todos">待辦</label>
+</nav>
+</div>
+</body>
+</html>
