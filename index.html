@@ -16,22 +16,22 @@ body{margin:0;background:radial-gradient(circle at 8% 2%,rgba(201,106,56,.10),tr
 a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overflow:hidden;min-height:238px;padding:calc(22px + env(safe-area-inset-top)) 20px 24px;color:#fff;background:linear-gradient(145deg,#49362d 0%,#7a3028 39%,#a54832 66%,#c96a38 88%,#d6b06a 122%);border-radius:0 0 28px 28px;box-shadow:0 14px 34px rgba(73,54,45,.18);isolation:isolate}
 .hero:before{content:"";position:absolute;right:-54px;top:-72px;width:210px;height:210px;border-radius:70% 30% 62% 38%;background:radial-gradient(circle at 34% 34%,rgba(255,224,165,.70),rgba(201,106,56,.52) 52%,rgba(122,48,40,.06) 72%);transform:rotate(28deg);opacity:.58;z-index:-1}
 .hero:after{content:"";position:absolute;left:-8%;right:-8%;bottom:-26px;height:88px;background:repeating-radial-gradient(ellipse at 50% 6%,rgba(255,247,232,.18) 0 1px,transparent 2px 15px);opacity:.52;z-index:-1}
-.hero-maple-art{position:absolute;inset:0;pointer-events:none;overflow:hidden}.hero-momiji{position:absolute;fill:#fff4df;opacity:.12}.hero-momiji.one{width:92px;height:92px;right:18px;top:19px;transform:rotate(18deg)}.hero-momiji.two{width:58px;height:58px;right:104px;bottom:18px;transform:rotate(-24deg);opacity:.09}.hero-momiji.three{width:42px;height:42px;left:16px;top:18px;transform:rotate(-35deg);opacity:.08}.hero-momiji.faint{width:74px;height:74px;left:42%;bottom:-24px;transform:rotate(28deg);opacity:.045}
+.hero-maple-art{position:absolute;inset:0;pointer-events:none;overflow:hidden}.hero-maple-watermark{position:absolute;right:7%;bottom:-33px;width:132px;height:132px;fill:#ffe4c5;opacity:.12;transform:rotate(-16deg)}
 .eyebrow{display:inline-flex;padding:5px 9px;border:1px solid rgba(255,255,255,.22);border-radius:999px;background:rgba(255,255,255,.09);font-size:11px;font-weight:850;letter-spacing:.14em}.hero h1{font-size:31px;line-height:1.15;margin:13px 0 7px;letter-spacing:.02em}.hero p{margin:0;color:rgba(255,255,255,.84);font-size:13px;line-height:1.55}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:18px;max-width:510px}.stat{padding:10px 11px;border:1px solid rgba(255,255,255,.15);border-radius:15px;background:rgba(255,250,242,.10);backdrop-filter:blur(4px)}.stat b{display:block;font-size:16px}.stat span{font-size:10px;color:rgba(255,255,255,.72)}
-.momiji-icon{display:inline-block;flex:none;width:12px;height:12px;fill:currentColor;opacity:.78}.date-strip{position:sticky;top:0;z-index:30;display:flex;gap:7px;overflow:auto;padding:9px 12px;background:rgba(246,240,229,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(16px);scrollbar-width:none}.date-strip::-webkit-scrollbar{display:none}.date-pill{display:inline-flex;align-items:center;gap:6px;flex:none;padding:8px 11px;border:1px solid #e5c9b7;border-radius:999px;background:#fff8ef;color:var(--maple);font-size:12px;font-weight:850;text-decoration:none}.date-pill .momiji-icon{width:10px;height:10px;color:var(--orange)}
+.date-strip{position:sticky;top:0;z-index:30;display:flex;gap:7px;overflow:auto;padding:9px 12px;background:rgba(246,240,229,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(16px);scrollbar-width:none}.date-strip::-webkit-scrollbar{display:none}.date-pill{display:inline-flex;align-items:center;justify-content:center;flex:none;padding:8px 12px;border:1px solid #e5c9b7;border-radius:999px;background:#fff8ef;color:var(--maple);font-size:12px;font-weight:850;text-decoration:none}
 .section{padding:18px 13px}.section-title{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;margin:0 2px 12px}.section-title h2{margin:0;padding-left:12px;border-left:3px solid var(--gold);color:var(--maple);font-size:22px}.section-title span{color:var(--muted);font-size:11px;text-align:right}.view{display:none!important}.tab-radio{position:fixed;opacity:0;pointer-events:none}
 #tab-trip:checked~main #view-trip,#tab-transport:checked~main #view-transport,#tab-budget:checked~main #view-budget,#tab-todos:checked~main #view-todos{display:block!important}
-.day-card,.info-card,.todo-card,.transport-day,.budget-group,.callout{background:var(--card);border:1px solid #ead9ca;border-radius:20px;box-shadow:var(--shadow)}.day-card{position:relative;overflow:hidden;margin-bottom:14px}.momiji-watermark{position:absolute;right:-13px;bottom:-18px;width:82px;height:82px;fill:var(--maple);opacity:.04;transform:rotate(18deg);pointer-events:none}.day-card>summary{list-style:none;cursor:pointer}.day-card>summary::-webkit-details-marker{display:none}.day-head{position:relative;z-index:1;display:flex;align-items:center;gap:12px;padding:17px;background:linear-gradient(110deg,var(--soft2),rgba(255,253,249,0))}.day-head-copy{min-width:0;flex:1}.day-index{display:flex;align-items:center;gap:6px;font-size:10px;font-weight:900;letter-spacing:.09em;color:var(--maple)}.day-index .momiji-icon{width:10px;height:10px;color:var(--orange)}.day-head h2{margin:4px 0 6px;font-size:19px;line-height:1.35}.day-head p{margin:0;color:var(--muted);font-size:12.5px;line-height:1.55}.day-toggle{flex:none;display:grid;place-items:center;width:54px;min-height:34px;padding:5px 7px;border:1px solid #e5c9b7;border-radius:999px;background:#fff8ef;color:var(--maple);font-size:10px;font-weight:900}.day-toggle:before{content:"展開"}.day-card[open] .day-toggle:before{content:"收合"}.day-card[open] .day-head{border-bottom:1px solid var(--line)}.hotel-line{position:relative;z-index:1;display:flex;gap:8px;align-items:flex-start;padding:12px 17px 13px;border-bottom:1px solid var(--line);color:var(--muted);font-size:11.5px}.hotel-line span{flex:none;color:var(--maple);font-weight:850}
-.timeline{position:relative;z-index:1;padding:9px 13px 5px}.timeline-item{display:grid;grid-template-columns:68px 12px minmax(0,1fr);gap:7px;min-height:72px}.time{padding-top:8px;color:#624a40;font-size:11.5px;font-weight:780;line-height:1.35}.time.core-time{color:var(--maple);font-weight:950}.dot{position:relative}.dot:before{content:"";position:absolute;top:13px;left:3px;width:7px;height:7px;border-radius:50%;background:linear-gradient(135deg,var(--maple),var(--orange))}.timeline-item.leaf-accent .dot:before{display:none}.timeline-momiji{position:absolute;top:10px;left:0;width:12px;height:12px;fill:var(--maple)}.dot:after{content:"";position:absolute;top:24px;bottom:-7px;left:6px;width:1px;background:var(--line)}.timeline-item:last-child .dot:after{display:none}.item-body{min-width:0;padding:6px 0 14px}.item-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}.item-top h4{min-width:0;flex:1;margin:0;font-size:14.5px;line-height:1.42}.item-body p{margin:5px 0 0;color:var(--muted);font-size:12px;line-height:1.58;overflow-wrap:anywhere}
+.day-card,.info-card,.todo-card,.transport-day,.budget-group,.callout{background:var(--card);border:1px solid #ead9ca;border-radius:20px;box-shadow:var(--shadow)}.day-card{position:relative;overflow:hidden;margin-bottom:14px}.momiji-watermark{position:absolute;right:-15px;bottom:-21px;width:92px;height:92px;fill:var(--maple);opacity:.045;transform:rotate(-15deg);pointer-events:none}.day-card>summary{list-style:none;cursor:pointer}.day-card>summary::-webkit-details-marker{display:none}.day-head{position:relative;z-index:1;display:flex;align-items:center;gap:12px;padding:17px;background:linear-gradient(110deg,var(--soft2),rgba(255,253,249,0))}.day-head-copy{min-width:0;flex:1}.day-index{display:flex;align-items:center;font-size:10px;font-weight:900;letter-spacing:.09em;color:var(--maple)}.day-head h2{margin:4px 0 6px;font-size:19px;line-height:1.35}.day-head p{margin:0;color:var(--muted);font-size:12.5px;line-height:1.55}.day-toggle{flex:none;display:grid;place-items:center;width:54px;min-height:34px;padding:5px 7px;border:1px solid #e5c9b7;border-radius:999px;background:#fff8ef;color:var(--maple);font-size:10px;font-weight:900}.day-toggle:before{content:"展開"}.day-card[open] .day-toggle:before{content:"收合"}.day-card[open] .day-head{border-bottom:1px solid var(--line)}.hotel-line{position:relative;z-index:1;display:flex;gap:8px;align-items:flex-start;padding:12px 17px 13px;border-bottom:1px solid var(--line);color:var(--muted);font-size:11.5px}.hotel-line span{flex:none;color:var(--maple);font-weight:850}
+.timeline{position:relative;z-index:1;padding:9px 13px 5px}.timeline-item{display:grid;grid-template-columns:68px 12px minmax(0,1fr);gap:7px;min-height:72px}.time{padding-top:8px;color:#624a40;font-size:11.5px;font-weight:780;line-height:1.35}.time.core-time{color:var(--maple);font-weight:950}.dot{position:relative}.dot:before{content:"";position:absolute;top:13px;left:3px;width:7px;height:7px;border-radius:50%;background:linear-gradient(135deg,var(--maple),var(--orange))}.timeline-item.leaf-accent .dot:before{top:10px;left:0;width:12px;height:12px;background:var(--paper);border:2px solid var(--gold);box-shadow:0 0 0 3px rgba(214,154,73,.14)}.dot:after{content:"";position:absolute;top:24px;bottom:-7px;left:6px;width:1px;background:var(--line)}.timeline-item:last-child .dot:after{display:none}.item-body{min-width:0;padding:6px 0 14px}.item-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}.item-top h4{min-width:0;flex:1;margin:0;font-size:14.5px;line-height:1.42}.item-body p{margin:5px 0 0;color:var(--muted);font-size:12px;line-height:1.58;overflow-wrap:anywhere}
 .chip{flex:none;max-width:42%;padding:4px 7px;border-radius:999px;font-size:9.5px;font-weight:900;line-height:1.2;text-align:center;background:var(--soft3);color:var(--maple)}.chip.danger{background:var(--soft);color:var(--maple)}.chip.must{background:#f1d2c6;color:#7a251e}.chip.food{background:#f7dfc3;color:#85421f}.chip.stay{background:#eee0d5;color:#674337}.chip.transport{background:#f3e0d3;color:#7d3426}.chip.warn{background:var(--soft3);color:#74441e}.chip.bonus{background:#eee7df;color:#67584f}.chip.flex{background:#f1ece6;color:#6d5c53}
 .text-map-link{text-decoration-line:underline;text-decoration-style:dotted;text-decoration-color:var(--orange);text-underline-offset:3px;font-weight:750;overflow-wrap:anywhere}.text-map-link:active,.action-link:active{opacity:.65}.callout{padding:16px;margin-bottom:14px;background:linear-gradient(145deg,#54231e,#873027 64%,#bd5b2f);color:#fff}.callout h3{margin:0 0 7px;font-size:16px}.callout p{margin:0;color:rgba(255,255,255,.84);font-size:12px;line-height:1.6}
-.transport-day{overflow:hidden;margin-bottom:11px}.accordion-summary{display:grid;grid-template-columns:64px minmax(0,1fr) auto 22px;gap:10px;align-items:center;width:100%;padding:15px 16px;cursor:pointer;list-style:none;background:linear-gradient(110deg,var(--soft2),var(--paper))}.accordion-summary::-webkit-details-marker{display:none}.transport-date{display:flex;align-items:center;gap:5px;color:var(--maple);font-weight:950}.transport-date .momiji-icon{width:10px;height:10px}.transport-summary-copy{display:block;min-width:0}.transport-summary-copy b,.transport-summary-copy small,.transport-summary-copy em{display:block;overflow-wrap:anywhere}.transport-summary-copy b{font-size:14px;line-height:1.4}.transport-summary-copy small{margin-top:3px;color:var(--maple);font-size:11px;font-weight:900}.transport-summary-copy em{margin-top:3px;color:var(--muted);font-size:9.5px;font-style:normal}.reservation-badge{max-width:170px;padding:5px 8px;border-radius:999px;background:var(--soft3);color:#74441e;font-size:9.5px;font-weight:900;text-align:center}.chevron{width:20px;height:20px;color:var(--maple);fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.transport-day[open] .chevron,.budget-group[open] .chevron{transform:rotate(180deg)}.transport-day[open] .accordion-summary,.budget-group[open] .accordion-summary{border-bottom:2px solid var(--gold)}.transport-body,.budget-body{padding:5px 14px 10px}.transport-day[open] .transport-body,.budget-group[open] .budget-body{animation:accordion-fade .18s ease-out}@keyframes accordion-fade{from{opacity:0}to{opacity:1}}.transport-leg{padding:13px 0;border-bottom:1px dashed var(--line)}.transport-leg:last-child{border-bottom:0}.leg-head{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}.leg-head strong{color:var(--maple);font-size:15px}.route-line{margin:7px 0;font-size:13px;line-height:1.5}.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.facts div{padding:7px 8px;border-radius:10px;background:var(--cream);min-width:0}.facts span{display:block;color:var(--muted);font-size:9px}.facts b{display:block;margin-top:2px;font-size:11px;line-height:1.35;overflow-wrap:anywhere}.facts b.warn{color:var(--maple)}.transport-leg p{margin:8px 0 0;color:var(--muted);font-size:11.5px;line-height:1.55}
+.transport-day{overflow:hidden;margin-bottom:11px}.accordion-summary{display:grid;grid-template-columns:64px minmax(0,1fr) auto 22px;gap:10px;align-items:center;width:100%;padding:15px 16px;cursor:pointer;list-style:none;background:linear-gradient(110deg,var(--soft2),var(--paper))}.accordion-summary::-webkit-details-marker{display:none}.transport-date{display:flex;align-items:center;color:var(--maple);font-weight:950}.transport-summary-copy{display:block;min-width:0}.transport-summary-copy b,.transport-summary-copy small,.transport-summary-copy em{display:block;overflow-wrap:anywhere}.transport-summary-copy b{font-size:14px;line-height:1.4}.transport-summary-copy small{margin-top:3px;color:var(--maple);font-size:11px;font-weight:900}.transport-summary-copy em{margin-top:3px;color:var(--muted);font-size:9.5px;font-style:normal}.reservation-badge{max-width:170px;padding:5px 8px;border-radius:999px;background:var(--soft3);color:#74441e;font-size:9.5px;font-weight:900;text-align:center}.chevron{width:20px;height:20px;color:var(--maple);fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.transport-day[open] .chevron,.budget-group[open] .chevron{transform:rotate(180deg)}.transport-day[open] .accordion-summary,.budget-group[open] .accordion-summary{border-bottom:2px solid var(--gold)}.transport-body,.budget-body{padding:5px 14px 10px}.transport-day[open] .transport-body,.budget-group[open] .budget-body{animation:accordion-fade .18s ease-out}@keyframes accordion-fade{from{opacity:0}to{opacity:1}}.transport-leg{padding:13px 0;border-bottom:1px dashed var(--line)}.transport-leg:last-child{border-bottom:0}.leg-head{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}.leg-head strong{color:var(--maple);font-size:15px}.route-line{margin:7px 0;font-size:13px;line-height:1.5}.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.facts div{padding:7px 8px;border-radius:10px;background:var(--cream);min-width:0}.facts span{display:block;color:var(--muted);font-size:9px}.facts b{display:block;margin-top:2px;font-size:11px;line-height:1.35;overflow-wrap:anywhere}.facts b.warn{color:var(--maple)}.transport-leg p{margin:8px 0 0;color:var(--muted);font-size:11.5px;line-height:1.55}
 .risk-grid,.grid{display:grid;gap:11px}.risk-card{padding:14px;border:1px solid #e6cdbb;border-radius:16px;background:var(--soft3)}.risk-card b{color:var(--maple);font-size:13px}.risk-card p{margin:5px 0 0;color:var(--muted);font-size:11.5px;line-height:1.55}
 .budget-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-bottom:14px}.money-card{padding:14px;border:1px solid var(--line);border-radius:17px;background:var(--paper)}.money-card span{display:block;color:var(--muted);font-size:10px}.money-card b{display:block;margin-top:5px;color:var(--maple);font-size:18px;line-height:1.25;overflow-wrap:anywhere}.money-card.alert{background:var(--soft)}.budget-note{margin:-3px 2px 14px;color:var(--muted);font-size:11px;line-height:1.5}.budget-group{position:relative;overflow:hidden;margin-bottom:12px}.budget-group .accordion-summary{grid-template-columns:minmax(0,1fr) auto 22px}.budget-group-title{display:block;min-width:0}.budget-group-title b,.budget-group-title small{display:block}.budget-group-title b{color:var(--maple);font-size:15px}.budget-group-title small{margin-top:3px;color:var(--muted);font-size:10px}.budget-row{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;padding:12px 14px;border-top:1px solid var(--line)}.budget-row:first-child{border-top:0}.budget-row>div:first-child{min-width:0}.budget-row span,.budget-row small{display:block;color:var(--muted);font-size:10px;line-height:1.45}.budget-row b{display:block;margin:3px 0;font-size:12.5px;line-height:1.4;overflow-wrap:anywhere}.budget-money{text-align:right;min-width:84px}.budget-money b{color:var(--maple);font-size:13px}.budget-money span{display:inline-block;padding:3px 6px;border-radius:999px;background:var(--soft3)}.budget-row.refund{background:#f1ece6}.budget-row.refund .budget-money b{color:#6f625b}.budget-row.refund .budget-money span{background:#e5ddd5;color:#645852}.budget-body .grid{padding:10px 0}
 .info-card,.todo-card{padding:15px}.info-title{margin-bottom:9px;color:var(--maple);font-size:14px;font-weight:900;line-height:1.45}.kv{display:grid;grid-template-columns:72px minmax(0,1fr);gap:8px;padding:7px 0;border-top:1px solid var(--line);font-size:11.5px}.kv span{color:var(--muted)}.kv b{text-align:right;overflow-wrap:anywhere}.info-card p,.todo-card p{margin:8px 0 0;color:var(--muted);font-size:11.5px;line-height:1.58}.todo-top{display:flex;justify-content:space-between;gap:8px;margin-bottom:8px}.priority{padding:4px 8px;border-radius:999px;background:var(--soft);color:var(--maple);font-size:9.5px;font-weight:900}.due{color:var(--muted);font-size:10px}.todo-card h3{margin:0;font-size:14px;line-height:1.45}.todo-card.done{opacity:.72;background:#f1ece6}.action-link{display:inline-block;margin-top:7px;color:var(--maple);font-weight:850}
 .source{padding:4px 18px 20px;color:var(--muted);font-size:10.5px;line-height:1.55;text-align:center}.bottom-nav{position:fixed;left:50%;bottom:0;z-index:50;width:min(920px,100%);transform:translateX(-50%);display:grid;grid-template-columns:repeat(4,1fr);gap:5px;padding:8px 9px calc(8px + env(safe-area-inset-bottom));border-top:1px solid var(--line);background:rgba(255,249,240,.96);box-shadow:0 -8px 24px rgba(82,42,29,.08);backdrop-filter:blur(18px)}.bottom-nav label{padding:10px 3px;border-radius:13px;color:#77655b;font-size:11px;font-weight:850;text-align:center;cursor:pointer;user-select:none}
 #tab-trip:checked~.bottom-nav label[for="tab-trip"],#tab-transport:checked~.bottom-nav label[for="tab-transport"],#tab-budget:checked~.bottom-nav label[for="tab-budget"],#tab-todos:checked~.bottom-nav label[for="tab-todos"]{position:relative;background:linear-gradient(135deg,var(--soft),var(--soft3));color:var(--maple)}#tab-trip:checked~.bottom-nav label[for="tab-trip"]:after,#tab-transport:checked~.bottom-nav label[for="tab-transport"]:after,#tab-budget:checked~.bottom-nav label[for="tab-budget"]:after,#tab-todos:checked~.bottom-nav label[for="tab-todos"]:after{content:"";position:absolute;left:28%;right:28%;top:3px;height:2px;border-radius:2px;background:var(--warm-gold)}
-@media(max-width:520px){.hero-momiji.faint{display:none}.hero-momiji.one{width:72px;height:72px;opacity:.095}.momiji-watermark{width:58px;height:58px;opacity:.03}.accordion-summary{grid-template-columns:58px minmax(0,1fr) 20px}.reservation-badge{grid-column:2/3;justify-self:start;max-width:100%;margin-top:2px}.transport-day .chevron{grid-column:3;grid-row:1/3}.budget-group .accordion-summary{grid-template-columns:minmax(0,1fr) auto 20px}.budget-group .reservation-badge{grid-column:2;grid-row:1}.budget-group .chevron{grid-column:3;grid-row:1}}
+@media(max-width:520px){.hero-maple-watermark{right:-5px;bottom:-24px;width:102px;height:102px;opacity:.10}.momiji-watermark{width:64px;height:64px;opacity:.035}.accordion-summary{grid-template-columns:58px minmax(0,1fr) 20px}.reservation-badge{grid-column:2/3;justify-self:start;max-width:100%;margin-top:2px}.transport-day .chevron{grid-column:3;grid-row:1/3}.budget-group .accordion-summary{grid-template-columns:minmax(0,1fr) auto 20px}.budget-group .reservation-badge{grid-column:2;grid-row:1}.budget-group .chevron{grid-column:3;grid-row:1}}
 @media(min-width:650px){.hero{padding-left:28px;padding-right:28px}.hero h1{font-size:38px}.section{padding:22px}.grid.two,.risk-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.budget-summary{grid-template-columns:repeat(3,minmax(0,1fr))}.facts{grid-template-columns:repeat(5,minmax(0,1fr))}.timeline-item{grid-template-columns:82px 14px minmax(0,1fr)}.transport-body,.budget-body{padding:8px 20px 12px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.transport-day[open] .transport-body,.budget-group[open] .budget-body{animation:none}}</style>
 </head>
@@ -39,20 +39,8 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 <div class="app">
 <header class="hero">
 <div class="hero-maple-art" aria-hidden="true">
-<svg class="hero-momiji one" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
-</path>
-</svg>
-<svg class="hero-momiji two" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
-</path>
-</svg>
-<svg class="hero-momiji three" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
-</path>
-</svg>
-<svg class="hero-momiji faint" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
+<svg class="hero-maple-watermark" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+<path d="M58 117C59 100 58 88 55 75C50 81 44 87 36 93C38 84 39 76 39 69C31 74 22 78 12 81C19 72 27 63 35 57C25 55 17 51 8 45C20 44 31 45 41 48C36 38 33 27 31 16C42 25 51 34 56 44C58 31 60 18 63 7C65 21 66 34 65 46C72 36 80 27 91 20C88 31 84 41 79 49C90 47 100 47 111 49C101 54 92 58 84 61C91 68 99 76 107 86C96 81 87 76 79 71C80 80 82 89 86 99C77 91 70 84 64 77C61 91 60 104 58 117Z">
 </path>
 </svg>
 </div>
@@ -75,51 +63,15 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 </div>
 </header>
 <div class="date-strip" aria-label="日期快速導覽">
-<a class="date-pill" href="#d1" onclick="document.getElementById('tab-trip').checked=true;document.getElementById('d1').open=true">
-<svg class="momiji-icon" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
-</path>
-</svg>10/17</a>
-<a class="date-pill" href="#d2" onclick="document.getElementById('tab-trip').checked=true;document.getElementById('d2').open=true">
-<svg class="momiji-icon" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
-</path>
-</svg>10/18</a>
-<a class="date-pill" href="#d3" onclick="document.getElementById('tab-trip').checked=true;document.getElementById('d3').open=true">
-<svg class="momiji-icon" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
-</path>
-</svg>10/19</a>
-<a class="date-pill" href="#d4" onclick="document.getElementById('tab-trip').checked=true;document.getElementById('d4').open=true">
-<svg class="momiji-icon" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
-</path>
-</svg>10/20</a>
-<a class="date-pill" href="#d5" onclick="document.getElementById('tab-trip').checked=true;document.getElementById('d5').open=true">
-<svg class="momiji-icon" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
-</path>
-</svg>10/21</a>
-<a class="date-pill" href="#d6" onclick="document.getElementById('tab-trip').checked=true;document.getElementById('d6').open=true">
-<svg class="momiji-icon" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
-</path>
-</svg>10/22</a>
-<a class="date-pill" href="#d7" onclick="document.getElementById('tab-trip').checked=true;document.getElementById('d7').open=true">
-<svg class="momiji-icon" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
-</path>
-</svg>10/23</a>
-<a class="date-pill" href="#d8" onclick="document.getElementById('tab-trip').checked=true;document.getElementById('d8').open=true">
-<svg class="momiji-icon" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
-</path>
-</svg>10/24</a>
-<a class="date-pill" href="#d9" onclick="document.getElementById('tab-trip').checked=true;document.getElementById('d9').open=true">
-<svg class="momiji-icon" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
-</path>
-</svg>10/25</a>
+<a class="date-pill" href="#d1" onclick="document.getElementById('tab-trip').checked=true;document.getElementById('d1').open=true">10/17</a>
+<a class="date-pill" href="#d2" onclick="document.getElementById('tab-trip').checked=true;document.getElementById('d2').open=true">10/18</a>
+<a class="date-pill" href="#d3" onclick="document.getElementById('tab-trip').checked=true;document.getElementById('d3').open=true">10/19</a>
+<a class="date-pill" href="#d4" onclick="document.getElementById('tab-trip').checked=true;document.getElementById('d4').open=true">10/20</a>
+<a class="date-pill" href="#d5" onclick="document.getElementById('tab-trip').checked=true;document.getElementById('d5').open=true">10/21</a>
+<a class="date-pill" href="#d6" onclick="document.getElementById('tab-trip').checked=true;document.getElementById('d6').open=true">10/22</a>
+<a class="date-pill" href="#d7" onclick="document.getElementById('tab-trip').checked=true;document.getElementById('d7').open=true">10/23</a>
+<a class="date-pill" href="#d8" onclick="document.getElementById('tab-trip').checked=true;document.getElementById('d8').open=true">10/24</a>
+<a class="date-pill" href="#d9" onclick="document.getElementById('tab-trip').checked=true;document.getElementById('d9').open=true">10/25</a>
 </div>
 <input class="tab-radio" type="radio" name="tabs" id="tab-trip" checked>
 <input class="tab-radio" type="radio" name="tabs" id="tab-transport">
@@ -135,11 +87,7 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 <details class="day-card" id="d1">
 <summary class="day-head">
 <div class="day-head-copy">
-<span class="day-index">
-<svg class="momiji-icon" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
-</path>
-</svg>D1・仙台</span>
+<span class="day-index">D1・仙台</span>
 <h2>10/17（六）抵達仙台</h2>
 <p>抵達、入住、牛舌晚餐；不安排Pokémon Center或額外限時景點。</p>
 </div>
@@ -232,11 +180,7 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 <details class="day-card" id="d2">
 <summary class="day-head">
 <div class="day-head-copy">
-<span class="day-index">
-<svg class="momiji-icon" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
-</path>
-</svg>D2・仙台・岩沼</span>
+<span class="day-index">D2・仙台・岩沼</span>
 <h2>10/18（日）仙台城跡＋金蛇水神社</h2>
 <p>上午兩個仙台核心景點，回站午餐；下午完整留給金蛇水神社，節奏不趕。</p>
 </div>
@@ -419,11 +363,7 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 <details class="day-card" id="d3">
 <summary class="day-head">
 <div class="day-head-copy">
-<span class="day-index">
-<svg class="momiji-icon" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
-</path>
-</svg>D3・松島</span>
+<span class="day-index">D3・松島</span>
 <h2>10/19（一）松島寺院與海岸慢遊</h2>
 <p>不用太早出發；寺院、牡蠣海鮮、海岸散步與咖啡為主，遊覽船只看當天狀況。</p>
 </div>
@@ -431,7 +371,7 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 </span>
 </summary>
 <svg class="momiji-watermark" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
+<path d="M58 117C59 100 58 88 55 75C50 81 44 87 36 93C38 84 39 76 39 69C31 74 22 78 12 81C19 72 27 63 35 57C25 55 17 51 8 45C20 44 31 45 41 48C36 38 33 27 31 16C42 25 51 34 56 44C58 31 60 18 63 7C65 21 66 34 65 46C72 36 80 27 91 20C88 31 84 41 79 49C90 47 100 47 111 49C101 54 92 58 84 61C91 68 99 76 107 86C96 81 87 76 79 71C80 80 82 89 86 99C77 91 70 84 64 77C61 91 60 104 58 117Z">
 </path>
 </svg>
 <div class="hotel-line">
@@ -565,11 +505,7 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 <details class="day-card" id="d4">
 <summary class="day-head">
 <div class="day-head-copy">
-<span class="day-index">
-<svg class="momiji-icon" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
-</path>
-</svg>D4・青森</span>
+<span class="day-index">D4・青森</span>
 <h2>10/20（二）仙台 → 青森站前半日</h2>
 <p>仙台→青森移動＋青森站前半日；睡魔、蘋果、港灣與站前慢慢逛。</p>
 </div>
@@ -752,11 +688,7 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 <details class="day-card" id="d5">
 <summary class="day-head">
 <div class="day-head-copy">
-<span class="day-index">
-<svg class="momiji-icon" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
-</path>
-</svg>D5・青森・奧入瀨</span>
+<span class="day-index">D5・青森・奧入瀨</span>
 <h2>10/21（三）奧入瀨中游紅葉慢步</h2>
 <p>抵達奧入瀨、石ヶ戶簡單午餐；整個下午留給石ヶ戶→馬門岩→阿修羅之流→雲井瀑布的紅葉慢步。</p>
 </div>
@@ -907,10 +839,6 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 <div class="timeline-item leaf-accent">
 <div class="time ">14:00–14:40</div>
 <div class="dot">
-<svg class="timeline-momiji" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
-</path>
-</svg>
 </div>
 <div class="item-body">
 <div class="item-top">
@@ -941,10 +869,6 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 <div class="timeline-item leaf-accent">
 <div class="time ">15:15–15:35</div>
 <div class="dot">
-<svg class="timeline-momiji" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
-</path>
-</svg>
 </div>
 <div class="item-body">
 <div class="item-top">
@@ -992,11 +916,7 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 <details class="day-card" id="d6">
 <summary class="day-head">
 <div class="day-head-copy">
-<span class="day-index">
-<svg class="momiji-icon" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
-</path>
-</svg>D6・奧入瀨・十和田湖</span>
+<span class="day-index">D6・奧入瀨・十和田湖</span>
 <h2>10/22（四）瀑布與湖上紅葉</h2>
 <p>今天只做兩件事：銚子大瀑布＋十和田湖Canadian Canoe；少景點、長停留，不安排休屋觀光清單。</p>
 </div>
@@ -1004,7 +924,7 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 </span>
 </summary>
 <svg class="momiji-watermark" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
+<path d="M58 117C59 100 58 88 55 75C50 81 44 87 36 93C38 84 39 76 39 69C31 74 22 78 12 81C19 72 27 63 35 57C25 55 17 51 8 45C20 44 31 45 41 48C36 38 33 27 31 16C42 25 51 34 56 44C58 31 60 18 63 7C65 21 66 34 65 46C72 36 80 27 91 20C88 31 84 41 79 49C90 47 100 47 111 49C101 54 92 58 84 61C91 68 99 76 107 86C96 81 87 76 79 71C80 80 82 89 86 99C77 91 70 84 64 77C61 91 60 104 58 117Z">
 </path>
 </svg>
 <div class="hotel-line">
@@ -1076,10 +996,6 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 <div class="timeline-item leaf-accent">
 <div class="time ">11:59–12:24</div>
 <div class="dot">
-<svg class="timeline-momiji" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
-</path>
-</svg>
 </div>
 <div class="item-body">
 <div class="item-top">
@@ -1155,10 +1071,6 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 <div class="timeline-item leaf-accent">
 <div class="time ">13:30–15:30</div>
 <div class="dot">
-<svg class="timeline-momiji" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
-</path>
-</svg>
 </div>
 <div class="item-body">
 <div class="item-top">
@@ -1236,11 +1148,7 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 <details class="day-card" id="d7">
 <summary class="day-head">
 <div class="day-head-copy">
-<span class="day-index">
-<svg class="momiji-icon" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
-</path>
-</svg>D7・奧入瀨・南下</span>
+<span class="day-index">D7・奧入瀨・南下</span>
 <h2>10/23（五）早餐・退房・南下</h2>
 <p>睡到舒服、早餐、整理與退房後直接南下；今天不排任何新景點，南下目的地仍待仙台／一之關最終確認。</p>
 </div>
@@ -1300,11 +1208,7 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 <details class="day-card" id="d8">
 <summary class="day-head">
 <div class="day-head-copy">
-<span class="day-index">
-<svg class="momiji-icon" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
-</path>
-</svg>D8・平泉</span>
+<span class="day-index">D8・平泉</span>
 <h2>10/24（六）毛越寺・中尊寺・紅葉銀河</h2>
 <p>平泉重要日：毛越寺、中尊寺金色堂與900年秘佛御開帳；傍晚完整保留紅葉銀河。</p>
 </div>
@@ -1395,10 +1299,6 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 <div class="timeline-item leaf-accent">
 <div class="time ">13:05–16:45</div>
 <div class="dot">
-<svg class="timeline-momiji" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
-</path>
-</svg>
 </div>
 <div class="item-body">
 <div class="item-top">
@@ -1446,11 +1346,7 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 <details class="day-card" id="d9">
 <summary class="day-head">
 <div class="day-head-copy">
-<span class="day-index">
-<svg class="momiji-icon" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
-</path>
-</svg>D9・仙台・返台</span>
+<span class="day-index">D9・仙台・返台</span>
 <h2>10/25（日）最後購物＋回台灣</h2>
 <p>睡飽、早午餐與仙台站最後購物；下午提早到機場，保留報到與免稅店時間。</p>
 </div>
@@ -1458,7 +1354,7 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 </span>
 </summary>
 <svg class="momiji-watermark" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
+<path d="M58 117C59 100 58 88 55 75C50 81 44 87 36 93C38 84 39 76 39 69C31 74 22 78 12 81C19 72 27 63 35 57C25 55 17 51 8 45C20 44 31 45 41 48C36 38 33 27 31 16C42 25 51 34 56 44C58 31 60 18 63 7C65 21 66 34 65 46C72 36 80 27 91 20C88 31 84 41 79 49C90 47 100 47 111 49C101 54 92 58 84 61C91 68 99 76 107 86C96 81 87 76 79 71C80 80 82 89 86 99C77 91 70 84 64 77C61 91 60 104 58 117Z">
 </path>
 </svg>
 <div class="hotel-line">
@@ -1590,11 +1486,7 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 </div>
 <details class="transport-day" id="transport-1017">
 <summary class="accordion-summary">
-<span class="transport-date">
-<svg class="momiji-icon" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
-</path>
-</svg>10/17</span>
+<span class="transport-date">10/17</span>
 <span class="transport-summary-copy">
 <b>桃園 → 仙台</b>
 <small>11:35 JX862｜抵達後搭機場線</small>
@@ -1687,11 +1579,7 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 </details>
 <details class="transport-day" id="transport-1018">
 <summary class="accordion-summary">
-<span class="transport-date">
-<svg class="momiji-icon" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
-</path>
-</svg>10/18</span>
+<span class="transport-date">10/18</span>
 <span class="transport-summary-copy">
 <b>仙台市區 → 岩沼 → 仙台</b>
 <small>09:00 Loople｜13:20 JR岩沼</small>
@@ -1936,11 +1824,7 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 </details>
 <details class="transport-day" id="transport-1019">
 <summary class="accordion-summary">
-<span class="transport-date">
-<svg class="momiji-icon" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
-</path>
-</svg>10/19</span>
+<span class="transport-date">10/19</span>
 <span class="transport-summary-copy">
 <b>仙台 ↔ 松島海岸</b>
 <small>10:10 JR仙石線｜遊覽船Bonus</small>
@@ -2071,11 +1955,7 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 </details>
 <details class="transport-day" id="transport-1020">
 <summary class="accordion-summary">
-<span class="transport-date">
-<svg class="momiji-icon" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
-</path>
-</svg>10/20</span>
+<span class="transport-date">10/20</span>
 <span class="transport-summary-copy">
 <b>仙台 → 青森</b>
 <small>09:50 Hayabusa 5｜11:37奧羽本線</small>
@@ -2168,11 +2048,7 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 </details>
 <details class="transport-day" id="transport-1021">
 <summary class="accordion-summary">
-<span class="transport-date">
-<svg class="momiji-icon" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
-</path>
-</svg>10/21</span>
+<span class="transport-date">10/21</span>
 <span class="transport-summary-copy">
 <b>青森 → 奧入瀨＋中游紅葉慢步</b>
 <small>09:00 JR Bus｜12:00溪流Shuttle</small>
@@ -2341,11 +2217,7 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 </details>
 <details class="transport-day" id="transport-1022">
 <summary class="accordion-summary">
-<span class="transport-date">
-<svg class="momiji-icon" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
-</path>
-</svg>10/22</span>
+<span class="transport-date">10/22</span>
 <span class="transport-summary-copy">
 <b>奧入瀨 → 銚子 → 宇樽部</b>
 <small>11:36 JR Bus｜13:30 Canoe</small>
@@ -2666,11 +2538,7 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 </details>
 <details class="transport-day" id="transport-1023">
 <summary class="accordion-summary">
-<span class="transport-date">
-<svg class="momiji-icon" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
-</path>
-</svg>10/23</span>
+<span class="transport-date">10/23</span>
 <span class="transport-summary-copy">
 <b>早餐・退房・南下</b>
 <small>11:00以後南下</small>
@@ -2725,11 +2593,7 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 </details>
 <details class="transport-day" id="transport-1024">
 <summary class="accordion-summary">
-<span class="transport-date">
-<svg class="momiji-icon" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
-</path>
-</svg>10/24</span>
+<span class="transport-date">10/24</span>
 <span class="transport-summary-copy">
 <b>仙台 → 平泉 → 仙台</b>
 <small>08:50新幹線｜20:22候選回程</small>
@@ -2936,11 +2800,7 @@ a{color:inherit}.app{max-width:920px;margin:0 auto}.hero{position:relative;overf
 </details>
 <details class="transport-day" id="transport-1025">
 <summary class="accordion-summary">
-<span class="transport-date">
-<svg class="momiji-icon" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-<path d="M60 116C59 99 58 86 55 74C48 84 41 93 32 102C36 89 39 79 40 70C29 75 18 78 5 80C17 69 27 62 35 57C24 52 14 46 3 38C18 40 31 42 43 46C38 34 34 22 31 7C43 17 51 28 57 40C58 26 59 13 60 2C62 14 63 27 63 40C70 28 78 17 90 7C87 22 83 34 77 46C90 42 102 40 117 38C106 46 96 52 85 57C93 62 103 69 115 80C102 78 91 75 79 70C81 79 84 89 88 102C79 93 72 84 65 74C62 86 61 99 60 116Z">
-</path>
-</svg>10/25</span>
+<span class="transport-date">10/25</span>
 <span class="transport-summary-copy">
 <b>仙台 → 仙台機場 → 桃園</b>
 <small>14:10機場線｜17:25 JX863</small>
