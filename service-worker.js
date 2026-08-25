@@ -1,9 +1,9 @@
-const CACHE = "tohoku-v7p1-public-3";
+const CACHE = "tohoku-v7p1-public-4";
 const ASSETS = ["./manifest.webmanifest", "./apple-touch-icon.png", "./icon-192.png", "./icon-512.png", "./favicon-32.png"];
 
 const FINAL_STYLE = `
-<style id="V7P1_SMOKED_GLASS_FINAL_3">
-/* Final override: must remain after every legacy bottom-nav rule. */
+<style id="V7P1_WARM_GLASS_FINAL_4">
+/* Final override: lighter warm translucent glass. */
 .bottom-nav{
   position:fixed!important;
   left:50%!important;
@@ -15,12 +15,12 @@ const FINAL_STYLE = `
   grid-template-columns:repeat(5,minmax(0,1fr))!important;
   gap:4px!important;
   padding:6px!important;
-  border:1px solid rgba(255,255,255,.20)!important;
+  border:1px solid rgba(255,255,255,.30)!important;
   border-radius:29px!important;
-  background:linear-gradient(135deg,rgba(35,30,28,.91),rgba(76,55,46,.84))!important;
-  box-shadow:0 16px 42px rgba(35,26,22,.34),inset 0 1px 0 rgba(255,255,255,.14)!important;
-  -webkit-backdrop-filter:blur(24px) saturate(1.18)!important;
-  backdrop-filter:blur(24px) saturate(1.18)!important;
+  background:linear-gradient(135deg,rgba(91,72,63,.66),rgba(128,96,78,.56))!important;
+  box-shadow:0 14px 36px rgba(55,39,31,.22),inset 0 1px 0 rgba(255,255,255,.22)!important;
+  -webkit-backdrop-filter:blur(28px) saturate(1.28)!important;
+  backdrop-filter:blur(28px) saturate(1.28)!important;
   overflow:hidden!important;
 }
 .bottom-nav:before{
@@ -29,7 +29,7 @@ const FINAL_STYLE = `
   inset:0!important;
   pointer-events:none!important;
   border-radius:inherit!important;
-  background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,0) 48%)!important;
+  background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.015) 52%)!important;
 }
 .bottom-nav label{
   position:relative!important;
@@ -42,7 +42,7 @@ const FINAL_STYLE = `
   padding:6px 2px!important;
   border-radius:22px!important;
   background:transparent!important;
-  color:rgba(255,248,239,.78)!important;
+  color:rgba(255,250,244,.88)!important;
   font-size:10px!important;
   line-height:1.1!important;
 }
@@ -58,16 +58,16 @@ const FINAL_STYLE = `
 #tab-trip:checked~.bottom-nav label[for="tab-trip"],
 #tab-budget:checked~.bottom-nav label[for="tab-budget"],
 #tab-todos:checked~.bottom-nav label[for="tab-todos"]{
-  background:linear-gradient(135deg,rgba(255,239,216,.18),rgba(255,255,255,.07))!important;
-  color:#fff7ec!important;
-  box-shadow:0 7px 18px rgba(16,11,9,.24),inset 0 1px 0 rgba(255,255,255,.14)!important;
-  -webkit-backdrop-filter:blur(12px)!important;
-  backdrop-filter:blur(12px)!important;
+  background:linear-gradient(135deg,rgba(255,244,227,.22),rgba(255,255,255,.10))!important;
+  color:#fffaf3!important;
+  box-shadow:0 6px 16px rgba(55,37,29,.15),inset 0 1px 0 rgba(255,255,255,.20)!important;
+  -webkit-backdrop-filter:blur(14px)!important;
+  backdrop-filter:blur(14px)!important;
   transform:translateY(-1px)!important;
 }
 #tab-trip:checked~.bottom-nav label[for="tab-trip"]{
-  color:#ffe1a3!important;
-  background:linear-gradient(135deg,rgba(181,122,78,.40),rgba(255,224,174,.13))!important;
+  color:#ffe2a8!important;
+  background:linear-gradient(135deg,rgba(198,145,93,.30),rgba(255,229,190,.16))!important;
 }
 #tab-lodging:checked~.bottom-nav label[for="tab-lodging"]:after,
 #tab-transport:checked~.bottom-nav label[for="tab-transport"]:after,
@@ -77,8 +77,8 @@ const FINAL_STYLE = `
 </style>`;
 
 function injectFinalStyle(html) {
-  if (html.includes('V7P1_SMOKED_GLASS_FINAL_3')) return html;
-  return html.replace('</head>', `${FINAL_STYLE}\n</head>`);
+  return html.replace(/<style id="V7P1_(?:SMOKED|WARM)_GLASS_FINAL_\d+">[\s\S]*?<\/style>/g, '')
+             .replace('</head>', `${FINAL_STYLE}\n</head>`);
 }
 
 async function patchedNavigation(request) {
