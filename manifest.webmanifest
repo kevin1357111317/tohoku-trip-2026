@@ -1,0 +1,26 @@
+{
+  "name": "東北楓葉之旅",
+  "short_name": "東北之旅",
+  "description": "2026 日本東北深秋夫妻行程",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#fff9f0",
+  "theme_color": "#7d3f2d",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
