@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#7a3028">
+<meta name="theme-color" content="#49362d">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="東北深秋V61">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="東北楓葉之旅">
 <meta name="description" content="2026 日本東北深秋之旅 V61｜夫妻共用公開去敏版">
 <meta name="version" content="V61">
 <title>東北楓葉之旅｜V61</title>
@@ -52,14 +52,17 @@ body{background:linear-gradient(180deg,#f2e5d4 0%,var(--bg) 210px,var(--bg) 100%
 #tab-trip:checked~.bottom-nav label[for="tab-trip"],#tab-transport:checked~.bottom-nav label[for="tab-transport"],#tab-budget:checked~.bottom-nav label[for="tab-budget"],#tab-todos:checked~.bottom-nav label[for="tab-todos"]{background:linear-gradient(135deg,var(--soft),var(--soft3));color:var(--maple)}
 /* V61_UNIFIED_CREAM_MAPLE_END */</style>
 
-<meta name="theme-color" content="#7d3f2d">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="東北楓葉之旅">
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
+<style id="standalone-app-shell">
+html,body{min-height:100%;min-height:100dvh}
+html{background:#49362d;overscroll-behavior-y:none}
+body{overscroll-behavior-y:none}
+.app{min-height:100vh;min-height:100dvh;background:var(--bg)}
+@media(display-mode:standalone){.hero{margin-top:0}.bottom-nav{-webkit-user-select:none;user-select:none}}
+</style>
 </head>
 <body>
 <div class="app">
@@ -2878,7 +2881,7 @@ body{background:linear-gradient(180deg,#f2e5d4 0%,var(--bg) 210px,var(--bg) 100%
 </div>
 <script>
 if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => navigator.serviceWorker.register("./service-worker.js"));
+  window.addEventListener("load", () => navigator.serviceWorker.register("./service-worker.js", { updateViaCache: "none" }).then(registration => registration.update()));
 }
 </script>
 </body>
