@@ -1,0 +1,50 @@
+name: Bump public app to V7P0
+
+on:
+  push:
+    paths:
+      - '.github/workflows/bump-v7p0.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  bump-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update public app version labels
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+          replacements = [
+              ('2026 日本東北深秋之旅 V61｜夫妻共用公開去敏版', '2026 日本東北深秋之旅 V7P0｜夫妻共用公開去敏版'),
+              ('<meta name="version" content="V61">', '<meta name="version" content="V7P0">'),
+              ('<title>東北楓葉之旅｜V61</title>', '<title>東北楓葉之旅｜V7P0</title>'),
+              ('/* V61_UNIFIED_CREAM_MAPLE_START */', '/* V7P0_UNIFIED_CREAM_MAPLE_START */'),
+              ('/* V61_UNIFIED_CREAM_MAPLE_END */', '/* V7P0_UNIFIED_CREAM_MAPLE_END */'),
+              ('<b>V61</b>\n<span>唯一正式版本</span>', '<b>V7P0</b>\n<span>唯一正式版本</span>'),
+              ('<div class="section-title" style="margin-top:22px"><h2>重要狀態</h2><span>V61</span></div>', '<div class="section-title" style="margin-top:22px"><h2>重要狀態</h2><span>V7P0</span></div>'),
+              ('<div class="source">V61｜夫妻共用公開去敏版<br>V61模板｜D 奶油霧面 Hero＋奶油楓木配色｜後續微調基準</div>', '<div class="source">V7P0｜夫妻共用公開去敏版<br>V7P0模板｜D 奶油霧面 Hero＋奶油楓木配色｜後續微調基準</div>'),
+          ]
+          missing = []
+          for old, new in replacements:
+              if old not in s:
+                  missing.append(old)
+              s = s.replace(old, new)
+          if missing:
+              raise SystemExit('Expected version markers missing: ' + repr(missing))
+          p.write_text(s, encoding='utf-8')
+          PY
+      - name: Commit public V7P0
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Update public app to V7P0"
+          git push
