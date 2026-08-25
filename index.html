@@ -82,23 +82,35 @@ body{padding-bottom:calc(72px + max(8px,calc(env(safe-area-inset-bottom) - 20px)
 #tab-trip:not(:checked)~.hero h1{margin:0;font-size:20px;line-height:1.25;letter-spacing:.015em}
 #tab-trip:not(:checked)~.hero:after{height:100%;background:linear-gradient(180deg,rgba(45,33,27,.78),rgba(45,33,27,.48))}
 #tab-trip:not(:checked)~.date-strip{display:none}
+#tab-lodging:checked~main #view-lodging{display:block!important}
 .view{animation:app-view-in .18s ease-out}
 @keyframes app-view-in{from{opacity:.72;transform:translateY(3px)}to{opacity:1;transform:none}}
-.bottom-nav{gap:4px;padding:6px 10px max(8px,calc(env(safe-area-inset-bottom) - 20px));border-top:1px solid rgba(122,48,40,.12);background:rgba(255,250,243,.94);box-shadow:0 -8px 26px rgba(65,38,27,.10);-webkit-backdrop-filter:blur(22px) saturate(1.2);backdrop-filter:blur(22px) saturate(1.2)}
+.budget-plan-grid{display:grid;grid-template-columns:1fr;gap:11px}
+.budget-plan-card{padding:15px;border:1px solid var(--line);border-radius:var(--app-radius);background:var(--card);box-shadow:0 5px 18px rgba(82,42,29,.065)}
+.budget-plan-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.budget-plan-top h3{margin:0;color:var(--maple);font-size:15px}
+.budget-plan-card p{margin:9px 0 0;color:var(--muted);font-size:12px;line-height:1.65}
+.budget-state{flex:none;padding:4px 8px;border-radius:999px;background:var(--soft3);color:var(--maple);font-size:9px;font-weight:900}
+.budget-state.pending{background:#f3e6d3;color:#885b22}
+.budget-privacy{background:linear-gradient(135deg,#6d2e28,#9b4938);color:#fff;border-color:transparent}
+.budget-privacy h3{color:#fff}.budget-privacy p{color:rgba(255,255,255,.84)}
+.bottom-nav{grid-template-columns:repeat(5,minmax(0,1fr));gap:3px;padding:6px 8px max(8px,calc(env(safe-area-inset-bottom) - 20px));border-top:1px solid rgba(122,48,40,.12);background:rgba(255,250,243,.94);box-shadow:0 -8px 26px rgba(65,38,27,.10);-webkit-backdrop-filter:blur(22px) saturate(1.2);backdrop-filter:blur(22px) saturate(1.2)}
 .bottom-nav label{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-width:0;min-height:52px;box-sizing:border-box;padding:5px 2px;border-radius:15px;font-size:10px;line-height:1.1;-webkit-tap-highlight-color:transparent;transition:background-color .16s ease,color .16s ease,transform .12s ease}
 .bottom-nav label:active{transform:scale(.96)}
 .bottom-nav svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.85;stroke-linecap:round;stroke-linejoin:round}
 .bottom-nav .tab-text{display:block;overflow:hidden;max-width:100%;text-overflow:ellipsis;white-space:nowrap}
-#tab-trip:checked~.bottom-nav label[for="tab-trip"],#tab-transport:checked~.bottom-nav label[for="tab-transport"],#tab-budget:checked~.bottom-nav label[for="tab-budget"],#tab-todos:checked~.bottom-nav label[for="tab-todos"]{background:linear-gradient(135deg,rgba(122,48,40,.10),rgba(214,154,73,.13));color:var(--maple)}
-#tab-trip:checked~.bottom-nav label[for="tab-trip"]:after,#tab-transport:checked~.bottom-nav label[for="tab-transport"]:after,#tab-budget:checked~.bottom-nav label[for="tab-budget"]:after,#tab-todos:checked~.bottom-nav label[for="tab-todos"]:after{display:none}
-@media(max-width:380px){:root{--app-gutter:13px}.bottom-nav{padding-left:7px;padding-right:7px}.bottom-nav label{font-size:9.5px}.bottom-nav svg{width:21px;height:21px}}
+#tab-lodging:checked~.bottom-nav label[for="tab-lodging"],#tab-transport:checked~.bottom-nav label[for="tab-transport"],#tab-trip:checked~.bottom-nav label[for="tab-trip"],#tab-budget:checked~.bottom-nav label[for="tab-budget"],#tab-todos:checked~.bottom-nav label[for="tab-todos"]{background:linear-gradient(135deg,rgba(122,48,40,.10),rgba(214,154,73,.13));color:var(--maple)}
+#tab-lodging:checked~.bottom-nav label[for="tab-lodging"]:after,#tab-transport:checked~.bottom-nav label[for="tab-transport"]:after,#tab-trip:checked~.bottom-nav label[for="tab-trip"]:after,#tab-budget:checked~.bottom-nav label[for="tab-budget"]:after,#tab-todos:checked~.bottom-nav label[for="tab-todos"]:after{display:none}
+@media(min-width:650px){.budget-plan-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:380px){:root{--app-gutter:13px}.bottom-nav{padding-left:5px;padding-right:5px}.bottom-nav label{font-size:9px}.bottom-nav svg{width:20px;height:20px}}
 @media(display-mode:standalone){#tab-trip:checked~.hero{margin-top:0;padding-top:calc(24px + env(safe-area-inset-top));background-position:center 47%}.bottom-nav{-webkit-user-select:none;user-select:none}}
 </style>
 </head>
 <body>
 <div class="app">
-<input class="tab-radio" type="radio" name="tabs" id="tab-trip" checked>
+<input class="tab-radio" type="radio" name="tabs" id="tab-lodging">
 <input class="tab-radio" type="radio" name="tabs" id="tab-transport">
+<input class="tab-radio" type="radio" name="tabs" id="tab-trip" checked>
 <input class="tab-radio" type="radio" name="tabs" id="tab-budget">
 <input class="tab-radio" type="radio" name="tabs" id="tab-todos">
 <header class="hero">
@@ -798,7 +810,7 @@ body{padding-bottom:calc(72px + max(8px,calc(env(safe-area-inset-bottom) - 20px)
 <p>
 <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E6%A3%AE%E7%AB%99%20%E2%86%92%20%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A4%A8" target="_blank" rel="noopener">青森站 → 奧入瀨溪流館<span aria-hidden="true"> ↗</span>
 </a>
-<br>交通：JR Bus みずうみ4号<br>成人單程¥2,650；紅葉季道路可能延誤。</p>
+<br>交通：JR Bus みずうみ4号<br>成人單程票價依官方公告；紅葉季道路可能延誤。</p>
 </div>
 </div>
 <div class="timeline-item">
@@ -1231,13 +1243,13 @@ body{padding-bottom:calc(72px + max(8px,calc(env(safe-area-inset-bottom) - 20px)
 <div class="time core-time">11:00–約12:45</div><div class="dot"></div>
 <div class="item-body"><div class="item-top"><h4>星野接駁至八戶站</h4><span class="chip danger">已確認</span></div>
 <p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%98%9F%E9%87%8E%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A3%AF%E5%BA%97%20%E5%85%AB%E6%88%B6%E7%AB%99" target="_blank" rel="noopener">星野奧入瀨溪流飯店 → 八戶站<span aria-hidden="true"> ↗</span>
-</a><br>交通：星野免費接駁<br>2人、¥0，接駁已確認；預估車程約105分鐘，交通狀況可能影響抵達時間。</p></div>
+</a><br>交通：星野免費接駁<br>免費接駁已確認；預估車程約105分鐘，交通狀況可能影響抵達時間。</p></div>
 </div>
 <div class="timeline-item leaf-accent">
 <div class="time ">約13:00–16:30</div><div class="dot"></div>
 <div class="item-body"><div class="item-top"><h4>八食中心海鮮午餐與逛市場</h4><span class="chip must">八戶小旅行</span></div>
 <p><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%85%AB%E6%88%B6%E7%AB%99%20%E5%85%AB%E9%A3%9F%E4%B8%AD%E5%BF%83" target="_blank" rel="noopener">八戶站 → 八食中心<span aria-hidden="true"> ↗</span>
-</a><br>交通：寄放行李＋八食150円巴士<br>午：八食中心海鮮<br>市場棟通常9:00–18:00；16:30前回到八戶站，巴士與營業日出發前再複核。</p></div>
+</a><br>交通：寄放行李＋八食中心接駁巴士<br>午：八食中心海鮮<br>市場棟通常9:00–18:00；16:30前回到八戶站，巴士與營業日出發前再複核。</p></div>
 </div>
 <div class="timeline-item">
 <div class="time core-time">17時台–約19:30</div><div class="dot"></div>
@@ -1350,7 +1362,7 @@ body{padding-bottom:calc(72px + max(8px,calc(env(safe-area-inset-bottom) - 20px)
 <p>
 <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%AD%E5%B0%8A%E5%AF%BA" target="_blank" rel="noopener">中尊寺<span aria-hidden="true"> ↗</span>
 </a>
-<br>交通：步行<br>2026/7/17–11/15；共通券成人¥1,600。</p>
+<br>交通：步行<br>2026/7/17–11/15；共通券票價依官方公告。</p>
 </div>
 </div>
 <div class="timeline-item">
@@ -1446,7 +1458,7 @@ body{padding-bottom:calc(72px + max(8px,calc(env(safe-area-inset-bottom) - 20px)
 </div>
 <div class="risk-card">
 <b>10/23</b>
-<p>11:00接駁已確認；約12:45抵八戶後安排八食中心，17時台Hayabusa與150円巴士仍待正式時刻複核。</p>
+<p>11:00接駁已確認；約12:45抵八戶後安排八食中心，17時台Hayabusa與八食中心接駁巴士仍待正式時刻複核。</p>
 </div>
 <div class="risk-card">
 <b>10/24</b>
@@ -1590,7 +1602,7 @@ body{padding-bottom:calc(72px + max(8px,calc(env(safe-area-inset-bottom) - 20px)
 </div>
 <div>
 <span>車資</span>
-<b>一日券成人¥630</b>
+<b>一日券票價依官方公告</b>
 </div>
 <div>
 <span>轉乘</span>
@@ -1742,7 +1754,7 @@ body{padding-bottom:calc(72px + max(8px,calc(env(safe-area-inset-bottom) - 20px)
 </div>
 <div>
 <span>車資</span>
-<b>約¥1,000／車</b>
+<b>依現場跳表</b>
 </div>
 <div>
 <span>轉乘</span>
@@ -2059,7 +2071,7 @@ body{padding-bottom:calc(72px + max(8px,calc(env(safe-area-inset-bottom) - 20px)
 </div>
 <div>
 <span>車資</span>
-<b>成人¥2,650；2人¥5,300</b>
+<b>依官方公告</b>
 </div>
 <div>
 <span>轉乘</span>
@@ -2342,7 +2354,7 @@ body{padding-bottom:calc(72px + max(8px,calc(env(safe-area-inset-bottom) - 20px)
 </div>
 <div>
 <span>車資</span>
-<b>官方現行成人¥9,500／人</b>
+<b>依官方公告</b>
 </div>
 <div>
 <span>轉乘</span>
@@ -2380,7 +2392,7 @@ body{padding-bottom:calc(72px + max(8px,calc(env(safe-area-inset-bottom) - 20px)
 </div>
 <div>
 <span>車資</span>
-<b>官方現行成人¥9,500／人</b>
+<b>依官方公告</b>
 </div>
 <div>
 <span>轉乘</span>
@@ -2519,13 +2531,13 @@ body{padding-bottom:calc(72px + max(8px,calc(env(safe-area-inset-bottom) - 20px)
 <div class="route-line"><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%98%9F%E9%87%8E%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A3%AF%E5%BA%97" target="_blank" rel="noopener">星野奧入瀨溪流飯店<span aria-hidden="true"> ↗</span>
 </a><span aria-hidden="true"> → </span><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%85%AB%E6%88%B6%E7%AB%99" target="_blank" rel="noopener">八戶站<span aria-hidden="true"> ↗</span>
 </a></div>
-<div class="facts"><div><span>工具</span><b>星野免費接駁</b></div><div><span>預約</span><b class="neutral">已確認</b></div><div><span>座位</span><b>2人</b></div><div><span>車資</span><b>¥0</b></div><div><span>轉乘</span><b>先寄放行李</b></div></div>
+<div class="facts"><div><span>工具</span><b>星野免費接駁</b></div><div><span>預約</span><b class="neutral">已確認</b></div><div><span>座位</span><b>2人</b></div><div><span>車資</span><b>免費</b></div><div><span>轉乘</span><b>先寄放行李</b></div></div>
 <p><b>Backup｜</b>交通延誤時縮短八食中心停留<br><b>注意｜</b>10:45前候車；預估車程約105分鐘。</p></div>
-<div class="transport-leg"><div class="leg-head"><strong>約13:00 → 16:30前</strong><span class="chip transport">八食150円巴士</span></div>
+<div class="transport-leg"><div class="leg-head"><strong>約13:00 → 16:30前</strong><span class="chip transport">八食中心接駁巴士</span></div>
 <div class="route-line"><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%85%AB%E6%88%B6%E7%AB%99" target="_blank" rel="noopener">八戶站<span aria-hidden="true"> ↗</span>
 </a><span aria-hidden="true"> ↔ </span><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%85%AB%E9%A3%9F%E4%B8%AD%E5%BF%83" target="_blank" rel="noopener">八食中心<span aria-hidden="true"> ↗</span>
 </a></div>
-<div class="facts"><div><span>工具</span><b>150円巴士</b></div><div><span>預約</span><b>免預約</b></div><div><span>座位</span><b>自由席</b></div><div><span>車資</span><b>¥150／次</b></div><div><span>轉乘</span><b>16:30前回八戶站</b></div></div>
+<div class="facts"><div><span>工具</span><b>八食中心接駁巴士</b></div><div><span>預約</span><b>免預約</b></div><div><span>座位</span><b>自由席</b></div><div><span>車資</span><b>依現場公告</b></div><div><span>轉乘</span><b>16:30前回八戶站</b></div></div>
 <p><b>Backup｜</b>延誤時改八戶站周邊用餐<br><b>注意｜</b>巴士時刻與八食中心營業日出發前複核。</p></div>
 <div class="transport-leg"><div class="leg-head"><strong>17時台 → 約19:30</strong><span class="chip transport">Hayabusa候選</span></div>
 <div class="route-line"><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%85%AB%E6%88%B6%E7%AB%99" target="_blank" rel="noopener">八戶站<span aria-hidden="true"> ↗</span>
@@ -2837,10 +2849,10 @@ body{padding-bottom:calc(72px + max(8px,calc(env(safe-area-inset-bottom) - 20px)
 </details>
 </div>
 </section>
-<section class="view" id="view-budget">
+<section class="view" id="view-lodging">
 <div class="section">
 <div class="section-title"><h2>住宿與確認</h2><span>公開去敏版</span></div>
-<div class="callout"><h3>夫妻共用行程</h3><p>此公開版本保留行程、飯店與交通資訊；預約編號、座位與付款／退款金額已隱藏。</p></div>
+<div class="callout"><h3>夫妻共用行程</h3><p>此公開版本保留行程、飯店與交通資訊；預約編號、座位與私人費用明細已隱藏。</p></div>
 <div class="grid two">
 <article class="info-card hotel-card">
 <div class="info-title">10/17–10/20｜<a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=Hotel%20Metropolitan%20The%20Base%20Sendai" target="_blank" rel="noopener">Hotel Metropolitan The Base Sendai<span aria-hidden="true"> ↗</span></a></div>
@@ -2861,16 +2873,36 @@ body{padding-bottom:calc(72px + max(8px,calc(env(safe-area-inset-bottom) - 20px)
 </div>
 <div class="section-title" style="margin-top:22px"><h2>重要狀態</h2><span>V61</span></div>
 <div class="grid two">
-<article class="todo-card done"><div class="todo-top"><span class="priority">完成</span><span class="due">—</span></div><h3>Daiwa Roynet仙台西口</h3><p>原住宿已取消並完成退款。</p></article>
+<article class="todo-card done"><div class="todo-top"><span class="priority">完成</span><span class="due">—</span></div><h3>Daiwa Roynet仙台西口</h3><p>原住宿取消處理已完成。</p></article>
 <article class="todo-card done"><div class="todo-top"><span class="priority">完成</span><span class="due">—</span></div><h3>八戶→星野接駁</h3><p>原接駁已確認取消；星野住宿不受影響。</p></article>
 <article class="todo-card done"><div class="todo-top"><span class="priority">完成</span><span class="due">—</span></div><h3>星野→八戶接駁</h3><p>10/23 11:00出發、約12:45抵達八戶站，已確認。</p></article>
 <article class="todo-card"><div class="todo-top"><span class="priority">處理中</span><span class="due">儘快</span></div><h3>十和田湖獨木舟</h3><p>方案仍在搜尋中，目前尚未預約。</p></article>
 </div>
 </div>
 </section>
+<section class="view" id="view-budget">
+<div class="section">
+<div class="section-title"><h2>預算</h2><span>夫妻私人費用不公開</span></div>
+<article class="budget-plan-card budget-privacy">
+<div class="budget-plan-top"><h3>公開去敏模式</h3><span class="budget-state">已保護</span></div>
+<p>此公開 App 只顯示預算架構與確認進度；完整費用明細仍保留在夫妻共用的私人 Excel，不會寫入公開網站。</p>
+</article>
+<div class="section-title" style="margin-top:22px"><h2>預算進度</h2><span>依行程持續補齊</span></div>
+<div class="budget-plan-grid">
+<article class="budget-plan-card"><div class="budget-plan-top"><h3>住宿</h3><span class="budget-state">已確認</span></div><p>仙台前段、青森、星野奧入瀨與仙台後段共4段住宿；取消狀態已整理。</p></article>
+<article class="budget-plan-card"><div class="budget-plan-top"><h3>航班</h3><span class="budget-state">已確認</span></div><p>JX862與JX863皆已開票；公開頁只保留航班狀態，不顯示費用明細。</p></article>
+<article class="budget-plan-card"><div class="budget-plan-top"><h3>跨區交通</h3><span class="budget-state pending">待補齊</span></div><p>東北新幹線、JR Bus、當地JR與計程車依正式班次及最終票券方案更新。</p></article>
+<article class="budget-plan-card"><div class="budget-plan-top"><h3>景點與活動</h3><span class="budget-state pending">處理中</span></div><p>十和田湖獨木舟仍在搜尋；其他門票與現場活動依最後預約結果補入。</p></article>
+<article class="budget-plan-card"><div class="budget-plan-top"><h3>餐飲</h3><span class="budget-state pending">彈性預留</span></div><p>牛舌、咖啡、飯店餐食與每日自由餐飲分開記錄，未定價項目不先亂填。</p></article>
+<article class="budget-plan-card"><div class="budget-plan-top"><h3>購物與備用金</h3><span class="budget-state pending">彈性預留</span></div><p>寶可夢中心、百貨採買與臨時交通另外保留，不與已確認必要支出混在一起。</p></article>
+</div>
+<div class="section-title" style="margin-top:22px"><h2>整理原則</h2><span>避免重複計算</span></div>
+<div class="callout"><h3>已確認・現場處理・待確認分開</h3><p>取消項目不計入旅行支出；日圓與台幣保留原幣記錄，只有私人總覽才使用同一匯率換算。未確認的新幹線、餐飲、購物與活動不先估成已支出。</p></div>
+</div>
+</section>
 <section class="view" id="view-todos">
 <div class="section"><div class="section-title"><h2>待辦</h2><span>10項未完成</span></div>
-<div class="callout"><h3>現在先做</h3><p>先繼續找10/22獨木舟方案，並複核10/23八食150円巴士與17時台Hayabusa；10/21、10/22的紅葉季JR Bus與Shuttle照原待辦確認。</p></div>
+<div class="callout"><h3>現在先做</h3><p>先繼續找10/22獨木舟方案，並複核10/23八食中心接駁巴士與17時台Hayabusa；10/21、10/22的紅葉季JR Bus與Shuttle照原待辦確認。</p></div>
 <div class="grid two"><article class="todo-card "><div class="todo-top"><span class="priority">高</span><span class="due">開賣後</span></div><h3>全程｜確認新幹線指定席</h3><p>10/20 Hayabusa 5、10/24往返平泉相關指定席；10/23改選八戶停留後的17時台Hayabusa候選，並決定是否使用Pass。<br>
 <a class="action-link" href="https://www.jreast.co.jp/multi/zh-CHT/ticket/ekinet.html" target="_blank" rel="noopener">開啟官方／訂單頁 ↗</a></p></article>
 <article class="todo-card "><div class="todo-top"><span class="priority">高</span><span class="due">儘快</span></div><h3>10/22｜持續尋找十和田湖獨木舟方案</h3><p>目前仍在找、尚未預約；原Towadako Guidehouse 櫂13:30時段只保留為候選A，選定供應商後再鎖定集合點與交通。<br>
@@ -2883,7 +2915,7 @@ body{padding-bottom:calc(72px + max(8px,calc(env(safe-area-inset-bottom) - 20px)
 <a class="action-link" href="https://www.jrbustohoku.co.jp/route/11/274/" target="_blank" rel="noopener">開啟官方／訂單頁 ↗</a></p></article>
 <article class="todo-card "><div class="todo-top"><span class="priority">高</span><span class="due">選定後</span></div><h3>10/22｜確認獨木舟取消規則、裝備與交通</h3><p>依最終供應商確認衣物、鞋、毛巾、飲水、保險、天候取消與自行取消規則，並重排JR Bus或接駁。<br>
 <a class="action-link" href="https://tgkai.jp/qa/" target="_blank" rel="noopener">開啟官方／訂單頁 ↗</a></p></article>
-<article class="todo-card "><div class="todo-top"><span class="priority">高</span><span class="due">出發前</span></div><h3>10/23｜複核八戶停留與回仙台交通</h3><p>確認八食150円巴士、行李寄放、八食中心營業與10月17時台Hayabusa正式班次；接駁本身已確認。<br>
+<article class="todo-card "><div class="todo-top"><span class="priority">高</span><span class="due">出發前</span></div><h3>10/23｜複核八戶停留與回仙台交通</h3><p>確認八食中心接駁巴士、行李寄放、八食中心營業與10月17時台Hayabusa正式班次；接駁本身已確認。<br>
 <a class="action-link" href="https://www.849net.com/access/" target="_blank" rel="noopener">開啟官方／訂單頁 ↗</a></p></article>
 <article class="todo-card "><div class="todo-top"><span class="priority">高</span><span class="due">9月底</span></div><h3>10/24｜確認中尊寺紅葉銀河交通</h3><p>複核仙台→一之關→平泉班次與當地移動；保留紅葉銀河完整觀賞時間。<br>
 <a class="action-link" href="https://www.jreast.co.jp/" target="_blank" rel="noopener">開啟官方／訂單頁 ↗</a></p></article>
@@ -2894,24 +2926,26 @@ body{padding-bottom:calc(72px + max(8px,calc(env(safe-area-inset-bottom) - 20px)
 <div class="section-title" style="margin-top:22px"><h2>已完成</h2><span>8項</span></div>
 <div class="grid two"><article class="todo-card done"><div class="todo-top"><span class="priority">完成</span><span class="due">—</span></div><h3>10/17・10/25｜國際航班</h3><p>JX862／JX863已開票。</p></article>
 <article class="todo-card done"><div class="todo-top"><span class="priority">完成</span><span class="due">—</span></div><h3>10/21–10/23｜星野奧入瀨住宿</h3><p>2晚住宿已確認。</p></article>
-<article class="todo-card done"><div class="todo-top"><span class="priority">完成</span><span class="due">—</span></div><h3>10/19｜藏王 Klook取消＋退款完成</h3><p>原訂單已取消並完成退款；正式行程已改為松島。</p></article>
-<article class="todo-card done"><div class="todo-top"><span class="priority">完成</span><span class="due">—</span></div><h3>10/20–10/21｜10/20仙台加訂住宿取消＋退款完成</h3><p>原加訂住宿已取消並完成退款。</p></article>
+<article class="todo-card done"><div class="todo-top"><span class="priority">完成</span><span class="due">—</span></div><h3>10/19｜藏王 Klook取消處理完成</h3><p>原訂單取消處理已完成；正式行程已改為松島。</p></article>
+<article class="todo-card done"><div class="todo-top"><span class="priority">完成</span><span class="due">—</span></div><h3>10/20–10/21｜10/20仙台加訂住宿取消處理完成</h3><p>原加訂住宿取消處理已完成。</p></article>
 <article class="todo-card done"><div class="todo-top"><span class="priority">完成</span><span class="due">—</span></div><h3>10/20–10/21｜ReLabo青森住宿已預訂</h3><p>【繭房】2人1間、禁菸；住宿已確認，含早餐、天然溫泉與休息室。</p></article>
 <article class="todo-card done"><div class="todo-top"><span class="priority">完成</span><span class="due">—</span></div><h3>10/21｜八戶→星野接駁已取消</h3><p>原14:30八戶站西口→奧入瀨接駁已取消。只取消接駁，星野住宿不變。</p></article>
-<article class="todo-card done"><div class="todo-top"><span class="priority">完成</span><span class="due">—</span></div><h3>10/23–10/25｜後段仙台住宿已確定</h3><p>Daiwa Roynet仙台西口已取消並退款；改住Hotel Metropolitan Sendai East，住宿已確認。</p></article>
+<article class="todo-card done"><div class="todo-top"><span class="priority">完成</span><span class="due">—</span></div><h3>10/23–10/25｜後段仙台住宿已確定</h3><p>Daiwa Roynet仙台西口取消處理已完成；改住Hotel Metropolitan Sendai East，住宿已確認。</p></article>
 <article class="todo-card done"><div class="todo-top"><span class="priority">完成</span><span class="due">—</span></div><h3>10/23｜星野→八戶接駁已確認</h3><p>11:00星野奧入瀨出發、約12:45抵八戶站，接駁已確認。</p></article></div>
 </div>
 </section>
 </main>
 <div class="source">V61｜夫妻共用公開去敏版<br>V61模板｜D 奶油霧面 Hero＋奶油楓木配色｜後續微調基準</div>
 <nav class="bottom-nav" aria-label="主要導覽">
-<label for="tab-trip" tabindex="0"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg><span class="tab-text">行程</span></label>
+<label for="tab-lodging" tabindex="0"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 19V8M21 19v-7a3 3 0 0 0-3-3H9v10M3 15h18M6 8h3v4H3v-1a3 3 0 0 1 3-3Z"/></svg><span class="tab-text">住宿</span></label>
 <label for="tab-transport" tabindex="0"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="16" rx="4"/><path d="M8 7h8M7 12h10M8 19l-2 2M16 19l2 2M9 16h.01M15 16h.01"/></svg><span class="tab-text">交通</span></label>
-<label for="tab-budget" tabindex="0"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 19V8M21 19v-7a3 3 0 0 0-3-3H9v10M3 15h18M6 8h3v4H3v-1a3 3 0 0 1 3-3Z"/></svg><span class="tab-text">住宿</span></label>
+<label for="tab-trip" tabindex="0"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg><span class="tab-text">行程</span></label>
+<label for="tab-budget" tabindex="0"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7.5A2.5 2.5 0 0 1 6.5 5H18a2 2 0 0 1 2 2v12H6.5A2.5 2.5 0 0 1 4 16.5v-9Z"/><path d="M4 8h13.5A2.5 2.5 0 0 1 20 10.5V13h-4a2 2 0 0 1 0-4h4M16 11h.01"/></svg><span class="tab-text">預算</span></label>
 <label for="tab-todos" tabindex="0"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="m8 9 1.5 1.5L12 8M14 9h3m-9 6 1.5 1.5L12 14m2 1h3"/></svg><span class="tab-text">待辦</span></label>
 </nav>
 </div>
 <script>
+document.getElementById("tab-trip").checked = true;
 document.querySelectorAll(".bottom-nav label").forEach(label => {
   label.addEventListener("click", () => {
     const input = document.getElementById(label.htmlFor);
