@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#49362d">
+<meta name="theme-color" content="#2d211b">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="東北楓葉之旅">
@@ -58,10 +58,12 @@ body{background:linear-gradient(180deg,#f2e5d4 0%,var(--bg) 210px,var(--bg) 100%
 <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
 <style id="standalone-app-shell">
 html,body{min-height:100%;min-height:100dvh}
-html{background:#49362d;overscroll-behavior-y:none}
+html{background:#2d211b;overscroll-behavior-y:none}
 body{overscroll-behavior-y:none}
 .app{min-height:100vh;min-height:100dvh;background:var(--bg)}
-@media(display-mode:standalone){.hero{margin-top:0}.bottom-nav{-webkit-user-select:none;user-select:none}}
+.hero:after{content:"";position:absolute;z-index:0;inset:0 0 auto;height:max(150px,calc(env(safe-area-inset-top) + 104px));pointer-events:none;background:linear-gradient(180deg,rgba(45,33,27,.92) 0,rgba(45,33,27,.70) 34%,rgba(45,33,27,.28) 70%,rgba(45,33,27,0) 100%)}
+.hero>*{position:relative;z-index:1}
+@media(display-mode:standalone){.hero{margin-top:0;padding-top:calc(24px + env(safe-area-inset-top));background-position:center 47%}.bottom-nav{-webkit-user-select:none;user-select:none}}
 </style>
 </head>
 <body>
