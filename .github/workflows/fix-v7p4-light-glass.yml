@@ -1,0 +1,25 @@
+name: Fix V7P4 light glass nav
+
+on:
+  push:
+    paths:
+      - '.github/v7p4-light-glass-trigger.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch light glass nav
+        run: python3 tools/fix_v7p4_light_glass_nav.py
+      - name: Commit hotfix
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html service-worker.js
+          git diff --cached --quiet && exit 0
+          git commit -m "Fix V7P4 light glass navigation"
+          git push
