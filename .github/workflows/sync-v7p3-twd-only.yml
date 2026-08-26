@@ -1,0 +1,25 @@
+name: Sync V7P3 TWD-only App
+
+on:
+  push:
+    paths:
+      - '.github/v7p3-trigger.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  sync-source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch App and service worker
+        run: python3 tools/sync_v7p3_twd_only.py
+      - name: Commit V7P3 App
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html service-worker.js
+          git diff --cached --quiet && exit 0
+          git commit -m "Publish V7P3 TWD-only App"
+          git push
