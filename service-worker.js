@@ -1,4 +1,4 @@
-const CACHE = "tohoku-v7p22-public-1";
+const CACHE = "tohoku-v7p23-public-1";
 const ASSETS = ["./index.html","./manifest.webmanifest","./apple-touch-icon.png","./icon-192.png","./icon-512.png","./favicon-32.png"];
 
 self.addEventListener("install", event => {
