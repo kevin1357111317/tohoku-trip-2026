@@ -1962,7 +1962,7 @@ body{background:radial-gradient(circle at 8% 2%,rgba(225,181,62,.24),transparent
 <div class="budget-summary" id="budget-summary-live">
 <div class="money-card"><span>已付款</span><b id="fx-paid-twd">NT$162,959</b></div>
 <div class="money-card"><span>已知待付款</span><b id="fx-pending-twd">NT$3,428</b></div>
-<div class="money-card"><span>已退款｜不計入支出</span><b id="fx-refund-twd">NT$32,612</b></div>
+<div class="money-card"><span>已退款｜不計入支出</span><b id="fx-refund-twd">NT$52,486</b></div>
 <div class="money-card"><span>目前可計算合計</span><b id="fx-total-twd">NT$166,387</b></div>
 <div class="money-card alert"><span>預估旅行總預算</span><b>待確認</b></div>
 </div>
@@ -2331,13 +2331,13 @@ body{background:radial-gradient(circle at 8% 2%,rgba(225,181,62,.24),transparent
 </details>
 <details class="budget-group">
 <summary class="accordion-summary">
-<span class="budget-group-title"><b>已取消／已退款紀錄</b><small>NT$22,403＋<span class="fx-twd-only" data-jpy="51400">NT$10,209</span>｜均退款完成</small></span>
+<span class="budget-group-title"><b>已取消／已退款紀錄</b><small>NT$42,277＋<span class="fx-twd-only" data-jpy="51400">NT$10,209</span>｜均退款完成</small></span>
 <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6.5 9 5.5 5.5L17.5 9"></path></svg>
 </summary>
 <div class="budget-body">
 <div class="budget-row refund"><div><span>10/19</span><b>Klook藏王一日遊</b><small>原訂單NT$8,980已取消並完成退款；不計入目前旅行支出。</small></div><div class="budget-money"><b>NT$8,980</b><span>已取消・退款完成</span></div></div>
 <div class="budget-row refund"><div><span>10/20–10/21</span><b>Hotel Metropolitan The Base Sendai｜原加訂1晚</b><small>退款<span class="fx-twd-only" data-jpy="32400">NT$6,435</span>；退款已完成，不計入目前旅行支出。</small></div><div class="budget-money"><b><span class="fx-twd-only" data-jpy="32400">NT$6,435</span></b><span>已取消・退款完成</span></div></div>
-<div class="budget-row refund"><div><span>10/23–10/25</span><b>Daiwa Roynet仙台西口｜2晚</b><small>約NT$13,423已取消並完成退款；不計入目前旅行支出。</small></div><div class="budget-money"><b>NT$13,423</b><span>已取消・退款完成</span></div></div>
+<div class="budget-row refund"><div><span>10/23–10/25</span><b>Daiwa Roynet仙台西口｜2晚</b><small>約NT$13,423已取消並完成退款；不計入目前旅行支出。</small></div><div class="budget-money"><b>NT$13,423</b><span>已取消・退款完成</span></div></div><div class="budget-row refund"><div><span>10/??</span><b>Tripla住宿訂單｜原訂住宿</b><small>帳單顯示原請款NT$19,874已取消並完成退款；不計入目前旅行支出。</small></div><div class="budget-money"><b>NT$19,874</b><span>已取消・退款完成</span></div></div>
 <div class="budget-row refund"><div><span>10/21</span><b>十和田湖 Canadian Canoe｜原日本在住者方案</b><small>¥9,500／人×2＝¥19,000；因不適用海外旅客，9/9已取消。取消日距活動日超過1天，依規定不收取消費、全額退款；不計入目前旅行支出。</small></div><div class="budget-money"><b><span class="fx-twd-only" data-jpy="19000">NT$3,774</span></b><span>已取消・退款完成</span></div></div>
 </div>
 </details>
@@ -2404,7 +2404,7 @@ if ("serviceWorker" in navigator) {
 (()=>{
   const FALLBACK={rate:0.19861,date:'2026-08-26',source:'V7P4 快照'};
   const STORAGE_KEY='tohoku-jpy-twd-v7p3';
-  const PAID_TWD=129966.73, PAID_JPY=166115, PENDING_JPY=17260, REFUND_TWD=22403, REFUND_JPY=51400;
+  const PAID_TWD=129966.73, PAID_JPY=166115, PENDING_JPY=17260, REFUND_TWD=42277, REFUND_JPY=51400;
   const fmt=n=>new Intl.NumberFormat('zh-TW',{minimumFractionDigits:0,maximumFractionDigits:0}).format(n);
   function render(fx,status){
     const rate=Number(fx.rate); if(!Number.isFinite(rate)||rate<=0) return;
