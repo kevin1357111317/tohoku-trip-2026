@@ -7,9 +7,9 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="東北楓葉之旅">
-<meta name="description" content="2026 日本東北楓葉之旅 V12P36｜9天8夜雙人行程">
-<meta name="version" content="V12P36">
-<title>東北楓葉之旅｜V12P36</title>
+<meta name="description" content="2026 日本東北楓葉之旅 V12P38｜9天8夜雙人行程">
+<meta name="version" content="V12P38">
+<title>東北楓葉之旅｜V12P38</title>
 
 
 <meta name="mobile-web-app-capable" content="yes">
@@ -163,12 +163,12 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 #tab-lodging:checked~.bottom-nav label[for="tab-lodging"],#tab-transport:checked~.bottom-nav label[for="tab-transport"],#tab-trip:checked~.bottom-nav label[for="tab-trip"],#tab-budget:checked~.bottom-nav label[for="tab-budget"],#tab-todos:checked~.bottom-nav label[for="tab-todos"]{color:var(--accent);background:var(--nav-active)}
 @media(hover:hover){.bottom-nav label:hover{color:var(--ink-2)}}
 
-/* V12P36 unified card spec */
+/* V12P38 unified card spec */
 .card-list{display:grid;gap:0}
 .card-body{padding:4px 14px 14px}.card-body .kv:first-child{border-top:0}.card-body p{margin:10px 0 0;color:var(--muted);font-size:.8rem;line-height:1.7}
 .stay-card .hotel-line{margin-top:14px}.stay-card .day-date span{font-size:.6rem}
 .budget-group>.accordion-summary{grid-template-columns:50px minmax(0,1fr) 28px}
-.cat-tile{display:grid;place-items:center;height:52px;border-radius:15px;background:var(--surface-2);color:var(--accent);transition:background .2s,color .2s}
+.cat-tile{display:grid;place-items:center;height:50px;border-radius:15px;background:var(--surface-2);color:var(--accent);transition:background .2s,color .2s}
 .cat-tile svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .budget-group[open] .cat-tile{background:var(--accent);color:var(--on-accent)}
 .budget-group-title b{font-size:1.02rem;font-weight:700}
@@ -181,7 +181,7 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 .todo-card h3{grid-column:2;grid-row:2;font-size:1.02rem;align-self:start;margin-top:2px}
 .todo-card p{grid-column:1/-1;margin:12px 0 0;padding-top:10px;border-top:1px solid var(--line)}
 
-/* V12P36 local-only QR */
+/* V12P38 local-only QR */
 .qr-card{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px;margin-bottom:14px}
 .qr-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .qr-head h3{margin:0;font-size:1.02rem;font-weight:700}.qr-head p{margin:2px 0 0;font-size:.733rem;color:var(--muted)}
@@ -198,6 +198,11 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 .todo-group span{display:inline-grid;place-items:center;min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:var(--surface-2);font-size:.667rem;color:var(--ink-2)}
 .grid.two>.todo-group:first-child{margin-top:4px}
 .day-tip{margin:12px 0 2px;padding:11px 13px;border-radius:12px;background:var(--accent-soft)}.day-tip b{display:block;font-size:.733rem;color:var(--accent-ink);font-weight:700}.day-tip p{margin:3px 0 0;font-size:.8rem;line-height:1.65;color:var(--ink-2)}
+/* V12P38 unified card heads */
+.transport-date{grid-row:auto}.transport-day .chevron{grid-row:auto}.accordion-summary{padding:13px 14px;row-gap:0}
+.transport-summary-copy b,.budget-group-title b{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;white-space:normal;margin-top:2px;font-size:1.02rem;line-height:1.35;font-weight:700;letter-spacing:-.01em}
+.budget-group>.accordion-summary,.transport-day>.accordion-summary{min-height:76px}
+.card-summary{margin:12px 0 0;font-size:.8rem;line-height:1.6;color:var(--muted)}
 @media(min-width:720px){body{background:var(--bg)}.app{box-shadow:0 0 0 1px var(--line)}}
 @media(max-width:370px){.hero h1{font-size:1.35rem}.hero{margin-left:12px;margin-right:12px;padding:12px 14px}.section{padding-left:12px;padding-right:12px}.day-head{grid-template-columns:44px minmax(0,1fr) 26px;gap:10px;padding:12px}.timeline-item{grid-template-columns:54px 12px minmax(0,1fr);gap:6px}.bs-total b{font-size:1.5rem}.tab-text{font-size:.633rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
@@ -211,7 +216,7 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 <input class="tab-radio" type="radio" name="tabs" id="tab-budget">
 <input class="tab-radio" type="radio" name="tabs" id="tab-todos">
 <div class="status-cover" aria-hidden="true"></div>
-<header class="hero"><div class="hero-top"><h1>東北楓葉之旅</h1><span class="release">V12P36</span></div><div class="hero-bottom"><span class="hero-sub">10/17—10/25 · 9天8夜 · 2人</span><span class="countdown" id="countdown"><strong>—</strong><small>天後出發</small></span></div></header>
+<header class="hero"><div class="hero-top"><h1>東北楓葉之旅</h1><span class="release">V12P38</span></div><div class="hero-bottom"><span class="hero-sub">10/17—10/25 · 9天8夜 · 2人</span><span class="countdown" id="countdown"><strong>—</strong><small>天後出發</small></span></div></header>
 <main>
 <section class="view" id="view-trip">
 <div class="section">
@@ -884,18 +889,13 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 <details class="transport-day" id="transport-1017">
 <summary class="accordion-summary">
 <span class="transport-date"><b>17</b><span>10月 · 六</span></span>
-<span class="transport-summary-copy">
-<b>新竹 → 桃園機場 → 仙台</b>
-<small>08:00 LINE GO專車・JX862已開票</small>
-<em>查看完整交通細節</em>
-</span>
-<span class="reservation-badge">專車已確認派車</span>
+<span class="transport-summary-copy"><span class="day-index">D1・專車已確認派車</span><b>新竹 → 桃園機場 → 仙台</b></span>
 <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
 <path d="m6.5 9 5.5 5.5L17.5 9">
 </path>
 </svg>
 </summary>
-<div class="transport-body">
+<div class="transport-body"><p class="card-summary">08:00 LINE GO專車・JX862已開票</p>
 <div class="transport-leg">
 <div class="leg-head"><strong>08:00 → 約09:10</strong><span class="chip transport">LINE GO</span></div>
 <div class="route-line">新竹住處 <span aria-hidden="true"> → </span> 桃園機場第一航廈</div>
@@ -980,34 +980,24 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 <details class="transport-day" id="transport-1018">
 <summary class="accordion-summary">
 <span class="transport-date"><b>18</b><span>10月 · 日</span></span>
-<span class="transport-summary-copy">
-<b>仙台站 → 瑞鳳殿 → 仙台城跡 → 大崎八幡宮</b>
-<small>Loople 13:15發串接三景點｜17:15計程車往閣</small>
-<em>查看完整交通細節</em>
-</span>
-<span class="reservation-badge">主要交通免預約</span>
+<span class="transport-summary-copy"><span class="day-index">D2・主要交通免預約</span><b>仙台站 → 瑞鳳殿 → 仙台城跡 → 大崎八幡宮</b></span>
 <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
 <path d="m6.5 9 5.5 5.5L17.5 9">
 </path>
 </svg>
 </summary>
-<div class="transport-body"><div class="day-tip"><b>重點提醒</b><p>Loople 13:15仙台站發；仙台城跡務必搭16:08班（最後一班16:23）到大崎八幡宮；17:15大崎八幡宮搭計程車直達「閣」。</p></div><div class="transport-leg"><div class="leg-head"><strong>13:15 → 13:28</strong><span class="chip transport">週日班次</span></div><div class="route-line"><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%AB%99%E8%A5%BF%E5%8F%A3" target="_blank" rel="noopener">仙台站西口<span aria-hidden="true"> ↗</span></a> <span aria-hidden="true"> → </span> <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E7%91%9E%E9%B3%B3%E6%AE%BF" target="_blank" rel="noopener">瑞鳳殿<span aria-hidden="true"> ↗</span></a></div><div class="facts"><div><span>工具</span><b>Loople Sendai</b></div><div><span>預約</span><b class="neutral">免預約</b></div><div><span>座位</span><b>自由席</b></div><div><span>轉乘</span><b>PARCO午餐後出發</b></div></div><p><b>備案｜</b>13:30班（瑞鳳殿13:43）<br><b>注意｜</b>週末每15分鐘一班；瑞鳳殿→仙台城跡→大崎八幡宮順路。</p></div><div class="transport-leg"><div class="leg-head"><strong>14:43 → 14:53</strong><span class="chip transport">同一路線</span></div><div class="route-line"><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E7%91%9E%E9%B3%B3%E6%AE%BF" target="_blank" rel="noopener">瑞鳳殿<span aria-hidden="true"> ↗</span></a> <span aria-hidden="true"> → </span> <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E5%9F%8E%E8%B7%A1" target="_blank" rel="noopener">仙台城跡<span aria-hidden="true"> ↗</span></a></div><div class="facts"><div><span>工具</span><b>Loople Sendai</b></div><div><span>預約</span><b class="neutral">免預約</b></div><div><span>座位</span><b>自由席</b></div><div><span>轉乘</span><b>瑞鳳殿停留75分鐘</b></div></div><p><b>備案｜</b>14:58班（城跡15:08）<br><b>注意｜</b>候車處依官方站牌。</p></div><div class="transport-leg"><div class="leg-head"><strong>16:08 → 16:28</strong><span class="chip transport">同一路線</span></div><div class="route-line"><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E5%9F%8E%E8%B7%A1" target="_blank" rel="noopener">仙台城跡<span aria-hidden="true"> ↗</span></a> <span aria-hidden="true"> → </span> <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E5%B4%8E%E5%85%AB%E5%B9%A1%E5%AE%AE" target="_blank" rel="noopener">大崎八幡宮<span aria-hidden="true"> ↗</span></a></div><div class="facts"><div><span>工具</span><b>Loople Sendai</b></div><div><span>預約</span><b class="neutral">免預約</b></div><div><span>座位</span><b>自由席</b></div><div><span>轉乘</span><b>仙台城跡停留75分鐘</b></div></div><p><b>備案｜</b>最後一班16:23（大崎16:43）<br><b>注意｜</b>15:00後發車班次到仙台站即收班；在大崎八幡宮前下車。</p></div><div class="transport-leg"><div class="leg-head"><strong>17:15 → 約17:30</strong><span class="chip transport">計程車</span></div><div class="route-line"><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E5%B4%8E%E5%85%AB%E5%B9%A1%E5%AE%AE" target="_blank" rel="noopener">大崎八幡宮<span aria-hidden="true"> ↗</span></a> <span aria-hidden="true"> → </span> <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E7%89%9B%E3%81%9F%E3%82%93%E6%96%99%E7%90%86%20%E9%96%A3" target="_blank" rel="noopener">牛舌料理「閣」<span aria-hidden="true"> ↗</span></a></div><div class="facts"><div><span>工具</span><b>計程車</b></div><div><span>預約</span><b class="neutral">免預約</b></div><div><span>座位</span><b>—</b></div><div><span>轉乘</span><b>不回飯店、直接晚餐</b></div></div><p><b>備案｜</b>叫車App<br><b>注意｜</b>時刻依2025/9/1起Loople官方時刻表，出發前複核。</p></div></div>
+<div class="transport-body"><p class="card-summary">Loople 13:15發串接三景點｜17:15計程車往閣</p><div class="day-tip"><b>重點提醒</b><p>Loople 13:15仙台站發；仙台城跡務必搭16:08班（最後一班16:23）到大崎八幡宮；17:15大崎八幡宮搭計程車直達「閣」。</p></div><div class="transport-leg"><div class="leg-head"><strong>13:15 → 13:28</strong><span class="chip transport">週日班次</span></div><div class="route-line"><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%AB%99%E8%A5%BF%E5%8F%A3" target="_blank" rel="noopener">仙台站西口<span aria-hidden="true"> ↗</span></a> <span aria-hidden="true"> → </span> <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E7%91%9E%E9%B3%B3%E6%AE%BF" target="_blank" rel="noopener">瑞鳳殿<span aria-hidden="true"> ↗</span></a></div><div class="facts"><div><span>工具</span><b>Loople Sendai</b></div><div><span>預約</span><b class="neutral">免預約</b></div><div><span>座位</span><b>自由席</b></div><div><span>轉乘</span><b>PARCO午餐後出發</b></div></div><p><b>備案｜</b>13:30班（瑞鳳殿13:43）<br><b>注意｜</b>週末每15分鐘一班；瑞鳳殿→仙台城跡→大崎八幡宮順路。</p></div><div class="transport-leg"><div class="leg-head"><strong>14:43 → 14:53</strong><span class="chip transport">同一路線</span></div><div class="route-line"><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E7%91%9E%E9%B3%B3%E6%AE%BF" target="_blank" rel="noopener">瑞鳳殿<span aria-hidden="true"> ↗</span></a> <span aria-hidden="true"> → </span> <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E5%9F%8E%E8%B7%A1" target="_blank" rel="noopener">仙台城跡<span aria-hidden="true"> ↗</span></a></div><div class="facts"><div><span>工具</span><b>Loople Sendai</b></div><div><span>預約</span><b class="neutral">免預約</b></div><div><span>座位</span><b>自由席</b></div><div><span>轉乘</span><b>瑞鳳殿停留75分鐘</b></div></div><p><b>備案｜</b>14:58班（城跡15:08）<br><b>注意｜</b>候車處依官方站牌。</p></div><div class="transport-leg"><div class="leg-head"><strong>16:08 → 16:28</strong><span class="chip transport">同一路線</span></div><div class="route-line"><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E5%9F%8E%E8%B7%A1" target="_blank" rel="noopener">仙台城跡<span aria-hidden="true"> ↗</span></a> <span aria-hidden="true"> → </span> <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E5%B4%8E%E5%85%AB%E5%B9%A1%E5%AE%AE" target="_blank" rel="noopener">大崎八幡宮<span aria-hidden="true"> ↗</span></a></div><div class="facts"><div><span>工具</span><b>Loople Sendai</b></div><div><span>預約</span><b class="neutral">免預約</b></div><div><span>座位</span><b>自由席</b></div><div><span>轉乘</span><b>仙台城跡停留75分鐘</b></div></div><p><b>備案｜</b>最後一班16:23（大崎16:43）<br><b>注意｜</b>15:00後發車班次到仙台站即收班；在大崎八幡宮前下車。</p></div><div class="transport-leg"><div class="leg-head"><strong>17:15 → 約17:30</strong><span class="chip transport">計程車</span></div><div class="route-line"><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E5%B4%8E%E5%85%AB%E5%B9%A1%E5%AE%AE" target="_blank" rel="noopener">大崎八幡宮<span aria-hidden="true"> ↗</span></a> <span aria-hidden="true"> → </span> <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E7%89%9B%E3%81%9F%E3%82%93%E6%96%99%E7%90%86%20%E9%96%A3" target="_blank" rel="noopener">牛舌料理「閣」<span aria-hidden="true"> ↗</span></a></div><div class="facts"><div><span>工具</span><b>計程車</b></div><div><span>預約</span><b class="neutral">免預約</b></div><div><span>座位</span><b>—</b></div><div><span>轉乘</span><b>不回飯店、直接晚餐</b></div></div><p><b>備案｜</b>叫車App<br><b>注意｜</b>時刻依2025/9/1起Loople官方時刻表，出發前複核。</p></div></div>
 </details>
 <details class="transport-day" id="transport-1019">
 <summary class="accordion-summary">
 <span class="transport-date"><b>19</b><span>10月 · 一</span></span>
-<span class="transport-summary-copy">
-<b>Klook 178500 C方案一日遊</b>
-<small>藏王御釜・藏王纜車／溫泉街・銀山溫泉｜已付款・憑證待確認</small>
-<em>查看完整交通細節</em>
-</span>
-<span class="reservation-badge">已付款・待確認</span>
+<span class="transport-summary-copy"><span class="day-index">D3・已付款・待確認</span><b>Klook 178500 C方案一日遊</b></span>
 <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
 <path d="m6.5 9 5.5 5.5L17.5 9">
 </path>
 </svg>
 </summary>
-<div class="transport-body">
+<div class="transport-body"><p class="card-summary">藏王御釜・藏王纜車／溫泉街・銀山溫泉｜已付款・憑證待確認</p>
 <div class="transport-leg">
 <div class="leg-head">
 <strong>約07:30–08:00</strong>
@@ -1115,18 +1105,13 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 <details class="transport-day" id="transport-1020">
 <summary class="accordion-summary">
 <span class="transport-date"><b>20</b><span>10月 · 二</span></span>
-<span class="transport-summary-copy">
-<b>仙台 → 青森</b>
-<small>09:50 Hayabusa 5｜11:37奧羽本線</small>
-<em>查看完整交通細節</em>
-</span>
-<span class="reservation-badge">已預約・IC已綁定</span>
+<span class="transport-summary-copy"><span class="day-index">D4・已預約・IC已綁定</span><b>仙台 → 青森</b></span>
 <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
 <path d="m6.5 9 5.5 5.5L17.5 9">
 </path>
 </svg>
 </summary>
-<div class="transport-body">
+<div class="transport-body"><p class="card-summary">09:50 Hayabusa 5｜11:37奧羽本線</p>
 <div class="transport-leg">
 <div class="leg-head">
 <strong>09:50 → 11:16</strong>
@@ -1197,13 +1182,13 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 </div>
 </div>
 </details>
-<details class="transport-day" id="transport-1021"><summary class="accordion-summary"><span class="transport-date"><b>21</b><span>10月 · 三</span></span><span class="transport-summary-copy"><b>青森 → 星野 → 宇樽部 → 星野</b><small>09:00主線｜12:01前往獨木舟｜16:06回程</small><em>查看完整交通細節</em></span><span class="reservation-badge">JR Bus免預約／Canoe已預約</span><svg class="chevron" viewBox="0 0 24 24"><path d="m6.5 9 5.5 5.5L17.5 9"></path></svg></summary><div class="transport-body"><div class="day-tip"><b>重點提醒</b><p>09:00青森站出發；13:00獨木舟報到時告知工作人員需銜接16:06下宇樽部JR Bus。海外旅客方案2人¥26,400，已付款。</p></div><div class="transport-leg"><div class="leg-head"><strong>09:00 → 11:01</strong><span class="chip transport">みずうみ4號</span></div><div class="route-line"><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E6%A3%AE%E7%AB%99" target="_blank" rel="noopener">青森站<span aria-hidden="true"> ↗</span></a> → <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A4%A8" target="_blank" rel="noopener">奧入瀨溪流館<span aria-hidden="true"> ↗</span></a></div><div class="facts"><div><span>方案</span><b>主方案</b></div><div><span>預約</span><b>無預約制</b></div><div><span>備用早班</span><b>08:10青森站發</b></div></div><p><b>注意｜</b>08:10僅備案，不放入主行程。</p></div>
+<details class="transport-day" id="transport-1021"><summary class="accordion-summary"><span class="transport-date"><b>21</b><span>10月 · 三</span></span><span class="transport-summary-copy"><span class="day-index">D5・JR Bus免預約／Canoe已預約</span><b>青森 → 星野 → 宇樽部 → 星野</b></span><svg class="chevron" viewBox="0 0 24 24"><path d="m6.5 9 5.5 5.5L17.5 9"></path></svg></summary><div class="transport-body"><p class="card-summary">09:00主線｜12:01前往獨木舟｜16:06回程</p><div class="day-tip"><b>重點提醒</b><p>09:00青森站出發；13:00獨木舟報到時告知工作人員需銜接16:06下宇樽部JR Bus。海外旅客方案2人¥26,400，已付款。</p></div><div class="transport-leg"><div class="leg-head"><strong>09:00 → 11:01</strong><span class="chip transport">みずうみ4號</span></div><div class="route-line"><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E6%A3%AE%E7%AB%99" target="_blank" rel="noopener">青森站<span aria-hidden="true"> ↗</span></a> → <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A4%A8" target="_blank" rel="noopener">奧入瀨溪流館<span aria-hidden="true"> ↗</span></a></div><div class="facts"><div><span>方案</span><b>主方案</b></div><div><span>預約</span><b>無預約制</b></div><div><span>備用早班</span><b>08:10青森站發</b></div></div><p><b>注意｜</b>08:10僅備案，不放入主行程。</p></div>
 <div class="transport-leg"><div class="leg-head"><strong>12:01 → 12:36</strong><span class="chip transport">みずうみ182號</span></div><div class="route-line"><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A4%A8" target="_blank" rel="noopener">奧入瀨溪流館<span aria-hidden="true"> ↗</span></a> → <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%8B%E5%AE%87%E6%A8%BD%E9%83%A8" target="_blank" rel="noopener">下宇樽部<span aria-hidden="true"> ↗</span></a></div><div class="facts"><div><span>方案</span><b>主方案</b></div><div><span>預約</span><b>無預約制</b></div><div><span>運行</span><b>2026/9/18後紅葉季增班</b></div></div><p><b>轉乘｜</b>下車後步行約15分鐘至うたるべキャンプ場。</p></div>
 <div class="transport-leg"><div class="leg-head"><strong>16:06 → 16:42</strong><span class="chip transport">おいらせ24號</span></div><div class="route-line"><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%8B%E5%AE%87%E6%A8%BD%E9%83%A8" target="_blank" rel="noopener">下宇樽部<span aria-hidden="true"> ↗</span></a> → <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A4%A8" target="_blank" rel="noopener">奧入瀨溪流館<span aria-hidden="true"> ↗</span></a></div><div class="facts"><div><span>方案</span><b>主方案</b></div><div><span>預約</span><b>無預約制</b></div><div><span>步行</span><b>溪流館→星野約5～10分鐘</b></div></div><p><b>重要｜</b>13:00獨木舟報到時主動告知工作人員需銜接本班。</p></div></div></details>
-<details class="transport-day" id="transport-1022"><summary class="accordion-summary"><span class="transport-date"><b>22</b><span>10月 · 四</span></span><span class="transport-summary-copy"><b>星野 → 子之口 → 石ヶ戶 → 星野</b><small>11:05敞篷巴士｜約8.9km健行｜16:04優先・16:34最晚</small><em>查看完整交通細節</em></span><span class="reservation-badge">敞篷巴士已預約</span><svg class="chevron" viewBox="0 0 24 24"><path d="m6.5 9 5.5 5.5L17.5 9"></path></svg></summary><div class="transport-body"><div class="day-tip"><b>重點提醒</b><p>敞篷巴士已預約（11:05渓流-BASE集合、現場付款）；11:55於子之口正式離團。子之口至石ヶ戶約8.9km，目標15:30–16:00抵達；16:04優先，16:34為最晚班次。</p></div><div class="transport-leg"><div class="leg-head"><strong>11:05 → 11:55</strong><span class="chip transport">星野溪流敞篷巴士</span></div><div class="route-line"><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A3%AF%E5%BA%97%20by%20%E6%98%9F%E9%87%8E%E9%9B%86%E5%9C%98" target="_blank" rel="noopener">星野奧入瀨<span aria-hidden="true"> ↗</span></a> → <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%20%E5%AD%90%E4%B9%8B%E5%8F%A3" target="_blank" rel="noopener">子之口<span aria-hidden="true"> ↗</span></a></div><div class="facts"><div><span>集合</span><b>11:05渓流-BASE</b></div><div><span>預約</span><b>已預約・現場付款</b></div></div><p><b>離團｜</b>11:55於子之口離團，接續健行行程。</p></div>
+<details class="transport-day" id="transport-1022"><summary class="accordion-summary"><span class="transport-date"><b>22</b><span>10月 · 四</span></span><span class="transport-summary-copy"><span class="day-index">D6・敞篷巴士已預約</span><b>星野 → 子之口 → 石ヶ戶 → 星野</b></span><svg class="chevron" viewBox="0 0 24 24"><path d="m6.5 9 5.5 5.5L17.5 9"></path></svg></summary><div class="transport-body"><p class="card-summary">11:05敞篷巴士｜約8.9km健行｜16:04優先・16:34最晚</p><div class="day-tip"><b>重點提醒</b><p>敞篷巴士已預約（11:05渓流-BASE集合、現場付款）；11:55於子之口正式離團。子之口至石ヶ戶約8.9km，目標15:30–16:00抵達；16:04優先，16:34為最晚班次。</p></div><div class="transport-leg"><div class="leg-head"><strong>11:05 → 11:55</strong><span class="chip transport">星野溪流敞篷巴士</span></div><div class="route-line"><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A3%AF%E5%BA%97%20by%20%E6%98%9F%E9%87%8E%E9%9B%86%E5%9C%98" target="_blank" rel="noopener">星野奧入瀨<span aria-hidden="true"> ↗</span></a> → <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%20%E5%AD%90%E4%B9%8B%E5%8F%A3" target="_blank" rel="noopener">子之口<span aria-hidden="true"> ↗</span></a></div><div class="facts"><div><span>集合</span><b>11:05渓流-BASE</b></div><div><span>預約</span><b>已預約・現場付款</b></div></div><p><b>離團｜</b>11:55於子之口離團，接續健行行程。</p></div>
 <div class="transport-leg"><div class="leg-head"><strong>12:15 → 15:30–16:00目標</strong><span class="chip transport">奧入瀨8.9km挑戰</span></div><div class="route-line"><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%20%E5%AD%90%E4%B9%8B%E5%8F%A3" target="_blank" rel="noopener">子之口<span aria-hidden="true"> ↗</span></a> → <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E7%9F%B3%E3%83%B6%E6%88%B8%E4%BC%91%E6%86%A9%E6%89%80" target="_blank" rel="noopener">石ヶ戶<span aria-hidden="true"> ↗</span></a></div><div class="facts"><div><span>距離</span><b>約8.9km</b></div><div><span>官方純步行</span><b>約3小時20分</b></div><div><span>本行程</span><b>預留約4小時</b></div></div><p>🚻 子之口 → 🚻 玉簾瀑布附近 → 🚻 石ヶ戶。</p></div>
 <div class="transport-leg"><div class="leg-head"><strong>16:04 → 16:12｜最晚16:34 → 16:42</strong><span class="chip transport">みずうみ87號／おいらせ24號</span></div><div class="route-line"><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E7%9F%B3%E3%83%B6%E6%88%B8" target="_blank" rel="noopener">石ヶ戶<span aria-hidden="true"> ↗</span></a> → <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A4%A8" target="_blank" rel="noopener">奧入瀨溪流館<span aria-hidden="true"> ↗</span></a></div><div class="facts"><div><span>優先</span><b>16:04みずうみ87號</b></div><div><span>預約</span><b>無預約制</b></div><div><span>最晚</span><b>16:34おいらせ24號</b></div></div><p><b>備案｜</b>星野溪流接駁車每小時:41發車，容量有限。</p></div></div></details>
-<details class="transport-day" id="transport-1023"><summary class="accordion-summary"><span class="transport-date"><b>23</b><span>10月 · 五</span></span><span class="transport-summary-copy"><b>星野 → 休屋 → 八戶 → 仙台</b><small>12:01休屋｜16:00八戶｜19:08仙台</small><em>查看完整交通細節</em></span><span class="reservation-badge">JR Bus免預約／新幹線已購票</span><svg class="chevron" viewBox="0 0 24 24"><path d="m6.5 9 5.5 5.5L17.5 9"></path></svg></summary><div class="transport-body"><div class="day-tip"><b>重點提醒</b><p>12:01帶行李前往休屋，午餐後走十和田神社、乙女之像與Marine Blue，不搭遊覽船；15:30開始排16:00直達八戶巴士。はやぶさ42號19:08八戶→20:29仙台已購票，IC卡已綁定。</p></div>
+<details class="transport-day" id="transport-1023"><summary class="accordion-summary"><span class="transport-date"><b>23</b><span>10月 · 五</span></span><span class="transport-summary-copy"><span class="day-index">D7・JR Bus免預約／新幹線已購票</span><b>星野 → 休屋 → 八戶 → 仙台</b></span><svg class="chevron" viewBox="0 0 24 24"><path d="m6.5 9 5.5 5.5L17.5 9"></path></svg></summary><div class="transport-body"><p class="card-summary">12:01休屋｜16:00八戶｜19:08仙台</p><div class="day-tip"><b>重點提醒</b><p>12:01帶行李前往休屋，午餐後走十和田神社、乙女之像與Marine Blue，不搭遊覽船；15:30開始排16:00直達八戶巴士。はやぶさ42號19:08八戶→20:29仙台已購票，IC卡已綁定。</p></div>
 <div class="transport-leg"><div class="leg-head"><strong>12:01 → 12:45</strong><span class="chip transport">みずうみ182號</span></div><div class="route-line"><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A4%A8" target="_blank" rel="noopener">奧入瀨溪流館<span aria-hidden="true"> ↗</span></a> → <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%20%E4%BC%91%E5%B1%8B" target="_blank" rel="noopener">十和田湖休屋<span aria-hidden="true"> ↗</span></a></div><div class="facts"><div><span>方案</span><b>主方案</b></div><div><span>預約</span><b>無預約制</b></div><div><span>行李</span><b>直接帶走</b></div></div><p><b>注意｜</b>紅葉季增班；11:40左右退房後前往巴士站候車。</p></div>
 <div class="transport-leg"><div class="leg-head"><strong>16:00 → 18:20</strong><span class="chip transport">おいらせ24號</span></div><div class="route-line"><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%20%E4%BC%91%E5%B1%8B" target="_blank" rel="noopener">十和田湖休屋<span aria-hidden="true"> ↗</span></a> → <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%85%AB%E6%88%B6%E7%AB%99" target="_blank" rel="noopener">八戶站西口<span aria-hidden="true"> ↗</span></a></div><div class="facts"><div><span>方案</span><b>主方案</b></div><div><span>預約</span><b>無預約制</b></div><div><span>排隊</span><b>15:40前後開始</b></div></div><p>紅葉季提早排隊。</p></div>
 <div class="transport-leg"><div class="leg-head"><strong>19:08 → 20:29</strong><span class="chip transport">はやぶさ42號</span></div><div class="route-line"><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%85%AB%E6%88%B6%E7%AB%99" target="_blank" rel="noopener">八戶站<span aria-hidden="true"> ↗</span></a> → <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%AB%99" target="_blank" rel="noopener">仙台站<span aria-hidden="true"> ↗</span></a></div><div class="facts"><div><span>方案</span><b>主方案</b></div><div><span>座位</span><b>6號車4D・4E</b></div><div><span>預約</span><b>已購票・IC已綁定</b></div></div><p><b>票種｜</b>新幹線電子票<br><b>乘車｜</b>兩張交通IC卡皆已完成設定；每人使用各自綁定Suica的裝置感應進站，不需領取實體票。</p></div>
@@ -1211,18 +1196,13 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 <details class="transport-day" id="transport-1024">
 <summary class="accordion-summary">
 <span class="transport-date"><b>24</b><span>10月 · 六</span></span>
-<span class="transport-summary-copy">
-<b>仙台 → 松島 → 圓通院點燈 → 仙台</b>
-<small>10:00出發｜14:00仁王丸｜圓通院確定參加</small>
-<em>查看完整交通細節</em>
-</span>
-<span class="reservation-badge">遊船已預約／點燈確定</span>
+<span class="transport-summary-copy"><span class="day-index">D8・遊船已預約／點燈確定</span><b>仙台 → 松島 → 圓通院點燈 → 仙台</b></span>
 <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
 <path d="m6.5 9 5.5 5.5L17.5 9">
 </path>
 </svg>
 </summary>
-<div class="transport-body"><div class="day-tip"><b>重點提醒</b><p>圓通院夜間點燈確定參加；正式時間與票價公布後再鎖定回程，點燈結束後搭最近一班JR仙石線回仙台。</p></div>
+<div class="transport-body"><p class="card-summary">10:00出發｜14:00仁王丸｜圓通院確定參加</p><div class="day-tip"><b>重點提醒</b><p>圓通院夜間點燈確定參加；正式時間與票價公布後再鎖定回程，點燈結束後搭最近一班JR仙石線回仙台。</p></div>
 <div class="transport-leg">
 <div class="leg-head">
 <strong>約10:20 → 約11:10</strong>
@@ -1398,18 +1378,13 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 <details class="transport-day" id="transport-1025">
 <summary class="accordion-summary">
 <span class="transport-date"><b>25</b><span>10月 · 日</span></span>
-<span class="transport-summary-copy">
-<b>仙台 ↔ 岩沼 → 返台</b>
-<small>上午金蛇水神社｜約14:20到機場｜JX863已開票・接機已確認</small>
-<em>查看完整交通細節</em>
-</span>
-<span class="reservation-badge">接機已確認派車</span>
+<span class="transport-summary-copy"><span class="day-index">D9・接機已確認派車</span><b>仙台 ↔ 岩沼 → 返台</b></span>
 <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
 <path d="m6.5 9 5.5 5.5L17.5 9">
 </path>
 </svg>
 </summary>
-<div class="transport-body"><div class="day-tip"><b>重點提醒</b><p>08:45前退房寄放行李；上午JR＋計程車往返金蛇水神社，11:00準時離開；13:30前取行李、約14:20抵達仙台機場，JX863 17:25起飛。</p></div>
+<div class="transport-body"><p class="card-summary">上午金蛇水神社｜約14:20到機場｜JX863已開票・接機已確認</p><div class="day-tip"><b>重點提醒</b><p>08:45前退房寄放行李；上午JR＋計程車往返金蛇水神社，11:00準時離開；13:30前取行李、約14:20抵達仙台機場，JX863 17:25起飛。</p></div>
 <div class="transport-leg"><div class="leg-head"><strong>約08:50 → 約09:15</strong><span class="chip transport">東北本線／常磐線</span></div><div class="route-line"><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%AB%99" target="_blank" rel="noopener">仙台站<span aria-hidden="true"> ↗</span></a> <span aria-hidden="true"> → </span> <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%B2%A9%E6%B2%BC%E7%AB%99" target="_blank" rel="noopener">岩沼站<span aria-hidden="true"> ↗</span></a></div><div class="facts"><div><span>工具</span><b>JR</b></div><div><span>預約</span><b class="neutral">免預約</b></div><div><span>座位</span><b>自由席</b></div><div><span>轉乘</span><b>08:45退房後出發</b></div></div><p><b>備案｜</b>下一班JR<br><b>注意｜</b>10月時刻出發前複核。</p></div><div class="transport-leg"><div class="leg-head"><strong>約09:15 → 約09:30</strong><span class="chip transport">站前搭乘</span></div><div class="route-line"><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%B2%A9%E6%B2%BC%E7%AB%99" target="_blank" rel="noopener">岩沼站<span aria-hidden="true"> ↗</span></a> <span aria-hidden="true"> → </span> <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%87%91%E8%9B%87%E6%B0%B4%E7%A5%9E%E7%A4%BE" target="_blank" rel="noopener">金蛇水神社<span aria-hidden="true"> ↗</span></a></div><div class="facts"><div><span>工具</span><b>計程車</b></div><div><span>預約</span><b class="neutral">通常免預約</b></div><div><span>座位</span><b>—</b></div><div><span>轉乘</span><b>約10分鐘</b></div></div><p><b>備案｜</b>市民巴士／步行40分鐘<br><b>注意｜</b>市民巴士班次稀疏，步行不作主案。</p></div><div class="transport-leg"><div class="leg-head"><strong>約11:00 → 約11:50</strong><span class="chip transport">岩沼站轉乘</span></div><div class="route-line"><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%87%91%E8%9B%87%E6%B0%B4%E7%A5%9E%E7%A4%BE" target="_blank" rel="noopener">金蛇水神社<span aria-hidden="true"> ↗</span></a> <span aria-hidden="true"> → </span> <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%AB%99" target="_blank" rel="noopener">仙台站<span aria-hidden="true"> ↗</span></a></div><div class="facts"><div><span>工具</span><b>計程車＋JR</b></div><div><span>預約</span><b class="neutral">免預約</b></div><div><span>座位</span><b>自由席</b></div><div><span>轉乘</span><b>約11:20岩沼發</b></div></div><p><b>備案｜</b>下一班JR；採買時間相應縮短<br><b>注意｜</b>若計程車不足可請SandoTerrace協助叫車。</p></div><div class="transport-leg"><div class="leg-head"><strong>約13:50 → 約14:20</strong><span class="chip transport">建議班次</span></div><div class="route-line"><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%AB%99" target="_blank" rel="noopener">仙台站<span aria-hidden="true"> ↗</span></a> <span aria-hidden="true"> → </span> <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E6%A9%9F%E5%A0%B4" target="_blank" rel="noopener">仙台機場<span aria-hidden="true"> ↗</span></a></div><div class="facts"><div><span>工具</span><b>仙台機場線</b></div><div><span>預約</span><b class="neutral">免預約</b></div><div><span>座位</span><b>自由席</b></div><div><span>轉乘</span><b>航班前約3小時到達</b></div></div><p><b>備案｜</b>14:30左右下一班<br><b>注意｜</b>13:30前取行李；10月正式時刻公布後複核。</p></div>
 <div class="transport-leg">
 <div class="leg-head">
@@ -1493,10 +1468,7 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 <details class="budget-group">
 <summary class="accordion-summary">
 <span class="cat-tile" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 19V8M21 19v-7a3 3 0 0 0-3-3H9v10M3 15h18M6 8h3v4H3v-1a3 3 0 0 1 3-3Z"/></svg></span>
-<span class="budget-group-title">
-<b>住宿</b>
-<small>4段・8晚｜皆已付款，後段住宿已確定</small>
-</span>
+<span class="budget-group-title"><span class="day-index">4段・8晚｜皆已付款，後段住宿已確定</span><b>住宿</b></span>
 <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
 <path d="m6.5 9 5.5 5.5L17.5 9">
 </path>
@@ -1624,10 +1596,7 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 <details class="budget-group">
 <summary class="accordion-summary">
 <span class="cat-tile" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="16" rx="4"/><path d="M8 7h8M7 12h10M8 19l-2 2M16 19l2 2M9 16h.01M15 16h.01"/></svg></span>
-<span class="budget-group-title">
-<b>交通</b>
-<small>機票已付款・10/20、10/23新幹線皆已購買</small>
-</span>
+<span class="budget-group-title"><span class="day-index">機票已付款・10/20、10/23新幹線皆已購買</span><b>交通</b></span>
 <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
 <path d="m6.5 9 5.5 5.5L17.5 9">
 </path>
@@ -1760,10 +1729,7 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 <details class="budget-group">
 <summary class="accordion-summary">
 <span class="cat-tile" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 19 6-10 4 6 3-4 5 8Z"/><circle cx="17" cy="6" r="2"/></svg></span>
-<span class="budget-group-title">
-<b>景點／活動</b>
-<small>獨木舟已付款・松島遊船現場付款</small>
-</span>
+<span class="budget-group-title"><span class="day-index">獨木舟已付款・松島遊船現場付款</span><b>景點／活動</b></span>
 <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
 <path d="m6.5 9 5.5 5.5L17.5 9">
 </path>
@@ -1852,10 +1818,7 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 <details class="budget-group">
 <summary class="accordion-summary">
 <span class="cat-tile" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 11h16a8 8 0 0 1-16 0ZM8 7c0-1 1-1 1-2M12 7c0-1 1-1 1-2M16 7c0-1 1-1 1-2"/></svg></span>
-<span class="budget-group-title">
-<b>飲食</b>
-<small>全程依實際消費｜金額待確認</small>
-</span>
+<span class="budget-group-title"><span class="day-index">全程依實際消費｜金額待確認</span><b>飲食</b></span>
 <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
 <path d="m6.5 9 5.5 5.5L17.5 9">
 </path>
@@ -1878,10 +1841,7 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 <details class="budget-group">
 <summary class="accordion-summary">
 <span class="cat-tile" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8Zm4 0V6a3 3 0 0 1 6 0v2"/></svg></span>
-<span class="budget-group-title">
-<b>購物</b>
-<small>伴手禮與其他購物｜金額待確認</small>
-</span>
+<span class="budget-group-title"><span class="day-index">伴手禮與其他購物｜金額待確認</span><b>購物</b></span>
 <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
 <path d="m6.5 9 5.5 5.5L17.5 9">
 </path>
@@ -1935,7 +1895,7 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 </div>
 </section>
 </main>
-<div class="source">V12P36｜2026 日本東北行程・最後更新 2026/09/29</div>
+<div class="source">V12P38｜2026 日本東北行程・最後更新 2026/09/29</div>
 <nav class="bottom-nav" aria-label="主要導覽">
 <label for="tab-lodging" tabindex="0"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 19V8M21 19v-7a3 3 0 0 0-3-3H9v10M3 15h18M6 8h3v4H3v-1a3 3 0 0 1 3-3Z"/></svg><span class="tab-text">住宿</span></label>
 <label for="tab-transport" tabindex="0"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="16" rx="4"/><path d="M8 7h8M7 12h10M8 19l-2 2M16 19l2 2M9 16h.01M15 16h.01"/></svg><span class="tab-text">交通</span></label>
@@ -2015,7 +1975,7 @@ if ("serviceWorker" in navigator) {
   render();
 })();
 </script>
-<script id="V12P36_LIVE_FX">
+<script id="V12P38_LIVE_FX">
 (()=>{
   const FALLBACK={rate:0.19861,date:'2026-08-26',source:'V7P4 快照'};
   const STORAGE_KEY='tohoku-jpy-twd-v10';
@@ -2037,23 +1997,46 @@ if ("serviceWorker" in navigator) {
       note.innerHTML=`1 日圓 ≈ NT$${rate.toFixed(5)}（${fx.date||'日期未提供'}）· <span class="fx-status">${status}</span> · 實際依銀行匯率`;
     }
   }
-  async function loadFx(){
+  const pad=n=>String(n).padStart(2,'0');
+  const stamp=t=>{const d=new Date(t);return `${d.getMonth()+1}/${d.getDate()} ${pad(d.getHours())}:${pad(d.getMinutes())}`};
+  async function getJSON(url){
+    const ctl=new AbortController(); const tm=setTimeout(()=>ctl.abort(),8000);
+    try{const r=await fetch(url,{cache:'no-store',signal:ctl.signal}); if(!r.ok) throw new Error('HTTP '+r.status); return await r.json();}
+    finally{clearTimeout(tm)}
+  }
+  async function liveRate(){
+    // 即時：Coinbase 匯率（分鐘級更新）
+    const cb=await getJSON('https://api.coinbase.com/v2/exchange-rates?currency=JPY');
+    const rate=Number(cb?.data?.rates?.TWD);
+    if(!Number.isFinite(rate)||rate<=0) throw new Error('invalid live FX');
+    return {rate,date:stamp(Date.now()),source:'即時匯率'};
+  }
+  async function dailyRate(){
+    // 備援：Frankfurter 每日參考匯率
+    const data=await getJSON('https://api.frankfurter.dev/v2/rate/JPY/TWD');
+    const rate=Number(data.rate ?? data.rates?.TWD);
+    if(!Number.isFinite(rate)||rate<=0) throw new Error('invalid FX');
+    return {rate,date:data.date||new Date().toISOString().slice(0,10),source:'每日參考匯率'};
+  }
+  let busy=false;
+  async function loadFx(first){
+    if(busy) return; busy=true;
     let cached=null; try{cached=JSON.parse(localStorage.getItem(STORAGE_KEY)||'null')}catch(e){}
-    if(cached?.rate) render(cached,'上次成功匯率'); else render(FALLBACK,'離線備援快照');
+    if(first){ if(cached?.rate) render(cached,'上次成功匯率'); else render(FALLBACK,'離線備援快照'); }
     try{
-      const res=await fetch('https://api.frankfurter.dev/v2/rate/JPY/TWD',{cache:'no-store'});
-      if(!res.ok) throw new Error('FX HTTP '+res.status);
-      const data=await res.json();
-      const rate=Number(data.rate ?? data.rates?.TWD);
-      if(!Number.isFinite(rate)||rate<=0) throw new Error('invalid FX');
-      const fx={rate,date:data.date||new Date().toISOString().slice(0,10),source:'Frankfurter'};
+      let fx; try{fx=await liveRate()}catch(e){fx=await dailyRate()}
       try{localStorage.setItem(STORAGE_KEY,JSON.stringify(fx))}catch(e){}
-      render(fx,'最新參考匯率');
+      render(fx,fx.source);
     }catch(e){
       if(cached?.rate) render(cached,'離線／上次成功匯率'); else render(FALLBACK,'離線備援快照');
-    }
+    }finally{busy=false}
   }
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',loadFx,{once:true}); else loadFx();
+  const start=()=>{
+    loadFx(true);
+    setInterval(()=>{if(document.visibilityState==='visible') loadFx(false)},5*60*1000);
+    document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible') loadFx(false)});
+  };
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',start,{once:true}); else start();
 })();
 </script>
 </body>

@@ -1,4 +1,4 @@
-const CACHE = "tohoku-v12p36-public-1";
+const CACHE = "tohoku-v12p38-public-1";
 const ASSETS = ["./index.html","./manifest.webmanifest","./apple-touch-icon.png","./icon-192.png","./icon-512.png","./favicon-32.png"];
 
 self.addEventListener("install", event => {
@@ -18,7 +18,7 @@ self.addEventListener("activate", event => {
 self.addEventListener("fetch", event => {
   if (event.request.method !== "GET") return;
   const url = new URL(event.request.url);
-  if (url.hostname === "api.frankfurter.dev") {
+  if (url.hostname === "api.frankfurter.dev" || url.hostname === "api.coinbase.com") {
     event.respondWith(fetch(event.request, {cache:"no-store"}));
     return;
   }
