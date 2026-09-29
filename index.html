@@ -8,9 +8,9 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="東北楓葉之旅">
-<meta name="description" content="2026 日本東北楓葉之旅 V12P6｜9天8夜雙人行程">
-<meta name="version" content="V12P6">
-<title>東北楓葉之旅｜V12P6</title>
+<meta name="description" content="2026 日本東北楓葉之旅 V12P7｜9天8夜雙人行程">
+<meta name="version" content="V12P7">
+<title>東北楓葉之旅｜V12P7</title>
 
 
 <meta name="mobile-web-app-capable" content="yes">
@@ -26,13 +26,13 @@
 --accent:#c2352a;--accent-ink:#a3281f;--accent-soft:#fcebe5;--on-accent:#fff;
 --hero:linear-gradient(135deg,#4a0f14 0%,#8f1d22 36%,#d4462a 72%,#f0a13a 112%);
 --rose-bg:#fde6e2;--rose:#b3261e;--amber-bg:#fdf0d8;--amber:#8f5406;--sky-bg:#e3efec;--sky:#2b6560;--violet-bg:#f6e7ee;--violet:#8a3562;--green-bg:#e8f2e3;--green:#3b7431;--gray-bg:#f3ece6;--gray:#6e5d56;
---radius:22px;--radius-sm:14px;--shadow:0 1px 2px #2a17120a,0 4px 16px #2a171208;--nav-bg:#fff;--nav-shadow:0 10px 36px #4a0f1426;
+--radius:22px;--radius-sm:14px;--shadow:0 1px 2px #2a17120a,0 4px 16px #2a171208;--nav-bg:rgba(255,255,255,.58);--nav-line:rgba(255,255,255,.7);--nav-active:rgba(194,53,42,.12);--nav-shadow:0 8px 32px #2a171222,inset 0 1px 0 #ffffffb3;
 font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;font-size:15px}
 @media(prefers-color-scheme:dark){:root{
 --bg:#140d0b;--surface:#1f1613;--surface-2:#2a1f1b;--ink:#f7ede7;--ink-2:#ddccc3;--muted:#ae988e;--faint:#7b675f;--line:#34271f;
 --accent:#ff7a5c;--accent-ink:#ff9b82;--accent-soft:#3b1a14;--on-accent:#2a0d08;
 --rose-bg:#3d1714;--rose:#ff9585;--amber-bg:#36250e;--amber:#ffc56e;--sky-bg:#132b28;--sky:#86d0c6;--violet-bg:#351a28;--violet:#f0a3c8;--green-bg:#1a2c16;--green:#9ed98f;--gray-bg:#2b221e;--gray:#c2b1a9;
---shadow:none;--nav-bg:#241a17;--nav-shadow:0 10px 36px #0009}}
+--shadow:none;--nav-bg:rgba(40,30,26,.55);--nav-line:rgba(255,255,255,.1);--nav-active:rgba(255,122,92,.18);--nav-shadow:0 8px 32px #0008,inset 0 1px 0 #ffffff1a}}
 *{box-sizing:border-box}html{background:var(--bg);scroll-behavior:smooth;scroll-padding-top:16px}
 body{margin:0;color:var(--ink);background:var(--bg);font-size:1rem;line-height:1.55;padding-bottom:calc(108px + env(safe-area-inset-bottom));-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased}
 a{color:inherit}button,summary,label,a{-webkit-tap-highlight-color:transparent}svg{flex-shrink:0}b,strong{font-weight:650}h1,h2,h3,h4,p{overflow-wrap:anywhere}
@@ -160,11 +160,11 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 
 /* Footer & nav */
 .source{color:var(--faint);text-align:center;font-size:.733rem;line-height:1.6;padding:0 24px 20px}
-.bottom-nav{position:fixed;z-index:50;bottom:max(12px,calc(env(safe-area-inset-bottom) - 12px));left:50%;transform:translateX(-50%);width:min(calc(100% - 28px),480px);height:64px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:2px;padding:6px;border-radius:999px;background:var(--nav-bg);box-shadow:var(--nav-shadow);border:1px solid var(--line)}
-.bottom-nav label{min-height:50px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;border-radius:999px;color:var(--faint);cursor:pointer;user-select:none;transition:background-color .18s,color .18s}
+.bottom-nav{position:fixed;z-index:50;bottom:max(12px,calc(env(safe-area-inset-bottom) - 12px));left:50%;transform:translateX(-50%);width:min(calc(100% - 28px),480px);height:64px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:2px;padding:6px;border-radius:999px;background:var(--nav-bg);-webkit-backdrop-filter:blur(18px) saturate(180%);backdrop-filter:blur(18px) saturate(180%);box-shadow:var(--nav-shadow);border:1px solid var(--nav-line)}
+.bottom-nav label{min-height:50px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;border-radius:999px;color:var(--muted);cursor:pointer;user-select:none;transition:background-color .18s,color .18s}
 .bottom-nav svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .tab-text{font-size:.667rem;line-height:1.15;white-space:nowrap;font-weight:650}
-#tab-lodging:checked~.bottom-nav label[for="tab-lodging"],#tab-transport:checked~.bottom-nav label[for="tab-transport"],#tab-trip:checked~.bottom-nav label[for="tab-trip"],#tab-budget:checked~.bottom-nav label[for="tab-budget"],#tab-todos:checked~.bottom-nav label[for="tab-todos"]{color:var(--accent);background:var(--accent-soft)}
+#tab-lodging:checked~.bottom-nav label[for="tab-lodging"],#tab-transport:checked~.bottom-nav label[for="tab-transport"],#tab-trip:checked~.bottom-nav label[for="tab-trip"],#tab-budget:checked~.bottom-nav label[for="tab-budget"],#tab-todos:checked~.bottom-nav label[for="tab-todos"]{color:var(--accent);background:var(--nav-active)}
 @media(hover:hover){.bottom-nav label:hover{color:var(--ink-2)}}
 
 @media(min-width:720px){body{background:var(--bg)}.app{box-shadow:0 0 0 1px var(--line)}}
@@ -182,7 +182,7 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 <div class="status-cover" aria-hidden="true"></div>
 <header class="app-bar">
 <div class="brand-copy"><h1>東北楓葉之旅</h1><p>JAPAN · AUTUMN 2026</p></div>
-<span class="release">V12P6</span>
+<span class="release">V12P7</span>
 </header>
 <div class="trip-meta"><span class="hero-label">仙台・青森・奧入瀨・十和田湖・松島</span><b>10/17 — 10/25</b><div class="countdown" id="countdown"><strong>—</strong><small>天後出發</small></div><span class="hero-sub">9天8夜 · 2人</span></div>
 <main>
@@ -2403,7 +2403,7 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 </div>
 </section>
 </main>
-<div class="source">V12P6｜2026 日本東北行程・最後更新 2026/09/29</div>
+<div class="source">V12P7｜2026 日本東北行程・最後更新 2026/09/29</div>
 <nav class="bottom-nav" aria-label="主要導覽">
 <label for="tab-lodging" tabindex="0"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 19V8M21 19v-7a3 3 0 0 0-3-3H9v10M3 15h18M6 8h3v4H3v-1a3 3 0 0 1 3-3Z"/></svg><span class="tab-text">住宿</span></label>
 <label for="tab-transport" tabindex="0"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="16" rx="4"/><path d="M8 7h8M7 12h10M8 19l-2 2M16 19l2 2M9 16h.01M15 16h.01"/></svg><span class="tab-text">交通</span></label>
@@ -2442,7 +2442,7 @@ if ("serviceWorker" in navigator) {
   else{el.querySelector('strong').textContent='✓';el.querySelector('small').textContent='旅程完成';}
 })();
 </script>
-<script id="V12P6_LIVE_FX">
+<script id="V12P7_LIVE_FX">
 (()=>{
   const FALLBACK={rate:0.19861,date:'2026-08-26',source:'V7P4 快照'};
   const STORAGE_KEY='tohoku-jpy-twd-v10';
