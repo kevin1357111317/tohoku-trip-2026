@@ -8,9 +8,9 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="東北楓葉之旅">
-<meta name="description" content="2026 日本東北楓葉之旅 V12P23｜9天8夜雙人行程">
-<meta name="version" content="V12P23">
-<title>東北楓葉之旅｜V12P23</title>
+<meta name="description" content="2026 日本東北楓葉之旅 V12P24｜9天8夜雙人行程">
+<meta name="version" content="V12P24">
+<title>東北楓葉之旅｜V12P24</title>
 
 
 <meta name="mobile-web-app-capable" content="yes">
@@ -168,7 +168,7 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 #tab-lodging:checked~.bottom-nav label[for="tab-lodging"],#tab-transport:checked~.bottom-nav label[for="tab-transport"],#tab-trip:checked~.bottom-nav label[for="tab-trip"],#tab-budget:checked~.bottom-nav label[for="tab-budget"],#tab-todos:checked~.bottom-nav label[for="tab-todos"]{color:var(--accent);background:var(--nav-active)}
 @media(hover:hover){.bottom-nav label:hover{color:var(--ink-2)}}
 
-/* V12P23 unified card spec */
+/* V12P24 unified card spec */
 .card-list{display:grid;gap:0}
 .card-body{padding:4px 14px 14px}.card-body .kv:first-child{border-top:0}.card-body p{margin:10px 0 0;color:var(--muted);font-size:.8rem;line-height:1.7}
 .stay-card .hotel-line{margin-top:14px}.stay-card .day-date span{font-size:.6rem}
@@ -186,6 +186,19 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 .todo-card h3{grid-column:2;grid-row:2;font-size:1.02rem;align-self:start;margin-top:2px}
 .todo-card p{grid-column:1/-1;margin:12px 0 0;padding-top:10px;border-top:1px solid var(--line)}
 
+/* V12P24 local-only QR */
+.qr-card{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px;margin-bottom:14px}
+.qr-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.qr-head h3{margin:0;font-size:1.02rem;font-weight:700}.qr-head p{margin:2px 0 0;font-size:.733rem;color:var(--muted)}
+.qr-add{flex-shrink:0;padding:7px 14px;border-radius:999px;background:var(--accent);color:var(--on-accent);font-size:.8rem;font-weight:700;cursor:pointer}
+.qr-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}.qr-list:empty{display:none}
+.qr-item{position:relative;background:#fff;border-radius:14px;padding:8px;border:1px solid var(--line)}
+.qr-item img{display:block;width:100%;height:auto;border-radius:8px;cursor:zoom-in}
+.qr-del{position:absolute;top:6px;right:6px;width:28px;height:28px;border-radius:50%;border:0;background:#10121cb3;color:#fff;font-size:1rem;line-height:28px;cursor:pointer}
+.qr-empty{margin:10px 0 0;font-size:.767rem;color:var(--muted);line-height:1.6}
+.qr-viewer{position:fixed;inset:0;z-index:100;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px}
+.qr-viewer[hidden]{display:none}.qr-viewer img{max-width:100%;max-height:85vh;image-rendering:pixelated}.qr-viewer p{color:#666;font-size:.8rem;margin-top:12px}
+
 @media(min-width:720px){body{background:var(--bg)}.app{box-shadow:0 0 0 1px var(--line)}}
 @media(max-width:370px){.app-bar{padding-left:16px;padding-right:16px}.brand-copy h1{font-size:1.75rem}.trip-meta{margin-left:12px;margin-right:12px;padding:11px 14px}.section{padding-left:12px;padding-right:12px}.day-head{grid-template-columns:44px minmax(0,1fr) 26px;gap:10px;padding:12px}.timeline-item{grid-template-columns:54px 12px minmax(0,1fr);gap:6px}.money-card>b{font-size:1.08rem}.tab-text{font-size:.633rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
@@ -201,7 +214,7 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 <div class="status-cover" aria-hidden="true"></div>
 <header class="app-bar">
 <div class="brand-copy"><h1>東北楓葉之旅</h1><p>JAPAN · AUTUMN 2026</p></div>
-<span class="release">V12P23</span>
+<span class="release">V12P24</span>
 </header>
 <div class="trip-meta"><span class="hero-label">仙台・青森・奧入瀨・十和田湖・松島</span><b>10/17 — 10/25</b><div class="countdown" id="countdown"><strong>—</strong><small>天後出發</small></div><span class="hero-sub">9天8夜 · 2人</span></div>
 <main>
@@ -1977,6 +1990,13 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 </section>
 <section class="view" id="view-todos">
 <div class="section"><div class="section-title"><h2>待辦</h2><span>13項未完成／待確認</span></div>
+<section class="qr-card" id="qr-card" aria-labelledby="qr-title">
+<div class="qr-head"><div><h3 id="qr-title">我的入境 QR</h3><p>只存在這支手機，不會上傳到網站或 GitHub。</p></div><label class="qr-add" for="qr-input">＋ 加入</label></div>
+<input id="qr-input" type="file" accept="image/*" multiple hidden>
+<div class="qr-list" id="qr-list"></div>
+<p class="qr-empty" id="qr-empty">尚未加入。選取 Visit Japan Web 截圖（入境審查＋海關申報），點圖片可全螢幕給機台掃描。</p>
+</section>
+<div class="qr-viewer" id="qr-viewer" hidden><img alt="入境 QR 全螢幕" id="qr-viewer-img"><p>點一下關閉</p></div>
 <div class="callout"><h3>現在先做</h3><p>① 旅平險＋Visit Japan Web　② 接機航班改JX863＋獨木舟銜接</p></div>
 <div class="grid two">
 <article class="todo-card"><div class="todo-top"><span class="priority priority-high"><b>高</b><span>優先</span></span><span class="due">出發前</span></div><h3>完成 Visit Japan Web</h3><p>• 兩人入境＋海關申報<br>• QR Code 截圖離線保存</p></article>
@@ -1998,7 +2018,7 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 </div>
 </section>
 </main>
-<div class="source">V12P23｜2026 日本東北行程・最後更新 2026/09/29</div>
+<div class="source">V12P24｜2026 日本東北行程・最後更新 2026/09/29</div>
 <nav class="bottom-nav" aria-label="主要導覽">
 <label for="tab-lodging" tabindex="0"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 19V8M21 19v-7a3 3 0 0 0-3-3H9v10M3 15h18M6 8h3v4H3v-1a3 3 0 0 1 3-3Z"/></svg><span class="tab-text">住宿</span></label>
 <label for="tab-transport" tabindex="0"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="16" rx="4"/><path d="M8 7h8M7 12h10M8 19l-2 2M16 19l2 2M9 16h.01M15 16h.01"/></svg><span class="tab-text">交通</span></label>
@@ -2037,7 +2057,48 @@ if ("serviceWorker" in navigator) {
   else{el.querySelector('strong').textContent='✓';el.querySelector('small').textContent='旅程完成';}
 })();
 </script>
-<script id="V12P23_LIVE_FX">
+<script>
+(()=>{
+  const KEY='tohoku-local-qr-v1';
+  const list=document.getElementById('qr-list'), empty=document.getElementById('qr-empty'), input=document.getElementById('qr-input');
+  const viewer=document.getElementById('qr-viewer'), vimg=document.getElementById('qr-viewer-img');
+  if(!list) return;
+  const load=()=>{try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return []}};
+  const save=a=>{try{localStorage.setItem(KEY,JSON.stringify(a));return true}catch(e){alert('手機空間不足或瀏覽器不允許儲存，請改用相簿截圖。');return false}};
+  function render(){
+    const items=load(); list.innerHTML='';
+    items.forEach((src,i)=>{
+      const d=document.createElement('div'); d.className='qr-item';
+      const img=document.createElement('img'); img.src=src; img.alt='入境 QR '+(i+1);
+      img.onclick=()=>{vimg.src=src; viewer.hidden=false};
+      const del=document.createElement('button'); del.className='qr-del'; del.type='button'; del.textContent='×'; del.setAttribute('aria-label','刪除');
+      del.onclick=()=>{if(confirm('刪除這張 QR？')){const a=load(); a.splice(i,1); save(a); render();}};
+      d.append(img,del); list.append(d);
+    });
+    empty.hidden=items.length>0;
+  }
+  function shrink(file){
+    return new Promise((res,rej)=>{
+      const r=new FileReader(); r.onerror=rej;
+      r.onload=()=>{const im=new Image(); im.onerror=rej; im.onload=()=>{
+        const max=1100, k=Math.min(1,max/Math.max(im.width,im.height));
+        const c=document.createElement('canvas'); c.width=Math.round(im.width*k); c.height=Math.round(im.height*k);
+        const g=c.getContext('2d'); g.imageSmoothingEnabled=false; g.fillStyle='#fff'; g.fillRect(0,0,c.width,c.height); g.drawImage(im,0,0,c.width,c.height);
+        res(c.toDataURL('image/png'));
+      }; im.src=r.result};
+      r.readAsDataURL(file);
+    });
+  }
+  input.addEventListener('change',async()=>{
+    const a=load();
+    for(const f of input.files){try{a.push(await shrink(f))}catch(e){}}
+    input.value=''; save(a); render();
+  });
+  viewer.addEventListener('click',()=>{viewer.hidden=true; vimg.removeAttribute('src')});
+  render();
+})();
+</script>
+<script id="V12P24_LIVE_FX">
 (()=>{
   const FALLBACK={rate:0.19861,date:'2026-08-26',source:'V7P4 快照'};
   const STORAGE_KEY='tohoku-jpy-twd-v10';
