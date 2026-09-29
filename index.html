@@ -8,9 +8,9 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="東北楓葉之旅">
-<meta name="description" content="2026 日本東北楓葉之旅 V12P7｜9天8夜雙人行程">
-<meta name="version" content="V12P7">
-<title>東北楓葉之旅｜V12P7</title>
+<meta name="description" content="2026 日本東北楓葉之旅 V12P8｜9天8夜雙人行程">
+<meta name="version" content="V12P8">
+<title>東北楓葉之旅｜V12P8</title>
 
 
 <meta name="mobile-web-app-capable" content="yes">
@@ -107,11 +107,12 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 .chip.neutral,.chip.flex,.priority-low{background:var(--gray-bg);color:var(--gray)}
 
 /* Accordions (transport / budget) */
-.accordion-summary{display:grid;grid-template-columns:52px minmax(0,1fr) 28px;gap:10px 12px;align-items:center;padding:14px;list-style:none;cursor:pointer}
-.transport-date{align-self:start;display:grid;place-items:center;height:44px;border-radius:13px;background:var(--surface-2);font-size:.8rem;font-weight:800;color:var(--ink);white-space:nowrap;font-variant-numeric:tabular-nums;grid-row:1/3}
-.transport-day[open] .transport-date{background:var(--accent);color:var(--on-accent)}
+.accordion-summary{display:grid;grid-template-columns:50px minmax(0,1fr) 28px;gap:6px 13px;align-items:center;padding:13px 14px;min-height:76px;list-style:none;cursor:pointer}
+.transport-date{grid-row:1/3;align-self:center;background:var(--surface-2);border-radius:15px;padding:7px 2px;text-align:center;line-height:1.05;transition:background .2s,color .2s}
+.transport-date b{display:block;font-size:1.45rem;font-weight:800;letter-spacing:-.05em;font-variant-numeric:tabular-nums}.transport-date span{display:block;margin-top:3px;font-size:.6rem;color:var(--muted);white-space:nowrap}
+.transport-day[open] .transport-date{background:var(--accent);color:var(--on-accent)}.transport-day[open] .transport-date span{color:inherit;opacity:.8}
 .transport-summary-copy{min-width:0}.transport-summary-copy b,.transport-summary-copy small,.transport-summary-copy em{display:block}
-.transport-summary-copy b{font-size:.95rem;font-weight:700;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.transport-summary-copy b{font-size:1.02rem;font-weight:700;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .transport-summary-copy small{font-size:.733rem;margin-top:2px;color:var(--muted);line-height:1.45;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .transport-summary-copy em{display:none}
 .transport-day .reservation-badge{grid-column:2;justify-self:start}
@@ -182,7 +183,7 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 <div class="status-cover" aria-hidden="true"></div>
 <header class="app-bar">
 <div class="brand-copy"><h1>東北楓葉之旅</h1><p>JAPAN · AUTUMN 2026</p></div>
-<span class="release">V12P7</span>
+<span class="release">V12P8</span>
 </header>
 <div class="trip-meta"><span class="hero-label">仙台・青森・奧入瀨・十和田湖・松島</span><b>10/17 — 10/25</b><div class="countdown" id="countdown"><strong>—</strong><small>天後出發</small></div><span class="hero-sub">9天8夜 · 2人</span></div>
 <main>
@@ -1048,7 +1049,7 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 </div>
 <details class="transport-day" id="transport-1017">
 <summary class="accordion-summary">
-<span class="transport-date">10/17</span>
+<span class="transport-date"><b>17</b><span>10月 · 六</span></span>
 <span class="transport-summary-copy">
 <b>新竹 → 桃園機場 → 仙台</b>
 <small>08:00 LINE GO專車・JX862已開票</small>
@@ -1153,7 +1154,7 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 </details>
 <details class="transport-day" id="transport-1018">
 <summary class="accordion-summary">
-<span class="transport-date">10/18</span>
+<span class="transport-date"><b>18</b><span>10月 · 日</span></span>
 <span class="transport-summary-copy">
 <b>仙台市區 → 岩沼 → 仙台</b>
 <small>09:00 Loople｜13:20 JR岩沼</small>
@@ -1398,7 +1399,7 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 </details>
 <details class="transport-day" id="transport-1019">
 <summary class="accordion-summary">
-<span class="transport-date">10/19</span>
+<span class="transport-date"><b>19</b><span>10月 · 一</span></span>
 <span class="transport-summary-copy">
 <b>Klook 178500 C方案一日遊</b>
 <small>藏王御釜・藏王纜車／溫泉街・銀山溫泉｜已付款・憑證待確認</small>
@@ -1529,7 +1530,7 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 </details>
 <details class="transport-day" id="transport-1020">
 <summary class="accordion-summary">
-<span class="transport-date">10/20</span>
+<span class="transport-date"><b>20</b><span>10月 · 二</span></span>
 <span class="transport-summary-copy">
 <b>仙台 → 青森</b>
 <small>09:50 Hayabusa 5｜11:37奧羽本線</small>
@@ -1620,20 +1621,20 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 </div>
 </div>
 </details>
-<details class="transport-day" id="transport-1021"><summary class="accordion-summary"><span class="transport-date">10/21</span><span class="transport-summary-copy"><b>青森 → 星野 → 宇樽部 → 星野</b><small>09:00主線｜12:01前往獨木舟｜16:06回程</small><em>查看完整交通細節</em></span><span class="reservation-badge">JR Bus免預約／Canoe已預約</span><svg class="chevron" viewBox="0 0 24 24"><path d="m6.5 9 5.5 5.5L17.5 9"></path></svg></summary><div class="transport-body"><div class="transport-leg"><div class="leg-head"><strong>09:00 → 11:01</strong><span class="chip transport">みずうみ4號</span></div><div class="route-line"><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E6%A3%AE%E7%AB%99" target="_blank" rel="noopener">青森站<span aria-hidden="true"> ↗</span></a> → <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A4%A8" target="_blank" rel="noopener">奧入瀨溪流館<span aria-hidden="true"> ↗</span></a></div><div class="facts"><div><span>方案</span><b>主方案</b></div><div><span>預約</span><b>無預約制</b></div><div><span>備用早班</span><b>08:10青森站發</b></div></div><p><b>注意｜</b>08:10僅備案，不放入主行程。</p></div>
+<details class="transport-day" id="transport-1021"><summary class="accordion-summary"><span class="transport-date"><b>21</b><span>10月 · 三</span></span><span class="transport-summary-copy"><b>青森 → 星野 → 宇樽部 → 星野</b><small>09:00主線｜12:01前往獨木舟｜16:06回程</small><em>查看完整交通細節</em></span><span class="reservation-badge">JR Bus免預約／Canoe已預約</span><svg class="chevron" viewBox="0 0 24 24"><path d="m6.5 9 5.5 5.5L17.5 9"></path></svg></summary><div class="transport-body"><div class="transport-leg"><div class="leg-head"><strong>09:00 → 11:01</strong><span class="chip transport">みずうみ4號</span></div><div class="route-line"><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E6%A3%AE%E7%AB%99" target="_blank" rel="noopener">青森站<span aria-hidden="true"> ↗</span></a> → <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A4%A8" target="_blank" rel="noopener">奧入瀨溪流館<span aria-hidden="true"> ↗</span></a></div><div class="facts"><div><span>方案</span><b>主方案</b></div><div><span>預約</span><b>無預約制</b></div><div><span>備用早班</span><b>08:10青森站發</b></div></div><p><b>注意｜</b>08:10僅備案，不放入主行程。</p></div>
 <div class="transport-leg"><div class="leg-head"><strong>12:01 → 12:36</strong><span class="chip transport">みずうみ182號</span></div><div class="route-line"><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A4%A8" target="_blank" rel="noopener">奧入瀨溪流館<span aria-hidden="true"> ↗</span></a> → <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%8B%E5%AE%87%E6%A8%BD%E9%83%A8" target="_blank" rel="noopener">下宇樽部<span aria-hidden="true"> ↗</span></a></div><div class="facts"><div><span>方案</span><b>主方案</b></div><div><span>預約</span><b>無預約制</b></div><div><span>運行</span><b>2026/9/18後紅葉季增班</b></div></div><p><b>轉乘｜</b>下車後步行約15分鐘至うたるべキャンプ場。</p></div>
 <div class="transport-leg"><div class="leg-head"><strong>16:06 → 16:42</strong><span class="chip transport">おいらせ24號</span></div><div class="route-line"><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%8B%E5%AE%87%E6%A8%BD%E9%83%A8" target="_blank" rel="noopener">下宇樽部<span aria-hidden="true"> ↗</span></a> → <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A4%A8" target="_blank" rel="noopener">奧入瀨溪流館<span aria-hidden="true"> ↗</span></a></div><div class="facts"><div><span>方案</span><b>主方案</b></div><div><span>預約</span><b>無預約制</b></div><div><span>步行</span><b>溪流館→星野約5～10分鐘</b></div></div><p><b>重要｜</b>13:00獨木舟報到時主動告知工作人員需銜接本班。</p></div></div></details>
-<details class="transport-day" id="transport-1022"><summary class="accordion-summary"><span class="transport-date">10/22</span><span class="transport-summary-copy"><b>星野 → 子之口 → 石ヶ戶 → 星野</b><small>11:05敞篷巴士｜約8.9km健行｜16:04優先・16:34最晚</small><em>查看完整交通細節</em></span><span class="reservation-badge">敞篷巴士已預約</span><svg class="chevron" viewBox="0 0 24 24"><path d="m6.5 9 5.5 5.5L17.5 9"></path></svg></summary><div class="transport-body"><div class="transport-leg"><div class="leg-head"><strong>11:05 → 11:55</strong><span class="chip transport">星野溪流敞篷巴士</span></div><div class="route-line"><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A3%AF%E5%BA%97%20by%20%E6%98%9F%E9%87%8E%E9%9B%86%E5%9C%98" target="_blank" rel="noopener">星野奧入瀨<span aria-hidden="true"> ↗</span></a> → <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%20%E5%AD%90%E4%B9%8B%E5%8F%A3" target="_blank" rel="noopener">子之口<span aria-hidden="true"> ↗</span></a></div><div class="facts"><div><span>集合</span><b>11:05渓流-BASE</b></div><div><span>預約</span><b>已預約・現場付款</b></div><div><span>費用</span><b>¥3,850／人；2人¥7,700</b></div></div><p><b>離團｜</b>11:55於子之口離團，接續健行行程。</p></div>
+<details class="transport-day" id="transport-1022"><summary class="accordion-summary"><span class="transport-date"><b>22</b><span>10月 · 四</span></span><span class="transport-summary-copy"><b>星野 → 子之口 → 石ヶ戶 → 星野</b><small>11:05敞篷巴士｜約8.9km健行｜16:04優先・16:34最晚</small><em>查看完整交通細節</em></span><span class="reservation-badge">敞篷巴士已預約</span><svg class="chevron" viewBox="0 0 24 24"><path d="m6.5 9 5.5 5.5L17.5 9"></path></svg></summary><div class="transport-body"><div class="transport-leg"><div class="leg-head"><strong>11:05 → 11:55</strong><span class="chip transport">星野溪流敞篷巴士</span></div><div class="route-line"><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A3%AF%E5%BA%97%20by%20%E6%98%9F%E9%87%8E%E9%9B%86%E5%9C%98" target="_blank" rel="noopener">星野奧入瀨<span aria-hidden="true"> ↗</span></a> → <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%20%E5%AD%90%E4%B9%8B%E5%8F%A3" target="_blank" rel="noopener">子之口<span aria-hidden="true"> ↗</span></a></div><div class="facts"><div><span>集合</span><b>11:05渓流-BASE</b></div><div><span>預約</span><b>已預約・現場付款</b></div><div><span>費用</span><b>¥3,850／人；2人¥7,700</b></div></div><p><b>離團｜</b>11:55於子之口離團，接續健行行程。</p></div>
 <div class="transport-leg"><div class="leg-head"><strong>12:15 → 15:30–16:00目標</strong><span class="chip transport">奧入瀨8.9km挑戰</span></div><div class="route-line"><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%20%E5%AD%90%E4%B9%8B%E5%8F%A3" target="_blank" rel="noopener">子之口<span aria-hidden="true"> ↗</span></a> → <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E7%9F%B3%E3%83%B6%E6%88%B8%E4%BC%91%E6%86%A9%E6%89%80" target="_blank" rel="noopener">石ヶ戶<span aria-hidden="true"> ↗</span></a></div><div class="facts"><div><span>距離</span><b>約8.9km</b></div><div><span>官方純步行</span><b>約3小時20分</b></div><div><span>本行程</span><b>預留約4小時</b></div></div><p>🚻 子之口 → 🚻 玉簾瀑布附近 → 🚻 石ヶ戶。</p></div>
 <div class="transport-leg"><div class="leg-head"><strong>16:34 → 16:42</strong><span class="chip transport">おいらせ24號</span></div><div class="route-line"><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E7%9F%B3%E3%83%B6%E6%88%B8" target="_blank" rel="noopener">石ヶ戶<span aria-hidden="true"> ↗</span></a> → <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A4%A8" target="_blank" rel="noopener">奧入瀨溪流館<span aria-hidden="true"> ↗</span></a></div><div class="facts"><div><span>方案</span><b>正式主方案</b></div><div><span>預約</span><b>無預約制</b></div><div><span>早到</span><b>16:04みずうみ87號→16:12</b></div></div><p><b>備案｜</b>星野溪流接駁車每小時:41發車，容量有限。</p></div></div></details>
-<details class="transport-day" id="transport-1023"><summary class="accordion-summary"><span class="transport-date">10/23</span><span class="transport-summary-copy"><b>星野 → 休屋 → 八戶 → 仙台</b><small>12:01休屋｜16:00八戶｜19:08仙台</small><em>查看完整交通細節</em></span><span class="reservation-badge">JR Bus免預約／新幹線待預約</span><svg class="chevron" viewBox="0 0 24 24"><path d="m6.5 9 5.5 5.5L17.5 9"></path></svg></summary><div class="transport-body">
+<details class="transport-day" id="transport-1023"><summary class="accordion-summary"><span class="transport-date"><b>23</b><span>10月 · 五</span></span><span class="transport-summary-copy"><b>星野 → 休屋 → 八戶 → 仙台</b><small>12:01休屋｜16:00八戶｜19:08仙台</small><em>查看完整交通細節</em></span><span class="reservation-badge">JR Bus免預約／新幹線待預約</span><svg class="chevron" viewBox="0 0 24 24"><path d="m6.5 9 5.5 5.5L17.5 9"></path></svg></summary><div class="transport-body">
 <div class="transport-leg"><div class="leg-head"><strong>12:01 → 12:45</strong><span class="chip transport">みずうみ182號</span></div><div class="route-line"><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A4%A8" target="_blank" rel="noopener">奧入瀨溪流館<span aria-hidden="true"> ↗</span></a> → <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%20%E4%BC%91%E5%B1%8B" target="_blank" rel="noopener">十和田湖休屋<span aria-hidden="true"> ↗</span></a></div><div class="facts"><div><span>方案</span><b>主方案</b></div><div><span>預約</span><b>無預約制</b></div><div><span>行李</span><b>直接帶走</b></div></div><p><b>注意｜</b>紅葉季增班；11:40左右退房後前往巴士站候車。</p></div>
 <div class="transport-leg"><div class="leg-head"><strong>16:00 → 18:20</strong><span class="chip transport">おいらせ24號</span></div><div class="route-line"><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%81%E5%92%8C%E7%94%B0%E6%B9%96%20%E4%BC%91%E5%B1%8B" target="_blank" rel="noopener">十和田湖休屋<span aria-hidden="true"> ↗</span></a> → <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%85%AB%E6%88%B6%E7%AB%99" target="_blank" rel="noopener">八戶站西口<span aria-hidden="true"> ↗</span></a></div><div class="facts"><div><span>方案</span><b>主方案</b></div><div><span>預約</span><b>無預約制</b></div><div><span>排隊</span><b>15:40前後開始</b></div></div><p>紅葉季提早排隊。</p></div>
 <div class="transport-leg"><div class="leg-head"><strong>19:08 → 20:29</strong><span class="chip transport">はやぶさ42號</span></div><div class="route-line"><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%85%AB%E6%88%B6%E7%AB%99" target="_blank" rel="noopener">八戶站<span aria-hidden="true"> ↗</span></a> → <a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%99%E5%8F%B0%E7%AB%99" target="_blank" rel="noopener">仙台站<span aria-hidden="true"> ↗</span></a></div><div class="facts"><div><span>方案</span><b>主方案</b></div><div><span>座位</span><b>全車指定席</b></div><div><span>狀態</span><b>正式時刻已確認／待預約</b></div></div><p>JR東日本2026/10/23指定日正式時刻。</p></div>
 </div></details>
 <details class="transport-day" id="transport-1024">
 <summary class="accordion-summary">
-<span class="transport-date">10/24</span>
+<span class="transport-date"><b>24</b><span>10月 · 六</span></span>
 <span class="transport-summary-copy">
 <b>仙台 → 松島 → 圓通院點燈 → 仙台</b>
 <small>10:00出發｜14:00仁王丸｜圓通院確定參加</small>
@@ -1840,7 +1841,7 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 </details>
 <details class="transport-day" id="transport-1025">
 <summary class="accordion-summary">
-<span class="transport-date">10/25</span>
+<span class="transport-date"><b>25</b><span>10月 · 日</span></span>
 <span class="transport-summary-copy">
 <b>仙台 → 桃園機場 → 新竹</b>
 <small>JX863已開票・專車待預約</small>
@@ -2403,7 +2404,7 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 </div>
 </section>
 </main>
-<div class="source">V12P7｜2026 日本東北行程・最後更新 2026/09/29</div>
+<div class="source">V12P8｜2026 日本東北行程・最後更新 2026/09/29</div>
 <nav class="bottom-nav" aria-label="主要導覽">
 <label for="tab-lodging" tabindex="0"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 19V8M21 19v-7a3 3 0 0 0-3-3H9v10M3 15h18M6 8h3v4H3v-1a3 3 0 0 1 3-3Z"/></svg><span class="tab-text">住宿</span></label>
 <label for="tab-transport" tabindex="0"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="16" rx="4"/><path d="M8 7h8M7 12h10M8 19l-2 2M16 19l2 2M9 16h.01M15 16h.01"/></svg><span class="tab-text">交通</span></label>
@@ -2442,7 +2443,7 @@ if ("serviceWorker" in navigator) {
   else{el.querySelector('strong').textContent='✓';el.querySelector('small').textContent='旅程完成';}
 })();
 </script>
-<script id="V12P7_LIVE_FX">
+<script id="V12P8_LIVE_FX">
 (()=>{
   const FALLBACK={rate:0.19861,date:'2026-08-26',source:'V7P4 快照'};
   const STORAGE_KEY='tohoku-jpy-twd-v10';
