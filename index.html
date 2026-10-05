@@ -7,9 +7,9 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="東北楓葉之旅">
-<meta name="description" content="2026 日本東北楓葉之旅 V12P49｜9天8夜雙人行程">
-<meta name="version" content="V12P49">
-<title>東北楓葉之旅｜V12P49</title>
+<meta name="description" content="2026 日本東北楓葉之旅 V13｜9天8夜雙人行程">
+<meta name="version" content="V13">
+<title>東北楓葉之旅｜V13</title>
 
 
 <meta name="mobile-web-app-capable" content="yes">
@@ -50,7 +50,7 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 .section-title h2{margin:0;font-size:1.6rem;line-height:1.2;letter-spacing:-.03em;font-weight:700;white-space:nowrap}
 .section-title>span{color:var(--muted);font-size:.767rem;text-align:right}
 .view{display:none}.tab-radio{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
-#tab-lodging:checked~main #view-lodging,#tab-transport:checked~main #view-transport,#tab-trip:checked~main #view-trip,#tab-budget:checked~main #view-budget,#tab-todos:checked~main #view-todos{display:block;animation:fade .22s ease}
+#tab-buy:checked~main #view-buy,#tab-transport:checked~main #view-transport,#tab-trip:checked~main #view-trip,#tab-budget:checked~main #view-budget,#tab-todos:checked~main #view-todos{display:block;animation:fade .22s ease}
 @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 
 /* Callouts & risk cards */
@@ -160,10 +160,10 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 .bottom-nav label{min-height:50px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;border-radius:999px;color:var(--muted);cursor:pointer;user-select:none;transition:background-color .18s,color .18s}
 .bottom-nav svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .tab-text{font-size:.667rem;line-height:1.15;white-space:nowrap;font-weight:650}
-#tab-lodging:checked~.bottom-nav label[for="tab-lodging"],#tab-transport:checked~.bottom-nav label[for="tab-transport"],#tab-trip:checked~.bottom-nav label[for="tab-trip"],#tab-budget:checked~.bottom-nav label[for="tab-budget"],#tab-todos:checked~.bottom-nav label[for="tab-todos"]{color:var(--accent);background:var(--nav-active)}
+#tab-buy:checked~.bottom-nav label[for="tab-buy"],#tab-transport:checked~.bottom-nav label[for="tab-transport"],#tab-trip:checked~.bottom-nav label[for="tab-trip"],#tab-budget:checked~.bottom-nav label[for="tab-budget"],#tab-todos:checked~.bottom-nav label[for="tab-todos"]{color:var(--accent);background:var(--nav-active)}
 @media(hover:hover){.bottom-nav label:hover{color:var(--ink-2)}}
 
-/* V12P49 unified card spec */
+/* V13 unified card spec */
 .card-list{display:grid;gap:0}
 .card-body{padding:4px 14px 14px}.card-body .kv:first-child{border-top:0}.card-body p{margin:10px 0 0;color:var(--muted);font-size:.8rem;line-height:1.7}
 .stay-card .hotel-line{margin-top:14px}.stay-card .day-date span{font-size:.6rem}
@@ -181,7 +181,7 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 .todo-card h3{grid-column:2;grid-row:2;font-size:1.02rem;align-self:start;margin-top:2px}
 .todo-card p{grid-column:1/-1;margin:12px 0 0;padding-top:10px;border-top:1px solid var(--line)}
 
-/* V12P49 local-only QR */
+/* V13 local-only QR */
 .qr-card{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px;margin-bottom:14px}
 .qr-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .qr-head h3{margin:0;font-size:1.02rem;font-weight:700}.qr-head p{margin:2px 0 0;font-size:.733rem;color:var(--muted)}
@@ -198,12 +198,12 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 .todo-group span{display:inline-grid;place-items:center;min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:var(--surface-2);font-size:.667rem;color:var(--ink-2)}
 .grid.two>.todo-group:first-child{margin-top:4px}
 .day-tip{margin:12px 0 2px;padding:11px 13px;border-radius:12px;background:var(--accent-soft)}.day-tip b{display:block;font-size:.733rem;color:var(--accent-ink);font-weight:700}.day-tip p{margin:3px 0 0;font-size:.8rem;line-height:1.65;color:var(--ink-2)}
-/* V12P49 unified card heads */
+/* V13 unified card heads */
 .transport-date{grid-row:auto}.transport-day .chevron{grid-row:auto}.accordion-summary{padding:13px 14px;row-gap:0}
 .transport-summary-copy b,.budget-group-title b{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;white-space:normal;margin-top:2px;font-size:1.02rem;line-height:1.35;font-weight:700;letter-spacing:-.01em}
 .budget-group>.accordion-summary,.transport-day>.accordion-summary{min-height:76px}
 .card-summary{margin:12px 0 0;font-size:.8rem;line-height:1.6;color:var(--muted)}
-/* V12P49 momiji elements */
+/* V13 momiji elements */
 :root{--leaf:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath stroke='%23000' stroke-width='1.5' stroke-linejoin='round' d='M50.0 66.0 L45.0 63.7 L40.9 68.6 L35.6 72.4 L32.6 73.3 L33.2 70.3 L36.5 64.6 L40.8 59.9 L36.5 60.6 L34.9 59.2 L25.7 60.1 L16.1 58.8 L12.1 56.7 L15.8 54.0 L25.1 51.4 L34.3 51.0 L35.9 49.0 L33.3 45.1 L25.1 37.8 L18.5 28.5 L17.1 23.3 L22.4 24.4 L32.1 30.3 L40.0 38.0 L44.0 40.2 L44.8 34.5 L44.5 22.8 L47.0 10.9 L50.0 6.0 L53.0 10.9 L55.5 22.8 L55.2 34.5 L56.0 40.2 L60.0 38.0 L67.9 30.3 L77.6 24.4 L82.9 23.3 L81.5 28.5 L74.9 37.8 L66.7 45.1 L64.1 49.0 L65.7 51.0 L74.9 51.4 L84.2 54.0 L87.9 56.7 L83.9 58.8 L74.3 60.1 L65.1 59.2 L63.5 60.6 L59.2 59.9 L63.5 64.6 L66.8 70.3 L67.4 73.3 L64.4 72.4 L59.1 68.6 L55.0 63.7 Z M49 62.0 L51 62.0 L52.5 96 L50.5 96 Z'/%3E%3C/svg%3E")}
 .leaf-ico,.hero:before,.leaf-fall{-webkit-mask:var(--leaf) center/contain no-repeat;mask:var(--leaf) center/contain no-repeat}
 .hero:before{content:"";position:absolute;right:-18px;bottom:-34px;width:132px;height:132px;background:#fff;opacity:.13;transform:rotate(-18deg);pointer-events:none}
@@ -222,13 +222,13 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 </head>
 <body>
 <div class="app">
-<input class="tab-radio" type="radio" name="tabs" id="tab-lodging">
+<input class="tab-radio" type="radio" name="tabs" id="tab-buy">
 <input class="tab-radio" type="radio" name="tabs" id="tab-transport">
 <input class="tab-radio" type="radio" name="tabs" id="tab-trip" checked>
 <input class="tab-radio" type="radio" name="tabs" id="tab-budget">
 <input class="tab-radio" type="radio" name="tabs" id="tab-todos">
 <div class="status-cover" aria-hidden="true"></div>
-<header class="hero"><i class="leaf-fall" aria-hidden="true"></i><i class="leaf-fall" aria-hidden="true"></i><i class="leaf-fall" aria-hidden="true"></i><div class="hero-top"><h1>東北楓葉之旅</h1><span class="release">V12P49</span></div><div class="hero-bottom"><span class="hero-sub">10/17—10/25 · 9天8夜 · 2人</span><span class="countdown" id="countdown"><strong>—</strong><small>天後出發</small></span></div></header>
+<header class="hero"><i class="leaf-fall" aria-hidden="true"></i><i class="leaf-fall" aria-hidden="true"></i><i class="leaf-fall" aria-hidden="true"></i><div class="hero-top"><h1>東北楓葉之旅</h1><span class="release">V13</span></div><div class="hero-bottom"><span class="hero-sub">10/17—10/25 · 9天8夜 · 2人</span><span class="countdown" id="countdown"><strong>—</strong><small>天後出發</small></span></div></header>
 <main>
 <section class="view" id="view-trip">
 <div class="section">
@@ -1449,25 +1449,14 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 </details>
 </div>
 </section>
-<section class="view" id="view-lodging">
+<section class="view" id="view-buy">
 <div class="section">
-<div class="section-title"><h2>住宿</h2><span>4間・8晚｜皆已確認</span></div>
+<div class="section-title"><h2>必買</h2><span>2項・仙台甜點</span></div>
 <div class="card-list">
-<details class="day-card stay-card"><summary class="day-head"><div class="day-date"><b>17</b><span>10月 · 3晚</span></div><div class="day-head-copy"><span class="day-index">10/17–10/20・仙台</span><h2>Hotel Metropolitan The Base Sendai</h2></div><span class="day-toggle" aria-hidden="true"></span></summary><div class="hotel-line"><span>地圖</span><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=Hotel%20Metropolitan%20The%20Base%20Sendai" target="_blank" rel="noopener">Hotel Metropolitan The Base Sendai<span aria-hidden="true"> ↗</span></a></div><div class="card-body">
-<div class="kv"><span>晚數</span><b>3晚</b></div><div class="kv"><span>房型</span><b>禁菸 Universal Twin｜同一房連住</b></div><div class="kv"><span>早餐</span><b>未含／依現場</b></div><div class="kv"><span>狀態</span><b>已確認</b></div><p>10/17入住、10/20退房。</p>
-</div></details>
-<details class="day-card stay-card"><summary class="day-head"><div class="day-date"><b>20</b><span>10月 · 1晚</span></div><div class="day-head-copy"><span class="day-index">10/20–10/21・青森</span><h2>ReLabo -Medical Spa &amp; Stay-</h2></div><span class="day-toggle" aria-hidden="true"></span></summary><div class="hotel-line"><span>地圖</span><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=ReLabo%20-Medical%20Spa%20%26%20Stay-" target="_blank" rel="noopener">ReLabo -Medical Spa &amp; Stay-<span aria-hidden="true"> ↗</span></a></div><div class="card-body">
-<div class="kv"><span>晚數</span><b>1晚</b></div><div class="kv"><span>房型</span><b>【繭房】Double Bed｜20㎡｜禁菸｜Unit Shower</b></div><div class="kv"><span>早餐</span><b>含早餐、天然溫泉與休息室</b></div><div class="kv"><span>狀態</span><b>已確認</b></div><p>青森站旁／直接連通區域。</p>
-</div></details>
-<details class="day-card stay-card"><summary class="day-head"><div class="day-date"><b>21</b><span>10月 · 2晚</span></div><div class="day-head-copy"><span class="day-index">10/21–10/23・奧入瀨</span><h2>星野集團 奧入瀨溪流飯店</h2></div><span class="day-toggle" aria-hidden="true"></span></summary><div class="hotel-line"><span>地圖</span><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%98%9F%E9%87%8E%E9%9B%86%E5%9C%98%20%E5%A5%A7%E5%85%A5%E7%80%A8%E6%BA%AA%E6%B5%81%E9%A3%AF%E5%BA%97" target="_blank" rel="noopener">星野集團 奧入瀨溪流飯店<span aria-hidden="true"> ↗</span></a></div><div class="card-body">
-<div class="kv"><span>晚數</span><b>2晚</b></div><div class="kv"><span>早餐</span><b>含早餐</b></div><div class="kv"><span>晚餐</span><b>兩晚青森りんごキッチン自助餐｜已含房費</b></div><div class="kv"><span>狀態</span><b>住宿已確認</b></div><div class="kv"><span>回程</span><b>10/23帶行李前往休屋</b></div><p>10/23早餐後退房；12:01由奧入瀨溪流館搭JR Bus前往休屋，之後不再回星野。</p>
-</div></details>
-<details class="day-card stay-card"><summary class="day-head"><div class="day-date"><b>23</b><span>10月 · 2晚</span></div><div class="day-head-copy"><span class="day-index">10/23–10/25・仙台</span><h2>Hotel Metropolitan Sendai East</h2></div><span class="day-toggle" aria-hidden="true"></span></summary><div class="hotel-line"><span>地圖</span><a class="text-map-link" href="https://www.google.com/maps/search/?api=1&query=Hotel%20Metropolitan%20Sendai%20East" target="_blank" rel="noopener">Hotel Metropolitan Sendai East<span aria-hidden="true"> ↗</span></a></div><div class="card-body">
-<div class="kv"><span>晚數</span><b>2晚</b></div><div class="kv"><span>房型</span><b>Wide Single Room｜禁菸｜21㎡｜Queen Bed</b></div><div class="kv"><span>早餐</span><b>未含</b></div><div class="kv"><span>狀態</span><b>已確認</b></div><p>10/23入住、10/25退房；15:00後入住、11:00前退房。</p>
-</div></details>
-</div>
-</div>
-</section>
+<details class="day-card buy-card" open><summary class="day-head"><div class="day-date"><b>飲</b><span>仙台</span></div><div class="day-head-copy"><span class="day-index">必喝・現場享用</span><h2>毛豆泥奶昔｜ずんだシェイク</h2></div><span class="day-toggle" aria-hidden="true"></span></summary><div class="card-body"><p>ずんだ茶寮的招牌毛豆泥奶昔，加入毛豆泥與牛奶，現場買來喝；另有毛豆麻糬與甜點可依喜好選購。</p><div class="kv"><span>店家</span><b>ずんだ茶寮 仙台駅ずんだ小径店</b></div><div class="kv"><span>位置</span><b>JR仙台站3F「ずんだ小径」｜中央1-1-1</b></div><div class="kv"><span>營業</span><b>物販09:00～21:00；喫茶10:00起、最後點餐18:00</b></div><div class="kv"><span>安排</span><b>10/18或10/25仙台站自由時間，路過再買</b></div><p>不把物販營業時間當成奶昔供應保證；設備維護可能影響販售，以現場為準。價格與杯型現場確認，費用列入餐飲，不先新增固定支出。</p><p><a class="action-link" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%9A%E3%82%93%E3%81%A0%E8%8C%B6%E5%AF%AE%20%E4%BB%99%E5%8F%B0%E9%A7%85%E3%81%9A%E3%82%93%E3%81%A0%E5%B0%8F%E5%BE%84%E5%BA%97" target="_blank" rel="noopener">店家地圖 ↗</a>　<a class="action-link" href="https://zundasaryo.com/zundashake/index.html" target="_blank" rel="noopener">官方商品／店鋪資訊 ↗</a></p></div></details>
+<details class="day-card buy-card" open><summary class="day-head"><div class="day-date"><b>買</b><span>仙台</span></div><div class="day-head-copy"><span class="day-index">必買・冷凍甜點</span><h2>喜久福｜鮮奶油大福</h2></div><span class="day-toggle" aria-hidden="true"></span></summary><div class="card-body"><p>喜久水庵的喜久福大福，定番四種口味：抹茶、生奶油、毛豆泥與焙茶。可買小份綜合口味，在仙台吃完或依店家建議冷藏保存。</p><div class="kv"><span>順路店</span><b>喜久水庵｜JR仙台站2F北側</b></div><div class="kv"><span>營業</span><b>08:00～21:00｜以當日公告為準</b></div><div class="kv"><span>截圖店家</span><b>お茶の井ヶ田 喜久水庵 南仙台本店｜太白區柳生2-6-3</b></div><div class="kv"><span>安排</span><b>10/18買少量當甜點；不為購買特地繞往南仙台</b></div><p>喜久福是冷凍商品。購買時確認保冷袋、可攜帶時間與旅館冷藏條件；解凍後需5°C以下冷藏並在48小時內吃完。回台交通時間較長，不直接當作可常溫攜帶的伴手禮。截圖也提到「千日餅」，想加買可現場確認品項。</p><p>數量、禮盒價格與保冷費現場確認，列入購物預算，不重複計入餐飲。</p><p><a class="action-link" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%96%9C%E4%B9%85%E6%B0%B4%E5%BA%B5%20%E4%BB%99%E5%8F%B0%E9%A7%85%202F%20%E5%8C%97%E5%81%B4" target="_blank" rel="noopener">仙台站店地圖 ↗</a>　<a class="action-link" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%8A%E8%8C%B6%E3%81%AE%E4%BA%95%E3%83%B6%E7%94%B0%20%E5%96%9C%E4%B9%85%E6%B0%B4%E5%BA%B5%20%E5%8D%97%E4%BB%99%E5%8F%B0%E6%9C%AC%E5%BA%97%20%E5%AE%AE%E5%9F%8E%E7%9C%8C%E4%BB%99%E5%8F%B0%E5%B8%82%E5%A4%AA%E7%99%BD%E5%8C%BA%E6%9F%B3%E7%94%9F2-6-3" target="_blank" rel="noopener">南仙台本店地圖 ↗</a></p><p><a class="action-link" href="https://www.livit.jregroup.ne.jp/detail/275" target="_blank" rel="noopener">車站店官方資訊 ↗</a>　<a class="action-link" href="https://www.kikusuian.com/smp/item/9840480.html" target="_blank" rel="noopener">官方保存說明 ↗</a></p></div></details>
+</div><p class="budget-note">住宿資訊仍保留在每日行程與預算頁；本頁改為必買清單。品項先列入清單，不增加固定行程或假設已購買。</p>
+</div></section>
 <section class="view" id="view-budget">
 <div class="section">
 <div class="section-title">
@@ -1885,9 +1874,9 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 </div>
 </section>
 </main>
-<div class="source">V12P49｜2026 日本東北行程・最後更新 2026/10/04</div>
+<div class="source">V13｜2026 日本東北行程・最後更新 2026/10/06</div>
 <nav class="bottom-nav" aria-label="主要導覽">
-<label for="tab-lodging" tabindex="0"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 19V8M21 19v-7a3 3 0 0 0-3-3H9v10M3 15h18M6 8h3v4H3v-1a3 3 0 0 1 3-3Z"/></svg><span class="tab-text">住宿</span></label>
+<label for="tab-buy" tabindex="0"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8Zm4 0V6a3 3 0 0 1 6 0v2"/></svg><span class="tab-text">必買</span></label>
 <label for="tab-transport" tabindex="0"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="16" rx="4"/><path d="M8 7h8M7 12h10M8 19l-2 2M16 19l2 2M9 16h.01M15 16h.01"/></svg><span class="tab-text">交通</span></label>
 <label for="tab-trip" tabindex="0"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg><span class="tab-text">行程</span></label>
 <label for="tab-budget" tabindex="0"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7.5A2.5 2.5 0 0 1 6.5 5H18a2 2 0 0 1 2 2v12H6.5A2.5 2.5 0 0 1 4 16.5v-9Z"/><path d="M4 8h13.5A2.5 2.5 0 0 1 20 10.5V13h-4a2 2 0 0 1 0-4h4M16 11h.01"/></svg><span class="tab-text">預算</span></label>
@@ -1965,7 +1954,7 @@ if ("serviceWorker" in navigator) {
   render();
 })();
 </script>
-<script id="V12P49_LIVE_FX">
+<script id="V13_LIVE_FX">
 (()=>{
   const FALLBACK={rate:0.19861,date:'2026-08-26',source:'V7P4 快照'};
   const STORAGE_KEY='tohoku-jpy-twd-v10';
