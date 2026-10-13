@@ -1,5 +1,5 @@
-const VERSION = "V20P3";
-const CACHE = "tohoku-v20p3-public-1";
+const VERSION = "V20P4";
+const CACHE = "tohoku-v20p4-public-1";
 const OPTIONAL_ASSETS = ["./manifest.webmanifest", "./apple-touch-icon.png", "./icon-192.png", "./icon-512.png", "./favicon-32.png"];
 
 self.addEventListener("install", event => {
@@ -42,10 +42,6 @@ self.addEventListener("activate", event => {
 self.addEventListener("fetch", event => {
   if (event.request.method !== "GET") return;
   const url = new URL(event.request.url);
-  if (url.hostname === "open.er-api.com" || url.hostname === "api.coinbase.com") {
-    event.respondWith(fetch(event.request, {cache: "no-store"}));
-    return;
-  }
   if (event.request.mode === "navigate") {
     event.respondWith((async () => {
       const cache = await caches.open(CACHE);
@@ -63,6 +59,7 @@ self.addEventListener("fetch", event => {
     return;
   }
   const knownAsset = OPTIONAL_ASSETS.some(asset => new URL(asset, self.registration.scope).href === url.href);
+  // Exchange-rate and other cross-origin requests go straight to the network so they never delay an update.
   if (url.origin !== self.location.origin || !knownAsset) return;
   event.respondWith((async () => {
     const cache = await caches.open(CACHE);
