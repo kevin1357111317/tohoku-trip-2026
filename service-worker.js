@@ -1,5 +1,5 @@
-const VERSION = "V20";
-const CACHE = "tohoku-v20-public-1";
+const VERSION = "V20P1";
+const CACHE = "tohoku-v20p1-public-1";
 const OPTIONAL_ASSETS = ["./manifest.webmanifest", "./apple-touch-icon.png", "./icon-192.png", "./icon-512.png", "./favicon-32.png"];
 
 self.addEventListener("install", event => {
@@ -42,7 +42,7 @@ self.addEventListener("activate", event => {
 self.addEventListener("fetch", event => {
   if (event.request.method !== "GET") return;
   const url = new URL(event.request.url);
-  if (url.hostname === "api.frankfurter.dev" || url.hostname === "api.coinbase.com") {
+  if (url.hostname === "open.er-api.com" || url.hostname === "api.coinbase.com") {
     event.respondWith(fetch(event.request, {cache: "no-store"}));
     return;
   }
