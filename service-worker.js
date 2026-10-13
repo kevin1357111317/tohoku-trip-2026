@@ -1,5 +1,5 @@
-const VERSION = "V20P1";
-const CACHE = "tohoku-v20p1-public-1";
+const VERSION = "V20P2";
+const CACHE = "tohoku-v20p2-public-1";
 const OPTIONAL_ASSETS = ["./manifest.webmanifest", "./apple-touch-icon.png", "./icon-192.png", "./icon-512.png", "./favicon-32.png"];
 
 self.addEventListener("install", event => {
