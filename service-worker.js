@@ -1,5 +1,5 @@
-const VERSION = "V20P6";
-const CACHE = "tohoku-v20p6-public-1";
+const VERSION = "V20P7";
+const CACHE = "tohoku-v20p7-public-1";
 // Bound the entire response body too, not only receipt of HTTP headers.
 async function download(request, timeout = 8000) {
   const controller = new AbortController();
