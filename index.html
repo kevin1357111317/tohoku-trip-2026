@@ -7,9 +7,9 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="東北楓葉之旅">
-<meta name="description" content="2026 日本東北楓葉之旅 V20P5｜9天8夜雙人行程">
-<meta name="version" content="V20P5">
-<title>東北楓葉之旅｜V20P5</title>
+<meta name="description" content="2026 日本東北楓葉之旅 V20P6｜9天8夜雙人行程">
+<meta name="version" content="V20P6">
+<title>東北楓葉之旅｜V20P6</title>
 
 
 <meta name="mobile-web-app-capable" content="yes">
@@ -247,7 +247,7 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 <input class="tab-radio" type="radio" name="tabs" id="tab-budget">
 <input class="tab-radio" type="radio" name="tabs" id="tab-todos">
 <div class="status-cover" aria-hidden="true"></div>
-<header class="hero"><i class="leaf-fall" aria-hidden="true"></i><i class="leaf-fall" aria-hidden="true"></i><i class="leaf-fall" aria-hidden="true"></i><div class="hero-top"><h1>東北楓葉之旅</h1><span class="release">V20P5</span></div><div class="hero-bottom"><span class="hero-sub">10/17—10/25 · 9天8夜 · 2人</span><span class="countdown" id="countdown"><strong>—</strong><small>天後出發</small></span></div></header>
+<header class="hero"><i class="leaf-fall" aria-hidden="true"></i><i class="leaf-fall" aria-hidden="true"></i><i class="leaf-fall" aria-hidden="true"></i><div class="hero-top"><h1>東北楓葉之旅</h1><span class="release">V20P6</span></div><div class="hero-bottom"><span class="hero-sub">10/17—10/25 · 9天8夜 · 2人</span><span class="countdown" id="countdown"><strong>—</strong><small>天後出發</small></span></div></header>
 <main>
 <section class="view" id="view-trip">
 <div class="section">
@@ -1931,7 +1931,7 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 </div>
 </section>
 </main>
-<div class="source">V20P5｜2026 日本東北行程・最後更新 2026/10/14</div>
+<div class="source">V20P6｜2026 日本東北行程・最後更新 2026/10/14</div>
 <nav class="bottom-nav" aria-label="主要導覽">
 <label for="tab-todos" tabindex="0"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="m8 9 1.5 1.5L12 8M14 9h3m-9 6 1.5 1.5L12 14m2 1h3"/></svg><span class="tab-text">待辦事項</span></label>
 <label for="tab-buy" tabindex="0"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8Zm4 0V6a3 3 0 0 1 6 0v2"/></svg><span class="tab-text">必買</span></label>
@@ -1966,7 +1966,7 @@ if ("serviceWorker" in navigator) {
     clearTimeout(updateTimer);
     applying = false;
     reloaded = false;
-    title.textContent = "更新未完成，請重試";
+    title.textContent = "更新失敗，請洽管理員";
     button.disabled = false;
     button.textContent = "再試一次";
     dismiss.hidden = false;
@@ -2001,7 +2001,7 @@ if ("serviceWorker" in navigator) {
   });
   button.addEventListener("click", () => {
     if (applying) return;
-    if (!navigator.onLine) { fail(); title.textContent = "目前離線，可繼續使用舊版"; return; }
+    if (!navigator.onLine) { fail(); return; }
     applying = true;
     button.disabled = true;
     button.textContent = "更新中…";
