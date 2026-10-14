@@ -1,11 +1,21 @@
-const VERSION = "V20P4";
-const CACHE = "tohoku-v20p4-public-1";
+const VERSION = "V20P5";
+const CACHE = "tohoku-v20p5-public-1";
+// Bound the entire response body too, not only receipt of HTTP headers.
+async function download(request, timeout = 8000) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeout);
+  try {
+    const response = await fetch(request, {cache: "no-store", signal: controller.signal});
+    const body = await response.arrayBuffer();
+    return new Response(body, {status: response.status, statusText: response.statusText, headers: response.headers});
+  } finally { clearTimeout(timer); }
+}
 const OPTIONAL_ASSETS = ["./manifest.webmanifest", "./apple-touch-icon.png", "./icon-192.png", "./icon-512.png", "./favicon-32.png"];
 
 self.addEventListener("install", event => {
   event.waitUntil((async () => {
     // Install only a matching HTML/worker pair; a partial deployment stays on the old version.
-    const response = await fetch("./index.html", {cache: "no-store"});
+    const response = await download("./index.html");
     if (!response.ok) throw new Error("App download failed");
     const html = await response.clone().text();
     if (!html.includes('<meta name="version" content="' + VERSION + '">')) {
@@ -16,7 +26,7 @@ self.addEventListener("install", event => {
     // A missing icon must not prevent the app from updating.
     await Promise.all(OPTIONAL_ASSETS.map(async asset => {
       try {
-        const assetResponse = await fetch(asset, {cache: "no-store"});
+        const assetResponse = await download(asset, 4000);
         if (assetResponse.ok) await cache.put(asset, assetResponse);
       } catch (_) {}
     }));
@@ -46,7 +56,7 @@ self.addEventListener("fetch", event => {
     event.respondWith((async () => {
       const cache = await caches.open(CACHE);
       try {
-        const network = await fetch(event.request, {cache: "no-store"});
+        const network = await download(event.request);
         if (network.ok) {
           try { await cache.put("./index.html", network.clone()); } catch (_) {}
           return network;
@@ -65,7 +75,7 @@ self.addEventListener("fetch", event => {
     const cache = await caches.open(CACHE);
     const cached = await cache.match(event.request);
     if (cached) return cached;
-    const response = await fetch(event.request);
+    const response = await download(event.request);
     if (response.ok) {
       try { await cache.put(event.request, response.clone()); } catch (_) {}
     }
