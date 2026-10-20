@@ -7,9 +7,9 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="東北楓葉之旅">
-<meta name="description" content="2026 日本東北楓葉之旅 V20P85｜9天8夜雙人行程">
-<meta name="version" content="V20P85">
-<title>東北楓葉之旅｜V20P85</title>
+<meta name="description" content="2026 日本東北楓葉之旅 V20P86｜9天8夜雙人行程">
+<meta name="version" content="V20P86">
+<title>東北楓葉之旅｜V20P86</title>
 
 
 <meta name="mobile-web-app-capable" content="yes">
@@ -263,6 +263,20 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 #view-budget .receipt-detail summary{cursor:pointer;color:var(--accent);font-weight:600}
 #view-budget .receipt-detail p{margin:7px 0 0}
 #view-budget .refund-strip{background:var(--surface-2)}
+
+.travel-progress{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 18px 15px;margin-bottom:22px}
+.travel-progress-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.travel-progress-top>div>span{display:block;color:var(--muted);font-size:.75rem;font-weight:650}
+.travel-progress-top b{display:block;margin-top:5px;font-size:1.15rem}
+.travel-progress-range{font-size:.72rem;color:var(--muted);white-space:nowrap}
+.travel-progress-track{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:5px;margin-top:16px}
+.travel-progress-step{text-align:center;min-width:0}
+.travel-progress-step i{display:block;height:8px;border-radius:8px;background:var(--surface-2)}
+.travel-progress-step.passed i{background:var(--accent)}
+.travel-progress-step.current i{background:var(--surface-2);box-shadow:inset 0 0 0 2px var(--accent)}
+.travel-progress-step small{display:block;margin-top:6px;font-size:.65rem;color:var(--muted)}
+.travel-progress-step.current small{color:var(--accent);font-weight:800}
+.travel-progress>p{margin:11px 0 0;font-size:.75rem;line-height:1.6;color:var(--muted)}
 </style>
 </head>
 <body>
@@ -274,9 +288,9 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 <input class="tab-radio" type="radio" name="tabs" id="tab-budget">
 <input class="tab-radio" type="radio" name="tabs" id="tab-todos">
 <div class="status-cover" aria-hidden="true"></div>
-<header class="hero"><i class="leaf-fall" aria-hidden="true"></i><i class="leaf-fall" aria-hidden="true"></i><i class="leaf-fall" aria-hidden="true"></i><div class="hero-top"><h1>東北楓葉之旅</h1><span class="release">V20P85</span></div><div class="hero-bottom"><span class="hero-sub">10/17—10/25 · 9天8夜 · 2人</span><span class="countdown" id="countdown"><strong>—</strong><small>天後出發</small></span></div></header>
+<header class="hero"><i class="leaf-fall" aria-hidden="true"></i><i class="leaf-fall" aria-hidden="true"></i><i class="leaf-fall" aria-hidden="true"></i><div class="hero-top"><h1>東北楓葉之旅</h1><span class="release">V20P86</span></div><div class="hero-bottom"><span class="hero-sub">10/17—10/25 · 9天8夜 · 2人</span><span class="countdown" id="countdown"><strong>—</strong><small>天後出發</small></span></div></header>
 <main>
-<section class="view" id="view-trip"><div class="section"><div class="section-title"><h2>每日行程</h2><span>時間・住宿・用餐</span></div>
+<section class="view" id="view-trip"><div class="section"><div class="travel-progress" id="travel-progress" aria-labelledby="travel-progress-title"><div class="travel-progress-top"><div><span id="travel-progress-title">東北旅行進度</span><b id="travel-progress-day">第 4 天／共 9 天</b></div><span class="travel-progress-range">10/17–10/25</span></div><div class="travel-progress-track" id="travel-progress-track" role="progressbar" aria-label="已度過的旅行天數" aria-valuemin="0" aria-valuemax="9" aria-valuenow="3"><span class="travel-progress-step passed" data-trip-day="1"><i aria-hidden="true"></i><small>17</small></span><span class="travel-progress-step passed" data-trip-day="2"><i aria-hidden="true"></i><small>18</small></span><span class="travel-progress-step passed" data-trip-day="3"><i aria-hidden="true"></i><small>19</small></span><span class="travel-progress-step current" data-trip-day="4"><i aria-hidden="true"></i><small>20</small></span><span class="travel-progress-step" data-trip-day="5"><i aria-hidden="true"></i><small>21</small></span><span class="travel-progress-step" data-trip-day="6"><i aria-hidden="true"></i><small>22</small></span><span class="travel-progress-step" data-trip-day="7"><i aria-hidden="true"></i><small>23</small></span><span class="travel-progress-step" data-trip-day="8"><i aria-hidden="true"></i><small>24</small></span><span class="travel-progress-step" data-trip-day="9"><i aria-hidden="true"></i><small>25</small></span></div><p id="travel-progress-caption">已度過 3 天 · 今天在青森 · 接下來還有 5 天</p></div><div class="section-title"><h2>每日行程</h2><span>時間・住宿・用餐</span></div>
 <div class="day-tip" id="trip-progress"><b>目前｜10/20 青森・已進房</b><p>17:14回報已進ReLabo房間，晚餐與泡湯尚待回報。明天11:35從青森出發，下午入住星野；獨木舟因天氣取消，退款待入帳。「約」為推估，未回報的項目保留預定。</p></div>
 <p class="page-group-label">今天｜10/20</p><details class="day-card" id="d4">
 <summary class="day-head"><div class="day-date"><b>20</b><span>10月 · 二</span></div><div class="day-head-copy"><span class="day-index">D4・青森｜已入住ReLabo</span><h2>青森漫遊・神社與睡魔</h2><p>09:50退房赴青森；Pope午餐、八甲田丸外觀、兩座神社、睡魔之家與A-FACTORY，17:14已進房。</p></div><span class="day-toggle" aria-hidden="true"></span></summary>
@@ -519,7 +533,6 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 <div class="timeline-item"><div class="time ">20:35起｜約22:30</div><div class="dot"></div><div class="item-body"><div class="item-top"><h4>桃園機場第一航廈 → 新竹</h4><span class="chip ok">已預約</span></div><p>55688機場接送（佳軒預約）；舒適型轎車，2人、行李2件。依JX863降落時間派車，降落後最長等候90分鐘。車資NT$1,350已線上付款；司機資訊於前一天以簡訊及Email通知。</p></div></div>
 </div>
 </details>
-<a class="koyo-open" href="https://kokoto.pages.dev/koyo/" target="_blank" rel="noopener noreferrer">開啟紅葉預測地圖 ↗</a>
 <p class="page-group-label">已完成｜10/17–10/19</p><details class="day-card" id="d3">
 <summary class="day-head">
 <div class="day-date"><b>19</b><span>10月 · 一</span></div>
@@ -1091,7 +1104,7 @@ a:focus-visible,summary:focus-visible,label:focus-visible{outline:3px solid var(
 </div>
 </section>
 </main>
-<div class="source">V20P85｜2026 日本東北行程・最後更新 2026/10/18</div>
+<div class="source">V20P86｜2026 日本東北行程・最後更新 2026/10/18</div>
 <nav class="bottom-nav" aria-label="主要導覽">
 <label for="tab-todos" tabindex="0"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="m8 9 1.5 1.5L12 8M14 9h3m-9 6 1.5 1.5L12 14m2 1h3"/></svg><span class="tab-text">待辦事項</span></label>
 <label for="tab-buy" tabindex="0"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8Zm4 0V6a3 3 0 0 1 6 0v2"/></svg><span class="tab-text">必買</span></label>
@@ -1326,5 +1339,24 @@ if ("serviceWorker" in navigator) {
 
 
 
+<script id="TRAVEL_PROGRESS">(()=>{
+ const regions=['仙台','仙台','藏王・銀山','青森','奧入瀨','奧入瀨','十和田湖・仙台','松島','仙台・返台'];
+ function state(now){
+  const p=new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Tokyo',year:'numeric',month:'numeric',day:'numeric'}).formatToParts(now);
+  const n=Object.fromEntries(p.filter(x=>x.type!=='literal').map(x=>[x.type,Number(x.value)]));
+  const offset=Math.floor((Date.UTC(n.year,n.month-1,n.day)-Date.UTC(2026,9,17))/86400000);
+  return {offset,completed:Math.max(0,Math.min(9,offset))};
+ }
+ function update(){
+  const {offset,completed}=state(new Date());
+  const day=document.getElementById('travel-progress-day'),track=document.getElementById('travel-progress-track'),caption=document.getElementById('travel-progress-caption');
+  if(!day||!track||!caption)return;
+  day.textContent=offset<0?'距離出發還有 '+(-offset)+' 天':offset>8?'9 天旅程已結束':'第 '+(offset+1)+' 天／共 9 天';
+  track.setAttribute('aria-valuenow',String(completed));
+  track.querySelectorAll('[data-trip-day]').forEach((el,i)=>{el.classList.toggle('passed',i<completed);el.classList.toggle('current',i===offset);});
+  caption.textContent=offset<0?'10/17 出發，一起期待東北旅行':offset>8?'10/17–10/25 · 留下滿滿的東北旅行回憶':'已度過 '+completed+' 天 · 今天在'+regions[offset]+' · '+(8-offset>0?'接下來還有 '+(8-offset)+' 天':'今天是旅程最後一天');
+ }
+ update();setInterval(update,60000);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')update();});
+})();</script>
 </body>
 </html>
